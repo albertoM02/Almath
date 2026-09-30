@@ -1,0 +1,199 @@
+[
+  {
+    "courseId": "cs",
+    "parts": [
+      {
+        "id": "cs-proofs",
+        "label": "I",
+        "units": [
+          {
+            "id": "cs-unit-01",
+            "number": 1,
+            "moduleIds": [
+              "cs-u1-claims",
+              "cs-u1-direct",
+              "cs-u1-contrapositive",
+              "cs-u1-equivalence",
+              "cs-u1-cases",
+              "cs-u1-contradiction"
+            ]
+          },
+          {
+            "id": "cs-unit-02",
+            "number": 2,
+            "moduleIds": [
+              "cs-u2-ordering",
+              "cs-u2-minimal",
+              "cs-u2-correctness",
+              "cs-u2-factors",
+              "cs-u2-termination"
+            ]
+          },
+          {
+            "id": "cs-unit-03",
+            "number": 3,
+            "moduleIds": [
+              "cs-u3-conditions",
+              "cs-u3-equivalence",
+              "cs-u3-normal-forms",
+              "cs-u3-sat",
+              "cs-u3-quantifiers",
+              "cs-u3-nested",
+              "cs-u3-negation"
+            ]
+          },
+          {
+            "id": "cs-unit-04",
+            "number": 4,
+            "moduleIds": [
+              "cs-u4-sets",
+              "cs-u4-set-algebra",
+              "cs-u4-sequences",
+              "cs-u4-functions",
+              "cs-u4-relations",
+              "cs-u4-images",
+              "cs-u4-cardinality"
+            ]
+          },
+          {
+            "id": "cs-unit-05",
+            "number": 5,
+            "moduleIds": [
+              "cs-u5-ordinary",
+              "cs-u5-bounds",
+              "cs-u5-strengthening",
+              "cs-u5-strong",
+              "cs-u5-bases",
+              "cs-u5-principles"
+            ]
+          },
+          {
+            "id": "cs-unit-06",
+            "number": 6,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-07",
+            "number": 7,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-08",
+            "number": 8,
+            "moduleIds": []
+          }
+        ]
+      },
+      {
+        "id": "cs-structures",
+        "label": "II",
+        "units": [
+          {
+            "id": "cs-unit-09",
+            "number": 9,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-10",
+            "number": 10,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-11",
+            "number": 11,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-12",
+            "number": 12,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-13",
+            "number": 13,
+            "moduleIds": []
+          }
+        ]
+      },
+      {
+        "id": "cs-counting",
+        "label": "III",
+        "units": [
+          {
+            "id": "cs-unit-14",
+            "number": 14,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-15",
+            "number": 15,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-16",
+            "number": 16,
+            "moduleIds": []
+          }
+        ]
+      },
+      {
+        "id": "cs-probability",
+        "label": "IV",
+        "units": [
+          {
+            "id": "cs-unit-17",
+            "number": 17,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-18",
+            "number": 18,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-19",
+            "number": 19,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-20",
+            "number": 20,
+            "moduleIds": []
+          },
+          {
+            "id": "cs-unit-21",
+            "number": 21,
+            "moduleIds": []
+          }
+        ]
+      },
+      {
+        "id": "cs-recurrences",
+        "label": "V",
+        "units": [
+          {
+            "id": "cs-unit-22",
+            "number": 22,
+            "moduleIds": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "ml",
+    "parts": [
+      {
+        "id": "ml-foundations",
+        "label": "I",
+        "units": [
+          {
+            "id": "ml-unit-01",
+            "number": 1,
+            "moduleIds": ["ml-vectors"]
+          }
+        ]
+      }
+    ]
+  }
+]

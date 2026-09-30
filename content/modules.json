@@ -1,0 +1,219 @@
+[
+  {
+    "id": "cs-logic",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-01",
+      "cs-02",
+      "cs-03",
+      "cs-04",
+      "cs-05",
+      "cs-06",
+      "cs-07",
+      "cs-08"
+    ],
+    "archived": true
+  },
+  {
+    "id": "ml-vectors",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-01",
+      "ml-02",
+      "ml-03",
+      "ml-04",
+      "ml-05",
+      "ml-06",
+      "ml-07",
+      "ml-08"
+    ]
+  },
+  {
+    "id": "cs-u1-claims",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u1-q01", "cs-u1-q02", "cs-u1-q03", "cs-u1-q04"]
+  },
+  {
+    "id": "cs-u1-direct",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u1-q05", "cs-u1-q06", "cs-u1-q07", "cs-u1-q08"]
+  },
+  {
+    "id": "cs-u1-contrapositive",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u1-q09", "cs-u1-q10", "cs-u1-q11", "cs-u1-q12"]
+  },
+  {
+    "id": "cs-u1-equivalence",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u1-q13", "cs-u1-q14", "cs-u1-q15", "cs-u1-q16"]
+  },
+  {
+    "id": "cs-u1-cases",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u1-q17", "cs-u1-q18", "cs-u1-q19", "cs-u1-q20"]
+  },
+  {
+    "id": "cs-u1-contradiction",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u1-q21", "cs-u1-q22", "cs-u1-q23", "cs-u1-q24"]
+  },
+  {
+    "id": "cs-u2-ordering",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u2-q01", "cs-u2-q02", "cs-u2-q03", "cs-u2-q04"]
+  },
+  {
+    "id": "cs-u2-minimal",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u2-q05", "cs-u2-q06", "cs-u2-q07", "cs-u2-q08"]
+  },
+  {
+    "id": "cs-u2-correctness",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u2-q09", "cs-u2-q10", "cs-u2-q11", "cs-u2-q12"]
+  },
+  {
+    "id": "cs-u2-factors",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u2-q13", "cs-u2-q14", "cs-u2-q15", "cs-u2-q16"]
+  },
+  {
+    "id": "cs-u2-termination",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u2-q17", "cs-u2-q18", "cs-u2-q19", "cs-u2-q20"]
+  },
+  {
+    "id": "cs-u3-conditions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q01", "cs-u3-q02", "cs-u3-q03", "cs-u3-q04"]
+  },
+  {
+    "id": "cs-u3-equivalence",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q05", "cs-u3-q06", "cs-u3-q07", "cs-u3-q08"]
+  },
+  {
+    "id": "cs-u3-normal-forms",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q09", "cs-u3-q10", "cs-u3-q11", "cs-u3-q12"]
+  },
+  {
+    "id": "cs-u3-sat",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q13", "cs-u3-q14", "cs-u3-q15", "cs-u3-q16"]
+  },
+  {
+    "id": "cs-u3-quantifiers",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q17", "cs-u3-q18", "cs-u3-q19", "cs-u3-q20"]
+  },
+  {
+    "id": "cs-u3-nested",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q21", "cs-u3-q22", "cs-u3-q23", "cs-u3-q24"]
+  },
+  {
+    "id": "cs-u3-negation",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u3-q25", "cs-u3-q26", "cs-u3-q27", "cs-u3-q28"]
+  },
+  {
+    "id": "cs-u4-sets",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q01", "cs-u4-q02", "cs-u4-q03", "cs-u4-q04"]
+  },
+  {
+    "id": "cs-u4-set-algebra",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q05", "cs-u4-q06", "cs-u4-q07", "cs-u4-q08"]
+  },
+  {
+    "id": "cs-u4-sequences",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q09", "cs-u4-q10", "cs-u4-q11", "cs-u4-q12"]
+  },
+  {
+    "id": "cs-u4-functions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q13", "cs-u4-q14", "cs-u4-q15", "cs-u4-q16"]
+  },
+  {
+    "id": "cs-u4-relations",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q17", "cs-u4-q18", "cs-u4-q19", "cs-u4-q20"]
+  },
+  {
+    "id": "cs-u4-images",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q21", "cs-u4-q22", "cs-u4-q23", "cs-u4-q24"]
+  },
+  {
+    "id": "cs-u4-cardinality",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u4-q25", "cs-u4-q26", "cs-u4-q27", "cs-u4-q28"]
+  },
+  {
+    "id": "cs-u5-ordinary",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u5-q01", "cs-u5-q02", "cs-u5-q03", "cs-u5-q04"]
+  },
+  {
+    "id": "cs-u5-bounds",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u5-q05", "cs-u5-q06", "cs-u5-q07", "cs-u5-q08"]
+  },
+  {
+    "id": "cs-u5-strengthening",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u5-q09", "cs-u5-q10", "cs-u5-q11", "cs-u5-q12"]
+  },
+  {
+    "id": "cs-u5-strong",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u5-q13", "cs-u5-q14", "cs-u5-q15", "cs-u5-q16"]
+  },
+  {
+    "id": "cs-u5-bases",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u5-q17", "cs-u5-q18", "cs-u5-q19", "cs-u5-q20"]
+  },
+  {
+    "id": "cs-u5-principles",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": ["cs-u5-q21", "cs-u5-q22", "cs-u5-q23", "cs-u5-q24"]
+  }
+]

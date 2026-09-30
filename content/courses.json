@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cs",
+    "icon": "logic",
+    "moduleIds": [
+      "cs-u1-claims",
+      "cs-u1-direct",
+      "cs-u1-contrapositive",
+      "cs-u1-equivalence",
+      "cs-u1-cases",
+      "cs-u1-contradiction",
+      "cs-u2-ordering",
+      "cs-u2-minimal",
+      "cs-u2-correctness",
+      "cs-u2-factors",
+      "cs-u2-termination",
+      "cs-u3-conditions",
+      "cs-u3-equivalence",
+      "cs-u3-normal-forms",
+      "cs-u3-sat",
+      "cs-u3-quantifiers",
+      "cs-u3-nested",
+      "cs-u3-negation",
+      "cs-u4-sets",
+      "cs-u4-set-algebra",
+      "cs-u4-sequences",
+      "cs-u4-functions",
+      "cs-u4-relations",
+      "cs-u4-images",
+      "cs-u4-cardinality",
+      "cs-u5-ordinary",
+      "cs-u5-bounds",
+      "cs-u5-strengthening",
+      "cs-u5-strong",
+      "cs-u5-bases",
+      "cs-u5-principles"
+    ]
+  },
+  {
+    "id": "ml",
+    "icon": "vectors",
+    "moduleIds": ["ml-vectors"]
+  }
+]

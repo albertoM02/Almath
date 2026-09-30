@@ -1,0 +1,30 @@
+[
+  {
+    "id": "almath-original",
+    "kind": "original",
+    "note": "Original explanations and exercises authored for Almath; no copied or adapted book exercises."
+  },
+  {
+    "id": "mcs-2018",
+    "kind": "concept-reference",
+    "title": "Mathematics for Computer Science",
+    "authors": ["Eric Lehman", "F. Thomson Leighton", "Albert R. Meyer"],
+    "edition": "2018-06-06",
+    "url": "https://courses.csail.mit.edu/6.042/spring18/mcs.pdf",
+    "license": "CC-BY-SA-3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checked": "2026-09-29",
+    "coverage": "Core chapters 1-5: 124 original questions in 31 modules, approved on 30 September 2026. Units 3-5 reproduce the approved review draft exactly, including original theory, examples, hints and explanations. Per-module printed book section/page references are retained in docs/question-banks/CS_Units_3_4_5_Approved.json. Earlier chapter 1/3 refresher retained for saved progress. Additional practice and full proof construction remain pending."
+  },
+  {
+    "id": "ml-foundations",
+    "kind": "curriculum-reference",
+    "title": "Google ML prerequisites and NVIDIA role requirements",
+    "urls": [
+      "https://developers.google.com/machine-learning/crash-course/prereqs-and-prework",
+      "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Systems-Engineer--Networking_JR2018261"
+    ],
+    "checked": "2026-09-29",
+    "note": "Skills evidence, not a company interview question bank."
+  }
+]

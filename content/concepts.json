@@ -1,0 +1,236 @@
+[
+  {
+    "id": "cs-statements",
+    "courseId": "cs",
+    "prerequisites": [],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-implication",
+    "courseId": "cs",
+    "prerequisites": ["cs-statements"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-converse",
+    "courseId": "cs",
+    "prerequisites": ["cs-implication"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-negation",
+    "courseId": "cs",
+    "prerequisites": ["cs-statements"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "ml-components",
+    "courseId": "ml",
+    "prerequisites": [],
+    "sourceId": "ml-foundations"
+  },
+  {
+    "id": "ml-dot",
+    "courseId": "ml",
+    "prerequisites": ["ml-components"],
+    "sourceId": "ml-foundations"
+  },
+  {
+    "id": "ml-angle",
+    "courseId": "ml",
+    "prerequisites": ["ml-dot"],
+    "sourceId": "ml-foundations"
+  },
+  {
+    "id": "ml-projection",
+    "courseId": "ml",
+    "prerequisites": ["ml-dot"],
+    "sourceId": "ml-foundations"
+  },
+  {
+    "id": "cs-u1-claims",
+    "courseId": "cs",
+    "prerequisites": [],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u1-direct",
+    "courseId": "cs",
+    "prerequisites": ["cs-u1-claims"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u1-contrapositive",
+    "courseId": "cs",
+    "prerequisites": ["cs-u1-direct"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u1-equivalence",
+    "courseId": "cs",
+    "prerequisites": ["cs-u1-contrapositive"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u1-cases",
+    "courseId": "cs",
+    "prerequisites": ["cs-u1-equivalence"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u1-contradiction",
+    "courseId": "cs",
+    "prerequisites": ["cs-u1-cases"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u2-ordering",
+    "courseId": "cs",
+    "prerequisites": ["cs-u1-contradiction"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u2-minimal",
+    "courseId": "cs",
+    "prerequisites": ["cs-u2-ordering"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u2-correctness",
+    "courseId": "cs",
+    "prerequisites": ["cs-u2-minimal"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u2-factors",
+    "courseId": "cs",
+    "prerequisites": ["cs-u2-correctness"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u2-termination",
+    "courseId": "cs",
+    "prerequisites": ["cs-u2-factors"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-conditions",
+    "courseId": "cs",
+    "prerequisites": ["cs-u2-termination"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-equivalence",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-conditions"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-normal-forms",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-equivalence"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-sat",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-normal-forms"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-quantifiers",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-sat"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-nested",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-quantifiers"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u3-negation",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-nested"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-sets",
+    "courseId": "cs",
+    "prerequisites": ["cs-u3-negation"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-set-algebra",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-sets"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-sequences",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-set-algebra"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-functions",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-sequences"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-relations",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-functions"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-images",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-relations"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u4-cardinality",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-images"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u5-ordinary",
+    "courseId": "cs",
+    "prerequisites": ["cs-u4-cardinality"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u5-bounds",
+    "courseId": "cs",
+    "prerequisites": ["cs-u5-ordinary"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u5-strengthening",
+    "courseId": "cs",
+    "prerequisites": ["cs-u5-bounds"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u5-strong",
+    "courseId": "cs",
+    "prerequisites": ["cs-u5-strengthening"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u5-bases",
+    "courseId": "cs",
+    "prerequisites": ["cs-u5-strong"],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u5-principles",
+    "courseId": "cs",
+    "prerequisites": ["cs-u5-bases"],
+    "sourceId": "mcs-2018"
+  }
+]

@@ -1,0 +1,2919 @@
+{
+  "ui": {
+    "chooseCourse": "Choose a course",
+    "learn": "Learn",
+    "review": "Review",
+    "about": "About Almath",
+    "continue": "Continue",
+    "startModule": "Start module",
+    "viewUnits": "View units",
+    "exploreCourse": "Explore course",
+    "notStarted": "Not started",
+    "completedCount": "{done} of {total} questions completed",
+    "moduleCount": "1 introductory module",
+    "courseBack": "All courses",
+    "unit": "Unit {number}",
+    "exerciseCount": "{count} questions",
+    "theory": "Theory",
+    "practice": "Practice",
+    "reviewPosition": "Review · concept {current} of {total}",
+    "exit": "Exit",
+    "saved": "Saved on this device",
+    "saving": "Saving…",
+    "saveError": "Progress could not be saved. Keep this tab open and retry.",
+    "retrySave": "Retry save",
+    "loading": "Opening your progress…",
+    "loadError": "Your saved progress could not be opened. Nothing has been overwritten.",
+    "retry": "Try again",
+    "example": "Worked example",
+    "takeaway": "Key takeaway",
+    "tryExercise": "Try the exercise",
+    "checkAnswer": "Check answer",
+    "nextExercise": "Next question",
+    "finishModule": "Finish module",
+    "needHint": "Need a hint?",
+    "reviewTheory": "Review theory",
+    "hint": "A little hint",
+    "correct": "That’s right.",
+    "incorrect": "Not quite. Try again.",
+    "invalidNumber": "Enter a number, such as 4 or -2.",
+    "selectAnswer": "Choose an answer first.",
+    "solution": "Show worked solution",
+    "solutionTitle": "Worked solution",
+    "solutionNote": "You can continue after reading the solution. This question will be marked as reviewed.",
+    "previous": "Previous question",
+    "answerLabel": "Your answer",
+    "answerPlaceholder": "Enter a number",
+    "solved": "Solved",
+    "reviewed": "Reviewed",
+    "ready": "Ready to learn",
+    "current": "In progress",
+    "reviewModule": "Review module",
+    "resumeReview": "Resume review",
+    "moduleComplete": "Module complete",
+    "reviewComplete": "Review complete",
+    "completedMessage": "You’ve worked through every question in this module.",
+    "solvedSummary": "{solved} solved · {reviewed} reviewed with a solution",
+    "backCourses": "Back to courses",
+    "reviewAgain": "Practice again",
+    "yourReview": "Your review",
+    "reviewIntro": "Revisit a module with a mix of familiar and alternate questions.",
+    "reviewEmpty": "Your review starts here.",
+    "reviewEmptyBody": "Complete a question in either course, then return to practise what you’ve learned.",
+    "reviewStart": "Explore courses",
+    "exerciseList": "Questions in this module",
+    "unitIntro": "Choose a question, or continue from where you left off.",
+    "reviewTag": "Review session",
+    "deviceNote": "Progress is saved in this browser on this device.",
+    "storageDetail": "Clearing this site’s browser data removes local progress. Cross-device sync is not part of this version.",
+    "learningPaths": "Learning paths",
+    "version": "Version 0.1 · English",
+    "aboutText": "Short explanations. Original exercises. Time to think.",
+    "contentSources": "Content and sources",
+    "sourcesText": "Lessons and exercises are written for Almath. The CS curriculum is informed by Mathematics for Computer Science (Lehman, Leighton and Meyer, June 2018). That book is licensed CC BY-SA 3.0; its text and exercises are not reproduced here.",
+    "mlSourcesText": "The ML path starts with mathematical foundations identified in Google’s ML prerequisites and relevant engineering role requirements. These are original practice questions, not claimed company interview questions.",
+    "projectGuide": "Project guide (PDF)",
+    "sourceBook": "Mathematics for Computer Science",
+    "sourceGoogle": "Google ML prerequisites",
+    "sourceLicense": "CC BY-SA 3.0",
+    "moduleFinishedLabel": "Completed",
+    "saveWarningTitle": "Saving needs attention",
+    "numericalHelp": "A numerical answer is enough.",
+    "reviewCount": "{count} questions ready to revisit",
+    "moduleLabel": "Module",
+    "brandLabel": "Almath home",
+    "noPenalty": "Take your time. There are no penalties.",
+    "restartLater": "Come back whenever you’re ready.",
+    "firstModule": "Foundations",
+    "reviewSelected": "Review this question",
+    "contentUpdated": "This module has changed. Your completed exercises are kept; the current session has been refreshed.",
+    "sessionUnavailable": "This saved lesson is no longer available. Your completed exercises are kept.",
+    "viewGuide": "Read the project guide",
+    "reviewHint": "Alternate questions appear where available.",
+    "workingOffline": "Offline · progress stays on this device",
+    "changeSign": "Change sign",
+    "mainNavigation": "Main navigation",
+    "skipContent": "Skip to content",
+    "lessonStage": "Lesson stage",
+    "conceptPosition": "Concept {current} of {total}",
+    "questionPosition": "Question {current} of {total}",
+    "outlineSummary": "{units} · {parts}",
+    "unitCountOne": "{count} unit",
+    "unitCountMany": "{count} units",
+    "partCountOne": "{count} part",
+    "partCountMany": "{count} parts",
+    "unitRange": "Units {first}–{last}",
+    "availableModuleOne": "{count} module available",
+    "availableModuleMany": "{count} modules available",
+    "plannedUnit": "Planned",
+    "modulesComingSoon": "Modules coming soon.",
+    "outlineNotice": "The full course outline is shown. Modules are available where listed; more will be added gradually.",
+    "showRemainingUnits": "Show remaining {count} units",
+    "showFewerUnits": "Show fewer units",
+    "viewQuestions": "View questions",
+    "availableModuleProgress": "{done} of {total} questions completed",
+    "legacyModule": "Earlier module · saved progress kept",
+    "resumeEarlierModule": "Resume earlier module",
+    "nextModule": "Next module",
+    "availableCourseProgress": "{done} of {total} available questions completed",
+    "modulesReadyOne": "{count} module ready",
+    "modulesReadyMany": "{count} modules ready",
+    "allAvailableComplete": "All available modules completed",
+    "showAllModules": "View all {count} modules",
+    "showFewerModules": "Show fewer modules"
+  },
+  "courses": {
+    "cs": {
+      "title": "Mathematics for Computer Science",
+      "description": "Build proofs and reason about correctness, counterexamples and termination.",
+      "category": "COMPUTER SCIENCE"
+    },
+    "ml": {
+      "title": "Mathematics for Machine Learning",
+      "description": "Build intuition for the mathematics behind models.",
+      "category": "MACHINE LEARNING"
+    }
+  },
+  "modules": {
+    "cs-logic": {
+      "title": "Earlier logic refresher",
+      "description": "Statements, implications, converses, and negation."
+    },
+    "ml-vectors": {
+      "title": "Vectors & dot products",
+      "description": "Components, similarity, and projections."
+    },
+    "cs-u1-claims": {
+      "title": "Precise claims and assumptions",
+      "description": "Inputs, universal claims, counterexamples and valid inference."
+    },
+    "cs-u1-direct": {
+      "title": "Direct proofs",
+      "description": "Derive conclusions from definitions and explicit assumptions."
+    },
+    "cs-u1-contrapositive": {
+      "title": "Converses and contrapositives",
+      "description": "Distinguish reversing a rule from proving its contrapositive."
+    },
+    "cs-u1-equivalence": {
+      "title": "If and only if",
+      "description": "Prove both directions and recognize reversible steps."
+    },
+    "cs-u1-cases": {
+      "title": "Proof by cases",
+      "description": "Cover every input, including boundary values."
+    },
+    "cs-u1-contradiction": {
+      "title": "Contradiction and proof review",
+      "description": "Find impossible consequences, circular arguments and mismatched assumptions."
+    },
+    "cs-u2-ordering": {
+      "title": "What well-ordering guarantees",
+      "description": "Minimum elements, bounds and well-ordered sets."
+    },
+    "cs-u2-minimal": {
+      "title": "The smallest counterexample",
+      "description": "Choose the least failure and use its minimality correctly."
+    },
+    "cs-u2-correctness": {
+      "title": "Proving a counting function correct",
+      "description": "Apply a shortest-counterexample argument to binary strings."
+    },
+    "cs-u2-factors": {
+      "title": "Existence of prime factorizations",
+      "description": "Use minimality on smaller factors; distinguish existence from uniqueness."
+    },
+    "cs-u2-termination": {
+      "title": "Well-ordering and termination",
+      "description": "Find a strictly decreasing measure and recognize when the argument fails."
+    },
+    "cs-u3-conditions": {
+      "title": "Boolean conditions and specifications",
+      "description": "Translate a precise requirement into a Boolean condition and identify a violating assignment."
+    },
+    "cs-u3-equivalence": {
+      "title": "Equivalence and Boolean algebra",
+      "description": "Simplify formulas while preserving every assignment, and reject invalid inference patterns."
+    },
+    "cs-u3-normal-forms": {
+      "title": "Truth tables and normal forms",
+      "description": "Read DNF and CNF, construct a small full DNF, and understand truth-table size."
+    },
+    "cs-u3-sat": {
+      "title": "SAT as a consistency check",
+      "description": "Find a satisfying assignment, expose inconsistent constraints, and reduce validity to SAT."
+    },
+    "cs-u3-quantifiers": {
+      "title": "Predicates, domains and quantifiers",
+      "description": "Translate claims with explicit domains, restrictions and witnesses."
+    },
+    "cs-u3-nested": {
+      "title": "Quantifier order and dependent witnesses",
+      "description": "Separate a per-input solution from one common solution, and build a finite countermodel."
+    },
+    "cs-u3-negation": {
+      "title": "Negating specifications and finding countermodels",
+      "description": "Negate nested specifications without losing scope and identify the evidence needed to refute them."
+    },
+    "cs-u4-sets": {
+      "title": "Sets, membership and exact collections",
+      "description": "Distinguish membership, inclusion, empty sets and sets of subsets."
+    },
+    "cs-u4-set-algebra": {
+      "title": "Set operations and membership proofs",
+      "description": "Compute set operations and prove or refute set identities using elementwise logic."
+    },
+    "cs-u4-sequences": {
+      "title": "Sequences, tuples and Cartesian products",
+      "description": "Model ordered records correctly and separate a tuple from a set of possible tuples."
+    },
+    "cs-u4-functions": {
+      "title": "Functions, support and composition",
+      "description": "Specify partial and total mappings precisely, and compose them in the correct order."
+    },
+    "cs-u4-relations": {
+      "title": "Relations and mapping properties",
+      "description": "Classify relations by their incoming and outgoing pairs, keeping endpoints explicit."
+    },
+    "cs-u4-images": {
+      "title": "Images, inverse images and inverse relations",
+      "description": "Find images and preimages without confusing an inverse relation with an inverse function."
+    },
+    "cs-u4-cardinality": {
+      "title": "Finite cardinality and reversible encodings",
+      "description": "Use injections, surjections, bijections and subset encodings to compare finite sizes."
+    },
+    "cs-u5-ordinary": {
+      "title": "Ordinary induction and the proof contract",
+      "description": "State a quantified induction claim, prove its base and identify the exact allowed assumption."
+    },
+    "cs-u5-bounds": {
+      "title": "Induction for exponential bounds",
+      "description": "Verify the algebra and starting range of an inductive inequality."
+    },
+    "cs-u5-strengthening": {
+      "title": "Strengthening the induction hypothesis",
+      "description": "Strengthen a claim just enough to preserve the information needed by the next step."
+    },
+    "cs-u5-strong": {
+      "title": "Strong induction for smaller subproblems",
+      "description": "Use all smaller established cases while checking decrease and domain membership."
+    },
+    "cs-u5-bases": {
+      "title": "Multiple base cases and dependency gaps",
+      "description": "Choose enough bases to support every dependency and detect missing links in a proof."
+    },
+    "cs-u5-principles": {
+      "title": "Induction, well-ordering and proof review",
+      "description": "Relate the three proof principles and diagnose a complete induction argument."
+    }
+  },
+  "concepts": {
+    "cs-statements": {
+      "title": "What counts as a statement?",
+      "body": "A proposition is a statement with a definite truth value: true or false. It can be false and still be a proposition.",
+      "formula": "True or false",
+      "example": "“9 is even” is a proposition.",
+      "exampleSteps": [
+        "It makes a definite claim.",
+        "That claim is false, but its truth value is clear."
+      ],
+      "takeaway": "A question or instruction is not a proposition. A claim with an unspecified variable may need more information."
+    },
+    "cs-implication": {
+      "title": "When does a rule fail?",
+      "body": "An implication says: if P is true, Q must be true. To disprove it, find a case where P is true and Q is false.",
+      "formula": "P → Q",
+      "example": "If a number is divisible by 4, it is even.",
+      "exampleSteps": [
+        "8 is divisible by 4 and is even.",
+        "An odd number does not break this rule: its “if” condition is false."
+      ],
+      "takeaway": "A counterexample makes P true and Q false."
+    },
+    "cs-converse": {
+      "title": "Can you reverse a rule?",
+      "body": "The converse swaps a rule’s condition and conclusion. A rule can be true while its converse is false.",
+      "formula": "P → Q   vs.   Q → P",
+      "example": "If a number is divisible by 10, it is divisible by 5.",
+      "exampleSteps": [
+        "The converse says: if divisible by 5, then divisible by 10.",
+        "15 satisfies the converse’s condition but not its conclusion."
+      ],
+      "takeaway": "Reversing an implication creates a new claim that needs its own justification."
+    },
+    "cs-negation": {
+      "title": "Negate a claim precisely",
+      "body": "The negation of a claim is true exactly when the original claim is false. To disprove “every”, one exception is enough.",
+      "formula": "not (every) = at least one not",
+      "example": "Every item in this list is positive.",
+      "exampleSteps": [
+        "Its negation is: at least one item is not positive.",
+        "Not positive means zero or negative, not just negative."
+      ],
+      "takeaway": "“Not all” does not mean “none”."
+    },
+    "ml-components": {
+      "title": "Read a vector",
+      "body": "A vector is an ordered list of numbers. Each component describes one coordinate or feature, and its position matters.",
+      "formula": "x = (2, −1, 4)",
+      "example": "A three-feature input is x = (2, −1, 4).",
+      "exampleSteps": [
+        "The first component is 2; the second is −1.",
+        "There are three components, so x belongs to a 3-dimensional space."
+      ],
+      "takeaway": "Match the component order when comparing vectors or applying model weights."
+    },
+    "ml-dot": {
+      "title": "Multiply, then add",
+      "body": "The dot product multiplies matching components and adds the results. Both vectors must have the same number of components.",
+      "formula": "a · b = a₁b₁ + a₂b₂",
+      "example": "Let a = (2, 1) and b = (3, −1).",
+      "exampleSteps": [
+        "Multiply matching entries: 2 × 3 = 6 and 1 × (−1) = −1.",
+        "Add them: a · b = 6 − 1 = 5."
+      ],
+      "takeaway": "The dot product returns one number, not another vector."
+    },
+    "ml-angle": {
+      "title": "What does the sign tell you?",
+      "body": "For two nonzero vectors, the dot product’s sign tells you whether the angle between them is below, equal to, or above 90°.",
+      "formula": "a · b = ‖a‖ ‖b‖ cos θ",
+      "example": "Let a = (1, 0) and b = (0, 2).",
+      "exampleSteps": [
+        "Their dot product is 0.",
+        "Both vectors are nonzero, so they are perpendicular."
+      ],
+      "takeaway": "Positive: below 90°. Zero: 90°. Negative: above 90°. The angle with a zero vector is undefined."
+    },
+    "ml-projection": {
+      "title": "Measure along a direction",
+      "body": "The dot product with a unit vector gives a signed scalar projection: how much a vector points along that direction.",
+      "formula": "signed amount = x · u,  ‖u‖ = 1",
+      "example": "Let x = (3, 4) and unit direction u = (1, 0).",
+      "exampleSteps": [
+        "x · u = 3 × 1 + 4 × 0 = 3.",
+        "The signed amount along the horizontal direction is 3."
+      ],
+      "takeaway": "Use a unit direction. A negative projection means the opposite direction."
+    },
+    "cs-u1-claims": {
+      "title": "Precise claims and assumptions",
+      "body": "A predicate becomes true or false when its inputs are fixed. A universal claim concerns every permitted input: one counterexample disproves it, while successful examples alone do not prove it. Unless stated otherwise, arithmetic uses mathematical integers without overflow; ℕ = {0, 1, 2, …}.",
+      "formula": "P(i, n): 0 ≤ i < n",
+      "example": "For an array of length n, P(i, n) describes a valid index.",
+      "exampleSteps": [
+        "P(2, 5) is true because 0 ≤ 2 < 5.",
+        "An implication P ⇒ Q lets us conclude Q once P has been established."
+      ],
+      "takeaway": "Check the input domain and the assumptions behind a claim."
+    },
+    "cs-u1-direct": {
+      "title": "Direct proofs",
+      "body": "To prove an implication directly, assume its premise and derive its conclusion using definitions and established facts. Make the assumptions supporting each step explicit.",
+      "formula": "Assume P → derive Q",
+      "example": "If a = 4k for an integer k, then a + 4 is also a multiple of 4.",
+      "exampleSteps": [
+        "a + 4 = 4k + 4 = 4(k + 1).",
+        "Since k + 1 is an integer, this is an integer multiple of 4."
+      ],
+      "takeaway": "A direct proof connects the premise to the conclusion through justified steps."
+    },
+    "cs-u1-contrapositive": {
+      "title": "Converses and contrapositives",
+      "body": "P ⇒ Q is equivalent to its contrapositive, ¬Q ⇒ ¬P. Reversing it to Q ⇒ P produces the converse, which needs its own justification.",
+      "formula": "P ⇒ Q  ⇔  ¬Q ⇒ ¬P",
+      "example": "A multiple of 10 is a multiple of 5.",
+      "exampleSteps": [
+        "Its contrapositive says: a number not divisible by 5 cannot be divisible by 10.",
+        "The converse is different: 5 is divisible by 5 but not by 10."
+      ],
+      "takeaway": "For a contrapositive, negate both statements and reverse their order."
+    },
+    "cs-u1-equivalence": {
+      "title": "If and only if",
+      "body": "Proving P ⇔ Q requires both directions. Alternatively, connect the statements through steps that are all reversible.",
+      "formula": "P ⇔ Q: P ⇒ Q and Q ⇒ P",
+      "example": "For real x, x + 5 = 9 ⇔ x = 4.",
+      "exampleSteps": [
+        "Subtracting 5 gives x = 4.",
+        "Adding 5 reverses the step and gives x + 5 = 9."
+      ],
+      "takeaway": "One implication alone does not establish an equivalence."
+    },
+    "cs-u1-cases": {
+      "title": "Proof by cases",
+      "body": "Split the permitted inputs into cases that cover every possibility. Prove the claim in each case; check boundaries carefully.",
+      "formula": "All cases covered → claim established",
+      "example": "To prove |x| ≥ 0 for real x, split by the sign of x.",
+      "exampleSteps": [
+        "If x ≥ 0, then |x| = x ≥ 0.",
+        "If x < 0, then |x| = −x > 0."
+      ],
+      "takeaway": "Correct arguments within incomplete cases do not prove the whole claim."
+    },
+    "cs-u1-contradiction": {
+      "title": "Contradiction and proof review",
+      "body": "A contradiction proof assumes the claim is false and derives something impossible. When reviewing any proof, check for circular reasoning and assumptions that do not match the problem.",
+      "formula": "Assume ¬P → contradiction → P",
+      "example": "A positive real x cannot satisfy x + 1 ≤ x.",
+      "exampleSteps": [
+        "Assume x + 1 ≤ x.",
+        "Subtracting x gives 1 ≤ 0, which is impossible."
+      ],
+      "takeaway": "A proof must establish its claim under the assumptions of the actual problem."
+    },
+    "cs-u2-ordering": {
+      "title": "What well-ordering guarantees",
+      "body": "Every nonempty subset of ℕ has a least element. A set is well-ordered when every nonempty subset has a least element. A lower bound need not belong to the set; a minimum must. Throughout this unit, sets use the usual numerical order.",
+      "formula": "ℕ = {0, 1, 2, …}",
+      "example": "The infinite set {3, 6, 9, …} has minimum 3.",
+      "exampleSteps": [
+        "Three belongs to the set and is no larger than any other member.",
+        "Finiteness is not required."
+      ],
+      "takeaway": "Having a minimum is different from every nonempty subset having a minimum."
+    },
+    "cs-u2-minimal": {
+      "title": "The smallest counterexample",
+      "body": "To establish P(n) for all n ∈ ℕ, suppose counterexamples exist and choose the smallest one. Derive a contradiction, either by proving it satisfies P, or by finding a smaller counterexample.",
+      "formula": "C = {n ∈ ℕ : P(n) is false}",
+      "example": "If P(0) is already established, a smallest counterexample must be positive.",
+      "exampleSteps": [
+        "Let m be the smallest counterexample.",
+        "Every permitted value smaller than m satisfies P."
+      ],
+      "takeaway": "A smaller value contradicts minimality only if it is also a counterexample."
+    },
+    "cs-u2-correctness": {
+      "title": "Proving a counting function correct",
+      "body": "Consider a function on finite binary strings. It returns 0 for the empty string; on a prefix followed by bit b, it returns countOnes(prefix) + b. Here b has numerical value 0 or 1. We will prove correctness using the length of a shortest failing input.",
+      "formula": "Length measures the input",
+      "example": "For example, countOnes(\"10\") = 1.",
+      "exampleSteps": [
+        "countOnes(\"\") = 0",
+        "countOnes(prefix followed by bit b) = countOnes(prefix) + b"
+      ],
+      "takeaway": "Choose the smallest failing length, so every shorter input is handled correctly."
+    },
+    "cs-u2-factors": {
+      "title": "Existence of prime factorizations",
+      "body": "A prime is an integer greater than 1 whose only positive divisors are 1 and itself. We will use a smallest-counterexample argument to show that every integer greater than 1 is a product of primes. A single prime counts as such a product.",
+      "formula": "42 = 2 × 3 × 7",
+      "example": "This expression writes 42 as a product of primes.",
+      "exampleSteps": [
+        "Each factor is prime.",
+        "A prime such as 7 is already a one-factor product of primes."
+      ],
+      "takeaway": "Existence and uniqueness are separate claims."
+    },
+    "cs-u2-termination": {
+      "title": "Well-ordering and termination",
+      "body": "A computation cannot keep strictly decreasing a nonnegative integer forever. A termination argument therefore looks for such a measure. Assume each individual loop iteration finishes; a measure that merely stays the same or decreases is insufficient by itself.",
+      "formula": "V ∈ ℕ; each step strictly lowers V",
+      "example": "Removing one item per iteration from a fixed finite queue decreases its remaining length.",
+      "exampleSteps": [
+        "The length is a nonnegative integer.",
+        "It decreases by 1 each time an item is removed."
+      ],
+      "takeaway": "The measure’s domain and strict decrease both matter."
+    },
+    "cs-u3-conditions": {
+      "title": "Boolean conditions and specifications",
+      "body": "AND requires both operands; inclusive OR permits either or both. XOR requires exactly one. P ⇒ Q fails only when P is true and Q is false; it does not assert causation or the converse. P ⇔ Q requires equal truth values. Here all Boolean checks are defined, deterministic and have no side effects. Logical equivalence alone does not justify reordering real code that can throw, mutate state or fail to terminate.",
+      "formula": "",
+      "example": "A job may run exactly when capacity C is available and either token T or override O is present: C ∧ (T ∨ O). With C=true, T=false and O=true, the condition is true.",
+      "exampleSteps": [],
+      "takeaway": "The learner can distinguish a requirement, its converse and an implementation condition."
+    },
+    "cs-u3-equivalence": {
+      "title": "Equivalence and Boolean algebra",
+      "body": "Equivalent formulas agree on every assignment. A valid formula is true on every assignment; a satisfiable formula is true on at least one. To disprove equivalence, one differing assignment suffices. Useful laws include ¬(P ∧ Q) ≡ ¬P ∨ ¬Q, ¬(P ∨ Q) ≡ ¬P ∧ ¬Q, and P ⇒ Q ≡ ¬P ∨ Q. The symbol ≡ here means equivalence across assignments, not an extra program operator.",
+      "formula": "",
+      "example": "¬(Ready ∨ Busy) is equivalent to ¬Ready ∧ ¬Busy: both original flags must be false. Checking just one assignment would not establish this equivalence.",
+      "exampleSteps": [],
+      "takeaway": "The learner can justify simplification by a law or a complete truth table."
+    },
+    "cs-u3-normal-forms": {
+      "title": "Truth tables and normal forms",
+      "body": "A literal is a Boolean variable or its negation. DNF is an OR of terms, each an AND of literals. CNF is an AND of clauses, each an OR of literals. To build a full DNF over fixed variables, write one term for each true row, mentioning every variable with the sign that selects that row. An n-variable truth table has 2^n rows. Form conversion can expand a short formula substantially.",
+      "formula": "",
+      "example": "For variables X,Y, a formula true only at (true,false) has full DNF X ∧ ¬Y. If (false,true) is also a true row, add the term ¬X ∧ Y using OR.",
+      "exampleSteps": [],
+      "takeaway": "The learner can connect a formula representation to its complete set of satisfying rows."
+    },
+    "cs-u3-sat": {
+      "title": "SAT as a consistency check",
+      "body": "SAT asks whether there is any assignment making a propositional formula true. For constraints joined by AND, one assignment must satisfy every constraint simultaneously. A witness proves satisfiability; one failed trial does not prove impossibility. Unsatisfiability needs an exhaustive finite check or a valid argument. F is valid exactly when ¬F is unsatisfiable. A witness can be checked by evaluating the formula; finding one is a different task.",
+      "formula": "",
+      "example": "Constraints K ⇒ L and K ∧ ¬L cannot both hold: the second makes K true and L false, which violates the first. This contradiction proves the conjunction unsatisfiable.",
+      "exampleSteps": [],
+      "takeaway": "The learner can distinguish a witness, a failed trial, and an impossibility argument."
+    },
+    "cs-u3-quantifiers": {
+      "title": "Predicates, domains and quantifiers",
+      "body": "A predicate becomes a truth-valued claim once its free variables are assigned or quantified. ∀x∈D means every element of D; ∃x∈D means at least one, not exactly one. A restricted universal usually uses implication: ∀x∈D (Eligible(x) ⇒ Ready(x)). A restricted existential uses conjunction: ∃x∈D (Eligible(x) ∧ Ready(x)). For an explicitly empty D, the universal is true and the existential false. As in the book, an omitted discourse domain is assumed nonempty.",
+      "formula": "",
+      "example": "If Jobs={j1,j2} and only j2 is queued, “some job is queued” is true with witness j2. “Every job is queued” is false with counterexample j1.",
+      "exampleSteps": [],
+      "takeaway": "The learner can state the domain and distinguish a witness from a universal guarantee."
+    },
+    "cs-u3-nested": {
+      "title": "Quantifier order and dependent witnesses",
+      "body": "In ∀x∈A ∃y∈B R(x,y), the chosen y may depend on x. In ∃y∈B ∀x∈A R(x,y), one y must work for every x. A common witness gives a per-input witness, but the converse need not hold. Swapping two universal quantifiers or two existential quantifiers preserves meaning; swapping different kinds generally does not. Parentheses and domains make the scope explicit.",
+      "formula": "",
+      "example": "Two files f1,f2 have separate replicas: R(f1,s1) and R(f2,s2), with no other replica pairs. Every file has a server, but no single server stores both files.",
+      "exampleSteps": [],
+      "takeaway": "The learner can test a quantifier claim against a small relation rather than rely on ambiguous English."
+    },
+    "cs-u3-negation": {
+      "title": "Negating specifications and finding countermodels",
+      "body": "Negation swaps ∀ and ∃ and negates the predicate: ¬∀x P(x) ≡ ∃x ¬P(x), and ¬∃x P(x) ≡ ∀x ¬P(x). Apply this one quantifier at a time. Negating an implication gives a true premise and false conclusion. A formula with predicates is valid only if it holds for every allowed domain and interpretation; a single countermodel refutes validity.",
+      "formula": "",
+      "example": "Negating “Every client has an available route” gives “Some client has no available route”: ¬[∀c∈C ∃r∈R A(c,r)] ≡ ∃c∈C ∀r∈R ¬A(c,r).",
+      "exampleSteps": [],
+      "takeaway": "The learner can describe the exact witness or countermodel required by a failed specification."
+    },
+    "cs-u4-sets": {
+      "title": "Sets, membership and exact collections",
+      "body": "A set ignores order and repeated listings. x∈A means x is an element; B⊆A means every element of B belongs to A. The empty set ∅ is a subset of every set. The set {∅} has one element and is not empty. Set-builder notation {x∈D | P(x)} filters a domain by a predicate. The power set pow(A) contains all subsets of A, including ∅ and A itself.",
+      "formula": "",
+      "example": "If Flags={read,write}, then {read}⊆Flags and {read}∈pow(Flags). The string read is an element of Flags; the singleton set {read} is a different object.",
+      "exampleSteps": [],
+      "takeaway": "The learner avoids element/subset and empty-container errors before manipulating collections."
+    },
+    "cs-u4-set-algebra": {
+      "title": "Set operations and membership proofs",
+      "body": "Union ∪ corresponds to OR of membership; intersection ∩ to AND. A\\B contains elements of A absent from B. A complement must name its universe U: U\\A. To prove A=B, show that an arbitrary x belongs to A iff it belongs to B, or prove both inclusions. One-sided inclusion does not establish equality. Logic operates on truth values; set operations operate on sets.",
+      "formula": "",
+      "example": "With U={a,b,c,d}, A={a,b} and B={b,c}, A∩B={b}, A\\B={a}, and U\\(A∪B)={d}.",
+      "exampleSteps": [],
+      "takeaway": "The learner connects Unit 3 logic to typed set reasoning and can exhibit a failing element."
+    },
+    "cs-u4-sequences": {
+      "title": "Sequences, tuples and Cartesian products",
+      "body": "A sequence preserves order and repetitions. A tuple is a finite sequence; equal tuples have the same length and equal components at each position. A×B is the set of ordered pairs (a,b) with a∈A and b∈B. It is usually different from B×A. S^n contains length-n sequences over S. S^0 contains one sequence, the empty sequence, even when S is empty.",
+      "formula": "",
+      "example": "For Method={GET,POST} and Status={200,500}, Method×Status has four pairs. (GET,500) is one pair, not the whole product; reversing it gives a differently typed record.",
+      "exampleSteps": [],
+      "takeaway": "The learner can reason about product types without losing order, multiplicity or the empty case."
+    },
+    "cs-u4-functions": {
+      "title": "Functions, support and composition",
+      "body": "Following this edition, f:A→B may be partial: each a has at most one value in B. Its support contains inputs where it is defined; f is total when support(f)=A. Its range contains values actually produced, which may be fewer than the codomain B. Composition applies the right-hand function first: (g∘f)(x)=g(f(x)). For partial functions it is defined only if f(x) exists and belongs to support(g).",
+      "formula": "",
+      "example": "Let f:Z→Z be f(x)=x+2 and g:Z→Z be g(x)=3x, both total. Then (g∘f)(1)=9 whereas (f∘g)(1)=5. Order matters.",
+      "exampleSteps": [],
+      "takeaway": "The learner can distinguish a declared input type from supported inputs and actually produced outputs."
+    },
+    "cs-u4-relations": {
+      "title": "Relations and mapping properties",
+      "body": "A relation from A to B specifies a graph contained in A×B. It may relate one input to several outputs. Functional means at most one output per input; total means at least one. Injective means at most one input per output, and surjective means at least one. In the book these properties also apply to relations that are not functions. A bijection has exactly one output per input and exactly one input per output. Changing A or B can change these properties.",
+      "formula": "",
+      "example": "From A={p,q} to B={1,2,3}, graph {(p,1),(q,2)} is a total injective function, but not surjective because 3 is not reached.",
+      "exampleSteps": [],
+      "takeaway": "The learner classifies mappings using all declared endpoints, including isolated ones."
+    },
+    "cs-u4-images": {
+      "title": "Images, inverse images and inverse relations",
+      "body": "For a relation R:A→B, R(S) collects outputs related to some input in S⊆A. The inverse relation R^(-1) reverses every pair. Its image R^(-1)(T) collects inputs related to some output in T⊆B: the inverse image, or preimage. This is defined even if R is not bijective. For a function, its inverse relation is functional exactly when the original function is injective; it is a total inverse function on B when the original is a bijection.",
+      "formula": "",
+      "example": "If f(a)=red, f(b)=red and f(c)=blue, then f({a,c})={red,blue} and f^(-1)({red})={a,b}. There is no unique inverse value at red, but its preimage set is perfectly defined.",
+      "exampleSteps": [],
+      "takeaway": "The learner can query mappings in either direction while preserving single-valuedness constraints."
+    },
+    "cs-u4-cardinality": {
+      "title": "Finite cardinality and reversible encodings",
+      "body": "For finite sets, a total injective function A→B requires |A|≤|B|; a surjective function requires |A|≥|B|. A bijection proves equal sizes. If |A|=|B| and f is total, injectivity and surjectivity are equivalent. Totality matters: a partial injection can leave inputs unsupported. For a fixed ordered list of n distinct elements, each subset corresponds to its n-bit membership vector, so the power set has 2^n members.",
+      "formula": "",
+      "example": "For ordered fields (id,name,age), subset {id,age} corresponds to vector (1,0,1). Every subset has one vector and every vector specifies one subset, giving a bijection.",
+      "exampleSteps": [],
+      "takeaway": "The learner can justify finite size claims and explain when a collision-free encoding is impossible."
+    },
+    "cs-u5-ordinary": {
+      "title": "Ordinary induction and the proof contract",
+      "body": "To prove P(n) for every integer n≥n0, establish P(n0), then fix an arbitrary k≥n0 and prove P(k)⇒P(k+1). In the step, P(k) is a temporary assumption for proving an implication; assuming P(k+1) would be circular. The argument must work for every allowed k. An empty sum is 0. Induction verifies a proposed formula; it does not automatically discover one.",
+      "formula": "",
+      "example": "A buffer begins with capacity C(0)=5 and grows by 3 each step: C(n+1)=C(n)+3. Claim C(n)=5+3n. Base: C(0)=5. Step: assuming C(k)=5+3k gives C(k+1)=5+3k+3=5+3(k+1).",
+      "exampleSteps": [],
+      "takeaway": "The learner can identify the base, hypothesis, target and quantification of a valid induction proof."
+    },
+    "cs-u5-bounds": {
+      "title": "Induction for exponential bounds",
+      "body": "An inequality proof needs a bridge from the bound available at k to the bound required at k+1. Multiplying by a positive quantity preserves direction; a negative multiplier reverses it. Verify the bridge on the entire induction range. A true base and a failed proof strategy do not establish that the theorem is false. Use exact mathematical integers here, without overflow.",
+      "formula": "",
+      "example": "To prove 2^n≥n+1 for n≥0: the base is 1≥1. If 2^k≥k+1, then 2^(k+1)≥2(k+1)≥k+2 because k≥0. The final expression is the next target.",
+      "exampleSteps": [],
+      "takeaway": "The learner can distinguish a numerical base check from the range condition supporting a general step."
+    },
+    "cs-u5-strengthening": {
+      "title": "Strengthening the induction hypothesis",
+      "body": "A weak induction hypothesis may omit information needed to advance. Prove a stronger predicate Q(n) that implies the original goal, with its own base and step. Stronger must still be true. A common engineering pattern is a coupled update: proving a property of one quantity requires tracking a second quantity. Strengthening the predicate is different from strong induction, which allows earlier indices.",
+      "formula": "",
+      "example": "Let u(0)=1, v(0)=2, u(n+1)=u(n)+v(n), and v(n+1)=2u(n)+v(n). To prove u(n)>0, use the stronger claim u(n)>0 and v(n)>0. Both updated values are then positive; tracking u alone does not directly bound v.",
+      "exampleSteps": [],
+      "takeaway": "The learner can choose a useful auxiliary fact and check that it is established, not merely assumed."
+    },
+    "cs-u5-strong": {
+      "title": "Strong induction for smaller subproblems",
+      "body": "Strong induction for n≥n0 permits assuming P(j) for every n0≤j<n when proving P(n). This helps when a subproblem is smaller but not exactly n-1. Every use of the hypothesis must satisfy that range. Handle terminal inputs explicitly. All arithmetic is exact, floor(x) is the greatest integer ≤x, and the integer recursions here are distinct from structural induction, reserved for Unit 7.",
+      "formula": "",
+      "example": "For n≥1, a procedure stops at n=1 and otherwise recurses on floor(n/2). For n≥2, 1≤floor(n/2)<n. Strong induction therefore proves termination: the recursive call is covered by a smaller terminating case.",
+      "exampleSteps": [],
+      "takeaway": "The learner can apply the induction hypothesis only to legitimate smaller inputs."
+    },
+    "cs-u5-bases": {
+      "title": "Multiple base cases and dependency gaps",
+      "body": "A recurrence using n-2 and n-3 needs enough directly established cases before both dependencies lie in range. Likewise, a step P(k)⇒P(k+d) only moves within a residue class modulo d; one base may leave whole classes uncovered. The number of bases is determined by the proof’s dependencies and starting range, not a universal rule. Inspect the earliest inductive transition carefully.",
+      "formula": "",
+      "example": "If P(k)⇒P(k+3) for every k≥0, proving P(0), P(1) and P(2) starts all three chains: 0,3,6,...; 1,4,7,...; and 2,5,8,.... P(0) alone starts only the first chain.",
+      "exampleSteps": [],
+      "takeaway": "The learner can explain why base coverage is sufficient instead of checking an arbitrary number of examples."
+    },
+    "cs-u5-principles": {
+      "title": "Induction, well-ordering and proof review",
+      "body": "Ordinary induction, strong induction and well-ordering over the nonnegative integers have equivalent proving power. To package strong induction as ordinary induction, use Q(n): “P(j) holds for every 0≤j≤n.” Conversely, if a base and successor step hold but a counterexample exists, well-ordering gives a least counterexample m. The base excludes m=0, so P(m-1) and the step force P(m), a contradiction. Equivalence of methods does not repair a missing premise.",
+      "formula": "",
+      "example": "Suppose P(0) and every successor implication hold. A least failing index m cannot be 0. Minimality gives P(m-1); the successor implication then gives P(m). Thus no failing index exists.",
+      "exampleSteps": [],
+      "takeaway": "The learner can audit an induction proof and connect it to minimal-counterexample reasoning."
+    }
+  },
+  "exercises": {
+    "cs-01": {
+      "title": "Spot the proposition",
+      "statement": "A proposition can be true or false.",
+      "prompt": "Which option is a proposition?",
+      "hint": "Look for a definite claim, even if it is false.",
+      "explanation": "“12 is odd” is a definite, false claim. The other options are a question and an instruction.",
+      "solutionSteps": [
+        "12 is odd has a truth value: false.",
+        "Questions and commands do not assert a truth value."
+      ],
+      "options": {
+        "a": "Is 12 even?",
+        "b": "12 is odd.",
+        "c": "Multiply 12 by 2."
+      }
+    },
+    "cs-02": {
+      "title": "Is anything missing?",
+      "statement": "x > 5",
+      "prompt": "With x unspecified, what is this expression?",
+      "hint": "Compare x = 2 with x = 8.",
+      "explanation": "The expression is false at x = 2 and true at x = 8. It needs a value or a quantifier.",
+      "solutionSteps": [
+        "At x = 2, 2 > 5 is false.",
+        "At x = 8, 8 > 5 is true."
+      ],
+      "options": {
+        "a": "A proposition that is always true.",
+        "b": "A proposition that is always false.",
+        "c": "An open statement whose truth depends on x."
+      }
+    },
+    "cs-03": {
+      "title": "Find a counterexample",
+      "statement": "If an integer is even, it is divisible by 4.",
+      "prompt": "Which number disproves this rule?",
+      "hint": "Look for an even number that is not divisible by 4.",
+      "explanation": "6 is even, but 6 is not divisible by 4. The condition is true and the conclusion is false.",
+      "solutionSteps": [
+        "6 = 2 × 3, so it is even.",
+        "6 ÷ 4 = 1.5, so 4 does not divide 6."
+      ],
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "12"
+      }
+    },
+    "cs-04": {
+      "title": "Test a rule",
+      "statement": "If a file is encrypted, it requires a key to read.",
+      "prompt": "Which case violates this rule?",
+      "hint": "The “if” condition must hold for a case to break the rule.",
+      "explanation": "An encrypted file readable without a key makes the condition true and the conclusion false.",
+      "solutionSteps": [
+        "P means encrypted. Q means requires a key.",
+        "The violating case has P true and Q false."
+      ],
+      "options": {
+        "a": "An unencrypted file that requires a key.",
+        "b": "An encrypted file that can be read without a key.",
+        "c": "An encrypted file that requires a key."
+      }
+    },
+    "cs-05": {
+      "title": "Write the converse",
+      "statement": "If a number is divisible by 8, it is divisible by 4.",
+      "prompt": "Which sentence is the converse?",
+      "hint": "Swap the condition and conclusion; do not negate them.",
+      "explanation": "The converse is Q → P: divisible by 4 implies divisible by 8. This new claim is false, for example at 12.",
+      "solutionSteps": [
+        "Original P: divisible by 8. Original Q: divisible by 4.",
+        "Converse: if Q, then P."
+      ],
+      "options": {
+        "a": "If divisible by 4, then divisible by 8.",
+        "b": "If not divisible by 8, then not divisible by 4.",
+        "c": "If divisible by 8, then not divisible by 4."
+      }
+    },
+    "cs-06": {
+      "title": "What can you conclude?",
+      "statement": "Every square is a rectangle. A shape is a rectangle.",
+      "prompt": "Must that shape be a square?",
+      "hint": "Knowing the conclusion is true does not establish the condition.",
+      "explanation": "A 2-by-5 rectangle is a rectangle and is not a square. The original rule does not establish its converse.",
+      "solutionSteps": [
+        "Square implies rectangle.",
+        "Rectangle does not necessarily imply square."
+      ],
+      "options": {
+        "a": "Yes, because the original rule is true.",
+        "b": "No. A rectangle can have unequal adjacent sides."
+      }
+    },
+    "cs-07": {
+      "title": "Negate “every”",
+      "statement": "Every number in the list is greater than zero.",
+      "prompt": "Which claim is its negation?",
+      "hint": "One exception is enough; remember that zero is not greater than zero.",
+      "explanation": "The original fails if at least one element is zero or negative. It need not fail for every element.",
+      "solutionSteps": [
+        "Negate “every” to “at least one”.",
+        "Negate > 0 to ≤ 0."
+      ],
+      "options": {
+        "a": "Every number is less than zero.",
+        "b": "At least one number is less than or equal to zero.",
+        "c": "At least one number is greater than zero."
+      }
+    },
+    "cs-08": {
+      "title": "Negate “at least one”",
+      "statement": "At least one test fails.",
+      "prompt": "Which claim is its negation?",
+      "hint": "A single passing test does not rule out a failing test.",
+      "explanation": "To make “at least one test fails” false, there must be zero failing tests.",
+      "solutionSteps": [
+        "The original requires one or more failures.",
+        "Its negation requires none."
+      ],
+      "options": {
+        "a": "At least one test passes.",
+        "b": "Exactly one test passes.",
+        "c": "No test fails."
+      }
+    },
+    "cs-01b": {
+      "title": "Find a definite claim",
+      "statement": "Choose the statement with a truth value.",
+      "prompt": "Which is a proposition?",
+      "hint": "A proposition asserts something.",
+      "explanation": "“The integer 7 is prime” is a definite true statement.",
+      "solutionSteps": [
+        "7 has exactly two positive divisors: 1 and 7.",
+        "The other options are a command and a question."
+      ],
+      "options": {
+        "a": "Please sort the array.",
+        "b": "Does this array contain 7?",
+        "c": "The integer 7 is prime."
+      }
+    },
+    "cs-03b": {
+      "title": "Break the rule",
+      "statement": "If an integer is divisible by 3, it is odd.",
+      "prompt": "Which is a counterexample?",
+      "hint": "Find a multiple of 3 that is even.",
+      "explanation": "12 is divisible by 3 and is not odd.",
+      "solutionSteps": [
+        "12 = 3 × 4.",
+        "12 is even, so the conclusion is false."
+      ],
+      "options": {
+        "a": "9",
+        "b": "12",
+        "c": "7"
+      }
+    },
+    "cs-05b": {
+      "title": "Reverse the implication",
+      "statement": "If a request is cached, it is fast.",
+      "prompt": "What is the converse?",
+      "hint": "Swap “cached” and “fast”.",
+      "explanation": "The converse swaps condition and conclusion. It is a separate claim, not guaranteed by the original.",
+      "solutionSteps": [
+        "P: cached. Q: fast.",
+        "Q → P says fast implies cached."
+      ],
+      "options": {
+        "a": "If a request is fast, it is cached.",
+        "b": "If a request is not cached, it is not fast.",
+        "c": "If a request is cached, it is not fast."
+      }
+    },
+    "cs-07b": {
+      "title": "Find the negation",
+      "statement": "Every request succeeds.",
+      "prompt": "What must hold if this claim is false?",
+      "hint": "Look for a single exception.",
+      "explanation": "One unsuccessful request is enough to refute “every request succeeds”.",
+      "solutionSteps": [
+        "Negate the universal claim.",
+        "There is at least one request for which success is false."
+      ],
+      "options": {
+        "a": "Every request fails.",
+        "b": "At least one request does not succeed.",
+        "c": "At least one request succeeds."
+      }
+    },
+    "ml-01": {
+      "title": "Read the component",
+      "statement": "x = (4, −2, 7)",
+      "prompt": "What is the second component?",
+      "hint": "Read from left to right, starting with the first component.",
+      "explanation": "The ordered entries are 4, −2, and 7; the second is −2.",
+      "solutionSteps": ["First: 4. Second: −2. Third: 7."]
+    },
+    "ml-02": {
+      "title": "Check the dimensions",
+      "statement": "a = (1, 2),  b = (3, 4, 5)",
+      "prompt": "Can you directly take their standard dot product?",
+      "hint": "Each component needs a matching partner.",
+      "explanation": "The standard dot product requires equal dimensions. Dropping a feature would change the data.",
+      "solutionSteps": [
+        "a has 2 components. b has 3.",
+        "There is no matching third component in a."
+      ],
+      "options": {
+        "a": "Yes, just ignore the last entry of b.",
+        "b": "No, they have different dimensions.",
+        "c": "Yes, a dot product accepts any lengths."
+      }
+    },
+    "ml-03": {
+      "title": "Calculate a dot product",
+      "statement": "a = (2, −1),  b = (3, 4)",
+      "prompt": "What is a · b?",
+      "hint": "Multiply matching entries, then add.",
+      "explanation": "2 × 3 + (−1) × 4 = 6 − 4 = 2.",
+      "solutionSteps": [
+        "First product: 2 × 3 = 6.",
+        "Second product: (−1) × 4 = −4.",
+        "Sum: 6 + (−4) = 2."
+      ]
+    },
+    "ml-04": {
+      "title": "A model’s weighted sum",
+      "statement": "w = (1, 2, −1),  x = (3, 1, 2)",
+      "prompt": "What is w · x, before adding any bias?",
+      "hint": "There are three products to add.",
+      "explanation": "1 × 3 + 2 × 1 + (−1) × 2 = 3 + 2 − 2 = 3.",
+      "solutionSteps": [
+        "The three products are 3, 2, and −2.",
+        "Their sum is 3."
+      ]
+    },
+    "ml-05": {
+      "title": "Read the sign",
+      "statement": "a and b are nonzero vectors, and a · b < 0.",
+      "prompt": "What does this tell you about their angle?",
+      "hint": "Norms are positive; the sign comes from the cosine.",
+      "explanation": "A negative dot product means cos θ < 0, so the angle lies between 90° and 180°, including 180°.",
+      "solutionSteps": [
+        "a · b = ‖a‖ ‖b‖ cos θ.",
+        "For nonzero vectors, both norms are positive.",
+        "A negative cosine corresponds to an obtuse angle or opposite directions."
+      ],
+      "options": {
+        "a": "It is less than 90°.",
+        "b": "It is exactly 90°.",
+        "c": "It is greater than 90°."
+      }
+    },
+    "ml-06": {
+      "title": "Spot perpendicular vectors",
+      "statement": "a = (1, 2)",
+      "prompt": "Which nonzero vector is perpendicular to a?",
+      "hint": "Look for a dot product equal to zero.",
+      "explanation": "(1, 2) · (2, −1) = 2 − 2 = 0.",
+      "solutionSteps": [
+        "Multiply 1 × 2 and 2 × (−1).",
+        "The sum is 0, so the nonzero vectors are perpendicular."
+      ],
+      "options": {
+        "a": "(2, −1)",
+        "b": "(1, 2)",
+        "c": "(2, 1)"
+      }
+    },
+    "ml-07": {
+      "title": "Project along a unit direction",
+      "statement": "x = (−3, 4),  u = (1, 0)",
+      "prompt": "What is the signed scalar projection of x onto u?",
+      "hint": "Because u is a unit vector, calculate x · u.",
+      "explanation": "(−3) × 1 + 4 × 0 = −3. The negative sign means the opposite direction to u.",
+      "solutionSteps": ["u has length 1.", "x · u = −3 + 0 = −3."]
+    },
+    "ml-08": {
+      "title": "Check the unit assumption",
+      "statement": "x = (3, 4),  v = (2, 0)",
+      "prompt": "What is the signed scalar projection of x onto the direction of v?",
+      "hint": "v has length 2. Divide it by its length to get the unit direction.",
+      "explanation": "v / ‖v‖ = (1, 0), so the signed projection is (3, 4) · (1, 0) = 3.",
+      "solutionSteps": [
+        "‖v‖ = 2, so u = v / 2 = (1, 0).",
+        "x · u = 3 × 1 + 4 × 0 = 3."
+      ],
+      "options": {
+        "a": "6, because x · v = 6.",
+        "b": "3, because v must first be normalized.",
+        "c": "5, because that is the length of x."
+      }
+    },
+    "ml-01b": {
+      "title": "Read a different vector",
+      "statement": "x = (−5, 0, 9)",
+      "prompt": "What is the third component?",
+      "hint": "Count entries from left to right.",
+      "explanation": "The third entry is 9.",
+      "solutionSteps": ["First: −5. Second: 0. Third: 9."]
+    },
+    "ml-03b": {
+      "title": "Compute another dot product",
+      "statement": "a = (1, 3),  b = (−2, 2)",
+      "prompt": "What is a · b?",
+      "hint": "Include the sign of each product.",
+      "explanation": "1 × (−2) + 3 × 2 = −2 + 6 = 4.",
+      "solutionSteps": ["The products are −2 and 6.", "Add them to obtain 4."]
+    },
+    "ml-05b": {
+      "title": "Interpret zero",
+      "statement": "a and b are nonzero vectors, and a · b = 0.",
+      "prompt": "What is the angle between them?",
+      "hint": "For nonzero vectors, the zero comes from cos θ.",
+      "explanation": "The cosine is zero at 90°, so the vectors are perpendicular.",
+      "solutionSteps": ["Their norms are positive.", "cos θ must equal 0."],
+      "options": {
+        "a": "0°",
+        "b": "90°",
+        "c": "180°"
+      }
+    },
+    "ml-07b": {
+      "title": "Project vertically",
+      "statement": "x = (−2, 5),  u = (0, 1)",
+      "prompt": "What is the signed scalar projection of x onto u?",
+      "hint": "u is already a unit vector.",
+      "explanation": "(−2) × 0 + 5 × 1 = 5.",
+      "solutionSteps": [
+        "The horizontal component contributes zero.",
+        "The vertical component contributes 5."
+      ]
+    },
+    "cs-u1-q01": {
+      "title": "Check the boundary",
+      "statement": "An array has length 8. Is P(8, 8) true, where P(i, n) means 0 ≤ i < n?",
+      "prompt": "Choose one answer.",
+      "hint": "The upper bound is strict: i must be smaller than n.",
+      "explanation": "Valid indices run from 0 to 7.",
+      "solutionSteps": [
+        "The upper bound is strict: i must be smaller than n.",
+        "Valid indices run from 0 to 7."
+      ],
+      "options": {
+        "a": "True",
+        "b": "False",
+        "c": "It depends on the array’s contents"
+      }
+    },
+    "cs-u1-q02": {
+      "title": "Tests versus proof",
+      "statement": "A sorting function passes one million tests. Does this prove that it correctly sorts every finite integer array?",
+      "prompt": "Choose one answer.",
+      "hint": "Consider whether the tests cover every permitted input.",
+      "explanation": "Testing those inputs does not establish correctness for all other inputs.",
+      "solutionSteps": [
+        "Consider whether the tests cover every permitted input.",
+        "Testing those inputs does not establish correctness for all other inputs."
+      ],
+      "options": {
+        "a": "Yes",
+        "b": "No",
+        "c": "Yes, if the tests were random"
+      }
+    },
+    "cs-u1-q03": {
+      "title": "Find the missing assumption",
+      "statement": "Consider the claim: “For every integer x, x/x = 1.” Which integer exposes a missing assumption?",
+      "prompt": "Enter an integer.",
+      "hint": "Before evaluating a quotient, check whether its denominator can be zero.",
+      "explanation": "Division by zero is undefined; the claim needs x ≠ 0.",
+      "solutionSteps": [
+        "Before evaluating a quotient, check whether its denominator can be zero.",
+        "Division by zero is undefined; the claim needs x ≠ 0."
+      ]
+    },
+    "cs-u1-q04": {
+      "title": "Apply a valid implication",
+      "statement": "You have established both P ⇒ Q and P. Which conclusion follows?",
+      "prompt": "Choose one answer.",
+      "hint": "The implication’s premise has been established, so its conclusion follows.",
+      "explanation": "Applying the implication to its established premise is a valid inference.",
+      "solutionSteps": [
+        "The implication’s premise has been established, so its conclusion follows.",
+        "Applying the implication to its established premise is a valid inference."
+      ],
+      "options": {
+        "a": "Q",
+        "b": "Q ⇒ P",
+        "c": "Both conclusions follow"
+      }
+    },
+    "cs-u1-q05": {
+      "title": "Expose the factor",
+      "statement": "Prove that every multiple of 6 is a multiple of 3. Given n = 6k for integer k, complete:\nn = 3(___).",
+      "prompt": "Choose one answer.",
+      "hint": "Factor 3 out of 6k.",
+      "explanation": "2k is an integer, so this expresses n as an integer multiple of 3.",
+      "solutionSteps": [
+        "Factor 3 out of 6k.",
+        "2k is an integer, so this expresses n as an integer multiple of 3."
+      ],
+      "options": {
+        "a": "k/2",
+        "b": "2k",
+        "c": "6k"
+      }
+    },
+    "cs-u1-q06": {
+      "title": "Reuse an index safely",
+      "statement": "An index satisfies 0 ≤ i < n. A second array has length m ≥ n. Which argument proves that the same index is valid in the second array?",
+      "prompt": "Choose one answer.",
+      "hint": "Combine the given upper bound on i with n ≤ m.",
+      "explanation": "Both the lower and upper bounds are established.",
+      "solutionSteps": [
+        "Combine the given upper bound on i with n ≤ m.",
+        "Both the lower and upper bounds are established."
+      ],
+      "options": {
+        "a": "i < n ≤ m, so i < m; also i ≥ 0",
+        "b": "i < n, so i < m, regardless of the relationship between n and m",
+        "c": "m ≥ n, so every integer is a valid index"
+      }
+    },
+    "cs-u1-q07": {
+      "title": "Identify the needed condition",
+      "statement": "For integers p, q, B, you know p + q ≤ B. Which additional condition guarantees p ≤ B?",
+      "prompt": "Choose one answer.",
+      "hint": "What condition ensures that adding q cannot make p smaller?",
+      "explanation": "Then p ≤ p + q ≤ B.",
+      "solutionSteps": [
+        "What condition ensures that adding q cannot make p smaller?",
+        "Then p ≤ p + q ≤ B."
+      ],
+      "options": {
+        "a": "p ≥ 0",
+        "b": "q ≥ 0",
+        "c": "q ≤ 0"
+      }
+    },
+    "cs-u1-q08": {
+      "title": "Check an inequality step",
+      "statement": "Someone claims: “If a ≤ b, then ac ≤ bc, for every integer c.” With a = 2 and b = 5, which value disproves the claim?",
+      "prompt": "Choose one answer.",
+      "hint": "Check how multiplying by a negative number changes the direction of an inequality.",
+      "explanation": "It produces −2 ≤ −5, which is false. Multiplication by a negative number reverses the inequality.",
+      "solutionSteps": [
+        "Check how multiplying by a negative number changes the direction of an inequality.",
+        "It produces −2 ≤ −5, which is false. Multiplication by a negative number reverses the inequality."
+      ],
+      "options": {
+        "a": "c = 1",
+        "b": "c = 0",
+        "c": "c = −1"
+      }
+    },
+    "cs-u1-q09": {
+      "title": "Can the rule be reversed?",
+      "statement": "You know: “If the cache is valid, its result matches recomputation.” The results match. Can you conclude that the cache is valid?",
+      "prompt": "Choose one answer.",
+      "hint": "A sufficient condition for a match need not be a necessary condition.",
+      "explanation": "That conclusion would require the converse.",
+      "solutionSteps": [
+        "A sufficient condition for a match need not be a necessary condition.",
+        "That conclusion would require the converse."
+      ],
+      "options": {
+        "a": "Yes",
+        "b": "No; that conclusion requires an additional implication",
+        "c": "No; matching results prove that the cache is invalid"
+      }
+    },
+    "cs-u1-q10": {
+      "title": "Form the contrapositive",
+      "statement": "What is the contrapositive of “If an operation succeeds, it is authorized”?",
+      "prompt": "Choose one answer.",
+      "hint": "Start with the negation of “it is authorized.”",
+      "explanation": "Negate both statements and reverse their order.",
+      "solutionSteps": [
+        "Start with the negation of “it is authorized.”",
+        "Negate both statements and reverse their order."
+      ],
+      "options": {
+        "a": "If it is authorized, it succeeds",
+        "b": "If it does not succeed, it is unauthorized",
+        "c": "If it is unauthorized, it does not succeed"
+      }
+    },
+    "cs-u1-q11": {
+      "title": "Choose the proof direction",
+      "statement": "To prove “If n² is odd, then n is odd” for integer n by contraposition, what should you prove?",
+      "prompt": "Choose one answer.",
+      "hint": "For an integer, not being odd means being even.",
+      "explanation": "This negates and reverses the original implication.",
+      "solutionSteps": [
+        "For an integer, not being odd means being even.",
+        "This negates and reverses the original implication."
+      ],
+      "options": {
+        "a": "If n is even, then n² is even",
+        "b": "If n is odd, then n² is odd",
+        "c": "If n² is even, then n is even"
+      }
+    },
+    "cs-u1-q12": {
+      "title": "Finish the parity argument",
+      "statement": "Suppose n = 2k, where k is an integer. You obtain n² = 2(2k²). Why does this establish that n² is even?",
+      "prompt": "Choose one answer.",
+      "hint": "An integer is even when it is twice another integer.",
+      "explanation": "It matches the definition of an even integer.",
+      "solutionSteps": [
+        "An integer is even when it is twice another integer.",
+        "It matches the definition of an even integer."
+      ],
+      "options": {
+        "a": "Every square is even",
+        "b": "2k² is an integer, so n² is twice an integer",
+        "c": "The expression contains an even exponent"
+      }
+    },
+    "cs-u1-q13": {
+      "title": "Find the missing direction",
+      "statement": "A specification says: “A request is accepted if and only if its token is valid.” You prove that a valid token causes acceptance. What remains?",
+      "prompt": "Choose one answer.",
+      "hint": "An “if and only if” statement requires an implication in each direction.",
+      "explanation": "Acceptance must also imply validity.",
+      "solutionSteps": [
+        "An “if and only if” statement requires an implication in each direction.",
+        "Acceptance must also imply validity."
+      ],
+      "options": {
+        "a": "Prove that an accepted request has a valid token",
+        "b": "Test more requests with valid tokens",
+        "c": "Nothing; one direction is sufficient"
+      }
+    },
+    "cs-u1-q14": {
+      "title": "Disprove an equivalence",
+      "statement": "For real x, consider x² = 16 ⇔ x = 4. Give a value of x that disproves this equivalence.",
+      "prompt": "Enter an integer.",
+      "hint": "A positive number and its negative have the same square.",
+      "explanation": "Its square is 16, but it is not 4.",
+      "solutionSteps": [
+        "A positive number and its negative have the same square.",
+        "Its square is 16, but it is not 4."
+      ]
+    },
+    "cs-u1-q15": {
+      "title": "State the full equivalence",
+      "statement": "Which statement correctly completes x² = 16 ⇔ … for real x?",
+      "prompt": "Choose one answer.",
+      "hint": "Include both possible signs, without requiring them simultaneously.",
+      "explanation": "These are exactly the two real solutions.",
+      "solutionSteps": [
+        "Include both possible signs, without requiring them simultaneously.",
+        "These are exactly the two real solutions."
+      ],
+      "options": {
+        "a": "x ≥ 4",
+        "b": "x = 4 and x = −4",
+        "c": "x = 4 or x = −4"
+      }
+    },
+    "cs-u1-q16": {
+      "title": "Check every reverse step",
+      "statement": "Is this chain valid for real x?\n3x + 2 = 14 ⇔ 3x = 12 ⇔ x = 4.",
+      "prompt": "Choose one answer.",
+      "hint": "Try reversing the operations from x = 4.",
+      "explanation": "Subtracting 2 and dividing by nonzero 3 can both be reversed.",
+      "solutionSteps": [
+        "Try reversing the operations from x = 4.",
+        "Subtracting 2 and dividing by nonzero 3 can both be reversed."
+      ],
+      "options": {
+        "a": "No; it proves only the forward direction",
+        "b": "Yes; each operation is reversible",
+        "c": "Yes, but only when x is an integer"
+      }
+    },
+    "cs-u1-q17": {
+      "title": "Find the omitted case",
+      "statement": "A proof about all integers considers only n < 0 and n > 0. Which integer is missing?",
+      "prompt": "Enter an integer.",
+      "hint": "Check the boundary between negative and positive integers.",
+      "explanation": "The cases are not exhaustive.",
+      "solutionSteps": [
+        "Check the boundary between negative and positive integers.",
+        "The cases are not exhaustive."
+      ]
+    },
+    "cs-u1-q18": {
+      "title": "Choose exhaustive cases",
+      "statement": "You want to prove that n(n + 1) is even for every integer n. Which split covers every integer?",
+      "prompt": "Choose one answer.",
+      "hint": "Check whether each proposed split includes zero and negative integers.",
+      "explanation": "Every integer has exactly one of these two parities.",
+      "solutionSteps": [
+        "Check whether each proposed split includes zero and negative integers.",
+        "Every integer has exactly one of these two parities."
+      ],
+      "options": {
+        "a": "n is positive or negative",
+        "b": "n is even or odd",
+        "c": "n is prime or composite"
+      }
+    },
+    "cs-u1-q19": {
+      "title": "Complete the odd case",
+      "statement": "In the odd case, write n = 2k + 1 for integer k. Complete:\nn + 1 = 2(___).",
+      "prompt": "Choose one answer.",
+      "hint": "Add 1 to 2k + 1, then factor out 2.",
+      "explanation": "Thus n + 1 is even, so its product with n is even.",
+      "solutionSteps": [
+        "Add 1 to 2k + 1, then factor out 2.",
+        "Thus n + 1 is even, so its product with n is even."
+      ],
+      "options": {
+        "a": "k + 1",
+        "b": "2k + 1",
+        "c": "k − 1"
+      }
+    },
+    "cs-u1-q20": {
+      "title": "Reason about the final branch",
+      "statement": "For integer i and array length n ≥ 1:\n\nif i < 0:       return 0\nelse if i >= n: return n - 1\nelse:          return i\n\nIn the final branch, which fact establishes that the returned index is valid?",
+      "prompt": "Choose one answer.",
+      "hint": "Negate the two conditions that have already been ruled out.",
+      "explanation": "Reaching that branch means both earlier conditions were false.",
+      "solutionSteps": [
+        "Negate the two conditions that have already been ruled out.",
+        "Reaching that branch means both earlier conditions were false."
+      ],
+      "options": {
+        "a": "i < n, with no lower bound required",
+        "b": "0 ≤ i ≤ n",
+        "c": "0 ≤ i < n"
+      }
+    },
+    "cs-u1-q21": {
+      "title": "Challenge a greatest integer",
+      "statement": "Suppose there is a greatest integer m. Which integer contradicts that assumption?",
+      "prompt": "Choose one answer.",
+      "hint": "Construct an integer larger than the supposedly greatest one.",
+      "explanation": "It is an integer strictly greater than m.",
+      "solutionSteps": [
+        "Construct an integer larger than the supposedly greatest one.",
+        "It is an integer strictly greater than m."
+      ],
+      "options": {
+        "a": "m − 1",
+        "b": "m + 1",
+        "c": "|m|"
+      }
+    },
+    "cs-u1-q22": {
+      "title": "Identify the contradiction",
+      "statement": "Suppose a > b and b ≥ a. Combining these inequalities gives which contradiction?",
+      "prompt": "Choose one answer.",
+      "hint": "Use transitivity to connect a back to itself.",
+      "explanation": "No number is strictly greater than itself.",
+      "solutionSteps": [
+        "Use transitivity to connect a back to itself.",
+        "No number is strictly greater than itself."
+      ],
+      "options": {
+        "a": "a > a",
+        "b": "a = a",
+        "c": "a + 1 > a"
+      }
+    },
+    "cs-u1-q23": {
+      "title": "Spot circular reasoning",
+      "statement": "A proof that a function always returns a nonnegative value begins: “Because the function always returns a nonnegative value, its output is at least zero.” What is wrong?",
+      "prompt": "Choose one answer.",
+      "hint": "Ask whether the premise has been established independently of the conclusion.",
+      "explanation": "This is circular reasoning.",
+      "solutionSteps": [
+        "Ask whether the premise has been established independently of the conclusion.",
+        "This is circular reasoning."
+      ],
+      "options": {
+        "a": "It proves only the case where the output is zero",
+        "b": "It assumes the claim it needs to establish",
+        "c": "It establishes the converse instead"
+      }
+    },
+    "cs-u1-q24": {
+      "title": "Match the arithmetic model",
+      "statement": "You prove n + 1 > n for mathematical integers. A program uses a toy signed 8-bit type that wraps from 127 to −128. Does the proof establish that the program’s increment always increases its value?",
+      "prompt": "Choose one answer.",
+      "hint": "Evaluate the increment at the largest representable value.",
+      "explanation": "The wrap at 127 supplies a concrete failure.",
+      "solutionSteps": [
+        "Evaluate the increment at the largest representable value.",
+        "The wrap at 127 supplies a concrete failure."
+      ],
+      "options": {
+        "a": "Yes; the algebraic proof covers every representation",
+        "b": "Yes; the finite range makes the claim stronger",
+        "c": "No; the program’s arithmetic differs from the proof’s assumptions"
+      }
+    },
+    "cs-u2-q01": {
+      "title": "Shift the lower bound",
+      "statement": "A nonempty set contains only integers greater than or equal to −5. Must it have a minimum?",
+      "prompt": "Choose one answer.",
+      "hint": "Translate the set into the nonnegative integers without changing its order.",
+      "explanation": "Find the shifted set’s minimum, then subtract 5.",
+      "solutionSteps": [
+        "Translate the set into the nonnegative integers without changing its order.",
+        "Find the shifted set’s minimum, then subtract 5."
+      ],
+      "options": {
+        "a": "Yes; adding 5 to every element reduces the problem to ℕ",
+        "b": "No; negative integers prevent well-ordering",
+        "c": "Only if the set is finite"
+      }
+    },
+    "cs-u2-q02": {
+      "title": "Bound or minimum?",
+      "statement": "What is the minimum of S = {1/k : k is a positive integer}?",
+      "prompt": "Choose one answer.",
+      "hint": "For any candidate 1/k, consider the next positive integer denominator.",
+      "explanation": "Every 1/k has a smaller member 1/(k + 1). Zero is a lower bound, but is absent.",
+      "solutionSteps": [
+        "For any candidate 1/k, consider the next positive integer denominator.",
+        "Every 1/k has a smaller member 1/(k + 1). Zero is a lower bound, but is absent."
+      ],
+      "options": {
+        "a": "0",
+        "b": "1",
+        "c": "There is no minimum"
+      }
+    },
+    "cs-u2-q03": {
+      "title": "Check the subsets",
+      "statement": "The set T = {0} ∪ {1/k : k is a positive integer} has minimum 0. Is T well-ordered under the usual numerical order?",
+      "prompt": "Choose one answer.",
+      "hint": "Remove zero and examine the remaining nonempty subset.",
+      "explanation": "Well-ordering concerns every nonempty subset, not just the whole set.",
+      "solutionSteps": [
+        "Remove zero and examine the remaining nonempty subset.",
+        "Well-ordering concerns every nonempty subset, not just the whole set."
+      ],
+      "options": {
+        "a": "Yes; having a minimum is sufficient",
+        "b": "No; its subset of positive elements has no minimum",
+        "c": "No infinite set can be well-ordered"
+      }
+    },
+    "cs-u2-q04": {
+      "title": "Turn a maximum into a minimum",
+      "statement": "A nonempty set S of integers is bounded above. Which transformation lets you use the corresponding minimum principle to establish a maximum of S?",
+      "prompt": "Choose one answer.",
+      "hint": "Look for an operation that reverses order and keeps integers as integers.",
+      "explanation": "The negated set is bounded below. Negating its minimum gives the original maximum.",
+      "solutionSteps": [
+        "Look for an operation that reverses order and keeps integers as integers.",
+        "The negated set is bounded below. Negating its minimum gives the original maximum."
+      ],
+      "options": {
+        "a": "Negate every element",
+        "b": "Take every element’s reciprocal",
+        "c": "Square every element"
+      }
+    },
+    "cs-u2-q05": {
+      "title": "Define the failure set",
+      "statement": "Which set should you use when proving that P(n) holds for every n ∈ ℕ?",
+      "prompt": "Choose one answer.",
+      "hint": "The set must contain all possible counterexamples, without an arbitrary cutoff.",
+      "explanation": "This captures every possible failure of the claim.",
+      "solutionSteps": [
+        "The set must contain all possible counterexamples, without an arbitrary cutoff.",
+        "This captures every possible failure of the claim."
+      ],
+      "options": {
+        "a": "The values where P(n) is true",
+        "b": "Counterexamples among the first 100 values only",
+        "c": "All n ∈ ℕ where P(n) is false"
+      }
+    },
+    "cs-u2-q06": {
+      "title": "Justify the minimum",
+      "statement": "Why can you choose a smallest counterexample after assuming the counterexample set is nonempty?",
+      "prompt": "Choose one answer.",
+      "hint": "Check both the nonemptiness condition and the set’s domain.",
+      "explanation": "These are precisely the conditions needed for well-ordering.",
+      "solutionSteps": [
+        "Check both the nonemptiness condition and the set’s domain.",
+        "These are precisely the conditions needed for well-ordering."
+      ],
+      "options": {
+        "a": "Every nonempty set of real numbers has a minimum",
+        "b": "It is a nonempty subset of ℕ",
+        "c": "Counterexample sets are always finite"
+      }
+    },
+    "cs-u2-q07": {
+      "title": "Use minimality",
+      "statement": "Let m > 0 be the smallest counterexample to P(n) over ℕ. What follows?",
+      "prompt": "Choose one answer.",
+      "hint": "A failure at m − 1 would contradict the choice of m.",
+      "explanation": "m − 1 is a permitted value smaller than the smallest failure.",
+      "solutionSteps": [
+        "A failure at m − 1 would contradict the choice of m.",
+        "m − 1 is a permitted value smaller than the smallest failure."
+      ],
+      "options": {
+        "a": "P(m − 1) is true",
+        "b": "P(m − 1) is false",
+        "c": "P(m + 1) is true"
+      }
+    },
+    "cs-u2-q08": {
+      "title": "Find the missing obligation",
+      "statement": "Your proof constructs an integer r < m. Is that alone a contradiction to m being the smallest counterexample?",
+      "prompt": "Choose one answer.",
+      "hint": "“Smallest counterexample” does not mean “smallest integer.”",
+      "explanation": "Smaller integers may exist without being counterexamples.",
+      "solutionSteps": [
+        "“Smallest counterexample” does not mean “smallest integer.”",
+        "Smaller integers may exist without being counterexamples."
+      ],
+      "options": {
+        "a": "Yes; nothing can be smaller than m",
+        "b": "No; you must also show that r belongs to the counterexample set",
+        "c": "Only if r = m − 1"
+      }
+    },
+    "cs-u2-q09": {
+      "title": "Capture any failing input",
+      "statement": "For countOnes, which counterexample set captures failure of the function?",
+      "prompt": "Choose one answer.",
+      "hint": "Failure on even one input must be included.",
+      "explanation": "One incorrect result is enough to make a length a counterexample.",
+      "solutionSteps": [
+        "Failure on even one input must be included.",
+        "One incorrect result is enough to make a length a counterexample."
+      ],
+      "options": {
+        "a": "Lengths for which every binary string receives a wrong answer",
+        "b": "Lengths for which at least one binary string receives a wrong answer",
+        "c": "Lengths for which at least one binary string receives a correct answer"
+      }
+    },
+    "cs-u2-q10": {
+      "title": "Exclude the empty input",
+      "statement": "Suppose m is the smallest failing length for countOnes. Why must m ≥ 1?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the function’s explicitly defined empty-string case.",
+      "explanation": "Length 0 is not a counterexample.",
+      "solutionSteps": [
+        "Check the function’s explicitly defined empty-string case.",
+        "Length 0 is not a counterexample."
+      ],
+      "options": {
+        "a": "Binary strings cannot be empty",
+        "b": "Every binary string contains a 1",
+        "c": "The empty string has zero ones, and the function returns 0 for it"
+      }
+    },
+    "cs-u2-q11": {
+      "title": "Trust the shorter prefix",
+      "statement": "Take a failing binary string of length m and remove its last bit. Why is countOnes correct on the remaining prefix?",
+      "prompt": "Choose one answer.",
+      "hint": "The prefix has a smaller length within the same input domain.",
+      "explanation": "Minimality guarantees correctness for every binary string of that shorter length.",
+      "solutionSteps": [
+        "The prefix has a smaller length within the same input domain.",
+        "Minimality guarantees correctness for every binary string of that shorter length."
+      ],
+      "options": {
+        "a": "Its length is m − 1, smaller than the smallest failing length",
+        "b": "Removing any bit makes the function correct",
+        "c": "The remaining prefix must contain only zeros"
+      }
+    },
+    "cs-u2-q12": {
+      "title": "Close the contradiction",
+      "statement": "The prefix contains k ones, so countOnes correctly returns k. The removed final bit is b ∈ {0, 1}. What completes the contradiction?",
+      "prompt": "Choose one answer.",
+      "hint": "A final zero contributes no new one; a final one contributes exactly one.",
+      "explanation": "The supposedly failing input is handled correctly.",
+      "solutionSteps": [
+        "A final zero contributes no new one; a final one contributes exactly one.",
+        "The supposedly failing input is handled correctly."
+      ],
+      "options": {
+        "a": "The full string always contains k + 1 ones",
+        "b": "Both the actual count and the function’s result are k + b",
+        "c": "The function’s result must be m"
+      }
+    },
+    "cs-u2-q13": {
+      "title": "Rule out a prime counterexample",
+      "statement": "Let m > 1 be the smallest integer that cannot be expressed as a product of primes. Could m itself be prime?",
+      "prompt": "Choose one answer.",
+      "hint": "A product of primes is allowed to have just one factor.",
+      "explanation": "Therefore a supposed counterexample must be composite.",
+      "solutionSteps": [
+        "A product of primes is allowed to have just one factor.",
+        "Therefore a supposed counterexample must be composite."
+      ],
+      "options": {
+        "a": "Yes; a product must contain at least two factors",
+        "b": "No; the one-factor expression m would already qualify",
+        "c": "Only if m = 2"
+      }
+    },
+    "cs-u2-q14": {
+      "title": "Choose smaller factors",
+      "statement": "Since m is composite, write m = ab. Which bounds make the minimality argument applicable to both factors?",
+      "prompt": "Choose one answer.",
+      "hint": "Both factors must remain in the theorem’s domain and be strictly smaller than the supposed failure.",
+      "explanation": "Both factors are permitted integers smaller than m.",
+      "solutionSteps": [
+        "Both factors must remain in the theorem’s domain and be strictly smaller than the supposed failure.",
+        "Both factors are permitted integers smaller than m."
+      ],
+      "options": {
+        "a": "1 < a < m and 1 < b < m",
+        "b": "a = 1 and b = m",
+        "c": "a < m and b < m, without any lower bounds"
+      }
+    },
+    "cs-u2-q15": {
+      "title": "Apply the minimality assumption",
+      "statement": "Why can both a and b be expressed as products of primes?",
+      "prompt": "Choose one answer.",
+      "hint": "Recall what is known about integers between 2 and m − 1.",
+      "explanation": "This follows from the choice of m, without assuming either factor is prime.",
+      "solutionSteps": [
+        "Recall what is known about integers between 2 and m − 1.",
+        "This follows from the choice of m, without assuming either factor is prime."
+      ],
+      "options": {
+        "a": "Every divisor of a composite number is prime",
+        "b": "Composite numbers always have two equal factors",
+        "c": "Neither can be a counterexample smaller than m"
+      }
+    },
+    "cs-u2-q16": {
+      "title": "State exactly what was proved",
+      "statement": "Combining the prime factors of a and b gives a prime factorization of m, contradicting its selection. What has this argument established?",
+      "prompt": "Choose one answer.",
+      "hint": "The construction gives a factorization; it has not compared different possible factorizations.",
+      "explanation": "Uniqueness requires an additional argument, covered later in number theory.",
+      "solutionSteps": [
+        "The construction gives a factorization; it has not compared different possible factorizations.",
+        "Uniqueness requires an additional argument, covered later in number theory."
+      ],
+      "options": {
+        "a": "Existence and uniqueness of prime factorizations",
+        "b": "Existence only",
+        "c": "Uniqueness only"
+      }
+    },
+    "cs-u2-q17": {
+      "title": "Bound the iterations",
+      "statement": "A nonnegative integer measure starts at 17 and decreases by at least 1 after every iteration. What is the maximum possible number of iterations?",
+      "prompt": "Enter an integer.",
+      "hint": "The smallest allowed decrease is 1 per iteration.",
+      "explanation": "Another decrease after reaching zero would violate nonnegativity.",
+      "solutionSteps": [
+        "The smallest allowed decrease is 1 per iteration.",
+        "Another decrease after reaching zero would violate nonnegativity."
+      ]
+    },
+    "cs-u2-q18": {
+      "title": "A decreasing real value",
+      "statement": "Under exact real-number arithmetic:\n\nx = 1\nwhile x > 0:\n    x = x / 2\n\nWhat happens?",
+      "prompt": "Choose one answer.",
+      "hint": "After any finite number of halvings, is the value zero?",
+      "explanation": "Every value 1/2ᵏ remains positive. Decreasing positive real values need not reach zero.",
+      "solutionSteps": [
+        "After any finite number of halvings, is the value zero?",
+        "Every value 1/2ᵏ remains positive. Decreasing positive real values need not reach zero."
+      ],
+      "options": {
+        "a": "It eventually reaches zero",
+        "b": "It continues forever",
+        "c": "It eventually becomes negative"
+      }
+    },
+    "cs-u2-q19": {
+      "title": "Handle the final step",
+      "statement": "Consider:\n\nn = 7\nwhile n > 0:\n    n = n - 2\n\nWhich measure remains nonnegative and strictly decreases after every iteration, including the last?",
+      "prompt": "Choose one answer.",
+      "hint": "Trace the transition from n = 1 to n = −1 for each candidate.",
+      "explanation": "Its values are 7, 5, 3, 1, 0. Raw n ends at −1; n² stays at 1 on the last step.",
+      "solutionSteps": [
+        "Trace the transition from n = 1 to n = −1 for each candidate.",
+        "Its values are 7, 5, 3, 1, 0. Raw n ends at −1; n² stays at 1 on the last step."
+      ],
+      "options": {
+        "a": "n",
+        "b": "max(n, 0)",
+        "c": "n²"
+      }
+    },
+    "cs-u2-q20": {
+      "title": "Progress is not guaranteed",
+      "statement": "Each attempt below finishes, but may succeed or fail:\n\npending = 3\nwhile pending > 0:\n    if attemptSucceeds():\n        pending = pending - 1\n\nDoes the fact that pending never increases establish termination?",
+      "prompt": "Choose one answer.",
+      "hint": "Consider a run in which no attempt ever succeeds.",
+      "explanation": "Non-increase alone does not exclude an infinite sequence of unchanged states.",
+      "solutionSteps": [
+        "Consider a run in which no attempt ever succeeds.",
+        "Non-increase alone does not exclude an infinite sequence of unchanged states."
+      ],
+      "options": {
+        "a": "Yes; it is bounded below by zero",
+        "b": "No; every attempt could fail, leaving it unchanged forever",
+        "c": "Yes; starting from a finite value is sufficient"
+      }
+    },
+    "cs-u3-q01": {
+      "title": "One of two backends",
+      "statement": "A configuration requires exactly one of local backend L and remote backend R. Which condition expresses the requirement?",
+      "prompt": "Choose one answer.",
+      "hint": "Express both “at least one” and “not both.”",
+      "explanation": "The first factor requires at least one backend; the second excludes both. Inclusive OR accepts both, while ⇔ accepts both true or both false.",
+      "solutionSteps": [
+        "The first factor requires at least one backend; the second excludes both. Inclusive OR accepts both, while ⇔ accepts both true or both false."
+      ],
+      "options": {
+        "a": "L ∨ R",
+        "b": "(L ∨ R) ∧ ¬(L ∧ R)",
+        "c": "L ⇔ R"
+      }
+    },
+    "cs-u3-q02": {
+      "title": "A violated guarantee",
+      "statement": "Let S mean “the request succeeds” and V mean “its input is valid.” Which assignment violates S ⇒ V?",
+      "prompt": "Choose one answer.",
+      "hint": "Look for a true premise with a false conclusion.",
+      "explanation": "A successful request with invalid input is precisely a true premise and false conclusion. A failed request does not violate this implication.",
+      "solutionSteps": [
+        "A successful request with invalid input is precisely a true premise and false conclusion. A failed request does not violate this implication."
+      ],
+      "options": {
+        "a": "S=false, V=false",
+        "b": "S=false, V=true",
+        "c": "S=true, V=false"
+      }
+    },
+    "cs-u3-q03": {
+      "title": "The whole requirement",
+      "statement": "A job is allowed iff it is not paused (¬P) and has either quota Q or an override O. Which formula correctly defines Allowed?",
+      "prompt": "Choose one answer.",
+      "hint": "The pause restriction must apply to the override too.",
+      "explanation": "Pausing blocks both admission routes. In B, O=true bypasses the pause condition; C permits jobs merely because any one operand is true.",
+      "solutionSteps": [
+        "Pausing blocks both admission routes. In B, O=true bypasses the pause condition; C permits jobs merely because any one operand is true."
+      ],
+      "options": {
+        "a": "Allowed ⇔ (¬P ∧ (Q ∨ O))",
+        "b": "Allowed ⇔ ((¬P ∧ Q) ∨ O)",
+        "c": "Allowed ⇔ (¬P ∨ Q ∨ O)"
+      }
+    },
+    "cs-u3-q04": {
+      "title": "A rewrite that needs more than logic",
+      "statement": "Two conditions have the same truth table. Before using their equivalence to reorder checks in actual code, which additional issue matters?",
+      "prompt": "Choose one answer.",
+      "hint": "A predicate in code may do more than return true or false.",
+      "explanation": "The truth-table model assumes fixed truth values. Reordering a null check and a dereference, for example, can change whether evaluation throws.",
+      "solutionSteps": [
+        "The truth-table model assumes fixed truth values. Reordering a null check and a dereference, for example, can change whether evaluation throws."
+      ],
+      "options": {
+        "a": "Boolean formulas must use different variable names",
+        "b": "Evaluation order, side effects and undefined operations",
+        "c": "The code must have at most two conditions"
+      }
+    },
+    "cs-u3-q05": {
+      "title": "Factor the common check",
+      "statement": "Which formula is equivalent to (A ∧ B) ∨ (A ∧ ¬B)?",
+      "prompt": "Choose one answer.",
+      "hint": "Factor out A and inspect the remaining disjunction.",
+      "explanation": "Distributivity gives A ∧ (B ∨ ¬B), and B ∨ ¬B is always true. The result is A.",
+      "solutionSteps": [
+        "Distributivity gives A ∧ (B ∨ ¬B), and B ∨ ¬B is always true. The result is A."
+      ],
+      "options": {
+        "a": "B",
+        "b": "A ∨ B",
+        "c": "A"
+      }
+    },
+    "cs-u3-q06": {
+      "title": "Negate a contract violation",
+      "statement": "Which formula is equivalent to ¬(P ⇒ Q)?",
+      "prompt": "Choose one answer.",
+      "hint": "First replace the implication with ¬P ∨ Q.",
+      "explanation": "Negating ¬P ∨ Q gives P ∧ ¬Q by De Morgan. This exactly describes the assignment that violates an implication.",
+      "solutionSteps": [
+        "Negating ¬P ∨ Q gives P ∧ ¬Q by De Morgan. This exactly describes the assignment that violates an implication."
+      ],
+      "options": {
+        "a": "P ∧ ¬Q",
+        "b": "¬P ∧ Q",
+        "c": "¬P ∨ Q"
+      }
+    },
+    "cs-u3-q07": {
+      "title": "Find the counterassignment",
+      "statement": "An engineer replaces F=P ∨ Q with G=P XOR Q. Which assignment demonstrates a behavior change?",
+      "prompt": "Choose one answer.",
+      "hint": "Inclusive OR and exclusive OR differ when both operands hold.",
+      "explanation": "When both inputs are true, F is true and G is false. The other two assignments listed give equal outputs.",
+      "solutionSteps": [
+        "When both inputs are true, F is true and G is false. The other two assignments listed give equal outputs."
+      ],
+      "options": {
+        "a": "P=false, Q=false",
+        "b": "P=true, Q=true",
+        "c": "P=true, Q=false"
+      }
+    },
+    "cs-u3-q08": {
+      "title": "Audit an inference",
+      "statement": "Is ((P ⇒ Q) ∧ Q) ⇒ P valid for all Boolean P and Q?",
+      "prompt": "Choose one answer.",
+      "hint": "Try making the final conclusion false while keeping the premises true.",
+      "explanation": "With P=false and Q=true, P⇒Q and Q are both true, but P is false. This is the invalid inference of affirming the consequent.",
+      "solutionSteps": [
+        "With P=false and Q=true, P⇒Q and Q are both true, but P is false. This is the invalid inference of affirming the consequent."
+      ],
+      "options": {
+        "a": "Yes, because Q confirms P",
+        "b": "Yes, because implication is symmetric",
+        "c": "No; P=false and Q=true is a counterexample"
+      }
+    },
+    "cs-u3-q09": {
+      "title": "Read CNF",
+      "statement": "Which expression is written as an AND of OR-clauses of literals?",
+      "prompt": "Choose one answer.",
+      "hint": "Inspect the outermost operation, then each clause.",
+      "explanation": "B is syntactically CNF: two OR-clauses joined by AND. A is DNF. C has a negation applied to a compound expression.",
+      "solutionSteps": [
+        "B is syntactically CNF: two OR-clauses joined by AND. A is DNF. C has a negation applied to a compound expression."
+      ],
+      "options": {
+        "a": "(P ∧ Q) ∨ (¬P ∧ R)",
+        "b": "(P ∨ ¬Q) ∧ (Q ∨ R)",
+        "c": "¬(P ∧ (Q ∨ R))"
+      }
+    },
+    "cs-u3-q10": {
+      "title": "Select two true rows",
+      "statement": "Over variables P,Q, a formula is true exactly at (false,false) and (true,false). Which is its full DNF, with a term for each true row?",
+      "prompt": "Choose one answer.",
+      "hint": "Each term must be true on exactly its own row.",
+      "explanation": "Both desired rows have Q=false, so both terms contain ¬Q. Their P literals select the two different values of P. The expression simplifies to ¬Q.",
+      "solutionSteps": [
+        "Both desired rows have Q=false, so both terms contain ¬Q. Their P literals select the two different values of P. The expression simplifies to ¬Q."
+      ],
+      "options": {
+        "a": "(¬P ∧ ¬Q) ∨ (P ∧ ¬Q)",
+        "b": "(P ∧ Q) ∨ (¬P ∧ Q)",
+        "c": "(¬P ∧ Q) ∨ (P ∧ ¬Q)"
+      }
+    },
+    "cs-u3-q11": {
+      "title": "Distribute OR over AND",
+      "statement": "Which CNF is equivalent to P ∨ (Q ∧ R)?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the cases P=true and P=false.",
+      "explanation": "OR distributes over AND in Boolean algebra. If P is true both clauses hold; if P is false both Q and R are required.",
+      "solutionSteps": [
+        "OR distributes over AND in Boolean algebra. If P is true both clauses hold; if P is false both Q and R are required."
+      ],
+      "options": {
+        "a": "(P ∨ Q) ∧ R",
+        "b": "(P ∧ Q) ∨ (P ∧ R)",
+        "c": "(P ∨ Q) ∧ (P ∨ R)"
+      }
+    },
+    "cs-u3-q12": {
+      "title": "Count the rows",
+      "statement": "A truth table includes seven independent Boolean variables. How many assignments must a full table list? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Double the row count whenever another Boolean variable is added.",
+      "explanation": "Each of the seven variables has two choices, giving 2^7=128 assignments. This counts rows, not the total cost of evaluating every formula on them.",
+      "solutionSteps": [
+        "Each of the seven variables has two choices, giving 2^7=128 assignments. This counts rows, not the total cost of evaluating every formula on them."
+      ]
+    },
+    "cs-u3-q13": {
+      "title": "Find a consistent configuration",
+      "statement": "Which assignment satisfies (P ∨ Q) ∧ (¬P ∨ R) ∧ ¬R?",
+      "prompt": "Choose one answer.",
+      "hint": "Start with the single-literal constraint ¬R.",
+      "explanation": "¬R forces R=false. Then ¬P∨R forces P=false, and P∨Q forces Q=true. C is the unique satisfying assignment.",
+      "solutionSteps": [
+        "¬R forces R=false. Then ¬P∨R forces P=false, and P∨Q forces Q=true. C is the unique satisfying assignment."
+      ],
+      "options": {
+        "a": "P=true, Q=true, R=false",
+        "b": "P=false, Q=false, R=false",
+        "c": "P=false, Q=true, R=false"
+      }
+    },
+    "cs-u3-q14": {
+      "title": "Explain an impossibility",
+      "statement": "Why is (A ∨ B) ∧ ¬A ∧ ¬B unsatisfiable?",
+      "prompt": "Choose one answer.",
+      "hint": "Apply the two single-literal constraints to the remaining clause.",
+      "explanation": "¬A and ¬B require both variables to be false, leaving no way to satisfy A∨B. Negations and clause counts alone say nothing about satisfiability.",
+      "solutionSteps": [
+        "¬A and ¬B require both variables to be false, leaving no way to satisfy A∨B. Negations and clause counts alone say nothing about satisfiability."
+      ],
+      "options": {
+        "a": "The final two constraints force the first one to be false",
+        "b": "Any formula with negations is unsatisfiable",
+        "c": "It has an odd number of clauses"
+      }
+    },
+    "cs-u3-q15": {
+      "title": "Use SAT to check validity",
+      "statement": "A sound SAT solver reports that ¬F is unsatisfiable. What follows?",
+      "prompt": "Choose one answer.",
+      "hint": "Translate “no satisfying assignment for ¬F” into a statement about F.",
+      "explanation": "There is no assignment on which ¬F is true, so none on which F is false. That is validity, not uniqueness.",
+      "solutionSteps": [
+        "There is no assignment on which ¬F is true, so none on which F is false. That is validity, not uniqueness."
+      ],
+      "options": {
+        "a": "F is false on every assignment",
+        "b": "F is true on every assignment",
+        "c": "F has exactly one satisfying assignment"
+      }
+    },
+    "cs-u3-q16": {
+      "title": "What a failed trial proves",
+      "statement": "A candidate assignment makes one of a system’s constraints false. What has been established?",
+      "prompt": "Choose one answer.",
+      "hint": "The SAT question uses “there exists,” not “this particular assignment.”",
+      "explanation": "The trial rejects one candidate only. Other assignments may satisfy every constraint; rejecting all of them requires further reasoning.",
+      "solutionSteps": [
+        "The trial rejects one candidate only. Other assignments may satisfy every constraint; rejecting all of them requires further reasoning."
+      ],
+      "options": {
+        "a": "The whole system is unsatisfiable",
+        "b": "Every other assignment works",
+        "c": "This assignment is not a witness; the system may still be satisfiable"
+      }
+    },
+    "cs-u3-q17": {
+      "title": "Only enabled jobs",
+      "statement": "Let J be all jobs; E(j) means enabled and R(j) means ready. Which formula says “Every enabled job is ready”?",
+      "prompt": "Choose one answer.",
+      "hint": "A disabled job must not automatically violate the statement.",
+      "explanation": "The implication imposes readiness only on enabled jobs. B also requires all jobs to be enabled; C does not establish a universal condition.",
+      "solutionSteps": [
+        "The implication imposes readiness only on enabled jobs. B also requires all jobs to be enabled; C does not establish a universal condition."
+      ],
+      "options": {
+        "a": "∀j∈J (E(j) ⇒ R(j))",
+        "b": "∀j∈J (E(j) ∧ R(j))",
+        "c": "∃j∈J (E(j) ⇒ R(j))"
+      }
+    },
+    "cs-u3-q18": {
+      "title": "An existential restriction",
+      "statement": "Which formula says “At least one job is both enabled and ready”?",
+      "prompt": "Choose one answer.",
+      "hint": "The witness must actually be enabled.",
+      "explanation": "The same witness must satisfy both properties. An existential implication could instead be witnessed by a disabled job.",
+      "solutionSteps": [
+        "The same witness must satisfy both properties. An existential implication could instead be witnessed by a disabled job."
+      ],
+      "options": {
+        "a": "∃j∈J (E(j) ⇒ R(j))",
+        "b": "∃j∈J (E(j) ∧ R(j))",
+        "c": "∀j∈J (E(j) ⇒ R(j))"
+      }
+    },
+    "cs-u3-q19": {
+      "title": "Empty batch",
+      "statement": "For an empty job set J, what are the truth values of ∀j∈J R(j) and ∃j∈J R(j), in that order?",
+      "prompt": "Choose one answer.",
+      "hint": "Look separately for a violating element and a satisfying element.",
+      "explanation": "There is no counterexample to the universal claim and no witness for the existential claim. An empty batch therefore passes an all-items condition but not an any-item condition.",
+      "solutionSteps": [
+        "There is no counterexample to the universal claim and no witness for the existential claim. An empty batch therefore passes an all-items condition but not an any-item condition."
+      ],
+      "options": {
+        "a": "False, false",
+        "b": "True, true",
+        "c": "True, false"
+      }
+    },
+    "cs-u3-q20": {
+      "title": "Domain changes truth",
+      "statement": "Compare ∃x∈Z (2x=1) with ∃x∈R (2x=1). Which statement is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Solving the equation is not enough; check where the solution belongs.",
+      "explanation": "The unique real solution 1/2 is not an integer. A witness is valid only if it belongs to the stated domain.",
+      "solutionSteps": [
+        "The unique real solution 1/2 is not an integer. A witness is valid only if it belongs to the stated domain."
+      ],
+      "options": {
+        "a": "The integer claim is false; the real claim is true",
+        "b": "Both are true because x=1/2",
+        "c": "Both are false"
+      }
+    },
+    "cs-u3-q21": {
+      "title": "Per-query indexes",
+      "statement": "I(q,i) means index i supports query q. Which statement permits different queries to use different indexes?",
+      "prompt": "Choose one answer.",
+      "hint": "Which choice is allowed to depend on the other?",
+      "explanation": "B chooses an index after the query is fixed. A demands one common index; C demands every index support every query.",
+      "solutionSteps": [
+        "B chooses an index after the query is fixed. A demands one common index; C demands every index support every query."
+      ],
+      "options": {
+        "a": "∃i∈Indexes ∀q∈Queries I(q,i)",
+        "b": "∀q∈Queries ∃i∈Indexes I(q,i)",
+        "c": "∀q∈Queries ∀i∈Indexes I(q,i)"
+      }
+    },
+    "cs-u3-q22": {
+      "title": "Inspect a finite model",
+      "statement": "Let Q={a,b}, I={1,2}. I(q,i) holds exactly for (a,1) and (b,2). What is true?",
+      "prompt": "Choose one answer.",
+      "hint": "Check both rows for per-query witnesses, then each column for a common witness.",
+      "explanation": "Choose 1 for a and 2 for b. Index 1 fails for b, and index 2 fails for a; those are all available indexes.",
+      "solutionSteps": [
+        "Choose 1 for a and 2 for b. Index 1 fails for b, and index 2 fails for a; those are all available indexes."
+      ],
+      "options": {
+        "a": "There is one index supporting all queries",
+        "b": "Every index supports every query",
+        "c": "Every query has an index, but no index supports all queries"
+      }
+    },
+    "cs-u3-q23": {
+      "title": "An implication that always works",
+      "statement": "For nonempty sets A,B and any relation R, which implication is always true?",
+      "prompt": "Choose one answer.",
+      "hint": "Reuse the common witness instead of choosing a new one.",
+      "explanation": "A single common y can be reused for every x. Separate witnesses need not coincide, as the two-query model shows.",
+      "solutionSteps": [
+        "A single common y can be reused for every x. Separate witnesses need not coincide, as the two-query model shows."
+      ],
+      "options": {
+        "a": "(∃y∈B ∀x∈A R(x,y)) ⇒ (∀x∈A ∃y∈B R(x,y))",
+        "b": "(∀x∈A ∃y∈B R(x,y)) ⇒ (∃y∈B ∀x∈A R(x,y))",
+        "c": "Both implications"
+      }
+    },
+    "cs-u3-q24": {
+      "title": "An integer witness",
+      "statement": "Which function y(x) supplies a witness for ∀x∈Z ∃y∈Z (y>x)?",
+      "prompt": "Choose one answer.",
+      "hint": "A witness rule must work for negative and positive x alike.",
+      "explanation": "For every integer x, x+1 is an integer strictly larger than x. Zero fails when x≥0, and x-1 is always smaller.",
+      "solutionSteps": [
+        "For every integer x, x+1 is an integer strictly larger than x. Zero fails when x≥0, and x-1 is always smaller."
+      ],
+      "options": {
+        "a": "y(x)=0",
+        "b": "y(x)=x+1",
+        "c": "y(x)=x-1"
+      }
+    },
+    "cs-u3-q25": {
+      "title": "Negate a bounded rule",
+      "statement": "Which formula negates ∀j∈J (Enabled(j) ⇒ Safe(j))?",
+      "prompt": "Choose one answer.",
+      "hint": "First negate the universal quantifier, then the implication.",
+      "explanation": "One enabled, unsafe job refutes the universal implication. It is unnecessary for all jobs to be unsafe, and a disabled job is irrelevant.",
+      "solutionSteps": [
+        "One enabled, unsafe job refutes the universal implication. It is unnecessary for all jobs to be unsafe, and a disabled job is irrelevant."
+      ],
+      "options": {
+        "a": "∀j∈J (Enabled(j) ∧ ¬Safe(j))",
+        "b": "∃j∈J (¬Enabled(j) ∧ Safe(j))",
+        "c": "∃j∈J (Enabled(j) ∧ ¬Safe(j))"
+      }
+    },
+    "cs-u3-q26": {
+      "title": "No universal test",
+      "statement": "Which formula negates ∃t∈Tests ∀b∈Bugs Detects(t,b)?",
+      "prompt": "Choose one answer.",
+      "hint": "Keep the original variable order while swapping each quantifier.",
+      "explanation": "Every candidate test must miss at least one bug; the missed bug may depend on the test. B is too weak, and C changes quantifier order.",
+      "solutionSteps": [
+        "Every candidate test must miss at least one bug; the missed bug may depend on the test. B is too weak, and C changes quantifier order."
+      ],
+      "options": {
+        "a": "∀t∈Tests ∃b∈Bugs ¬Detects(t,b)",
+        "b": "∃t∈Tests ∃b∈Bugs ¬Detects(t,b)",
+        "c": "∀b∈Bugs ∃t∈Tests ¬Detects(t,b)"
+      }
+    },
+    "cs-u3-q27": {
+      "title": "One witness cannot be split",
+      "statement": "The claim “(∃x∈D P(x)) ∧ (∃x∈D Q(x)) implies ∃x∈D (P(x) ∧ Q(x))” is proposed. Which interpretation refutes it?",
+      "prompt": "Choose one answer.",
+      "hint": "The two existential witnesses need not be the same element.",
+      "explanation": "Each predicate has a witness in B, so the premise is true. No element satisfies both, so the conclusion is false. A and C satisfy the conclusion.",
+      "solutionSteps": [
+        "Each predicate has a witness in B, so the premise is true. No element satisfies both, so the conclusion is false. A and C satisfy the conclusion."
+      ],
+      "options": {
+        "a": "D={a}; both P(a) and Q(a) are true",
+        "b": "D={a,b}; P holds only at a and Q only at b",
+        "c": "D={a,b}; both predicates hold everywhere"
+      }
+    },
+    "cs-u3-q28": {
+      "title": "Certify a coverage failure",
+      "statement": "A specification is ∀r∈Requests ∃s∈Servers Handles(r,s). Which evidence suffices to refute it?",
+      "prompt": "Choose one answer.",
+      "hint": "Negate the full quantified statement before choosing the evidence.",
+      "explanation": "A bad pair may be covered by another server. An unused server may be irrelevant. One request with no working server is exactly the negation of the specification.",
+      "solutionSteps": [
+        "A bad pair may be covered by another server. An unused server may be irrelevant. One request with no working server is exactly the negation of the specification."
+      ],
+      "options": {
+        "a": "One request-server pair with Handles=false",
+        "b": "One server that handles no requests",
+        "c": "One request for which every server fails Handles"
+      }
+    },
+    "cs-u4-q01": {
+      "title": "Deduplicate a collection",
+      "statement": "How many elements are in {api, worker, api, cache, worker}? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Count distinct objects, not positions in the listing.",
+      "explanation": "The distinct elements are api, worker and cache. Repeated occurrences in a set listing do not add elements.",
+      "solutionSteps": [
+        "The distinct elements are api, worker and cache. Repeated occurrences in a set listing do not add elements."
+      ]
+    },
+    "cs-u4-q02": {
+      "title": "A set containing an empty set",
+      "statement": "For S={∅,{x}}, which statement is true?",
+      "prompt": "Choose one answer.",
+      "hint": "Membership and subset inclusion ask different questions.",
+      "explanation": "S contains the two distinct sets ∅ and {x}. The empty set is one of its elements and is also a subset, since it has no elements that could violate inclusion.",
+      "solutionSteps": [
+        "S contains the two distinct sets ∅ and {x}. The empty set is one of its elements and is also a subset, since it has no elements that could violate inclusion."
+      ],
+      "options": {
+        "a": "S=∅",
+        "b": "∅∈S and ∅⊆S",
+        "c": "|S|=1"
+      }
+    },
+    "cs-u4-q03": {
+      "title": "Read a set-builder filter",
+      "statement": "Let D={0,1,2,3,4,5,6}. Which set equals {x∈D | x is even and x<5}?",
+      "prompt": "Choose one answer.",
+      "hint": "Apply the predicate to the whole domain, including zero.",
+      "explanation": "Zero is even and satisfies 0<5. Six is even but fails the strict upper bound. Each element must satisfy both conditions.",
+      "solutionSteps": [
+        "Zero is even and satisfies 0<5. Six is even but fails the strict upper bound. Each element must satisfy both conditions."
+      ],
+      "options": {
+        "a": "{2,4}",
+        "b": "{0,2,4,6}",
+        "c": "{0,2,4}"
+      }
+    },
+    "cs-u4-q04": {
+      "title": "Member of a power set",
+      "statement": "Let A={read,write}. Which object is an element of pow(A)?",
+      "prompt": "Choose one answer.",
+      "hint": "A power set contains sets, not the underlying labels directly.",
+      "explanation": "An element of pow(A) must itself be a subset of A. {read} is such a subset; read is a label rather than that subset, and execute is not in A.",
+      "solutionSteps": [
+        "An element of pow(A) must itself be a subset of A. {read} is such a subset; read is a label rather than that subset, and execute is not in A."
+      ],
+      "options": {
+        "a": "{read}",
+        "b": "read",
+        "c": "{read,execute}"
+      }
+    },
+    "cs-u4-q05": {
+      "title": "Filter eligible users",
+      "statement": "Let Enabled={a,b,c}, Suspended={b,d}, and Premium={b,c,d}. Which set is (Enabled\\Suspended)∩Premium?",
+      "prompt": "Choose one answer.",
+      "hint": "Perform the difference before the intersection.",
+      "explanation": "Removing suspended users from Enabled leaves {a,c}; intersecting with Premium leaves only c.",
+      "solutionSteps": [
+        "Removing suspended users from Enabled leaves {a,c}; intersecting with Premium leaves only c."
+      ],
+      "options": {
+        "a": "{b,c}",
+        "b": "{a,c}",
+        "c": "{c}"
+      }
+    },
+    "cs-u4-q06": {
+      "title": "Complement needs a universe",
+      "statement": "Let A={1,3}. Its complement is computed in U={0,1,2,3,4}. Which result is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Stay inside the declared universe.",
+      "explanation": "The complement includes precisely the members of U not in A. A larger universe would generally give a different complement.",
+      "solutionSteps": [
+        "The complement includes precisely the members of U not in A. A larger universe would generally give a different complement."
+      ],
+      "options": {
+        "a": "{0,2,4}",
+        "b": "All integers except 1 and 3",
+        "c": "{1,3}"
+      }
+    },
+    "cs-u4-q07": {
+      "title": "Complete an equality proof",
+      "statement": "For arbitrary x, x∈A\\(B∪C) iff x∈A and x∉B and x∉C. Which set has exactly that membership condition?",
+      "prompt": "Choose one answer.",
+      "hint": "“And” between two membership conditions corresponds to intersection.",
+      "explanation": "Membership in both differences requires membership in A and exclusion from both B and C. This equivalence proves the equality for every element.",
+      "solutionSteps": [
+        "Membership in both differences requires membership in A and exclusion from both B and C. This equivalence proves the equality for every element."
+      ],
+      "options": {
+        "a": "(A\\B)∪(A\\C)",
+        "b": "(A\\B)∩(A\\C)",
+        "c": "A∪(B∩C)"
+      }
+    },
+    "cs-u4-q08": {
+      "title": "Refute a false identity",
+      "statement": "Someone claims A\\(B∩C)=(A\\B)∩(A\\C) for all sets. Which choice disproves it?",
+      "prompt": "Choose one answer.",
+      "hint": "Seek an element lying in exactly one of B and C.",
+      "explanation": "For C’s choice, B∩C=∅, so the left side is {x}. The right side is ∅∩{x}=∅. The other two choices make both sides empty.",
+      "solutionSteps": [
+        "For C’s choice, B∩C=∅, so the left side is {x}. The right side is ∅∩{x}=∅. The other two choices make both sides empty."
+      ],
+      "options": {
+        "a": "A=B=C={x}",
+        "b": "A=B=C=∅",
+        "c": "A={x}, B={x}, C=∅"
+      }
+    },
+    "cs-u4-q09": {
+      "title": "Set versus sequence",
+      "statement": "Let s=(2,2,5) and A={2,2,5}. What are length(s) and |A|, respectively?",
+      "prompt": "Choose one answer.",
+      "hint": "Sequences count positions; sets count distinct elements.",
+      "explanation": "The sequence has three positions, including two equal components. The set has only the distinct elements 2 and 5.",
+      "solutionSteps": [
+        "The sequence has three positions, including two equal components. The set has only the distinct elements 2 and 5."
+      ],
+      "options": {
+        "a": "3 and 2",
+        "b": "2 and 2",
+        "c": "3 and 3"
+      }
+    },
+    "cs-u4-q10": {
+      "title": "Check a product type",
+      "statement": "Let E={prod,stage} and P={80,443}. Which is a member of E×P?",
+      "prompt": "Choose one answer.",
+      "hint": "Check both the container type and the order of its components.",
+      "explanation": "The first component must belong to E and the second to P. A reverses their types; C is an unordered set, not a pair.",
+      "solutionSteps": [
+        "The first component must belong to E and the second to P. A reverses their types; C is an unordered set, not a pair."
+      ],
+      "options": {
+        "a": "(443,prod)",
+        "b": "(stage,443)",
+        "c": "{stage,443}"
+      }
+    },
+    "cs-u4-q11": {
+      "title": "An impossible component",
+      "statement": "How many elements are in {GET,POST}×∅? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Can you choose the second component?",
+      "explanation": "A pair in the product needs a second component from ∅. No such component exists, so the product is empty.",
+      "solutionSteps": [
+        "A pair in the product needs a second component from ∅. No such component exists, so the product is empty."
+      ]
+    },
+    "cs-u4-q12": {
+      "title": "The zero-length case",
+      "statement": "How many sequences are in {0,1}^0? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Distinguish the empty sequence from an empty collection of sequences.",
+      "explanation": "There is exactly one length-zero sequence: the empty sequence. This is different from having no sequences at all.",
+      "solutionSteps": [
+        "There is exactly one length-zero sequence: the empty sequence. This is different from having no sequences at all."
+      ]
+    },
+    "cs-u4-q13": {
+      "title": "A precise lookup model",
+      "statement": "Let A={a,b,c} and B={0,1}. A lookup has graph {(a,0),(b,1)} and no other pairs. Which description is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "At most one output and exactly one output are different conditions.",
+      "explanation": "Each input has at most one output, so it is a function under the book’s convention. It is not total on A because c has no output.",
+      "solutionSteps": [
+        "Each input has at most one output, so it is a function under the book’s convention. It is not total on A because c has no output."
+      ],
+      "options": {
+        "a": "A total function with range {0,1}",
+        "b": "Not a function because c has no value",
+        "c": "A partial function with support {a,b} and range {0,1}"
+      }
+    },
+    "cs-u4-q14": {
+      "title": "Range is not codomain",
+      "statement": "Let f:{0,1,2,3}→{0,1,2} be the total function f(x)=x mod 2. What is its range?",
+      "prompt": "Choose one answer.",
+      "hint": "Evaluate the mapping on its four inputs.",
+      "explanation": "The only produced values are 0 and 1. The value 2 is allowed by the codomain but never occurs.",
+      "solutionSteps": [
+        "The only produced values are 0 and 1. The value 2 is allowed by the codomain but never occurs."
+      ],
+      "options": {
+        "a": "{0,1}",
+        "b": "{0,1,2}",
+        "c": "{0,1,2,3}"
+      }
+    },
+    "cs-u4-q15": {
+      "title": "Compose two transformations",
+      "statement": "Let f,g:Z→Z be total, with f(x)=2x-1 and g(x)=x+4. Find (g∘f)(3). Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Read g∘f from right to left when evaluating an input.",
+      "explanation": "First f(3)=5, then g(5)=9. Applying the maps in the opposite order would give f(7)=13.",
+      "solutionSteps": [
+        "First f(3)=5, then g(5)=9. Applying the maps in the opposite order would give f(7)=13."
+      ]
+    },
+    "cs-u4-q16": {
+      "title": "Composition can lose support",
+      "statement": "Let f:{a,b}→{0,1} have f(a)=0, f(b)=1. Let g:{0,1}→Z be defined only by g(1)=7. What is support(g∘f)?",
+      "prompt": "Choose one answer.",
+      "hint": "The intermediate value must be a supported input of g.",
+      "explanation": "The composite is undefined at a because g(0) is undefined. At b it is defined and equals 7.",
+      "solutionSteps": [
+        "The composite is undefined at a because g(0) is undefined. At b it is defined and equals 7."
+      ],
+      "options": {
+        "a": "{a,b}",
+        "b": "{b}",
+        "c": "∅"
+      }
+    },
+    "cs-u4-q17": {
+      "title": "A many-valued relation",
+      "statement": "Let R go from A={a,b} to B={1,2,3}, with graph {(a,1),(a,2),(b,3)}. Which description is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Count outgoing and incoming pairs separately; use the book’s relation terminology.",
+      "explanation": "Every input has an output, every output is reached, and none has two incoming inputs. But a has two outputs, so R is not functional and hence not bijective.",
+      "solutionSteps": [
+        "Every input has an output, every output is reached, and none has two incoming inputs. But a has two outputs, so R is not functional and hence not bijective."
+      ],
+      "options": {
+        "a": "Total, injective and surjective, but not a function",
+        "b": "A bijection",
+        "c": "A function that is not total"
+      }
+    },
+    "cs-u4-q18": {
+      "title": "A collision",
+      "statement": "A total function f:{a,b,c}→{0,1} has f(a)=0, f(b)=1, f(c)=1. Which property fails?",
+      "prompt": "Choose one answer.",
+      "hint": "Look for two different inputs with the same output.",
+      "explanation": "Distinct inputs b and c share output 1. Both outputs are reached and every input has exactly one value, so the other properties hold.",
+      "solutionSteps": [
+        "Distinct inputs b and c share output 1. Both outputs are reached and every input has exactly one value, so the other properties hold."
+      ],
+      "options": {
+        "a": "Totality",
+        "b": "Surjectivity",
+        "c": "Injectivity"
+      }
+    },
+    "cs-u4-q19": {
+      "title": "Same graph, different codomain",
+      "statement": "The graph {(a,1),(b,2)} is used first with codomain {1,2}, then with codomain {1,2,3}. The domain stays {a,b}. What changes?",
+      "prompt": "Choose one answer.",
+      "hint": "A codomain includes allowed values even when the graph does not reach them.",
+      "explanation": "The additional codomain element 3 has no incoming pair. Input coverage and uniqueness of outputs are unchanged.",
+      "solutionSteps": [
+        "The additional codomain element 3 has no incoming pair. Input coverage and uniqueness of outputs are unchanged."
+      ],
+      "options": {
+        "a": "The mapping ceases to be a function",
+        "b": "It ceases to be surjective",
+        "c": "It ceases to be total"
+      }
+    },
+    "cs-u4-q20": {
+      "title": "Recognize a bijection",
+      "statement": "For A={a,b,c} and B={1,2,3}, which graph defines a bijection?",
+      "prompt": "Choose one answer.",
+      "hint": "Check exactly one outgoing and exactly one incoming pair at every endpoint.",
+      "explanation": "C gives each input exactly one output and reaches each output exactly once. A has a collision and misses 2; B leaves c unsupported and misses 3.",
+      "solutionSteps": [
+        "C gives each input exactly one output and reaches each output exactly once. A has a collision and misses 2; B leaves c unsupported and misses 3."
+      ],
+      "options": {
+        "a": "{(a,1),(b,1),(c,3)}",
+        "b": "{(a,1),(b,2)}",
+        "c": "{(a,2),(b,3),(c,1)}"
+      }
+    },
+    "cs-u4-q21": {
+      "title": "Compute an image",
+      "statement": "Let f:{a,b,c,d}→{0,1,2} be total with values 0,1,1,2 respectively. What is f({b,c,d})?",
+      "prompt": "Choose one answer.",
+      "hint": "An image is a set of outputs.",
+      "explanation": "The image is the set of values produced by b,c,d: 1,1,2. Repetition contributes no new element, so the result is {1,2}. Zero is produced only by a, which is not in the input subset.",
+      "solutionSteps": [
+        "The image is the set of values produced by b,c,d: 1,1,2. Repetition contributes no new element, so the result is {1,2}. Zero is produced only by a, which is not in the input subset."
+      ],
+      "options": {
+        "a": "{1,2}",
+        "b": "{0,1,2}",
+        "c": "{b,c,d}"
+      }
+    },
+    "cs-u4-q22": {
+      "title": "Compute a preimage",
+      "statement": "Let f:{a,b,c,d}→{0,1,2} have values 0,1,1,2 respectively. What is f^(-1)({1})?",
+      "prompt": "Choose one answer.",
+      "hint": "Collect all inputs whose output is 1.",
+      "explanation": "Both b and c map to a value in {1}. A preimage includes every such input and need not be a singleton.",
+      "solutionSteps": [
+        "Both b and c map to a value in {1}. A preimage includes every such input and need not be a singleton."
+      ],
+      "options": {
+        "a": "{1}",
+        "b": "{b,c}",
+        "c": "{c}"
+      }
+    },
+    "cs-u4-q23": {
+      "title": "Reverse a collision",
+      "statement": "Let f:{a,b}→{0} be total with f(a)=f(b)=0. Is its inverse relation a function under the book’s at-most-one-output convention?",
+      "prompt": "Choose one answer.",
+      "hint": "Reverse the pairs and inspect outgoing values.",
+      "explanation": "Reversing the two pairs gives (0,a) and (0,b). One input now has two distinct outputs, violating functionality.",
+      "solutionSteps": [
+        "Reversing the two pairs gives (0,a) and (0,b). One input now has two distinct outputs, violating functionality."
+      ],
+      "options": {
+        "a": "Yes, because f is total",
+        "b": "Yes, because f is surjective",
+        "c": "No, because 0 is related to both a and b"
+      }
+    },
+    "cs-u4-q24": {
+      "title": "Preimage respects intersection",
+      "statement": "Let f:A→B be a total function and X,Y⊆B. Which equality holds for all such X,Y?",
+      "prompt": "Choose one answer.",
+      "hint": "Translate membership in the left side into two conditions on f(a).",
+      "explanation": "An input belongs on the left iff its single output belongs to both X and Y, which is exactly membership in both preimages. Inputs and outputs may have different types, so C is not generally meaningful as an equality.",
+      "solutionSteps": [
+        "An input belongs on the left iff its single output belongs to both X and Y, which is exactly membership in both preimages. Inputs and outputs may have different types, so C is not generally meaningful as an equality."
+      ],
+      "options": {
+        "a": "f^(-1)(X∩Y)=f^(-1)(X)∩f^(-1)(Y)",
+        "b": "f^(-1)(X∩Y)=f^(-1)(X)∪f^(-1)(Y)",
+        "c": "f^(-1)(X∩Y)=X∩Y"
+      }
+    },
+    "cs-u4-q25": {
+      "title": "A size obstruction",
+      "statement": "Can a total injective function map a set of 6 inputs into a set of 5 outputs?",
+      "prompt": "Choose one answer.",
+      "hint": "Every input needs its own output.",
+      "explanation": "A total injection needs a distinct output for each input. A is incompatible with the question’s totality requirement; C violates injectivity.",
+      "solutionSteps": [
+        "A total injection needs a distinct output for each input. A is incompatible with the question’s totality requirement; C violates injectivity."
+      ],
+      "options": {
+        "a": "Yes, if the function is partial",
+        "b": "No, because injectivity would require 6≤5",
+        "c": "Yes, if two inputs share an output"
+      }
+    },
+    "cs-u4-q26": {
+      "title": "Equal finite sizes",
+      "statement": "Let |A|=|B|=4. A total f:A→B is injective. Which conclusion follows?",
+      "prompt": "Choose one answer.",
+      "hint": "Count distinct outputs and compare with the full codomain.",
+      "explanation": "The four inputs produce four distinct outputs in a codomain with exactly four elements, so every output is reached.",
+      "solutionSteps": [
+        "The four inputs produce four distinct outputs in a codomain with exactly four elements, so every output is reached."
+      ],
+      "options": {
+        "a": "f may miss two elements of B",
+        "b": "f must be constant",
+        "c": "f is surjective, hence bijective"
+      }
+    },
+    "cs-u4-q27": {
+      "title": "Count subsets by encoding",
+      "statement": "A feature set contains five distinct features. How many subsets does it have, including the empty and full subsets? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Encode each subset with one membership bit per feature.",
+      "explanation": "Each feature is either present or absent. The bijection with length-five bit vectors gives 2^5=32 subsets.",
+      "solutionSteps": [
+        "Each feature is either present or absent. The bijection with length-five bit vectors gives 2^5=32 subsets."
+      ]
+    },
+    "cs-u4-q28": {
+      "title": "Find the missing assumption",
+      "statement": "A={a,b,c}, B={0}. The partial function has only the pair (a,0). It is injective although |A|>|B|. Why does this not contradict the finite injection rule?",
+      "prompt": "Choose one answer.",
+      "hint": "Which two inputs are unsupported?",
+      "explanation": "The rule |A|≤|B| applies to total injections (and, in the book’s general version, total injective relations). Here b and c need no output, so that premise is absent.",
+      "solutionSteps": [
+        "The rule |A|≤|B| applies to total injections (and, in the book’s general version, total injective relations). Here b and c need no output, so that premise is absent."
+      ],
+      "options": {
+        "a": "The size bound requires totality, which this function lacks",
+        "b": "Injectivity requires every output to be used twice",
+        "c": "Finite size rules apply only to numeric inputs"
+      }
+    },
+    "cs-u5-q01": {
+      "title": "State the hypothesis",
+      "statement": "Define S(0)=0 and S(n+1)=S(n)+(2n+1) for n≥0. To prove S(n)=n^2, what may ordinary induction assume at a fixed k≥0?",
+      "prompt": "Choose one answer.",
+      "hint": "Separate the current case from the next target.",
+      "explanation": "P(k) is the permitted temporary assumption. B is the next case to prove; C assumes the entire desired theorem.",
+      "solutionSteps": [
+        "P(k) is the permitted temporary assumption. B is the next case to prove; C assumes the entire desired theorem."
+      ],
+      "options": {
+        "a": "S(k)=k^2",
+        "b": "S(k+1)=(k+1)^2",
+        "c": "S(n)=n^2 for every n≥0 as an established theorem"
+      }
+    },
+    "cs-u5-q02": {
+      "title": "Check the starting case",
+      "statement": "For the same definition S(0)=0 and claim S(n)=n^2 for all n≥0, which is the required starting equality?",
+      "prompt": "Choose one answer.",
+      "hint": "Read the lower endpoint of the theorem.",
+      "explanation": "The claimed domain begins at 0, and its empty sum is 0. Starting at 1 alone would omit a stated case.",
+      "solutionSteps": [
+        "The claimed domain begins at 0, and its empty sum is 0. Starting at 1 alone would omit a stated case."
+      ],
+      "options": {
+        "a": "S(1)=1 only",
+        "b": "S(0)=0=0^2",
+        "c": "S(-1)=1"
+      }
+    },
+    "cs-u5-q03": {
+      "title": "Finish the algebraic step",
+      "statement": "Using S(k)=k^2 and S(k+1)=S(k)+(2k+1), which expression completes S(k+1)=k^2+2k+1=___?",
+      "prompt": "Choose one answer.",
+      "hint": "Compare with the square of a sum.",
+      "explanation": "Expanding (k+1)^2 gives k^2+2k+1. This is exactly the next case of the proposed formula.",
+      "solutionSteps": [
+        "Expanding (k+1)^2 gives k^2+2k+1. This is exactly the next case of the proposed formula."
+      ],
+      "options": {
+        "a": "k^2+1",
+        "b": "2(k+1)^2",
+        "c": "(k+1)^2"
+      }
+    },
+    "cs-u5-q04": {
+      "title": "What has been proved?",
+      "statement": "You proved P(3) and proved P(k)⇒P(k+1) for every integer k≥3. Which conclusion is justified?",
+      "prompt": "Choose one answer.",
+      "hint": "The first verified case determines where the chain begins.",
+      "explanation": "Induction propagates forward from 3 through every larger integer. It provides no information about 0,1,2 without additional arguments.",
+      "solutionSteps": [
+        "Induction propagates forward from 3 through every larger integer. It provides no information about 0,1,2 without additional arguments."
+      ],
+      "options": {
+        "a": "P(n) holds for every integer n≥3",
+        "b": "P(n) holds for every integer n≥0",
+        "c": "Only P(3) and P(4) hold"
+      }
+    },
+    "cs-u5-q05": {
+      "title": "Check a nonzero starting point",
+      "statement": "For the claim 2^n≥n^2 for every integer n≥4, what values verify the base n=4?",
+      "prompt": "Choose one answer.",
+      "hint": "Substitute n=4 into both expressions.",
+      "explanation": "Substituting n=4 gives 2^4=16 and 4^2=16. A base check must evaluate the actual two sides of the claim.",
+      "solutionSteps": [
+        "Substituting n=4 gives 2^4=16 and 4^2=16. A base check must evaluate the actual two sides of the claim."
+      ],
+      "options": {
+        "a": "8≥16",
+        "b": "16≥16",
+        "c": "16≥8"
+      }
+    },
+    "cs-u5-q06": {
+      "title": "Identify the missing bridge",
+      "statement": "Assume 2^k≥k^2 for k≥4. Then 2^(k+1)≥2k^2. What still needs to be shown to reach 2^(k+1)≥(k+1)^2?",
+      "prompt": "Choose one answer.",
+      "hint": "Write the desired three-term chain of inequalities.",
+      "explanation": "The lower bound 2k^2 must itself be at least the desired lower bound (k+1)^2. This permits chaining inequalities in the same direction.",
+      "solutionSteps": [
+        "The lower bound 2k^2 must itself be at least the desired lower bound (k+1)^2. This permits chaining inequalities in the same direction."
+      ],
+      "options": {
+        "a": "k^2≥2^k",
+        "b": "2k^2≤(k+1)^2",
+        "c": "2k^2≥(k+1)^2"
+      }
+    },
+    "cs-u5-q07": {
+      "title": "Justify the bridge on the range",
+      "statement": "For k≥4, which argument establishes 2k^2-(k+1)^2≥0?",
+      "prompt": "Choose one answer.",
+      "hint": "Expand the square, then use both lower bounds on the factors.",
+      "explanation": "The difference is k^2-2k-1=k(k-2)-1. On k≥4 both factors are positive with k≥4 and k-2≥2, so the product is at least 8.",
+      "solutionSteps": [
+        "The difference is k^2-2k-1=k(k-2)-1. On k≥4 both factors are positive with k≥4 and k-2≥2, so the product is at least 8."
+      ],
+      "options": {
+        "a": "It equals k(k-2)-1, which is at least 4·2-1=7",
+        "b": "It equals -2k-1",
+        "c": "It is nonnegative merely because k is an integer"
+      }
+    },
+    "cs-u5-q08": {
+      "title": "Can the proof start earlier?",
+      "statement": "The same inequality 2^n≥n^2 is true at n=2. Does that alone allow the induction proof to start at n=2?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the first case after the proposed earlier base.",
+      "explanation": "The claim fails at 3, so no sound induction proof can establish it for all n≥2. The original threshold n≥4 is essential.",
+      "solutionSteps": [
+        "The claim fails at 3, so no sound induction proof can establish it for all n≥2. The original threshold n≥4 is essential."
+      ],
+      "options": {
+        "a": "Yes; a true base guarantees every step",
+        "b": "No; the n=3 case fails because 8<9",
+        "c": "Yes; integer powers always dominate squares"
+      }
+    },
+    "cs-u5-q09": {
+      "title": "Choose a sufficient induction hypothesis",
+      "statement": "Let a(0)=0, b(0)=1, a(n+1)=a(n)+b(n), b(n+1)=2b(n). To prove a(n)=2^n-1 by ordinary induction, which strengthened predicate is useful?",
+      "prompt": "Choose one answer.",
+      "hint": "The update for a uses b, so track a formula for b too.",
+      "explanation": "C supplies the missing value of b(n) and is true at n=0. A is false at the base; B fails, for example, at n=2 where a(2)=3 and b(2)=4.",
+      "solutionSteps": [
+        "C supplies the missing value of b(n) and is true at n=0. A is false at the base; B fails, for example, at n=2 where a(2)=3 and b(2)=4."
+      ],
+      "options": {
+        "a": "a(n)=2^n-1 and b(n)=0",
+        "b": "a(n)=n and b(n)=n+1",
+        "c": "a(n)=2^n-1 and b(n)=2^n"
+      }
+    },
+    "cs-u5-q10": {
+      "title": "Establish both base facts",
+      "statement": "Let a(0)=0, b(0)=1, a(n+1)=a(n)+b(n), and b(n+1)=2b(n). For the strengthened claim a(n)=2^n-1 and b(n)=2^n, which base verification is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "The stronger predicate has two components.",
+      "explanation": "A conjunction needs both conjuncts established at the base. Otherwise the step would rely on an unproved auxiliary claim.",
+      "solutionSteps": [
+        "A conjunction needs both conjuncts established at the base. Otherwise the step would rely on an unproved auxiliary claim."
+      ],
+      "options": {
+        "a": "a(0)=0=2^0-1 and b(0)=1=2^0",
+        "b": "Only a(0)=0 needs to be checked",
+        "c": "a(0)=1 and b(0)=0"
+      }
+    },
+    "cs-u5-q11": {
+      "title": "Advance the coupled claim",
+      "statement": "The updates are a(n+1)=a(n)+b(n) and b(n+1)=2b(n). Assume a(k)=2^k-1 and b(k)=2^k. Which pair follows after one update?",
+      "prompt": "Choose one answer.",
+      "hint": "Apply each recurrence separately using the two assumed formulas.",
+      "explanation": "Adding gives a(k+1)=(2^k-1)+2^k=2^(k+1)-1. Doubling gives b(k+1)=2·2^k=2^(k+1). Both parts of the hypothesis are preserved.",
+      "solutionSteps": [
+        "Adding gives a(k+1)=(2^k-1)+2^k=2^(k+1)-1. Doubling gives b(k+1)=2·2^k=2^(k+1). Both parts of the hypothesis are preserved."
+      ],
+      "options": {
+        "a": "a(k+1)=2^k and b(k+1)=2^k+1",
+        "b": "a(k+1)=2^(k+1)-1 and b(k+1)=2^(k+1)",
+        "c": "a(k+1)=2^(k+1) and b(k+1)=2^(k+1)-1"
+      }
+    },
+    "cs-u5-q12": {
+      "title": "Why strengthening helps",
+      "statement": "Which explanation best describes why proving more helped in the coupled recurrence?",
+      "prompt": "Choose one answer.",
+      "hint": "Identify which quantity the original hypothesis left unspecified.",
+      "explanation": "The auxiliary fact makes the step derivable while remaining provable at the base and preservable by the update. Strengthening does not license circular reasoning.",
+      "solutionSteps": [
+        "The auxiliary fact makes the step derivable while remaining provable at the base and preservable by the update. Strengthening does not license circular reasoning."
+      ],
+      "options": {
+        "a": "The induction step may now assume its desired conclusion",
+        "b": "Stronger predicates never need additional base checks",
+        "c": "The added formula for b(k) supplies information required by the update for a(k+1)"
+      }
+    },
+    "cs-u5-q13": {
+      "title": "Choose the permitted cases",
+      "statement": "When proving P(n) by strong induction for all integers n≥1, which assumptions are allowed in the step for n>1?",
+      "prompt": "Choose one answer.",
+      "hint": "Both the strict upper bound and the domain’s lower bound matter.",
+      "explanation": "Strong induction permits every earlier case in the theorem’s domain. It never permits the current target or future cases without a separate proof.",
+      "solutionSteps": [
+        "Strong induction permits every earlier case in the theorem’s domain. It never permits the current target or future cases without a separate proof."
+      ],
+      "options": {
+        "a": "P(j) for every integer 1≤j<n",
+        "b": "P(j) only for j>n",
+        "c": "P(n), because it is the induction target"
+      }
+    },
+    "cs-u5-q14": {
+      "title": "A decreasing recursive call",
+      "statement": "For n≥2, which fact makes the recursive input ceil(n/2) suitable for strong induction over positive integers? Here ceil rounds upward to an integer.",
+      "prompt": "Choose one answer.",
+      "hint": "Check n=2 explicitly, then compare half of n with n.",
+      "explanation": "For n=2 the value is 1; for larger n it remains a positive integer strictly below n. Thus it lies within the assumed smaller cases.",
+      "solutionSteps": [
+        "For n=2 the value is 1; for larger n it remains a positive integer strictly below n. Thus it lies within the assumed smaller cases."
+      ],
+      "options": {
+        "a": "ceil(n/2)=n+1",
+        "b": "1≤ceil(n/2)<n",
+        "c": "ceil(n/2) can equal 0"
+      }
+    },
+    "cs-u5-q15": {
+      "title": "The base is part of correctness",
+      "statement": "Define digit(n), for nonnegative integers, to return n when n<10 and otherwise return digit(floor(n/10)). Which inputs must be handled directly before applying strong induction to the recursive case?",
+      "prompt": "Choose one answer.",
+      "hint": "Read the full stopping condition, including zero.",
+      "explanation": "Those are all terminal inputs under the definition. For n≥10, floor(n/10) is a nonnegative integer strictly smaller than n, so the hypothesis applies.",
+      "solutionSteps": [
+        "Those are all terminal inputs under the definition. For n≥10, floor(n/10) is a nonnegative integer strictly smaller than n, so the hypothesis applies."
+      ],
+      "options": {
+        "a": "Only n=1",
+        "b": "Only positive multiples of 10",
+        "c": "Every n from 0 through 9"
+      }
+    },
+    "cs-u5-q16": {
+      "title": "Debug a recursive argument",
+      "statement": "Someone claims a routine that calls itself on n+1 terminates for all n≥1 “by strong induction on n.” No other stopping rule is given. What is wrong?",
+      "prompt": "Choose one answer.",
+      "hint": "Compare the recursive input with the induction target.",
+      "explanation": "The stated induction hypothesis covers inputs below n. An increasing call falls outside that range, so the proposed argument supplies no termination proof.",
+      "solutionSteps": [
+        "The stated induction hypothesis covers inputs below n. An increasing call falls outside that range, so the proposed argument supplies no termination proof."
+      ],
+      "options": {
+        "a": "P(n+1) is not among the smaller cases available when proving P(n)",
+        "b": "Strong induction forbids recursive functions",
+        "c": "Every recursive call must subtract exactly one"
+      }
+    },
+    "cs-u5-q17": {
+      "title": "Cover both earlier dependencies",
+      "statement": "Let c(0)=1, c(1)=2, c(2)=3, and c(n)=c(n-2)+c(n-3) for n≥3. To prove a property of c(n) for all n≥0 using that recurrence, which cases should this proof establish directly?",
+      "prompt": "Choose one answer.",
+      "hint": "Find the first n for which the recursive rule applies.",
+      "explanation": "The recurrence does not define a step for n<3. Once 0,1,2 are established, both n-2 and n-3 are earlier nonnegative indices for every n≥3.",
+      "solutionSteps": [
+        "The recurrence does not define a step for n<3. Once 0,1,2 are established, both n-2 and n-3 are earlier nonnegative indices for every n≥3."
+      ],
+      "options": {
+        "a": "Only n=0",
+        "b": "n=0,1,2",
+        "c": "Only n=3"
+      }
+    },
+    "cs-u5-q18": {
+      "title": "Check the first legal step",
+      "statement": "For c(0)=1, c(1)=2, c(2)=3 and c(n)=c(n-2)+c(n-3) for n≥3, what is c(3)? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Substitute 3 into both recursive indices.",
+      "explanation": "c(3)=c(1)+c(0)=2+1=3. The rule uses offsets two and three, not the two immediately preceding values.",
+      "solutionSteps": [
+        "c(3)=c(1)+c(0)=2+1=3. The rule uses offsets two and three, not the two immediately preceding values."
+      ]
+    },
+    "cs-u5-q19": {
+      "title": "One chain is not all integers",
+      "statement": "Suppose P(0) is proved and P(k)⇒P(k+2) holds for every k≥0. What is guaranteed by these facts alone?",
+      "prompt": "Choose one answer.",
+      "hint": "List the indices reachable from the established base.",
+      "explanation": "Starting at 0 and repeatedly adding 2 reaches all nonnegative even integers. Nothing in the premises establishes P(1), so the odd chain can remain false.",
+      "solutionSteps": [
+        "Starting at 0 and repeatedly adding 2 reaches all nonnegative even integers. Nothing in the premises establishes P(1), so the odd chain can remain false."
+      ],
+      "options": {
+        "a": "P(n) for every nonnegative integer",
+        "b": "P(n) only for odd positive integers",
+        "c": "P(n) for every even nonnegative integer; odd cases are not guaranteed"
+      }
+    },
+    "cs-u5-q20": {
+      "title": "A step with an uncovered start",
+      "statement": "A proof establishes P(0), then proves P(k)⇒P(k+1) only for k≥1. What additional base would complete this particular argument for all n≥0?",
+      "prompt": "Choose one answer.",
+      "hint": "The available step cannot be applied at k=0.",
+      "explanation": "P(1) starts the chain covered by the given step, yielding all n≥1. P(0) already handles the remaining case. P(100) would leave 1 through 99 uncovered.",
+      "solutionSteps": [
+        "P(1) starts the chain covered by the given step, yielding all n≥1. P(0) already handles the remaining case. P(100) would leave 1 through 99 uncovered."
+      ],
+      "options": {
+        "a": "P(1)",
+        "b": "P(100) only",
+        "c": "No additional fact is needed"
+      }
+    },
+    "cs-u5-q21": {
+      "title": "Package the stronger hypothesis",
+      "statement": "Which predicate Q(n) lets ordinary induction carry all the assumptions needed for strong induction on P over n≥0?",
+      "prompt": "Choose one answer.",
+      "hint": "The new predicate must retain the entire proved prefix.",
+      "explanation": "Q(n) stores every established case through n. Using the strong-induction step adds P(n+1), giving Q(n+1). Q(0) is just P(0).",
+      "solutionSteps": [
+        "Q(n) stores every established case through n. Using the strong-induction step adds P(n+1), giving Q(n+1). Q(0) is just P(0)."
+      ],
+      "options": {
+        "a": "Q(n): P(n+1)",
+        "b": "Q(n): P(0) or P(n)",
+        "c": "Q(n): ∀j∈{0,...,n} P(j)"
+      }
+    },
+    "cs-u5-q22": {
+      "title": "Use minimality correctly",
+      "statement": "P(0) holds and P(k)⇒P(k+1) holds for all k≥0. Assume a least counterexample m exists. Why may we use P(m-1)?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the predecessor’s domain before invoking minimality.",
+      "explanation": "The base rules out m=0. Therefore m-1 lies in the domain and is smaller than the least counterexample; its predicate must hold.",
+      "solutionSteps": [
+        "The base rules out m=0. Therefore m-1 lies in the domain and is smaller than the least counterexample; its predicate must hold."
+      ],
+      "options": {
+        "a": "m>0 by the base, so 0≤m-1<m and minimality excludes it as a counterexample",
+        "b": "All integers are nonnegative",
+        "c": "The conclusion P(m) is already assumed"
+      }
+    },
+    "cs-u5-q23": {
+      "title": "Compare proving power",
+      "statement": "Which statement about these principles on the nonnegative integers is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Distinguish a stronger-looking hypothesis from a stronger logical principle.",
+      "explanation": "A strengthened predicate converts strong induction to ordinary induction, and minimal-counterexample reasoning connects induction with well-ordering. Their presentation differs, not their power here.",
+      "solutionSteps": [
+        "A strengthened predicate converts strong induction to ordinary induction, and minimal-counterexample reasoning connects induction with well-ordering. Their presentation differs, not their power here."
+      ],
+      "options": {
+        "a": "Strong induction proves strictly more theorems than ordinary induction",
+        "b": "They have equivalent proving power, though one form may give a clearer proof",
+        "c": "Well-ordering applies only to finite sets"
+      }
+    },
+    "cs-u5-q24": {
+      "title": "Audit a whole proof",
+      "statement": "Claim: 5^n≥1 for every n≥0. A proposed proof says: “Assume 5^k≥1. Multiplying by 5 gives 5^(k+1)≥5≥1. Therefore the claim holds for all n≥0.” Which proof obligation is missing?",
+      "prompt": "Choose one answer.",
+      "hint": "A valid transition does not by itself establish a starting case.",
+      "explanation": "The successor argument is valid for any k≥0, but it needs a true initial case to start the chain. Adding the stated base completes the proof.",
+      "solutionSteps": [
+        "The successor argument is valid for any k≥0, but it needs a true initial case to start the chain. Adding the stated base completes the proof."
+      ],
+      "options": {
+        "a": "Proving that 5 is even",
+        "b": "Checking infinitely many numerical cases",
+        "c": "The base n=0: 5^0=1≥1"
+      }
+    }
+  },
+  "parts": {
+    "cs-proofs": {
+      "title": "Proofs"
+    },
+    "cs-structures": {
+      "title": "Structures"
+    },
+    "cs-counting": {
+      "title": "Counting"
+    },
+    "cs-probability": {
+      "title": "Probability"
+    },
+    "cs-recurrences": {
+      "title": "Recurrences"
+    },
+    "ml-foundations": {
+      "title": "Foundations"
+    }
+  },
+  "units": {
+    "cs-unit-01": {
+      "title": "Statements and proof methods"
+    },
+    "cs-unit-02": {
+      "title": "Well-ordering"
+    },
+    "cs-unit-03": {
+      "title": "Logic, quantifiers and SAT"
+    },
+    "cs-unit-04": {
+      "title": "Mathematical data types"
+    },
+    "cs-unit-05": {
+      "title": "Induction"
+    },
+    "cs-unit-06": {
+      "title": "State machines and correctness"
+    },
+    "cs-unit-07": {
+      "title": "Recursive structures"
+    },
+    "cs-unit-08": {
+      "title": "Infinity and computation limits"
+    },
+    "cs-unit-09": {
+      "title": "Number theory"
+    },
+    "cs-unit-10": {
+      "title": "Directed graphs and orders"
+    },
+    "cs-unit-11": {
+      "title": "Communication networks"
+    },
+    "cs-unit-12": {
+      "title": "Undirected graphs"
+    },
+    "cs-unit-13": {
+      "title": "Planar graphs"
+    },
+    "cs-unit-14": {
+      "title": "Sums and asymptotics"
+    },
+    "cs-unit-15": {
+      "title": "Counting"
+    },
+    "cs-unit-16": {
+      "title": "Generating functions"
+    },
+    "cs-unit-17": {
+      "title": "Probability spaces and events"
+    },
+    "cs-unit-18": {
+      "title": "Conditional probability and independence"
+    },
+    "cs-unit-19": {
+      "title": "Random variables and expectation"
+    },
+    "cs-unit-20": {
+      "title": "Variance, bounds and sampling"
+    },
+    "cs-unit-21": {
+      "title": "Random walks"
+    },
+    "cs-unit-22": {
+      "title": "Recurrences and algorithm analysis"
+    },
+    "ml-unit-01": {
+      "title": "Vectors and linear algebra"
+    }
+  }
+}
