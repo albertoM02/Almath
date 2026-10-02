@@ -70,17 +70,39 @@
           {
             "id": "cs-unit-06",
             "number": 6,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u6-model",
+              "cs-u6-invariants",
+              "cs-u6-partial-correctness",
+              "cs-u6-termination",
+              "cs-u6-matching-trace",
+              "cs-u6-matching-proof"
+            ]
           },
           {
             "id": "cs-unit-07",
             "number": 7,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u7-recursive-definitions",
+              "cs-u7-structural-induction",
+              "cs-u7-brackets",
+              "cs-u7-recursive-functions",
+              "cs-u7-expressions",
+              "cs-u7-finite-games",
+              "cs-u7-search-trees"
+            ]
           },
           {
             "id": "cs-unit-08",
             "number": 8,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u8-bijections",
+              "cs-u8-enumeration",
+              "cs-u8-diagonal",
+              "cs-u8-power-sets",
+              "cs-u8-halting",
+              "cs-u8-set-foundations"
+            ]
           }
         ]
       },
@@ -91,7 +113,16 @@
           {
             "id": "cs-unit-09",
             "number": 9,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u9-divisibility",
+              "cs-u9-euclid",
+              "cs-u9-bezout",
+              "cs-u9-primes",
+              "cs-u9-modular-arithmetic",
+              "cs-u9-inverses",
+              "cs-u9-euler",
+              "cs-u9-rsa"
+            ]
           },
           {
             "id": "cs-unit-10",
@@ -190,7 +221,9 @@
           {
             "id": "ml-unit-01",
             "number": 1,
-            "moduleIds": ["ml-vectors"]
+            "moduleIds": [
+              "ml-vectors"
+            ]
           }
         ]
       }

@@ -6,7 +6,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-02",
@@ -15,7 +19,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-03",
@@ -24,7 +32,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-04",
@@ -33,7 +45,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-05",
@@ -42,7 +58,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-06",
@@ -51,7 +71,10 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b"]
+    "optionIds": [
+      "a",
+      "b"
+    ]
   },
   {
     "id": "cs-07",
@@ -60,7 +83,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-08",
@@ -69,7 +96,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-01b",
@@ -78,7 +109,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"],
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ],
     "variantOf": "cs-01"
   },
   {
@@ -88,7 +123,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"],
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ],
     "variantOf": "cs-03"
   },
   {
@@ -98,7 +137,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"],
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ],
     "variantOf": "cs-05"
   },
   {
@@ -108,7 +151,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"],
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ],
     "variantOf": "cs-07"
   },
   {
@@ -127,7 +174,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "ml-03",
@@ -154,7 +205,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "ml-06",
@@ -163,7 +218,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "ml-07",
@@ -181,7 +240,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "ml-01b",
@@ -210,7 +273,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"],
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ],
     "variantOf": "ml-05"
   },
   {
@@ -230,7 +297,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q02",
@@ -239,7 +310,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q03",
@@ -257,7 +332,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q05",
@@ -266,7 +345,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q06",
@@ -275,7 +358,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q07",
@@ -284,7 +371,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q08",
@@ -293,7 +384,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q09",
@@ -302,7 +397,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q10",
@@ -311,7 +410,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q11",
@@ -320,7 +423,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q12",
@@ -329,7 +436,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q13",
@@ -338,7 +449,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q14",
@@ -356,7 +471,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q16",
@@ -365,7 +484,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q17",
@@ -383,7 +506,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q19",
@@ -392,7 +519,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q20",
@@ -401,7 +532,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q21",
@@ -410,7 +545,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q22",
@@ -419,7 +558,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q23",
@@ -428,7 +571,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u1-q24",
@@ -437,7 +584,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q01",
@@ -446,7 +597,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q02",
@@ -455,7 +610,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q03",
@@ -464,7 +623,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q04",
@@ -473,7 +636,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q05",
@@ -482,7 +649,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q06",
@@ -491,7 +662,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q07",
@@ -500,7 +675,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q08",
@@ -509,7 +688,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q09",
@@ -518,7 +701,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q10",
@@ -527,7 +714,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q11",
@@ -536,7 +727,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q12",
@@ -545,7 +740,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q13",
@@ -554,7 +753,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q14",
@@ -563,7 +766,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q15",
@@ -572,7 +779,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q16",
@@ -581,7 +792,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q17",
@@ -599,7 +814,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q19",
@@ -608,7 +827,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u2-q20",
@@ -617,7 +840,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q01",
@@ -626,7 +853,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q02",
@@ -635,7 +866,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q03",
@@ -644,7 +879,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q04",
@@ -653,7 +892,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q05",
@@ -662,7 +905,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q06",
@@ -671,7 +918,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q07",
@@ -680,7 +931,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q08",
@@ -689,7 +944,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q09",
@@ -698,7 +957,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q10",
@@ -707,7 +970,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q11",
@@ -716,7 +983,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q12",
@@ -734,7 +1005,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q14",
@@ -743,7 +1018,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q15",
@@ -752,7 +1031,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q16",
@@ -761,7 +1044,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q17",
@@ -770,7 +1057,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q18",
@@ -779,7 +1070,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q19",
@@ -788,7 +1083,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q20",
@@ -797,7 +1096,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q21",
@@ -806,7 +1109,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q22",
@@ -815,7 +1122,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q23",
@@ -824,7 +1135,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q24",
@@ -833,7 +1148,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q25",
@@ -842,7 +1161,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q26",
@@ -851,7 +1174,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q27",
@@ -860,7 +1187,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u3-q28",
@@ -869,7 +1200,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q01",
@@ -887,7 +1222,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q03",
@@ -896,7 +1235,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q04",
@@ -905,7 +1248,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q05",
@@ -914,7 +1261,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q06",
@@ -923,7 +1274,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q07",
@@ -932,7 +1287,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q08",
@@ -941,7 +1300,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q09",
@@ -950,7 +1313,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q10",
@@ -959,7 +1326,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q11",
@@ -986,7 +1357,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q14",
@@ -995,7 +1370,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q15",
@@ -1013,7 +1392,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q17",
@@ -1022,7 +1405,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q18",
@@ -1031,7 +1418,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q19",
@@ -1040,7 +1431,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q20",
@@ -1049,7 +1444,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q21",
@@ -1058,7 +1457,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q22",
@@ -1067,7 +1470,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q23",
@@ -1076,7 +1483,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q24",
@@ -1085,7 +1496,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q25",
@@ -1094,7 +1509,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q26",
@@ -1103,7 +1522,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u4-q27",
@@ -1121,7 +1544,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q01",
@@ -1130,7 +1557,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q02",
@@ -1139,7 +1570,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q03",
@@ -1148,7 +1583,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q04",
@@ -1157,7 +1596,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q05",
@@ -1166,7 +1609,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q06",
@@ -1175,7 +1622,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q07",
@@ -1184,7 +1635,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q08",
@@ -1193,7 +1648,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q09",
@@ -1202,7 +1661,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q10",
@@ -1211,7 +1674,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q11",
@@ -1220,7 +1687,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q12",
@@ -1229,7 +1700,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q13",
@@ -1238,7 +1713,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q14",
@@ -1247,7 +1726,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q15",
@@ -1256,7 +1739,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q16",
@@ -1265,7 +1752,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q17",
@@ -1274,7 +1765,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q18",
@@ -1292,7 +1787,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q20",
@@ -1301,7 +1800,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q21",
@@ -1310,7 +1813,11 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q22",
@@ -1319,7 +1826,11 @@
     "type": "choice",
     "answer": "a",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q23",
@@ -1328,7 +1839,11 @@
     "type": "choice",
     "answer": "b",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   },
   {
     "id": "cs-u5-q24",
@@ -1337,6 +1852,1314 @@
     "type": "choice",
     "answer": "c",
     "sourceId": "almath-original",
-    "optionIds": ["a", "b", "c"]
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q01",
+    "conceptId": "cs-u6-model",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q02",
+    "conceptId": "cs-u6-model",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q03",
+    "conceptId": "cs-u6-model",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q04",
+    "conceptId": "cs-u6-model",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q05",
+    "conceptId": "cs-u6-invariants",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q06",
+    "conceptId": "cs-u6-invariants",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q07",
+    "conceptId": "cs-u6-invariants",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q08",
+    "conceptId": "cs-u6-invariants",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q09",
+    "conceptId": "cs-u6-partial-correctness",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q10",
+    "conceptId": "cs-u6-partial-correctness",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q11",
+    "conceptId": "cs-u6-partial-correctness",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q12",
+    "conceptId": "cs-u6-partial-correctness",
+    "version": 1,
+    "type": "number",
+    "answer": 6,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u6-q13",
+    "conceptId": "cs-u6-termination",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q14",
+    "conceptId": "cs-u6-termination",
+    "version": 1,
+    "type": "number",
+    "answer": 11,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u6-q15",
+    "conceptId": "cs-u6-termination",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q16",
+    "conceptId": "cs-u6-termination",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q17",
+    "conceptId": "cs-u6-matching-trace",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q18",
+    "conceptId": "cs-u6-matching-trace",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q19",
+    "conceptId": "cs-u6-matching-trace",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q20",
+    "conceptId": "cs-u6-matching-trace",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q21",
+    "conceptId": "cs-u6-matching-proof",
+    "version": 1,
+    "type": "number",
+    "answer": 25,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u6-q22",
+    "conceptId": "cs-u6-matching-proof",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q23",
+    "conceptId": "cs-u6-matching-proof",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u6-q24",
+    "conceptId": "cs-u6-matching-proof",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q01",
+    "conceptId": "cs-u7-recursive-definitions",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q02",
+    "conceptId": "cs-u7-recursive-definitions",
+    "version": 1,
+    "type": "number",
+    "answer": 13,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u7-q03",
+    "conceptId": "cs-u7-recursive-definitions",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q04",
+    "conceptId": "cs-u7-recursive-definitions",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q05",
+    "conceptId": "cs-u7-structural-induction",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q06",
+    "conceptId": "cs-u7-structural-induction",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q07",
+    "conceptId": "cs-u7-structural-induction",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q08",
+    "conceptId": "cs-u7-structural-induction",
+    "version": 1,
+    "type": "number",
+    "answer": 10,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u7-q09",
+    "conceptId": "cs-u7-brackets",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u7-q10",
+    "conceptId": "cs-u7-brackets",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q11",
+    "conceptId": "cs-u7-brackets",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q12",
+    "conceptId": "cs-u7-brackets",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q13",
+    "conceptId": "cs-u7-recursive-functions",
+    "version": 1,
+    "type": "number",
+    "answer": 5,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u7-q14",
+    "conceptId": "cs-u7-recursive-functions",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q15",
+    "conceptId": "cs-u7-recursive-functions",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q16",
+    "conceptId": "cs-u7-recursive-functions",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q17",
+    "conceptId": "cs-u7-expressions",
+    "version": 1,
+    "type": "number",
+    "answer": 21,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u7-q18",
+    "conceptId": "cs-u7-expressions",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q19",
+    "conceptId": "cs-u7-expressions",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q20",
+    "conceptId": "cs-u7-expressions",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q21",
+    "conceptId": "cs-u7-finite-games",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q22",
+    "conceptId": "cs-u7-finite-games",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q23",
+    "conceptId": "cs-u7-finite-games",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q24",
+    "conceptId": "cs-u7-finite-games",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q25",
+    "conceptId": "cs-u7-search-trees",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q26",
+    "conceptId": "cs-u7-search-trees",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u7-q27",
+    "conceptId": "cs-u7-search-trees",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u7-q28",
+    "conceptId": "cs-u7-search-trees",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q01",
+    "conceptId": "cs-u8-bijections",
+    "version": 1,
+    "type": "number",
+    "answer": 8,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u8-q02",
+    "conceptId": "cs-u8-bijections",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q03",
+    "conceptId": "cs-u8-bijections",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q04",
+    "conceptId": "cs-u8-bijections",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q05",
+    "conceptId": "cs-u8-enumeration",
+    "version": 1,
+    "type": "number",
+    "answer": 5,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u8-q06",
+    "conceptId": "cs-u8-enumeration",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q07",
+    "conceptId": "cs-u8-enumeration",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q08",
+    "conceptId": "cs-u8-enumeration",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q09",
+    "conceptId": "cs-u8-diagonal",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q10",
+    "conceptId": "cs-u8-diagonal",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q11",
+    "conceptId": "cs-u8-diagonal",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q12",
+    "conceptId": "cs-u8-diagonal",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q13",
+    "conceptId": "cs-u8-power-sets",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q14",
+    "conceptId": "cs-u8-power-sets",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q15",
+    "conceptId": "cs-u8-power-sets",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q16",
+    "conceptId": "cs-u8-power-sets",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q17",
+    "conceptId": "cs-u8-halting",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q18",
+    "conceptId": "cs-u8-halting",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q19",
+    "conceptId": "cs-u8-halting",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q20",
+    "conceptId": "cs-u8-halting",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q21",
+    "conceptId": "cs-u8-set-foundations",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q22",
+    "conceptId": "cs-u8-set-foundations",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q23",
+    "conceptId": "cs-u8-set-foundations",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u8-q24",
+    "conceptId": "cs-u8-set-foundations",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q01",
+    "conceptId": "cs-u9-divisibility",
+    "version": 1,
+    "type": "number",
+    "answer": -7,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q02",
+    "conceptId": "cs-u9-divisibility",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q03",
+    "conceptId": "cs-u9-divisibility",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q04",
+    "conceptId": "cs-u9-divisibility",
+    "version": 1,
+    "type": "number",
+    "answer": 1,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q05",
+    "conceptId": "cs-u9-euclid",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q06",
+    "conceptId": "cs-u9-euclid",
+    "version": 1,
+    "type": "number",
+    "answer": 17,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q07",
+    "conceptId": "cs-u9-euclid",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q08",
+    "conceptId": "cs-u9-euclid",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q09",
+    "conceptId": "cs-u9-bezout",
+    "version": 1,
+    "type": "number",
+    "answer": 19,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q10",
+    "conceptId": "cs-u9-bezout",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q11",
+    "conceptId": "cs-u9-bezout",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q12",
+    "conceptId": "cs-u9-bezout",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q13",
+    "conceptId": "cs-u9-primes",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q14",
+    "conceptId": "cs-u9-primes",
+    "version": 1,
+    "type": "number",
+    "answer": 12,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q15",
+    "conceptId": "cs-u9-primes",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q16",
+    "conceptId": "cs-u9-primes",
+    "version": 1,
+    "type": "number",
+    "answer": 7,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q17",
+    "conceptId": "cs-u9-modular-arithmetic",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q18",
+    "conceptId": "cs-u9-modular-arithmetic",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q19",
+    "conceptId": "cs-u9-modular-arithmetic",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q20",
+    "conceptId": "cs-u9-modular-arithmetic",
+    "version": 1,
+    "type": "number",
+    "answer": 12,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q21",
+    "conceptId": "cs-u9-inverses",
+    "version": 1,
+    "type": "number",
+    "answer": 15,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q22",
+    "conceptId": "cs-u9-inverses",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q23",
+    "conceptId": "cs-u9-inverses",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q24",
+    "conceptId": "cs-u9-inverses",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q25",
+    "conceptId": "cs-u9-euler",
+    "version": 1,
+    "type": "number",
+    "answer": 24,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q26",
+    "conceptId": "cs-u9-euler",
+    "version": 1,
+    "type": "number",
+    "answer": 7,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q27",
+    "conceptId": "cs-u9-euler",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q28",
+    "conceptId": "cs-u9-euler",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u9-q29",
+    "conceptId": "cs-u9-rsa",
+    "version": 1,
+    "type": "number",
+    "answer": 29,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q30",
+    "conceptId": "cs-u9-rsa",
+    "version": 1,
+    "type": "number",
+    "answer": 82,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q31",
+    "conceptId": "cs-u9-rsa",
+    "version": 1,
+    "type": "number",
+    "answer": 10,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u9-q32",
+    "conceptId": "cs-u9-rsa",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   }
 ]

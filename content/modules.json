@@ -34,186 +34,638 @@
     "id": "cs-u1-claims",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u1-q01", "cs-u1-q02", "cs-u1-q03", "cs-u1-q04"]
+    "exerciseIds": [
+      "cs-u1-q01",
+      "cs-u1-q02",
+      "cs-u1-q03",
+      "cs-u1-q04"
+    ]
   },
   {
     "id": "cs-u1-direct",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u1-q05", "cs-u1-q06", "cs-u1-q07", "cs-u1-q08"]
+    "exerciseIds": [
+      "cs-u1-q05",
+      "cs-u1-q06",
+      "cs-u1-q07",
+      "cs-u1-q08"
+    ]
   },
   {
     "id": "cs-u1-contrapositive",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u1-q09", "cs-u1-q10", "cs-u1-q11", "cs-u1-q12"]
+    "exerciseIds": [
+      "cs-u1-q09",
+      "cs-u1-q10",
+      "cs-u1-q11",
+      "cs-u1-q12"
+    ]
   },
   {
     "id": "cs-u1-equivalence",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u1-q13", "cs-u1-q14", "cs-u1-q15", "cs-u1-q16"]
+    "exerciseIds": [
+      "cs-u1-q13",
+      "cs-u1-q14",
+      "cs-u1-q15",
+      "cs-u1-q16"
+    ]
   },
   {
     "id": "cs-u1-cases",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u1-q17", "cs-u1-q18", "cs-u1-q19", "cs-u1-q20"]
+    "exerciseIds": [
+      "cs-u1-q17",
+      "cs-u1-q18",
+      "cs-u1-q19",
+      "cs-u1-q20"
+    ]
   },
   {
     "id": "cs-u1-contradiction",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u1-q21", "cs-u1-q22", "cs-u1-q23", "cs-u1-q24"]
+    "exerciseIds": [
+      "cs-u1-q21",
+      "cs-u1-q22",
+      "cs-u1-q23",
+      "cs-u1-q24"
+    ]
   },
   {
     "id": "cs-u2-ordering",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u2-q01", "cs-u2-q02", "cs-u2-q03", "cs-u2-q04"]
+    "exerciseIds": [
+      "cs-u2-q01",
+      "cs-u2-q02",
+      "cs-u2-q03",
+      "cs-u2-q04"
+    ]
   },
   {
     "id": "cs-u2-minimal",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u2-q05", "cs-u2-q06", "cs-u2-q07", "cs-u2-q08"]
+    "exerciseIds": [
+      "cs-u2-q05",
+      "cs-u2-q06",
+      "cs-u2-q07",
+      "cs-u2-q08"
+    ]
   },
   {
     "id": "cs-u2-correctness",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u2-q09", "cs-u2-q10", "cs-u2-q11", "cs-u2-q12"]
+    "exerciseIds": [
+      "cs-u2-q09",
+      "cs-u2-q10",
+      "cs-u2-q11",
+      "cs-u2-q12"
+    ]
   },
   {
     "id": "cs-u2-factors",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u2-q13", "cs-u2-q14", "cs-u2-q15", "cs-u2-q16"]
+    "exerciseIds": [
+      "cs-u2-q13",
+      "cs-u2-q14",
+      "cs-u2-q15",
+      "cs-u2-q16"
+    ]
   },
   {
     "id": "cs-u2-termination",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u2-q17", "cs-u2-q18", "cs-u2-q19", "cs-u2-q20"]
+    "exerciseIds": [
+      "cs-u2-q17",
+      "cs-u2-q18",
+      "cs-u2-q19",
+      "cs-u2-q20"
+    ]
   },
   {
     "id": "cs-u3-conditions",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q01", "cs-u3-q02", "cs-u3-q03", "cs-u3-q04"]
+    "exerciseIds": [
+      "cs-u3-q01",
+      "cs-u3-q02",
+      "cs-u3-q03",
+      "cs-u3-q04"
+    ]
   },
   {
     "id": "cs-u3-equivalence",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q05", "cs-u3-q06", "cs-u3-q07", "cs-u3-q08"]
+    "exerciseIds": [
+      "cs-u3-q05",
+      "cs-u3-q06",
+      "cs-u3-q07",
+      "cs-u3-q08"
+    ]
   },
   {
     "id": "cs-u3-normal-forms",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q09", "cs-u3-q10", "cs-u3-q11", "cs-u3-q12"]
+    "exerciseIds": [
+      "cs-u3-q09",
+      "cs-u3-q10",
+      "cs-u3-q11",
+      "cs-u3-q12"
+    ]
   },
   {
     "id": "cs-u3-sat",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q13", "cs-u3-q14", "cs-u3-q15", "cs-u3-q16"]
+    "exerciseIds": [
+      "cs-u3-q13",
+      "cs-u3-q14",
+      "cs-u3-q15",
+      "cs-u3-q16"
+    ]
   },
   {
     "id": "cs-u3-quantifiers",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q17", "cs-u3-q18", "cs-u3-q19", "cs-u3-q20"]
+    "exerciseIds": [
+      "cs-u3-q17",
+      "cs-u3-q18",
+      "cs-u3-q19",
+      "cs-u3-q20"
+    ]
   },
   {
     "id": "cs-u3-nested",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q21", "cs-u3-q22", "cs-u3-q23", "cs-u3-q24"]
+    "exerciseIds": [
+      "cs-u3-q21",
+      "cs-u3-q22",
+      "cs-u3-q23",
+      "cs-u3-q24"
+    ]
   },
   {
     "id": "cs-u3-negation",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u3-q25", "cs-u3-q26", "cs-u3-q27", "cs-u3-q28"]
+    "exerciseIds": [
+      "cs-u3-q25",
+      "cs-u3-q26",
+      "cs-u3-q27",
+      "cs-u3-q28"
+    ]
   },
   {
     "id": "cs-u4-sets",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q01", "cs-u4-q02", "cs-u4-q03", "cs-u4-q04"]
+    "exerciseIds": [
+      "cs-u4-q01",
+      "cs-u4-q02",
+      "cs-u4-q03",
+      "cs-u4-q04"
+    ]
   },
   {
     "id": "cs-u4-set-algebra",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q05", "cs-u4-q06", "cs-u4-q07", "cs-u4-q08"]
+    "exerciseIds": [
+      "cs-u4-q05",
+      "cs-u4-q06",
+      "cs-u4-q07",
+      "cs-u4-q08"
+    ]
   },
   {
     "id": "cs-u4-sequences",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q09", "cs-u4-q10", "cs-u4-q11", "cs-u4-q12"]
+    "exerciseIds": [
+      "cs-u4-q09",
+      "cs-u4-q10",
+      "cs-u4-q11",
+      "cs-u4-q12"
+    ]
   },
   {
     "id": "cs-u4-functions",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q13", "cs-u4-q14", "cs-u4-q15", "cs-u4-q16"]
+    "exerciseIds": [
+      "cs-u4-q13",
+      "cs-u4-q14",
+      "cs-u4-q15",
+      "cs-u4-q16"
+    ]
   },
   {
     "id": "cs-u4-relations",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q17", "cs-u4-q18", "cs-u4-q19", "cs-u4-q20"]
+    "exerciseIds": [
+      "cs-u4-q17",
+      "cs-u4-q18",
+      "cs-u4-q19",
+      "cs-u4-q20"
+    ]
   },
   {
     "id": "cs-u4-images",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q21", "cs-u4-q22", "cs-u4-q23", "cs-u4-q24"]
+    "exerciseIds": [
+      "cs-u4-q21",
+      "cs-u4-q22",
+      "cs-u4-q23",
+      "cs-u4-q24"
+    ]
   },
   {
     "id": "cs-u4-cardinality",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u4-q25", "cs-u4-q26", "cs-u4-q27", "cs-u4-q28"]
+    "exerciseIds": [
+      "cs-u4-q25",
+      "cs-u4-q26",
+      "cs-u4-q27",
+      "cs-u4-q28"
+    ]
   },
   {
     "id": "cs-u5-ordinary",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u5-q01", "cs-u5-q02", "cs-u5-q03", "cs-u5-q04"]
+    "exerciseIds": [
+      "cs-u5-q01",
+      "cs-u5-q02",
+      "cs-u5-q03",
+      "cs-u5-q04"
+    ]
   },
   {
     "id": "cs-u5-bounds",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u5-q05", "cs-u5-q06", "cs-u5-q07", "cs-u5-q08"]
+    "exerciseIds": [
+      "cs-u5-q05",
+      "cs-u5-q06",
+      "cs-u5-q07",
+      "cs-u5-q08"
+    ]
   },
   {
     "id": "cs-u5-strengthening",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u5-q09", "cs-u5-q10", "cs-u5-q11", "cs-u5-q12"]
+    "exerciseIds": [
+      "cs-u5-q09",
+      "cs-u5-q10",
+      "cs-u5-q11",
+      "cs-u5-q12"
+    ]
   },
   {
     "id": "cs-u5-strong",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u5-q13", "cs-u5-q14", "cs-u5-q15", "cs-u5-q16"]
+    "exerciseIds": [
+      "cs-u5-q13",
+      "cs-u5-q14",
+      "cs-u5-q15",
+      "cs-u5-q16"
+    ]
   },
   {
     "id": "cs-u5-bases",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u5-q17", "cs-u5-q18", "cs-u5-q19", "cs-u5-q20"]
+    "exerciseIds": [
+      "cs-u5-q17",
+      "cs-u5-q18",
+      "cs-u5-q19",
+      "cs-u5-q20"
+    ]
   },
   {
     "id": "cs-u5-principles",
     "courseId": "cs",
     "version": 1,
-    "exerciseIds": ["cs-u5-q21", "cs-u5-q22", "cs-u5-q23", "cs-u5-q24"]
+    "exerciseIds": [
+      "cs-u5-q21",
+      "cs-u5-q22",
+      "cs-u5-q23",
+      "cs-u5-q24"
+    ]
+  },
+  {
+    "id": "cs-u6-model",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u6-q01",
+      "cs-u6-q02",
+      "cs-u6-q03",
+      "cs-u6-q04"
+    ]
+  },
+  {
+    "id": "cs-u6-invariants",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u6-q05",
+      "cs-u6-q06",
+      "cs-u6-q07",
+      "cs-u6-q08"
+    ]
+  },
+  {
+    "id": "cs-u6-partial-correctness",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u6-q09",
+      "cs-u6-q10",
+      "cs-u6-q11",
+      "cs-u6-q12"
+    ]
+  },
+  {
+    "id": "cs-u6-termination",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u6-q13",
+      "cs-u6-q14",
+      "cs-u6-q15",
+      "cs-u6-q16"
+    ]
+  },
+  {
+    "id": "cs-u6-matching-trace",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u6-q17",
+      "cs-u6-q18",
+      "cs-u6-q19",
+      "cs-u6-q20"
+    ]
+  },
+  {
+    "id": "cs-u6-matching-proof",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u6-q21",
+      "cs-u6-q22",
+      "cs-u6-q23",
+      "cs-u6-q24"
+    ]
+  },
+  {
+    "id": "cs-u7-recursive-definitions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q01",
+      "cs-u7-q02",
+      "cs-u7-q03",
+      "cs-u7-q04"
+    ]
+  },
+  {
+    "id": "cs-u7-structural-induction",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q05",
+      "cs-u7-q06",
+      "cs-u7-q07",
+      "cs-u7-q08"
+    ]
+  },
+  {
+    "id": "cs-u7-brackets",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q09",
+      "cs-u7-q10",
+      "cs-u7-q11",
+      "cs-u7-q12"
+    ]
+  },
+  {
+    "id": "cs-u7-recursive-functions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q13",
+      "cs-u7-q14",
+      "cs-u7-q15",
+      "cs-u7-q16"
+    ]
+  },
+  {
+    "id": "cs-u7-expressions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q17",
+      "cs-u7-q18",
+      "cs-u7-q19",
+      "cs-u7-q20"
+    ]
+  },
+  {
+    "id": "cs-u7-finite-games",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q21",
+      "cs-u7-q22",
+      "cs-u7-q23",
+      "cs-u7-q24"
+    ]
+  },
+  {
+    "id": "cs-u7-search-trees",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u7-q25",
+      "cs-u7-q26",
+      "cs-u7-q27",
+      "cs-u7-q28"
+    ]
+  },
+  {
+    "id": "cs-u8-bijections",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u8-q01",
+      "cs-u8-q02",
+      "cs-u8-q03",
+      "cs-u8-q04"
+    ]
+  },
+  {
+    "id": "cs-u8-enumeration",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u8-q05",
+      "cs-u8-q06",
+      "cs-u8-q07",
+      "cs-u8-q08"
+    ]
+  },
+  {
+    "id": "cs-u8-diagonal",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u8-q09",
+      "cs-u8-q10",
+      "cs-u8-q11",
+      "cs-u8-q12"
+    ]
+  },
+  {
+    "id": "cs-u8-power-sets",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u8-q13",
+      "cs-u8-q14",
+      "cs-u8-q15",
+      "cs-u8-q16"
+    ]
+  },
+  {
+    "id": "cs-u8-halting",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u8-q17",
+      "cs-u8-q18",
+      "cs-u8-q19",
+      "cs-u8-q20"
+    ]
+  },
+  {
+    "id": "cs-u8-set-foundations",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u8-q21",
+      "cs-u8-q22",
+      "cs-u8-q23",
+      "cs-u8-q24"
+    ]
+  },
+  {
+    "id": "cs-u9-divisibility",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q01",
+      "cs-u9-q02",
+      "cs-u9-q03",
+      "cs-u9-q04"
+    ]
+  },
+  {
+    "id": "cs-u9-euclid",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q05",
+      "cs-u9-q06",
+      "cs-u9-q07",
+      "cs-u9-q08"
+    ]
+  },
+  {
+    "id": "cs-u9-bezout",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q09",
+      "cs-u9-q10",
+      "cs-u9-q11",
+      "cs-u9-q12"
+    ]
+  },
+  {
+    "id": "cs-u9-primes",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q13",
+      "cs-u9-q14",
+      "cs-u9-q15",
+      "cs-u9-q16"
+    ]
+  },
+  {
+    "id": "cs-u9-modular-arithmetic",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q17",
+      "cs-u9-q18",
+      "cs-u9-q19",
+      "cs-u9-q20"
+    ]
+  },
+  {
+    "id": "cs-u9-inverses",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q21",
+      "cs-u9-q22",
+      "cs-u9-q23",
+      "cs-u9-q24"
+    ]
+  },
+  {
+    "id": "cs-u9-euler",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q25",
+      "cs-u9-q26",
+      "cs-u9-q27",
+      "cs-u9-q28"
+    ]
+  },
+  {
+    "id": "cs-u9-rsa",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u9-q29",
+      "cs-u9-q30",
+      "cs-u9-q31",
+      "cs-u9-q32"
+    ]
   }
 ]

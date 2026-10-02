@@ -8,19 +8,25 @@
   {
     "id": "cs-implication",
     "courseId": "cs",
-    "prerequisites": ["cs-statements"],
+    "prerequisites": [
+      "cs-statements"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-converse",
     "courseId": "cs",
-    "prerequisites": ["cs-implication"],
+    "prerequisites": [
+      "cs-implication"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-negation",
     "courseId": "cs",
-    "prerequisites": ["cs-statements"],
+    "prerequisites": [
+      "cs-statements"
+    ],
     "sourceId": "mcs-2018"
   },
   {
@@ -32,19 +38,25 @@
   {
     "id": "ml-dot",
     "courseId": "ml",
-    "prerequisites": ["ml-components"],
+    "prerequisites": [
+      "ml-components"
+    ],
     "sourceId": "ml-foundations"
   },
   {
     "id": "ml-angle",
     "courseId": "ml",
-    "prerequisites": ["ml-dot"],
+    "prerequisites": [
+      "ml-dot"
+    ],
     "sourceId": "ml-foundations"
   },
   {
     "id": "ml-projection",
     "courseId": "ml",
-    "prerequisites": ["ml-dot"],
+    "prerequisites": [
+      "ml-dot"
+    ],
     "sourceId": "ml-foundations"
   },
   {
@@ -56,181 +68,457 @@
   {
     "id": "cs-u1-direct",
     "courseId": "cs",
-    "prerequisites": ["cs-u1-claims"],
+    "prerequisites": [
+      "cs-u1-claims"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u1-contrapositive",
     "courseId": "cs",
-    "prerequisites": ["cs-u1-direct"],
+    "prerequisites": [
+      "cs-u1-direct"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u1-equivalence",
     "courseId": "cs",
-    "prerequisites": ["cs-u1-contrapositive"],
+    "prerequisites": [
+      "cs-u1-contrapositive"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u1-cases",
     "courseId": "cs",
-    "prerequisites": ["cs-u1-equivalence"],
+    "prerequisites": [
+      "cs-u1-equivalence"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u1-contradiction",
     "courseId": "cs",
-    "prerequisites": ["cs-u1-cases"],
+    "prerequisites": [
+      "cs-u1-cases"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u2-ordering",
     "courseId": "cs",
-    "prerequisites": ["cs-u1-contradiction"],
+    "prerequisites": [
+      "cs-u1-contradiction"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u2-minimal",
     "courseId": "cs",
-    "prerequisites": ["cs-u2-ordering"],
+    "prerequisites": [
+      "cs-u2-ordering"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u2-correctness",
     "courseId": "cs",
-    "prerequisites": ["cs-u2-minimal"],
+    "prerequisites": [
+      "cs-u2-minimal"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u2-factors",
     "courseId": "cs",
-    "prerequisites": ["cs-u2-correctness"],
+    "prerequisites": [
+      "cs-u2-correctness"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u2-termination",
     "courseId": "cs",
-    "prerequisites": ["cs-u2-factors"],
+    "prerequisites": [
+      "cs-u2-factors"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-conditions",
     "courseId": "cs",
-    "prerequisites": ["cs-u2-termination"],
+    "prerequisites": [
+      "cs-u2-termination"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-equivalence",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-conditions"],
+    "prerequisites": [
+      "cs-u3-conditions"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-normal-forms",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-equivalence"],
+    "prerequisites": [
+      "cs-u3-equivalence"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-sat",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-normal-forms"],
+    "prerequisites": [
+      "cs-u3-normal-forms"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-quantifiers",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-sat"],
+    "prerequisites": [
+      "cs-u3-sat"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-nested",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-quantifiers"],
+    "prerequisites": [
+      "cs-u3-quantifiers"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u3-negation",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-nested"],
+    "prerequisites": [
+      "cs-u3-nested"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-sets",
     "courseId": "cs",
-    "prerequisites": ["cs-u3-negation"],
+    "prerequisites": [
+      "cs-u3-negation"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-set-algebra",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-sets"],
+    "prerequisites": [
+      "cs-u4-sets"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-sequences",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-set-algebra"],
+    "prerequisites": [
+      "cs-u4-set-algebra"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-functions",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-sequences"],
+    "prerequisites": [
+      "cs-u4-sequences"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-relations",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-functions"],
+    "prerequisites": [
+      "cs-u4-functions"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-images",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-relations"],
+    "prerequisites": [
+      "cs-u4-relations"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u4-cardinality",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-images"],
+    "prerequisites": [
+      "cs-u4-images"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u5-ordinary",
     "courseId": "cs",
-    "prerequisites": ["cs-u4-cardinality"],
+    "prerequisites": [
+      "cs-u4-cardinality"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u5-bounds",
     "courseId": "cs",
-    "prerequisites": ["cs-u5-ordinary"],
+    "prerequisites": [
+      "cs-u5-ordinary"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u5-strengthening",
     "courseId": "cs",
-    "prerequisites": ["cs-u5-bounds"],
+    "prerequisites": [
+      "cs-u5-bounds"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u5-strong",
     "courseId": "cs",
-    "prerequisites": ["cs-u5-strengthening"],
+    "prerequisites": [
+      "cs-u5-strengthening"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u5-bases",
     "courseId": "cs",
-    "prerequisites": ["cs-u5-strong"],
+    "prerequisites": [
+      "cs-u5-strong"
+    ],
     "sourceId": "mcs-2018"
   },
   {
     "id": "cs-u5-principles",
     "courseId": "cs",
-    "prerequisites": ["cs-u5-bases"],
+    "prerequisites": [
+      "cs-u5-bases"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u6-model",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u5-principles"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u6-invariants",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u6-model"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u6-partial-correctness",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u6-invariants"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u6-termination",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u6-partial-correctness"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u6-matching-trace",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u6-termination"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u6-matching-proof",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u6-matching-trace"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-recursive-definitions",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u6-matching-proof"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-structural-induction",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-recursive-definitions"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-brackets",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-structural-induction"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-recursive-functions",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-brackets"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-expressions",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-recursive-functions"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-finite-games",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-expressions"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u7-search-trees",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-finite-games"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u8-bijections",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u7-search-trees"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u8-enumeration",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u8-bijections"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u8-diagonal",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u8-enumeration"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u8-power-sets",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u8-diagonal"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u8-halting",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u8-power-sets"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u8-set-foundations",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u8-halting"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-divisibility",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u8-set-foundations"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-euclid",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-divisibility"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-bezout",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-euclid"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-primes",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-bezout"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-modular-arithmetic",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-primes"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-inverses",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-modular-arithmetic"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-euler",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-inverses"
+    ],
+    "sourceId": "mcs-2018"
+  },
+  {
+    "id": "cs-u9-rsa",
+    "courseId": "cs",
+    "prerequisites": [
+      "cs-u9-euler"
+    ],
     "sourceId": "mcs-2018"
   }
 ]

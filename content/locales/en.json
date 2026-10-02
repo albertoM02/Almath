@@ -266,6 +266,114 @@
     "cs-u5-principles": {
       "title": "Induction, well-ordering and proof review",
       "description": "Relate the three proof principles and diagnose a complete induction argument."
+    },
+    "cs-u6-model": {
+      "title": "States, transitions and reachability",
+      "description": "Translate a small process into exact state updates and distinguish possible behavior from guaranteed behavior."
+    },
+    "cs-u6-invariants": {
+      "title": "Prove a resource invariant",
+      "description": "Check initialization and preservation, and identify what an invariant does and does not prove."
+    },
+    "cs-u6-partial-correctness": {
+      "title": "From a loop invariant to the result",
+      "description": "Use a loop invariant and an exit condition to prove partial correctness; repair an update that breaks the proof."
+    },
+    "cs-u6-termination": {
+      "title": "Termination needs a well-founded decrease",
+      "description": "Choose a decreasing measure with the correct domain, and distinguish safety, partial correctness and total correctness."
+    },
+    "cs-u6-matching-trace": {
+      "title": "Stable matching: trace and challenge a result",
+      "description": "Find a blocking pair and trace deferred acceptance under explicit preference assumptions."
+    },
+    "cs-u6-matching-proof": {
+      "title": "Why deferred acceptance works",
+      "description": "Use a finite proposal count and a monotonic preference invariant to justify termination and stability."
+    },
+    "cs-u7-recursive-definitions": {
+      "title": "Define finite structures precisely",
+      "description": "Read constructors as exact mathematical rules and evaluate a function by following the structure."
+    },
+    "cs-u7-structural-induction": {
+      "title": "Prove properties of every tree",
+      "description": "Use the actual constructors in an induction proof and reject circular reasoning."
+    },
+    "cs-u7-brackets": {
+      "title": "Balanced brackets and unique decomposition",
+      "description": "Check every prefix, identify the recursive decomposition, and detect an ambiguous recursive function."
+    },
+    "cs-u7-recursive-functions": {
+      "title": "Well-defined recursion and shrinking inputs",
+      "description": "Distinguish a terminating recursive algorithm, an underdetermined equation and incompatible cases."
+    },
+    "cs-u7-expressions": {
+      "title": "Expression trees and semantics-preserving rewrites",
+      "description": "Separate syntax from value and justify a recursive transformation by its constructor cases."
+    },
+    "cs-u7-finite-games": {
+      "title": "Recursive reasoning about winning moves",
+      "description": "Classify finite game positions by their successors and prove a strategy rather than merely finding a lucky play."
+    },
+    "cs-u7-search-trees": {
+      "title": "Search trees: global invariants and cost",
+      "description": "Check the full search-tree condition and connect correctness and search cost to recursive structure."
+    },
+    "cs-u8-bijections": {
+      "title": "Compare infinite sets by explicit maps",
+      "description": "Check injectivity and surjectivity separately and construct a correspondence with N."
+    },
+    "cs-u8-enumeration": {
+      "title": "List finite strings, pairs and rationals",
+      "description": "Design enumerations that reach each object after finitely many steps, and diagnose starvation."
+    },
+    "cs-u8-diagonal": {
+      "title": "Build the missing infinite sequence",
+      "description": "Execute a diagonal construction and identify the quantifier that makes it an impossibility proof."
+    },
+    "cs-u8-power-sets": {
+      "title": "Cantor’s theorem and the limits of counting programs",
+      "description": "Construct a subset omitted by a proposed map and connect cardinality to the existence of undecidable languages."
+    },
+    "cs-u8-halting": {
+      "title": "Halting, recognition and bounded questions",
+      "description": "Follow the self-reference contradiction, distinguish timeout from nontermination, and combine two recognizers."
+    },
+    "cs-u8-set-foundations": {
+      "title": "Safe set formation and Russell’s paradox",
+      "description": "Identify unrestricted set formation, derive the contradiction and distinguish an axiom-system repair from a consistency proof."
+    },
+    "cs-u9-divisibility": {
+      "title": "Divisibility and canonical remainders",
+      "description": "Use integer witnesses for divisibility and handle negative dividends without an ambiguous remainder convention."
+    },
+    "cs-u9-euclid": {
+      "title": "Euclid’s algorithm as a correctness proof",
+      "description": "Trace the remainder algorithm and justify its invariant and termination using Unit 6."
+    },
+    "cs-u9-bezout": {
+      "title": "Extended Euclid and integer combinations",
+      "description": "Use a linear-combination certificate, solve an integer feasibility question, and distinguish integer from nonnegative solutions."
+    },
+    "cs-u9-primes": {
+      "title": "Prime factors: use the hypotheses",
+      "description": "Apply prime factorization and explain the logic of trial division and Euclid’s infinitude proof."
+    },
+    "cs-u9-modular-arithmetic": {
+      "title": "Compute with residue classes",
+      "description": "Use congruence under addition and multiplication, recognize collisions, and reduce a large power by repeated squaring."
+    },
+    "cs-u9-inverses": {
+      "title": "When cancellation and inverses are valid",
+      "description": "Find an inverse, detect a noninvertible factor and preserve the full solution set when dividing a congruence."
+    },
+    "cs-u9-euler": {
+      "title": "Euler’s theorem: check before reducing an exponent",
+      "description": "Compute a totient, apply the coprimality hypothesis and reject the converse of a primality theorem."
+    },
+    "cs-u9-rsa": {
+      "title": "Toy RSA: assemble and audit the mathematics",
+      "description": "Connect totients, modular inverses and exponentiation, and repair a correctness proof for a noncoprime message."
     }
   },
   "concepts": {
@@ -637,6 +745,222 @@
       "example": "Suppose P(0) and every successor implication hold. A least failing index m cannot be 0. Minimality gives P(m-1); the successor implication then gives P(m). Thus no failing index exists.",
       "exampleSteps": [],
       "takeaway": "The learner can audit an induction proof and connect it to minimal-counterexample reasoning."
+    },
+    "cs-u6-model": {
+      "title": "States, transitions and reachability",
+      "body": "A state records the information needed to determine which transitions are allowed. An execution starts in an initial state and follows allowed transitions. A state is reachable if some finite execution reaches it, including the execution with zero transitions. Nondeterminism allows several next states. One successful execution establishes possibility; a guarantee must cover every allowed execution. State updates here are atomic and use old values on their right-hand sides.",
+      "formula": "",
+      "example": "A worker has state (q,d), with q pending tasks and d completed tasks. Starting at (3,0), the rule (q,d) → (q-1,d+1), allowed only for q>0, gives (3,0) → (2,1) → (1,2) → (0,3).",
+      "exampleSteps": [],
+      "takeaway": "Can the learner give an allowed trace and identify the quantifier in a reachability or correctness claim?"
+    },
+    "cs-u6-invariants": {
+      "title": "Prove a resource invariant",
+      "body": "To use the Invariant Principle, choose a predicate I that holds initially and prove I(s) implies I(t) for every allowed transition s→t. Then I holds in every reachable state. The book calls the transition property a preserved invariant: its preservation proof must cover every I-state in the declared state space, including unreachable ones. An invariant gives a necessary condition for reachability, not generally a sufficient condition.",
+      "formula": "",
+      "example": "For a pool with state (free,busy)∈N², allocation changes (f,b) to (f-1,b+1) when f>0. Returning a resource changes it to (f+1,b-1) when b>0. Starting with capacity C, both updates preserve f+b=C.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner verify both proof obligations and distinguish safety from reachability?"
+    },
+    "cs-u6-partial-correctness": {
+      "title": "From a loop invariant to the result",
+      "body": "Partial correctness means: for every permitted input, if execution terminates, the output satisfies the specification. It does not claim termination. At loop boundaries, establish an invariant, show each complete iteration preserves it, then combine it with the exit condition. Exact arithmetic and explicit update order matter. For repeated addition, an accumulator can record work already done while a counter records work still to do.",
+      "formula": "",
+      "example": "To compute a product a·n for a,n∈N, initialize (i,s)=(0,0) and repeat (i,s)→(i+1,s+a) while i<n. The predicate s=a·i and 0≤i≤n holds initially and is preserved. On exit i=n, so s=a·n.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner supply the missing algebraic step and separate partial correctness from termination?"
+    },
+    "cs-u6-termination": {
+      "title": "Termination needs a well-founded decrease",
+      "body": "A nonnegative integer-valued measure that strictly decreases on every transition rules out infinite executions. From measure r, there can be at most r such transitions. Weak decrease allows infinite repetitions. Strict decrease in the nonnegative reals is also insufficient: 1,1/2,1/4,... never reaches 0. Partial correctness plus termination gives total correctness for the stated inputs.",
+      "formula": "",
+      "example": "For a loop with integer 0≤i≤n and update i′=i+1 when i<n, use r=n-i. The guard ensures r≥1 before a step and r′=r-1≥0 afterwards. Therefore the loop terminates.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner reject a plausible-looking termination argument by constructing an infinite execution?"
+    },
+    "cs-u6-matching-trace": {
+      "title": "Stable matching: trace and challenge a result",
+      "body": "Use two equally sized groups, applicants and teams, with one-to-one matching and strict complete rankings of the other group. An unmatched applicant-team pair blocks a matching if each prefers the other to its current partner. A stable matching has no blocking pair. In applicant-proposing deferred acceptance, a free applicant proposes to its highest-ranked team not yet tried; a team keeps its preferred applicant among its current hold and new proposals and rejects the rest.",
+      "formula": "",
+      "example": "If T holds B and prefers A to B, a proposal from A makes T hold A and reject B. The hold is tentative: B can continue proposing. Preference ranks, not proposal arrival order, decide whom T keeps.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner check both sides of a blocking pair and carry a rejection into the next step?"
+    },
+    "cs-u6-matching-proof": {
+      "title": "Why deferred acceptance works",
+      "body": "In the strict, complete, equal-size one-to-one model, an applicant proposes to each team at most once, so at most n² proposals occur. A team that holds an applicant never becomes empty and can only replace its hold with someone it prefers. Thus every team that rejects A ends with someone it prefers to A. A free applicant cannot exhaust all teams: then all n teams would be holding applicants while one of the n applicants remained free. The resulting complete matching is stable. Proposer-optimal means best partner among stable matchings, not necessarily first choice overall.",
+      "formula": "",
+      "example": "If A prefers team T to its final partner, A must have proposed to T earlier and been rejected. T’s final partner is preferred by T to A, so A and T cannot block the final matching.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner identify the invariant used in the stability argument and state the theorem’s assumptions?"
+    },
+    "cs-u7-recursive-definitions": {
+      "title": "Define finite structures precisely",
+      "body": "A recursive data type is the smallest collection containing its base objects and closed under its constructors. “Smallest” excludes extra objects not obtained by finitely many constructor applications. For integer lists: [] is a list, and a::xs is a list when a∈Z and xs is a list. The constructor prepends a. A function can specify one base case and one rule per constructor, with recursive calls on the smaller components.",
+      "formula": "",
+      "example": "Define F([])=0 and F(a::xs)=a-F(xs). Then F(3::(8::[]))=3-(8-0)=-5. Unfolding the tail first prevents subtraction from being grouped incorrectly.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner distinguish a valid finite object from an ill-typed or infinite expression and evaluate its recursive definition?"
+    },
+    "cs-u7-structural-induction": {
+      "title": "Prove properties of every tree",
+      "body": "A finite full binary tree is either Leaf(v) or Join(L,R), where L and R are trees. Structural induction checks every leaf and proves the property for Join(L,R) assuming it for both children. Let leaves(T) count leaves and inner(T) count Join nodes. A leaf has counts (1,0); a join has leaves(L)+leaves(R) leaves and 1+inner(L)+inner(R) internal nodes. These rules prove leaves(T)=inner(T)+1.",
+      "formula": "",
+      "example": "At a join, substituting the two child hypotheses gives leaves(T)=(inner(L)+1)+(inner(R)+1)=inner(T)+1. The argument covers unequal subtree sizes; no balanced-tree assumption is used.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner complete both constructor cases and identify exactly where each induction hypothesis is used?"
+    },
+    "cs-u7-brackets": {
+      "title": "Balanced brackets and unique decomposition",
+      "body": "A parenthesis string is balanced exactly when its total balance is 0 and every prefix has nonnegative balance, counting “(” as +1 and “)” as -1. Recursively, the empty string ε is balanced; every nonempty balanced string has the unique form (s)t, where s and t are balanced and the first closing parenthesis matching the initial opening one determines the split. Equal total counts alone are insufficient. If alternative construction rules allow multiple derivations, a function on strings must give consistent values across all derivations.",
+      "formula": "",
+      "example": "For (()())(), the first opening parenthesis closes at position 6, so the unique decomposition (s)t has s=()() and t=(). Position numbering begins at 1.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner find the first invalid prefix and explain why ambiguity can make a proposed function inconsistent?"
+    },
+    "cs-u7-recursive-functions": {
+      "title": "Well-defined recursion and shrinking inputs",
+      "body": "A base case alone does not make recursion valid. The cases must cover the domain consistently, and recursive evaluation must progress toward a base case. For h(0)=0 and h(n)=1+h(floor(n/2)) when n≥1, every recursive argument is a smaller nonnegative integer. Conversely, equations referring only to larger inputs may admit many mathematical solutions while their direct recursive implementation never returns. Mathematical simultaneous cases differ from an ordered if/else program.",
+      "formula": "",
+      "example": "The recurrence h(0)=0; h(n)=1+h(floor(n/2)) gives h(9)=1+h(4)=2+h(2)=3+h(1)=4. This counts positive stages before reaching 0.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner state a decreasing argument and diagnose missing uniqueness or conflicting cases?"
+    },
+    "cs-u7-expressions": {
+      "title": "Expression trees and semantics-preserving rewrites",
+      "body": "Expressions here are finite trees Const(k), Add(L,R), or Mul(L,R), with integer k. Evaluation is recursive: constants return k; Add sums child values; Mul multiplies them. Distinct trees can have equal values. Define mirror by leaving constants unchanged and swapping the recursively mirrored children at every Add or Mul. Structural induction proves eval(mirror(E))=eval(E), using commutativity for each operator. That argument needs revisiting if the language gains a noncommutative operator.",
+      "formula": "",
+      "example": "Add(Const(2),Const(5)) and Const(7) evaluate equally but are different syntax trees. A proof about evaluated values cannot silently conclude that the trees are identical.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner trace a tree and identify the algebraic assumption behind a rewrite?"
+    },
+    "cs-u7-finite-games": {
+      "title": "Recursive reasoning about winning moves",
+      "body": "Consider a finite, perfect-information, two-player game without draws. Players alternate; a player with no legal move loses. A position is winning for the player to move iff it has some move to a losing position. It is losing iff every legal move leads to a winning position. Terminal positions are losing, since they have no legal moves. This recursive classification requires well-founded play; a reachable cycle cannot simply be treated as a finite game tree.",
+      "formula": "",
+      "example": "If position U can move to V or W, and V is losing while W is winning for the next player, U is winning: choose V. Choosing W instead may lose, so “winning position” does not mean every move wins.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner choose a winning move and give a proof that covers the opponent’s possible replies?"
+    },
+    "cs-u7-search-trees": {
+      "title": "Search trees: global invariants and cost",
+      "body": "A binary search tree here stores distinct integer keys, one per nonempty node. Every key anywhere in the left subtree is smaller than the node key; every key in the right subtree is larger. Both subtrees satisfy the same rule. Checking only immediate children is insufficient. Inorder traversal returns left subtree keys, then the root, then right subtree keys. Search follows one branch per comparison. Its cost depends on height: a valid but skewed tree may require one comparison per stored key.",
+      "formula": "",
+      "example": "With root 10, left child 4 and right child 15, searching for 15 compares first with 10 and then with 15. If a node 12 is placed inside the left subtree of 10, the root’s global bound is violated even when 12 is greater than its own parent.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner find an ancestor-bound violation and distinguish a valid tree from a balanced one?"
+    },
+    "cs-u8-bijections": {
+      "title": "Compare infinite sets by explicit maps",
+      "body": "Two sets have the same cardinality when a bijection pairs their elements. Countably infinite means in bijection with N={0,1,2,...}; countable includes finite sets as well. An injection never merges different inputs. A surjection reaches every element of the declared codomain. Infinite sets can be in bijection with proper subsets, so conclusions valid only for finite sets must not be reused without their finiteness assumption.",
+      "formula": "",
+      "example": "The function f:N→{4n+2:n∈N}, f(n)=4n+2, is a bijection. Equal outputs imply equal inputs, and each target 4k+2 is reached by input k.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner give both halves of a bijection proof and keep the codomain explicit?"
+    },
+    "cs-u8-enumeration": {
+      "title": "List finite strings, pairs and rationals",
+      "body": "All finite strings over a finite alphabet can be listed by increasing length, then lexicographically within each length. Each string then has only finitely many predecessors. For pairs (a,b)∈N², list by increasing a+b, then increasing a within each diagonal. Each diagonal is finite and every pair has a finite sum. This gives a listing of positive rationals by mapping (a,b) to (a+1)/(b+1); repeated values are allowed in a surjective listing or can be skipped.",
+      "formula": "",
+      "example": "Over {a,b}, length-first order starts ε,a,b,aa,ab,ba,bb,aaa,... . Over N², diagonal order starts (0,0),(0,1),(1,0),(0,2),(1,1),(2,0),... . Neither method tries to finish an infinite block first.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner explain why an enumeration eventually reaches any chosen object?"
+    },
+    "cs-u8-diagonal": {
+      "title": "Build the missing infinite sequence",
+      "body": "Suppose someone lists infinite binary sequences s₀,s₁,s₂,... . Index bits from 0 and define d(n)=1-sₙ(n). For every row k, d differs from sₖ at bit k; therefore d is missing from that list. Since the list was arbitrary, no countable listing contains every infinite binary sequence. This proof concerns sequences, so it avoids ambiguities between different positional representations of the same real number. Finite binary strings remain countable.",
+      "formula": "",
+      "example": "If the diagonal bits of the first four rows are 1,0,0,1, the first four bits of d are 0,1,1,0. These four differences illustrate the rule; the impossibility proof uses the rule at every natural-number index.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner construct the missing sequence and distinguish a finite illustration from the general proof?"
+    },
+    "cs-u8-power-sets": {
+      "title": "Cantor’s theorem and the limits of counting programs",
+      "body": "For any total function g:A→P(A), define D={a∈A:a∉g(a)}, where P(A) is the set of all subsets of A. If D=g(t), then t∈D iff t∉D, a contradiction. So no such g is surjective. The map a↦{a} is injective, which together gives |A|<|P(A)|. Finite program descriptions form a countable set; languages over a nonempty finite alphabet are subsets of its countably infinite set of finite strings. Cantor’s theorem makes this collection of languages uncountable.",
+      "formula": "",
+      "example": "For A={u,v}, g(u)={u} and g(v)=∅ give D={v}: u is in g(u), while v is not in g(v). Neither output of g equals {v}.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner carry out the diagonal subset construction and state exactly what the counting argument establishes?"
+    },
+    "cs-u8-halting": {
+      "title": "Halting, recognition and bounded questions",
+      "body": "Programs in this mathematical model have finite descriptions and unbounded computation resources. A decider always halts with a correct yes/no answer. A recognizer for L halts and accepts every member of L; for a nonmember it may reject or run forever. Suppose H(p,x) always decides whether program p halts on input x. Define D(x): if H(x,x) says “halts”, loop forever; otherwise halt. Applying D to its own code contradicts H in either case. No universal H with all these guarantees exists.",
+      "formula": "",
+      "example": "A simulation that has run for a million steps proves only that the program did not halt during those steps. In contrast, “Does it halt within t steps?” is decidable for any supplied finite t by bounded simulation.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner distinguish an impossible universal guarantee from useful restricted analyses?"
+    },
+    "cs-u8-set-foundations": {
+      "title": "Safe set formation and Russell’s paradox",
+      "body": "Set-builder notation needs a legitimate ambient set. Separation forms {x∈A:P(x)} from an existing set A; it does not grant a set of every object satisfying an arbitrary property. If R were the set of all sets S with S∉S, substituting R would give R∈R iff R∉R. This rules out that unrestricted construction. Modern axioms restrict set formation. Avoiding this particular contradiction is not, by itself, a proof that the whole axiom system is consistent.",
+      "formula": "",
+      "example": "The set {n∈N:n²<10} is safely formed inside N and equals {0,1,2,3}. In contrast, writing “all sets” as the ambient collection cannot be assumed to define a set.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner locate the invalid formation assumption without concluding that all ordinary set reasoning is contradictory?"
+    },
+    "cs-u9-divisibility": {
+      "title": "Divisibility and canonical remainders",
+      "body": "For a positive integer d and integer a, d|a means a=d·k for some k∈Z. If d divides a and b, it divides every integer linear combination r·a+s·b. A divisor of a product need not divide either factor individually; a prime divisor has a stronger property taught later. For a∈Z and positive n, Euclidean division gives unique integers q,r with a=qn+r and 0≤r<n. This draft always uses that nonnegative remainder convention.",
+      "formula": "",
+      "example": "Dividing -23 by 5 gives -23=(-5)·5+2, so the quotient is -5 and the canonical remainder is 2. The expression (-4)·5-3 has a negative final term, so -3 is not the canonical remainder.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner exhibit the witness or counterexample behind each divisibility claim?"
+    },
+    "cs-u9-euclid": {
+      "title": "Euclid’s algorithm as a correctness proof",
+      "body": "For nonnegative a,b not both zero, gcd(a,b) is their greatest positive common divisor. For b>0, writing a=qb+r gives gcd(a,b)=gcd(b,r): a divisor of a and b divides r=a-qb, and a divisor of b and r divides a=qb+r. Euclid repeatedly updates (x,y)→(y,x mod y) while y>0. The gcd is invariant; the new second coordinate is smaller than the old positive y. At y=0 the remaining x is the original gcd.",
+      "formula": "",
+      "example": "Starting from (78,30), the states are (30,18),(18,12),(12,6),(6,0). The invariant identifies 6 as the answer, and the decreasing second coordinate proves termination.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner justify the algorithm rather than only execute it?"
+    },
+    "cs-u9-bezout": {
+      "title": "Extended Euclid and integer combinations",
+      "body": "Extended Euclid tracks integer coefficients to express gcd(a,b)=u·a+v·b. Consequently a·x+b·y=c has integer solutions exactly when gcd(a,b)|c: every combination is divisible by the gcd, and a gcd representation can be scaled to any multiple. Coefficients may be negative. This theorem does not guarantee nonnegative solutions, which model a different constraint. A certificate g=u·a+v·b, together with g>0 and g|a,g|b, proves g is the gcd.",
+      "formula": "",
+      "example": "For 65 and 24: 65=2·24+17, 24=17+7, 17=2·7+3, 7=2·3+1. Back-substitution gives 1=19·24-7·65. The identity both certifies coprimality and supplies coefficients.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner explain both directions of the integer-solvability criterion?"
+    },
+    "cs-u9-primes": {
+      "title": "Prime factors: use the hypotheses",
+      "body": "A prime is an integer greater than 1 with no positive divisors other than 1 and itself. Every integer greater than 1 has a prime factorization, unique up to order. If prime p divides ab, then p divides a or b; the word prime is essential. Gcds take the minimum exponent of each prime in the two factorizations. A composite n>1 has a prime divisor at most sqrt(n). To show there are infinitely many primes, a proposed finite complete list p₁,...,pₖ gives N=p₁...pₖ+1: none of those primes divides N, so a prime factor of N is missing.",
+      "formula": "",
+      "example": "The gcd of 2⁴·3 and 2²·3² is 2²·3=12. In the infinitude argument, N need not itself be prime; the existence of a prime factor outside the proposed complete list is enough.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner distinguish the theorem from a stronger false statement suggested by its examples?"
+    },
+    "cs-u9-modular-arithmetic": {
+      "title": "Compute with residue classes",
+      "body": "For modulus n≥2, a≡b (mod n) means n|(a-b). It says the integers share a remainder, not that they are equal. Congruences can be added and multiplied; inputs and intermediate results may be replaced by their canonical remainders. Repeated squaring computes large powers by splitting the exponent into powers of 2 and reducing after each multiplication. Division requires additional conditions, developed in the next module.",
+      "formula": "",
+      "example": "To compute 3⁵ mod 7: 3²≡2, 3⁴≡4, and 3⁵≡4·3≡5. Each reduced multiplication agrees with the full integer computation because congruence is preserved under multiplication.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner use modular equalities without confusing them with ordinary equality or unrestricted division?"
+    },
+    "cs-u9-inverses": {
+      "title": "When cancellation and inverses are valid",
+      "body": "For n≥2, a has a multiplicative inverse modulo n exactly when gcd(a,n)=1. Extended Euclid supplies it from u·a+v·n=1. An invertible factor can be cancelled without changing the modulus. For ax≡b (mod n), let g=gcd(a,n). There are no solutions unless g|b. When it divides b, dividing a,b and n by g yields the equivalent congruence (a/g)x≡b/g (mod n/g). Dividing only the displayed coefficients while keeping n can lose solutions.",
+      "formula": "",
+      "example": "From 3·7-2·10=1, the inverse of 7 modulo 10 is 3. By contrast, 4x≡8 (mod 12) becomes x≡2 (mod 3), not x≡2 (mod 12).",
+      "exampleSteps": [],
+      "takeaway": "Can the learner explain the role of the gcd and avoid illegal cancellation?"
+    },
+    "cs-u9-euler": {
+      "title": "Euler’s theorem: check before reducing an exponent",
+      "body": "The totient φ(n) counts residues 0≤k<n with gcd(k,n)=1. For prime p and r≥1, φ(pʳ)=pʳ-pʳ⁻¹; for coprime a,b, φ(ab)=φ(a)φ(b). Euler’s theorem states a^φ(n)≡1 (mod n) when gcd(a,n)=1. Therefore exponents of such a can be reduced modulo φ(n). For prime p and p not dividing a, Fermat’s little theorem gives a^(p-1)≡1 (mod p). Passing one such congruence test does not prove the modulus prime.",
+      "formula": "",
+      "example": "φ(20)=φ(4)φ(5)=2·4=8. Since gcd(3,20)=1, 3¹⁰≡3²≡9 modulo 20. The same exponent reduction cannot automatically be used for a=2, which is not coprime to 20.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner state and test the missing hypothesis before applying a powerful shortcut?"
+    },
+    "cs-u9-rsa": {
+      "title": "Toy RSA: assemble and audit the mathematics",
+      "body": "For distinct primes p,q, let n=pq and φ(n)=(p-1)(q-1). Choose a positive exponent e coprime to φ(n), and positive d with ed≡1 modulo φ(n). The public pair is (n,e); encryption maps 0≤m<n to c=m^e mod n, and decryption computes c^d mod n. Euler directly proves recovery when gcd(m,n)=1. To cover all message residues, argue separately modulo p and q: a zero residue stays zero; a nonzero residue uses Fermat’s theorem. Agreement modulo both distinct primes implies agreement modulo their product. These small examples teach the arithmetic, not a deployable encryption design.",
+      "formula": "",
+      "example": "Take p=7, q=13. Then n=91 and φ(n)=72. With e=5, choose d=29 because 5·29=145=1+2·72. Thus encryption uses a fifth power and decryption a twenty-ninth power, both modulo 91.",
+      "exampleSteps": [],
+      "takeaway": "Can the learner identify each modulus and prove recovery without silently assuming the message is coprime to n?"
     }
   },
   "exercises": {
@@ -837,7 +1161,9 @@
       "prompt": "What is the second component?",
       "hint": "Read from left to right, starting with the first component.",
       "explanation": "The ordered entries are 4, −2, and 7; the second is −2.",
-      "solutionSteps": ["First: 4. Second: −2. Third: 7."]
+      "solutionSteps": [
+        "First: 4. Second: −2. Third: 7."
+      ]
     },
     "ml-02": {
       "title": "Check the dimensions",
@@ -917,7 +1243,10 @@
       "prompt": "What is the signed scalar projection of x onto u?",
       "hint": "Because u is a unit vector, calculate x · u.",
       "explanation": "(−3) × 1 + 4 × 0 = −3. The negative sign means the opposite direction to u.",
-      "solutionSteps": ["u has length 1.", "x · u = −3 + 0 = −3."]
+      "solutionSteps": [
+        "u has length 1.",
+        "x · u = −3 + 0 = −3."
+      ]
     },
     "ml-08": {
       "title": "Check the unit assumption",
@@ -941,7 +1270,9 @@
       "prompt": "What is the third component?",
       "hint": "Count entries from left to right.",
       "explanation": "The third entry is 9.",
-      "solutionSteps": ["First: −5. Second: 0. Third: 9."]
+      "solutionSteps": [
+        "First: −5. Second: 0. Third: 9."
+      ]
     },
     "ml-03b": {
       "title": "Compute another dot product",
@@ -949,7 +1280,10 @@
       "prompt": "What is a · b?",
       "hint": "Include the sign of each product.",
       "explanation": "1 × (−2) + 3 × 2 = −2 + 6 = 4.",
-      "solutionSteps": ["The products are −2 and 6.", "Add them to obtain 4."]
+      "solutionSteps": [
+        "The products are −2 and 6.",
+        "Add them to obtain 4."
+      ]
     },
     "ml-05b": {
       "title": "Interpret zero",
@@ -957,7 +1291,10 @@
       "prompt": "What is the angle between them?",
       "hint": "For nonzero vectors, the zero comes from cos θ.",
       "explanation": "The cosine is zero at 90°, so the vectors are perpendicular.",
-      "solutionSteps": ["Their norms are positive.", "cos θ must equal 0."],
+      "solutionSteps": [
+        "Their norms are positive.",
+        "cos θ must equal 0."
+      ],
       "options": {
         "a": "0°",
         "b": "90°",
@@ -2822,6 +3159,1501 @@
         "a": "Proving that 5 is even",
         "b": "Checking infinitely many numerical cases",
         "c": "The base n=0: 5^0=1≥1"
+      }
+    },
+    "cs-u6-q01": {
+      "title": "Apply the transition",
+      "statement": "A worker starts at (q,d)=(4,0). Its only transition is (q,d) → (q-1,d+1) when q>0. What is the state after exactly two transitions?",
+      "prompt": "Choose one answer.",
+      "hint": "Update both coordinates once per step.",
+      "explanation": "The two steps are (4,0) → (3,1) → (2,2). Each transition completes exactly one task.",
+      "solutionSteps": [
+        "The two steps are (4,0) → (3,1) → (2,2). Each transition completes exactly one task."
+      ],
+      "options": {
+        "a": "(2,1)",
+        "b": "(2,2)",
+        "c": "(0,4)"
+      }
+    },
+    "cs-u6-q02": {
+      "title": "Reject an unreachable state",
+      "statement": "For the same worker, which state is unreachable from (4,0)? The only rule remains (q,d) → (q-1,d+1) for q>0.",
+      "prompt": "Choose one answer.",
+      "hint": "Look for a quantity the update cannot change.",
+      "explanation": "Every step preserves q+d=4. The state (1,4) has sum 5. The start state is reachable with zero steps; (1,3) is reached after three.",
+      "solutionSteps": [
+        "Every step preserves q+d=4. The state (1,4) has sum 5. The start state is reachable with zero steps; (1,3) is reached after three."
+      ],
+      "options": {
+        "a": "(4,0)",
+        "b": "(1,3)",
+        "c": "(1,4)"
+      }
+    },
+    "cs-u6-q03": {
+      "title": "Model enough state",
+      "statement": "A retry controller may send a request only if its attempt count is below 3. Two histories both end with status=\"failed\", but one has used 1 attempt and the other 3. Which model supports the rule?",
+      "prompt": "Choose one answer.",
+      "hint": "Could two histories with the same recorded state require different next-step rules?",
+      "explanation": "The pair retains the attempt count needed by the guard and the status. Status alone merges histories with different allowed behavior. Counts modulo 3 also merge 0 and 3, which have different eligibility.",
+      "solutionSteps": [
+        "The pair retains the attempt count needed by the guard and the status. Status alone merges histories with different allowed behavior. Counts modulo 3 also merge 0 and 3, which have different eligibility."
+      ],
+      "options": {
+        "a": "State=(status, attempts)",
+        "b": "State=status alone",
+        "c": "State=attempts modulo 3 alone"
+      }
+    },
+    "cs-u6-q04": {
+      "title": "A trace is not a guarantee",
+      "statement": "A machine starts with integer x=2. For x>0 it may either decrease x by 1 or leave x unchanged. At x=0 it stops. Which statement is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Compare “there exists an execution” with “every execution.”",
+      "explanation": "The decreasing trace proves reachability. Repeatedly choosing the unchanged transition gives an infinite execution. No fairness assumption rules that execution out.",
+      "solutionSteps": [
+        "The decreasing trace proves reachability. Repeatedly choosing the unchanged transition gives an infinite execution. No fairness assumption rules that execution out."
+      ],
+      "options": {
+        "a": "It always stops because 2 → 1 → 0 is a valid trace",
+        "b": "It can reach 0, but an execution may remain at 2 forever",
+        "c": "It cannot reach 0 because unchanged steps are allowed"
+      }
+    },
+    "cs-u6-q05": {
+      "title": "Complete the invariant",
+      "statement": "A pool starts at (f,b)=(7,0). Allocate: (f,b)→(f-1,b+1) when f>0. Return: (f,b)→(f+1,b-1) when b>0. States lie in N². Which predicate holds initially and is preserved?",
+      "prompt": "Choose one answer.",
+      "hint": "Account for the change to both coordinates.",
+      "explanation": "Initially 7+0=7. Allocation changes the sum by -1+1=0; return changes it by 1-1=0. The other predicates fail initially or after an allocation.",
+      "solutionSteps": [
+        "Initially 7+0=7. Allocation changes the sum by -1+1=0; return changes it by 1-1=0. The other predicates fail initially or after an allocation."
+      ],
+      "options": {
+        "a": "f=b",
+        "b": "f=7",
+        "c": "f+b=7"
+      }
+    },
+    "cs-u6-q06": {
+      "title": "Locate the leak",
+      "statement": "A proposed allocation update is (f,b)→(f-1,b+2), with guard f>0. Which one-step trace from an initially valid capacity-7 pool disproves preservation of f+b=7?",
+      "prompt": "Choose one answer.",
+      "hint": "A counterexample must obey the faulty rule, not merely violate the desired property.",
+      "explanation": "The proposed rule actually produces (6,2), whose sum is 8. The other traces do not follow the proposed update.",
+      "solutionSteps": [
+        "The proposed rule actually produces (6,2), whose sum is 8. The other traces do not follow the proposed update."
+      ],
+      "options": {
+        "a": "(7,0)→(6,2)",
+        "b": "(7,0)→(6,1)",
+        "c": "(7,0)→(7,0)"
+      }
+    },
+    "cs-u6-q07": {
+      "title": "The missing base case",
+      "statement": "Over all integer states, the rule x→x+2 preserves the predicate “x is even”. The initial state is x=1. What can be concluded about the attempted invariant proof?",
+      "prompt": "Choose one answer.",
+      "hint": "An inductive step cannot establish a false base case.",
+      "explanation": "Evenness is preserved for every even input, but it is false initially. In fact the reachable values are 1+2k for k∈N.",
+      "solutionSteps": [
+        "Evenness is preserved for every even input, but it is false initially. In fact the reachable values are 1+2k for k∈N."
+      ],
+      "options": {
+        "a": "Every reachable x is even because preservation is enough",
+        "b": "The proof fails initialization; reachable values are odd",
+        "c": "The rule does not preserve evenness"
+      }
+    },
+    "cs-u6-q08": {
+      "title": "Necessary is not sufficient",
+      "statement": "A machine starts at x=0 and has only the rule x→x+4. Every reachable x is even. Does this prove x=2 is reachable?",
+      "prompt": "Choose one answer.",
+      "hint": "Write the state after k transitions.",
+      "explanation": "The actual reachable set is {4k:k∈N}. Evenness is a valid but weaker necessary condition and admits states outside that set.",
+      "solutionSteps": [
+        "The actual reachable set is {4k:k∈N}. Evenness is a valid but weaker necessary condition and admits states outside that set."
+      ],
+      "options": {
+        "a": "Yes; satisfying an invariant proves reachability",
+        "b": "Yes; all even numbers are multiples of 4",
+        "c": "No; all reachable values are multiples of 4, so 2 is unreachable"
+      }
+    },
+    "cs-u6-q09": {
+      "title": "The right loop boundary claim",
+      "statement": "Let n∈N. Initialize (i,s)=(0,0); while i<n, update atomically to (i+1,s+i+1). Which invariant relates s to the completed work?",
+      "prompt": "Choose one answer.",
+      "hint": "After i iterations, which integers have already been added?",
+      "explanation": "Initially both sides are 0. An iteration adds the next integer i+1, producing the sum through the new counter i+1. The desired final sum need not hold during execution; i² fails, for example, at i=2.",
+      "solutionSteps": [
+        "Initially both sides are 0. An iteration adds the next integer i+1, producing the sum through the new counter i+1. The desired final sum need not hold during execution; i² fails, for example, at i=2."
+      ],
+      "options": {
+        "a": "s=i(i+1)/2 and 0≤i≤n",
+        "b": "s=n(n+1)/2 and 0≤i≤n",
+        "c": "s=i² and 0≤i≤n"
+      }
+    },
+    "cs-u6-q10": {
+      "title": "Fill the preservation step",
+      "statement": "Assume s=i(i+1)/2. In the update (i,s)→(i+1,s+i+1), which expression equals the new accumulator s′?",
+      "prompt": "Choose one answer.",
+      "hint": "Factor out i+1.",
+      "explanation": "s′=i(i+1)/2+(i+1)=(i+1)(i+2)/2. This is the invariant formula evaluated at i′=i+1.",
+      "solutionSteps": [
+        "s′=i(i+1)/2+(i+1)=(i+1)(i+2)/2. This is the invariant formula evaluated at i′=i+1."
+      ],
+      "options": {
+        "a": "i(i+2)/2",
+        "b": "(i+1)(i+2)/2",
+        "c": "(i+1)²"
+      }
+    },
+    "cs-u6-q11": {
+      "title": "Combine the invariant with exit",
+      "statement": "For integer i,n, suppose 0≤i≤n and s=i(i+1)/2 hold at a loop boundary. The guard i<n is false. What follows?",
+      "prompt": "Choose one answer.",
+      "hint": "Use both the guard and the bound in the invariant.",
+      "explanation": "The false guard gives i≥n. Together with i≤n it gives i=n, and substituting into the invariant gives the required sum.",
+      "solutionSteps": [
+        "The false guard gives i≥n. Together with i≤n it gives i=n, and substituting into the invariant gives the required sum."
+      ],
+      "options": {
+        "a": "Only s≥0; i might exceed n",
+        "b": "s=n²",
+        "c": "i=n and s=n(n+1)/2"
+      }
+    },
+    "cs-u6-q12": {
+      "title": "Debug the off-by-one update",
+      "statement": "Let n=4. Start (i,s)=(0,0), and while i<n use the faulty atomic update (i,s)→(i+1,s+i). What integer is returned in s?",
+      "prompt": "Enter an integer.",
+      "hint": "List the value of i on each right-hand side before the update.",
+      "explanation": "The added values are the old counters 0,1,2,3, so s=6. The intended sum 1+2+3+4 is 10. The faulty update omits the final term.",
+      "solutionSteps": [
+        "The added values are the old counters 0,1,2,3, so s=6. The intended sum 1+2+3+4 is 10. The faulty update omits the final term."
+      ]
+    },
+    "cs-u6-q13": {
+      "title": "Select a ranking function",
+      "statement": "Let x,y∈N. A step decreases exactly one positive coordinate by 1; the machine stops at (0,0). Which measure proves every execution terminates?",
+      "prompt": "Choose one answer.",
+      "hint": "Test each candidate on a step that changes the smaller coordinate.",
+      "explanation": "x+y is nonnegative and decreases by exactly 1 per step. x-y may increase or become negative. The maximum can stay unchanged, for example (2,2)→(1,2).",
+      "solutionSteps": [
+        "x+y is nonnegative and decreases by exactly 1 per step. x-y may increase or become negative. The maximum can stay unchanged, for example (2,2)→(1,2)."
+      ],
+      "options": {
+        "a": "x-y",
+        "b": "x+y",
+        "c": "max(x,y), because it strictly decreases on every step"
+      }
+    },
+    "cs-u6-q14": {
+      "title": "Bound the remaining steps",
+      "statement": "In the same machine, start at (x,y)=(4,7). Every step decreases exactly one positive coordinate by 1, and stopping occurs only at (0,0). How many transitions occur in every execution?",
+      "prompt": "Enter an integer.",
+      "hint": "Here the measure gives an exact count, not only an upper bound.",
+      "explanation": "The sum starts at 11, drops by exactly 1 per step and equals 0 only at the terminal state. Thus every complete execution has exactly 11 transitions.",
+      "solutionSteps": [
+        "The sum starts at 11, drops by exactly 1 per step and equals 0 only at the terminal state. Thus every complete execution has exactly 11 transitions."
+      ]
+    },
+    "cs-u6-q15": {
+      "title": "A real-valued trap",
+      "statement": "A loop starts with exact real x=1. While x>0, it assigns x←x/2. Which conclusion is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Find a formula for x after any finite number k of steps.",
+      "explanation": "Strictly decreasing nonnegative real values can form an infinite sequence. Floating-point underflow is outside the explicitly stated mathematical model.",
+      "solutionSteps": [
+        "Strictly decreasing nonnegative real values can form an infinite sequence. Floating-point underflow is outside the explicitly stated mathematical model."
+      ],
+      "options": {
+        "a": "It terminates because x strictly decreases and is bounded below",
+        "b": "It terminates because computers eventually round x to zero",
+        "c": "In this exact-arithmetic model it never terminates: after k steps x=2^(-k)>0"
+      }
+    },
+    "cs-u6-q16": {
+      "title": "Finish a correctness proof",
+      "statement": "A proof shows that every terminating run returns the specified result. What additional statement is required to establish total correctness for all allowed inputs?",
+      "prompt": "Choose one answer.",
+      "hint": "What possibility is left open by “if the program terminates”?",
+      "explanation": "The existing argument establishes partial correctness. Total correctness additionally requires termination on every allowed input and every allowed execution.",
+      "solutionSteps": [
+        "The existing argument establishes partial correctness. Total correctness additionally requires termination on every allowed input and every allowed execution."
+      ],
+      "options": {
+        "a": "Every allowed execution terminates",
+        "b": "At least one example returns the right result",
+        "c": "The output variable never decreases"
+      }
+    },
+    "cs-u6-q17": {
+      "title": "Find the blocking pair",
+      "statement": "Applicants rank A: X>Y and B: X>Y. Teams rank X: B>A and Y: A>B. Consider matching A-X, B-Y. Which pair blocks it?",
+      "prompt": "Choose one answer.",
+      "hint": "Both members must prefer switching, not just one.",
+      "explanation": "B prefers X to its assigned Y, and X prefers B to its assigned A. A-Y does not block because A prefers its current X.",
+      "solutionSteps": [
+        "B prefers X to its assigned Y, and X prefers B to its assigned A. A-Y does not block because A prefers its current X."
+      ],
+      "options": {
+        "a": "A-Y",
+        "b": "B-X",
+        "c": "Neither pair"
+      }
+    },
+    "cs-u6-q18": {
+      "title": "Resolve simultaneous proposals",
+      "statement": "With A: X>Y, B: X>Y, X: B>A, Y: A>B, both applicants initially propose to X. Which action follows?",
+      "prompt": "Choose one answer.",
+      "hint": "Use the receiving team’s ranking.",
+      "explanation": "X has one place and ranks B above A. Deferred acceptance keeps the preferred proposal, independently of the written order of names.",
+      "solutionSteps": [
+        "X has one place and ranks B above A. Deferred acceptance keeps the preferred proposal, independently of the written order of names."
+      ],
+      "options": {
+        "a": "X holds A because A is named first",
+        "b": "X holds both because both chose X",
+        "c": "X holds B and rejects A"
+      }
+    },
+    "cs-u6-q19": {
+      "title": "Complete the matching",
+      "statement": "Use the same rankings: A: X>Y; B: X>Y; X: B>A; Y: A>B. After X holds B and rejects A, A proposes to Y. What is the final stable matching?",
+      "prompt": "Choose one answer.",
+      "hint": "Follow the rejected applicant, then check every unmatched pair.",
+      "explanation": "Y accepts A, giving A-Y and B-X. A would prefer X, but X prefers B; B already has its first choice. Therefore neither unmatched pair blocks.",
+      "solutionSteps": [
+        "Y accepts A, giving A-Y and B-X. A would prefer X, but X prefers B; B already has its first choice. Therefore neither unmatched pair blocks."
+      ],
+      "options": {
+        "a": "A-Y, B-X",
+        "b": "A-X, B-Y",
+        "c": "A and B both matched to X"
+      }
+    },
+    "cs-u6-q20": {
+      "title": "Stability is not everyone’s first choice",
+      "statement": "Rankings are A: X>Y; B: X>Y; X: B>A; Y: A>B. In matching A-Y, B-X, applicant A prefers X. Why is that compatible with stability?",
+      "prompt": "Choose one answer.",
+      "hint": "Return to the two-sided definition of a blocking pair.",
+      "explanation": "A unilateral wish to switch is insufficient. The potential partner must also prefer the switch; X does not.",
+      "solutionSteps": [
+        "A unilateral wish to switch is insufficient. The potential partner must also prefer the switch; X does not."
+      ],
+      "options": {
+        "a": "Stability requires only teams to be satisfied",
+        "b": "X prefers its assigned B to A, so A-X is not a blocking pair",
+        "c": "A’s preferences stop mattering after the algorithm ends"
+      }
+    },
+    "cs-u6-q21": {
+      "title": "Count the possible proposals",
+      "statement": "In applicant-proposing deferred acceptance with 5 applicants and 5 teams, each applicant proposes to any given team at most once. What upper bound does this counting argument give on the total number of proposals?",
+      "prompt": "Enter an integer.",
+      "hint": "Count possible distinct pairs.",
+      "explanation": "There are 5·5=25 possible applicant-team pairs. This is an upper bound from pair counting, not a claim that every instance uses 25 proposals.",
+      "solutionSteps": [
+        "There are 5·5=25 possible applicant-team pairs. This is an upper bound from pair counting, not a claim that every instance uses 25 proposals."
+      ]
+    },
+    "cs-u6-q22": {
+      "title": "Choose the monotonic property",
+      "statement": "Under strict complete rankings, which statement remains true once a team has received its first proposal?",
+      "prompt": "Choose one answer.",
+      "hint": "What changes when a team replaces its current hold?",
+      "explanation": "A team always keeps its preferred option among the current hold and newcomers. Its hold can improve or stay unchanged, so every past rejection remains less preferred.",
+      "solutionSteps": [
+        "A team always keeps its preferred option among the current hold and newcomers. Its hold can improve or stay unchanged, so every past rejection remains less preferred."
+      ],
+      "options": {
+        "a": "It holds an applicant at least as preferred as every applicant it has rejected",
+        "b": "It must keep its very first applicant permanently",
+        "c": "Its held applicant becomes worse whenever a new proposal arrives"
+      }
+    },
+    "cs-u6-q23": {
+      "title": "Close the blocking-pair proof",
+      "statement": "Applicant A prefers T to its final team. Under deferred acceptance, A was rejected by T earlier. Which fact rules out A-T as a blocking pair at the end?",
+      "prompt": "Choose one answer.",
+      "hint": "Carry the receiving team’s invariant from rejection to termination.",
+      "explanation": "Rejection means T had a preferred applicant, and T’s held partner only improves thereafter. T therefore does not want the proposed switch, regardless of A’s preference.",
+      "solutionSteps": [
+        "Rejection means T had a preferred applicant, and T’s held partner only improves thereafter. T therefore does not want the proposed switch, regardless of A’s preference."
+      ],
+      "options": {
+        "a": "A eventually forgot about T",
+        "b": "T must end unmatched",
+        "c": "T’s final partner is preferred by T to A"
+      }
+    },
+    "cs-u6-q24": {
+      "title": "Interpret proposer-optimality",
+      "statement": "For strict complete rankings in this model, applicant-proposing deferred acceptance is applicant-optimal. What does that mean?",
+      "prompt": "Choose one answer.",
+      "hint": "Ask: optimal over which feasible outcomes?",
+      "explanation": "Optimality is restricted to the set of stable matchings. Some first choices may be unavailable in every stable matching, and no aggregate rank-score objective is being optimized.",
+      "solutionSteps": [
+        "Optimality is restricted to the set of stable matchings. Some first choices may be unavailable in every stable matching, and no aggregate rank-score objective is being optimized."
+      ],
+      "options": {
+        "a": "Every applicant receives its first choice from its full ranking",
+        "b": "Every applicant gets its best attainable partner among stable matchings",
+        "c": "It maximizes the sum of all participants’ numerical rank scores"
+      }
+    },
+    "cs-u7-q01": {
+      "title": "Check the constructor’s input type",
+      "statement": "Integer lists are generated by [] and a::xs, where a∈Z and xs is a list. Which expression is a valid list?",
+      "prompt": "Choose one answer.",
+      "hint": "Check head and tail separately at every constructor.",
+      "explanation": "In 2::(5::[]), each tail is a list and each head is an integer. In 2::5 the tail is an integer; in []::2 neither required type is satisfied.",
+      "solutionSteps": [
+        "In 2::(5::[]), each tail is a list and each head is an integer. In 2::5 the tail is an integer; in []::2 neither required type is satisfied."
+      ],
+      "options": {
+        "a": "2::5",
+        "b": "2::(5::[])",
+        "c": "[]::2"
+      }
+    },
+    "cs-u7-q02": {
+      "title": "Unfold without changing grouping",
+      "statement": "For F([])=0 and F(a::xs)=a-F(xs), compute F(4::(-2::(7::[]))). Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Evaluate from the innermost tail outward.",
+      "explanation": "F([7])=7, F([-2,7])=-2-7=-9, and F([4,-2,7])=4-(-9)=13. Left-associative subtraction would evaluate a different expression.",
+      "solutionSteps": [
+        "F([7])=7, F([-2,7])=-2-7=-9, and F([4,-2,7])=4-(-9)=13. Left-associative subtraction would evaluate a different expression."
+      ]
+    },
+    "cs-u7-q03": {
+      "title": "Exclude an unintended infinite object",
+      "statement": "The finite-list definition contains [] and is closed under a::xs, with no other objects admitted. Is an infinite stream 1::1::1::... one of these lists?",
+      "prompt": "Choose one answer.",
+      "hint": "Distinguish the number of distinct values from the number of positions.",
+      "explanation": "Every generated object has a finite construction ending at []. Infinite streams require a different definition; finite value diversity does not imply finite length.",
+      "solutionSteps": [
+        "Every generated object has a finite construction ending at []. Infinite streams require a different definition; finite value diversity does not imply finite length."
+      ],
+      "options": {
+        "a": "No; it cannot be produced by finitely many constructor applications from []",
+        "b": "Yes; closure under one constructor automatically includes infinite applications",
+        "c": "Yes; having only one distinct value makes the stream finite"
+      }
+    },
+    "cs-u7-q04": {
+      "title": "A base case still has content",
+      "statement": "Suppose len([])=0 and len(a::xs)=1+len(xs). Which claim is true?",
+      "prompt": "Choose one answer.",
+      "hint": "Which part of the recurrence counts a position?",
+      "explanation": "Length counts constructor positions, not the sum of values. A list containing the integer 0 is different from the empty list.",
+      "solutionSteps": [
+        "Length counts constructor positions, not the sum of values. A list containing the integer 0 is different from the empty list."
+      ],
+      "options": {
+        "a": "[] and 0::[] have the same length because 0 contributes nothing",
+        "b": "len(a::xs)=len(xs) whenever a=0",
+        "c": "len(0::[])=1, independently of the stored integer value"
+      }
+    },
+    "cs-u7-q05": {
+      "title": "Check the leaf case",
+      "statement": "For trees generated by Leaf(v) and Join(L,R), we want leaves(T)=inner(T)+1. Which calculation establishes the Leaf(v) base case?",
+      "prompt": "Choose one answer.",
+      "hint": "Do not count a Leaf as an internal node.",
+      "explanation": "A leaf contributes one leaf and no internal Join node. Thus the required equation is 1=0+1.",
+      "solutionSteps": [
+        "A leaf contributes one leaf and no internal Join node. Thus the required equation is 1=0+1."
+      ],
+      "options": {
+        "a": "0=1+1",
+        "b": "1=0+1",
+        "c": "1=1+1"
+      }
+    },
+    "cs-u7-q06": {
+      "title": "Complete the constructor algebra",
+      "statement": "Assume leaves(L)=inner(L)+1 and leaves(R)=inner(R)+1. What is leaves(Join(L,R)) in terms of the children’s internal-node counts?",
+      "prompt": "Choose one answer.",
+      "hint": "Use both child hypotheses, even if the two children have different shapes.",
+      "explanation": "The parent’s leaves are the disjoint leaves of its two children. Adding the hypotheses gives inner(L)+inner(R)+2, exactly one more than the parent’s internal count 1+inner(L)+inner(R).",
+      "solutionSteps": [
+        "The parent’s leaves are the disjoint leaves of its two children. Adding the hypotheses gives inner(L)+inner(R)+2, exactly one more than the parent’s internal count 1+inner(L)+inner(R)."
+      ],
+      "options": {
+        "a": "inner(L)+inner(R)+2",
+        "b": "inner(L)+inner(R)+1",
+        "c": "2·inner(L)+1"
+      }
+    },
+    "cs-u7-q07": {
+      "title": "Expose a circular step",
+      "statement": "An attempted constructor proof says: “For T=Join(L,R), assume leaves(T)=inner(T)+1; hence the desired result holds for T.” What is wrong?",
+      "prompt": "Choose one answer.",
+      "hint": "Which objects were built before the parent?",
+      "explanation": "The permitted hypotheses concern the strictly smaller components L and R. Assuming the target equation for T makes the step circular.",
+      "solutionSteps": [
+        "The permitted hypotheses concern the strictly smaller components L and R. Assuming the target equation for T makes the step circular."
+      ],
+      "options": {
+        "a": "Structural induction cannot prove counting identities",
+        "b": "The proof needs L and R to have equal size",
+        "c": "It assumes the result for the parent instead of deriving it from the children"
+      }
+    },
+    "cs-u7-q08": {
+      "title": "Apply the proved identity",
+      "statement": "A finite tree built only with Leaf(v) and Join(L,R) has 9 internal Join nodes. How many leaves does it have?",
+      "prompt": "Enter an integer.",
+      "hint": "Check that the constructors match the theorem’s assumptions.",
+      "explanation": "The established structural identity gives leaves=inner+1=10. It applies to every such finite full binary tree, whether balanced or skewed.",
+      "solutionSteps": [
+        "The established structural identity gives leaves=inner+1=10. It applies to every such finite full binary tree, whether balanced or skewed."
+      ]
+    },
+    "cs-u7-q09": {
+      "title": "Find the earliest invalid prefix",
+      "statement": "Scan the string ())(() from left to right, with positions numbered from 1. At which position does the prefix balance first become negative?",
+      "prompt": "Enter an integer.",
+      "hint": "Keep a running total; the final total is not enough.",
+      "explanation": "The first three balances are 1,0,-1. Although the full string has three opening and three closing parentheses, its third character already invalidates it.",
+      "solutionSteps": [
+        "The first three balances are 1,0,-1. Although the full string has three opening and three closing parentheses, its third character already invalidates it."
+      ]
+    },
+    "cs-u7-q10": {
+      "title": "Recover the unique split",
+      "statement": "For the balanced string (()())(), which pair (s,t) gives its unique decomposition (s)t?",
+      "prompt": "Choose one answer.",
+      "hint": "Find the closing parenthesis paired with the very first opening parenthesis.",
+      "explanation": "The first return of prefix balance to 0 occurs after character 6. The interior is ()(), and the remaining suffix is (). Substitution reconstructs (()())().",
+      "solutionSteps": [
+        "The first return of prefix balance to 0 occurs after character 6. The interior is ()(), and the remaining suffix is (). Substitution reconstructs (()())()."
+      ],
+      "options": {
+        "a": "s=(), t=()()",
+        "b": "s=()(), t=()",
+        "c": "s=(()()), t=ε"
+      }
+    },
+    "cs-u7-q11": {
+      "title": "Choose a complete validator",
+      "statement": "Which condition is necessary and sufficient for a string over { (, ) } to be balanced?",
+      "prompt": "Choose one answer.",
+      "hint": "One condition prevents premature closing; the other prevents leftover openings.",
+      "explanation": "A stack-style scan cannot close an unopened pair, which gives the prefix condition. Final balance 0 closes every opening pair. Together these are also sufficient; the empty string satisfies them.",
+      "solutionSteps": [
+        "A stack-style scan cannot close an unopened pair, which gives the prefix condition. Final balance 0 closes every opening pair. Together these are also sufficient; the empty string satisfies them."
+      ],
+      "options": {
+        "a": "Equal numbers of opening and closing parentheses",
+        "b": "The first character is ( and the last is )",
+        "c": "Every prefix has balance ≥0, and the full string has balance 0"
+      }
+    },
+    "cs-u7-q12": {
+      "title": "Catch inconsistent construction costs",
+      "statement": "Let ε be empty, let wrap(s)=(s), and let s·t be concatenation. A proposed function on balanced strings satisfies C(ε)=0, C(wrap(s))=2+C(s), and C(s·t)=3+C(s)+C(t), for all balanced s,t. Why is this inconsistent?",
+      "prompt": "Choose one answer.",
+      "hint": "Test whether two constructions can produce the very same object.",
+      "explanation": "Since ε·ε=ε, the concatenation equation forces C(ε)=3+0+0=3, contradicting its base value. Such costs can label construction trees, but these rules do not define a consistent function of the resulting string.",
+      "solutionSteps": [
+        "Since ε·ε=ε, the concatenation equation forces C(ε)=3+0+0=3, contradicting its base value. Such costs can label construction trees, but these rules do not define a consistent function of the resulting string."
+      ],
+      "options": {
+        "a": "Using s=t=ε makes the same empty string require both C(ε)=0 and C(ε)=3",
+        "b": "Every function on balanced strings must be constant",
+        "c": "Concatenation of balanced strings is never balanced"
+      }
+    },
+    "cs-u7-q13": {
+      "title": "Count the recursive stages",
+      "statement": "Let h(0)=0 and h(n)=1+h(floor(n/2)) for n≥1. What is h(19)? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Count recurrence applications, not all listed arguments.",
+      "explanation": "The arguments are 19,9,4,2,1,0. Five positive arguments each contribute 1 before the base case contributes 0.",
+      "solutionSteps": [
+        "The arguments are 19,9,4,2,1,0. Five positive arguments each contribute 1 before the base case contributes 0."
+      ]
+    },
+    "cs-u7-q14": {
+      "title": "Supply the termination argument",
+      "statement": "Why does that recursive computation of h(n) terminate for every n∈N?",
+      "prompt": "Choose one answer.",
+      "hint": "Apply Unit 6’s termination method to the call argument.",
+      "explanation": "The decreasing nonnegative integer argument cannot produce an infinite descending chain. Neither the existence of a base case nor nonnegative output values alone gives this guarantee.",
+      "solutionSteps": [
+        "The decreasing nonnegative integer argument cannot produce an infinite descending chain. Neither the existence of a base case nor nonnegative output values alone gives this guarantee."
+      ],
+      "options": {
+        "a": "Every recursive function with a base case terminates",
+        "b": "For n≥1, 0≤floor(n/2)<n, so the nonnegative integer argument strictly decreases",
+        "c": "Its return values are nonnegative"
+      }
+    },
+    "cs-u7-q15": {
+      "title": "Separate equations from evaluation",
+      "statement": "Consider g:N→Z constrained by g(0)=5 and g(n)=g(n+1) for n≥1. Which statement is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Does any equation connect g(1) back to g(0)?",
+      "explanation": "The equations tie all positive arguments together but never connect them to 0. For any integer c, g(0)=5 and g(n)=c for n≥1 is a solution. Evaluating by calling n+1 never reaches the base case.",
+      "solutionSteps": [
+        "The equations tie all positive arguments together but never connect them to 0. For any integer c, g(0)=5 and g(n)=c for n≥1 is a solution. Evaluating by calling n+1 never reaches the base case."
+      ],
+      "options": {
+        "a": "The equations uniquely force g(n)=5 for every n",
+        "b": "The equations have no mathematical solutions",
+        "c": "Any constant value on the positive integers works; direct evaluation from g(1) recurses forever"
+      }
+    },
+    "cs-u7-q16": {
+      "title": "Find overlapping cases",
+      "statement": "A function f:N→Z is required simultaneously to satisfy f(n)=0 whenever 2 divides n, and f(n)=1 whenever 5 divides n. These are mathematical requirements, not ordered if/else branches. What fails?",
+      "prompt": "Choose one answer.",
+      "hint": "Find an input lying in the intersection of the two cases.",
+      "explanation": "Both conditions hold at 10, producing incompatible values. Ordered program branches would define different semantics and would not satisfy both stated requirements.",
+      "solutionSteps": [
+        "Both conditions hold at 10, producing incompatible values. Ordered program branches would define different semantics and would not satisfy both stated requirements."
+      ],
+      "options": {
+        "a": "At n=10 the requirements force both 0 and 1, so no such function exists",
+        "b": "Only the value at odd n is problematic",
+        "c": "The first written case automatically overrides the second"
+      }
+    },
+    "cs-u7-q17": {
+      "title": "Evaluate the syntax tree",
+      "statement": "Evaluate Mul(Add(Const(2),Const(5)),Const(3)) using integer arithmetic. Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Evaluate children before their parent.",
+      "explanation": "The inner Add evaluates to 7, then the outer Mul gives 7·3=21. Tree structure fixes the grouping.",
+      "solutionSteps": [
+        "The inner Add evaluates to 7, then the outer Mul gives 7·3=21. Tree structure fixes the grouping."
+      ]
+    },
+    "cs-u7-q18": {
+      "title": "Distinguish equality notions",
+      "statement": "Let E=Add(Const(2),Const(5)) and F=Const(7). Which statement is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "A function need not be injective.",
+      "explanation": "Evaluation maps both expressions to 7. As trees, E has an Add root and two children, while F is a single Const node.",
+      "solutionSteps": [
+        "Evaluation maps both expressions to 7. As trees, E has an Add root and two children, while F is a single Const node."
+      ],
+      "options": {
+        "a": "E and F have equal values but different syntax trees",
+        "b": "Equal values imply identical constructors",
+        "c": "Different constructors imply different values"
+      }
+    },
+    "cs-u7-q19": {
+      "title": "Name the constructor-case law",
+      "statement": "In a structural proof that mirror preserves expression values, the child hypotheses reduce the Add case to comparing eval(R)+eval(L) with eval(L)+eval(R). Which law completes this case?",
+      "prompt": "Choose one answer.",
+      "hint": "Only the order of the two operands has changed.",
+      "explanation": "Swapping the two summands preserves their sum by commutativity. The Mul case uses commutativity of multiplication.",
+      "solutionSteps": [
+        "Swapping the two summands preserves their sum by commutativity. The Mul case uses commutativity of multiplication."
+      ],
+      "options": {
+        "a": "Distributivity of multiplication over addition",
+        "b": "Commutativity of integer addition",
+        "c": "Uniqueness of prime factorization"
+      }
+    },
+    "cs-u7-q20": {
+      "title": "Test an extension before reusing the proof",
+      "statement": "Extend the language with Sub(L,R), evaluated as eval(L)-eval(R), and let mirror swap its children too. Which expression disproves value preservation?",
+      "prompt": "Choose one answer.",
+      "hint": "Choose unequal operands for the new operator.",
+      "explanation": "The original subtraction gives 9-2=7, while its mirror gives 2-9=-7. Equal operands would hide the problem, and Add remains commutative.",
+      "solutionSteps": [
+        "The original subtraction gives 9-2=7, while its mirror gives 2-9=-7. Equal operands would hide the problem, and Add remains commutative."
+      ],
+      "options": {
+        "a": "Sub(Const(4),Const(4))",
+        "b": "Add(Const(3),Const(8))",
+        "c": "Sub(Const(9),Const(2))"
+      }
+    },
+    "cs-u7-q21": {
+      "title": "Choose the relevant quantifier",
+      "statement": "A finite game position has one legal move to a losing position and two legal moves to winning positions, with labels referring to the next player. What is its status for the player to move?",
+      "prompt": "Choose one answer.",
+      "hint": "A strategy chooses a move; it does not average over moves.",
+      "explanation": "The current player can choose the losing successor. Existence of one such move is sufficient; the fraction of poor alternatives is irrelevant under optimal play.",
+      "solutionSteps": [
+        "The current player can choose the losing successor. Existence of one such move is sufficient; the fraction of poor alternatives is irrelevant under optimal play."
+      ],
+      "options": {
+        "a": "Losing, because most moves are bad",
+        "b": "Winning, because one move hands the opponent a losing position",
+        "c": "Undetermined until a random move is sampled"
+      }
+    },
+    "cs-u7-q22": {
+      "title": "Find the forced winning move",
+      "statement": "A pile contains 5 counters. On each turn remove exactly 1 or exactly 2, provided enough remain. Whoever has no move loses. Which first move guarantees a win with optimal later play?",
+      "prompt": "Choose one answer.",
+      "hint": "Classify 0,1,2,3 before judging the two successors of 5.",
+      "explanation": "From 3, the opponent leaves 2 or 1, and you remove the remainder. Leaving 4 instead lets the opponent remove 1 and hand you the losing position 3.",
+      "solutionSteps": [
+        "From 3, the opponent leaves 2 or 1, and you remove the remainder. Leaving 4 instead lets the opponent remove 1 and hand you the losing position 3."
+      ],
+      "options": {
+        "a": "Remove 1, leaving 4",
+        "b": "Either removal guarantees a win",
+        "c": "Remove 2, leaving 3"
+      }
+    },
+    "cs-u7-q23": {
+      "title": "Complete a strategy proof",
+      "statement": "In the remove-1-or-2 game, why are positions with a multiple of 3 counters losing for the player to move?",
+      "prompt": "Choose one answer.",
+      "hint": "Prove the losing and winning classes together.",
+      "explanation": "Induct on pile size. Every legal move from a positive multiple reaches a smaller nonmultiple, which can move to a still smaller multiple. Conversely every nonmultiple can move to a multiple. Together with 0 losing, these implications prove the classification.",
+      "solutionSteps": [
+        "Induct on pile size. Every legal move from a positive multiple reaches a smaller nonmultiple, which can move to a still smaller multiple. Conversely every nonmultiple can move to a multiple. Together with 0 losing, these implications prove the classification."
+      ],
+      "options": {
+        "a": "Removing 1 or 2 leaves a nonmultiple; from a nonmultiple one can return to a smaller multiple of 3, with 0 as the losing base case",
+        "b": "From a multiple of 3 the current player can always remove 3 to remain in the same class",
+        "c": "A losing position is one with no counters, and no other position can be losing"
+      }
+    },
+    "cs-u7-q24": {
+      "title": "Recognize a missing assumption",
+      "statement": "A game has a single position U and only the move U→U, with the same “no legal move loses” rule. Does the finite-game classification guarantee a winner?",
+      "prompt": "Choose one answer.",
+      "hint": "Follow the only move repeatedly.",
+      "explanation": "The state space is finite, but the play length is not. The self-loop never reaches a terminal position. Finitely many states is different from a finite game tree.",
+      "solutionSteps": [
+        "The state space is finite, but the play length is not. The self-loop never reaches a terminal position. Finitely many states is different from a finite game tree."
+      ],
+      "options": {
+        "a": "Yes; U is terminal because there is only one position",
+        "b": "No; play can continue forever, so the well-founded no-draw assumption fails",
+        "c": "Yes; every directed cycle is losing for both players"
+      }
+    },
+    "cs-u7-q25": {
+      "title": "Find the hidden violation",
+      "statement": "A proposed search tree has root 10; its left child is 4, whose right child is 12; its right child is 15. All other children are empty. What is wrong?",
+      "prompt": "Choose one answer.",
+      "hint": "Carry the root’s upper bound down into the whole left subtree.",
+      "explanation": "12 is correctly larger than its immediate parent 4, but every key in the entire left subtree of 10 must be below 10. Ancestor bounds must also hold.",
+      "solutionSteps": [
+        "12 is correctly larger than its immediate parent 4, but every key in the entire left subtree of 10 must be below 10. Ancestor bounds must also hold."
+      ],
+      "options": {
+        "a": "The edge 4→12 is wrong because right children must be smaller",
+        "b": "The root must be the smallest key",
+        "c": "Key 12 lies in the left subtree of 10 but exceeds 10"
+      }
+    },
+    "cs-u7-q26": {
+      "title": "Count search comparisons",
+      "statement": "A valid search tree has root 10; left child 4 with right child 7; right child 15. All other children are empty. Searching for 7 compares the target once with each visited node’s key. How many comparisons occur?",
+      "prompt": "Enter an integer.",
+      "hint": "Trace just the chosen branch, not every node.",
+      "explanation": "The search visits 10, then 4, then 7. It goes left because 7<10 and right because 7>4, then finds equality.",
+      "solutionSteps": [
+        "The search visits 10, then 4, then 7. It goes left because 7<10 and right because 7>4, then finds equality."
+      ]
+    },
+    "cs-u7-q27": {
+      "title": "Choose the sorted traversal",
+      "statement": "A valid search tree stores the distinct keys 10,4,7,15. Which sequence is its inorder traversal?",
+      "prompt": "Choose one answer.",
+      "hint": "Use left subtree, root, right subtree recursively.",
+      "explanation": "Inorder traversal of any valid search tree with distinct keys lists them in increasing order, here 4,7,10,15. The recursive bounds put every left-subtree key before its root and every right-subtree key after it.",
+      "solutionSteps": [
+        "Inorder traversal of any valid search tree with distinct keys lists them in increasing order, here 4,7,10,15. The recursive bounds put every left-subtree key before its root and every right-subtree key after it."
+      ],
+      "options": {
+        "a": "4,7,10,15",
+        "b": "10,4,7,15",
+        "c": "4,10,7,15"
+      }
+    },
+    "cs-u7-q28": {
+      "title": "Correct a complexity claim",
+      "statement": "Insert 1,2,...,n in that order into an initially empty ordinary search tree, using no rebalancing. For n≥1, how many key comparisons does searching for n require?",
+      "prompt": "Choose one answer.",
+      "hint": "Separate the ordering invariant from a shape invariant.",
+      "explanation": "Each inserted key exceeds every existing key and becomes the next right child. Searching for n visits all n nodes. Logarithmic height requires an additional balancing guarantee.",
+      "solutionSteps": [
+        "Each inserted key exceeds every existing key and becomes the next right child. Searching for n visits all n nodes. Logarithmic height requires an additional balancing guarantee."
+      ],
+      "options": {
+        "a": "Always at most ceil(log2(n))+1",
+        "b": "Exactly n; the tree is a chain of right children",
+        "c": "Exactly 1; n was inserted last"
+      }
+    },
+    "cs-u8-q01": {
+      "title": "Index a negative integer",
+      "statement": "Define f:N→Z by f(0)=0; f(n)=(n+1)/2 for odd n; and f(n)=-n/2 for positive even n. Which input maps to -4? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "First choose the branch whose output has the required sign.",
+      "explanation": "The target is negative, so use the positive even branch: -n/2=-4 gives n=8. Every positive integer k has the unique input 2k-1, every negative integer -k has the unique input 2k, and 0 has input 0; thus the rule is a bijection.",
+      "solutionSteps": [
+        "The target is negative, so use the positive even branch: -n/2=-4 gives n=8. Every positive integer k has the unique input 2k-1, every negative integer -k has the unique input 2k, and 0 has input 0; thus the rule is a bijection."
+      ]
+    },
+    "cs-u8-q02": {
+      "title": "The codomain matters",
+      "statement": "For f:N→N defined by f(n)=n+1, which classification is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the smallest element of the stated codomain.",
+      "explanation": "Equal outputs n+1=m+1 imply n=m. But 0 is in the codomain and has no preimage. Changing the codomain to the positive integers would make f bijective.",
+      "solutionSteps": [
+        "Equal outputs n+1=m+1 imply n=m. But 0 is in the codomain and has no preimage. Changing the codomain to the positive integers would make f bijective."
+      ],
+      "options": {
+        "a": "Injective but not surjective",
+        "b": "Surjective but not injective",
+        "c": "Bijective"
+      }
+    },
+    "cs-u8-q03": {
+      "title": "A listing can repeat",
+      "statement": "For g:N→N defined by g(n)=floor(n/2), which classification is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Compare g(0) and g(1), then find an input for an arbitrary k.",
+      "explanation": "Every k is reached at n=2k. But 2k and 2k+1 have the same output k, so the function is not injective.",
+      "solutionSteps": [
+        "Every k is reached at n=2k. But 2k and 2k+1 have the same output k, so the function is not injective."
+      ],
+      "options": {
+        "a": "Injective but not surjective",
+        "b": "Bijective",
+        "c": "Surjective but not injective"
+      }
+    },
+    "cs-u8-q04": {
+      "title": "Test a finite-set intuition",
+      "statement": "Let E={0,2,4,...}. Which statement is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Use the map itself instead of visual density on a number line.",
+      "explanation": "The map is injective, and every even nonnegative integer is 2n for a unique n. Proper subsets of infinite sets can have the same cardinality.",
+      "solutionSteps": [
+        "The map is injective, and every even nonnegative integer is 2n for a unique n. Proper subsets of infinite sets can have the same cardinality."
+      ],
+      "options": {
+        "a": "E has strictly smaller cardinality than N because E is a proper subset",
+        "b": "n↦2n is a bijection N→E, although E is a proper subset of N",
+        "c": "No function from N to E can be surjective"
+      }
+    },
+    "cs-u8-q05": {
+      "title": "Index a finite string",
+      "statement": "List finite strings over {a,b} by increasing length, then lexicographically with a<b. Index the empty string ε at 0. What is the index of ba?",
+      "prompt": "Enter an integer.",
+      "hint": "Include the empty string when counting indices.",
+      "explanation": "The initial entries are 0:ε, 1:a, 2:b, 3:aa, 4:ab, 5:ba. Each length contributes a finite block.",
+      "solutionSteps": [
+        "The initial entries are 0:ε, 1:a, 2:b, 3:aa, 4:ab, 5:ba. Each length contributes a finite block."
+      ]
+    },
+    "cs-u8-q06": {
+      "title": "Find a starvation bug",
+      "statement": "Someone proposes listing N² by outputting (0,0),(0,1),(0,2),... and, after finishing that row, starting (1,0),(1,1),... . What fails?",
+      "prompt": "Choose one answer.",
+      "hint": "When, exactly, would the first row finish?",
+      "explanation": "The first row is infinite, so there is no finite point at which it finishes. A valid listing must reach each pair at some natural-number index.",
+      "solutionSteps": [
+        "The first row is infinite, so there is no finite point at which it finishes. A valid listing must reach each pair at some natural-number index."
+      ],
+      "options": {
+        "a": "No pair with first coordinate 1 is ever reached at a finite output index",
+        "b": "There are only finitely many pairs in N²",
+        "c": "The pair (0,0) is not in N²"
+      }
+    },
+    "cs-u8-q07": {
+      "title": "Repair the enumeration",
+      "statement": "Why does listing pairs (a,b)∈N² by increasing a+b, then by increasing a, avoid that problem?",
+      "prompt": "Choose one answer.",
+      "hint": "Fix a target pair and count the blocks before its diagonal.",
+      "explanation": "The pair (a,b) belongs to diagonal a+b. Only finitely many diagonals precede it, and diagonal k has k+1 pairs. Its own position within its diagonal is also finite.",
+      "solutionSteps": [
+        "The pair (a,b) belongs to diagonal a+b. Only finitely many diagonals precede it, and diagonal k has k+1 pairs. Its own position within its diagonal is also finite."
+      ],
+      "options": {
+        "a": "It makes N² a finite set",
+        "b": "Every pair has finitely many predecessors because every earlier diagonal is finite",
+        "c": "Every pair occurs on infinitely many diagonals"
+      }
+    },
+    "cs-u8-q08": {
+      "title": "Handle duplicate fractions",
+      "statement": "A diagonal enumeration of positive numerator-denominator pairs outputs 1/2 and later 2/4. Does this invalidate the proof that the positive rationals are countable?",
+      "prompt": "Choose one answer.",
+      "hint": "Distinguish listing all values from giving each value only once.",
+      "explanation": "A surjection from N onto a nonempty set establishes countability. Fraction representations need not be unique; every positive rational still has a positive numerator and denominator.",
+      "solutionSteps": [
+        "A surjection from N onto a nonempty set establishes countability. Fraction representations need not be unique; every positive rational still has a positive numerator and denominator."
+      ],
+      "options": {
+        "a": "Yes; a surjective listing must also be injective",
+        "b": "Yes; equal fractions prove there are uncountably many rationals",
+        "c": "No; every positive rational is reached, and duplicate values may be skipped if a distinct listing is wanted"
+      }
+    },
+    "cs-u8-q09": {
+      "title": "Flip the diagonal",
+      "statement": "The first four rows of a proposed infinite list begin s₀=0010..., s₁=1100..., s₂=1011..., s₃=0100... . Rows and bit positions start at 0. For d(n)=1-sₙ(n), what are the first four bits of d?",
+      "prompt": "Choose one answer.",
+      "hint": "Take a different bit position from each row before flipping.",
+      "explanation": "The diagonal bits are s₀(0)=0, s₁(1)=1, s₂(2)=1, s₃(3)=0. Flipping them gives 1001.",
+      "solutionSteps": [
+        "The diagonal bits are s₀(0)=0, s₁(1)=1, s₂(2)=1, s₃(3)=0. Flipping them gives 1001."
+      ],
+      "options": {
+        "a": "1001",
+        "b": "0110",
+        "c": "1010"
+      }
+    },
+    "cs-u8-q10": {
+      "title": "Exclude every row",
+      "statement": "For an arbitrary proposed list s₀,s₁,..., let d(n)=1-sₙ(n). Why can d not equal row sₖ, for any k∈N?",
+      "prompt": "Choose one answer.",
+      "hint": "Compare the two sequences at the position named by the row index.",
+      "explanation": "At position k, d(k)=1-sₖ(k), which differs from sₖ(k) because the bit is 0 or 1. One differing position suffices to show two sequences are unequal.",
+      "solutionSteps": [
+        "At position k, d(k)=1-sₖ(k), which differs from sₖ(k) because the bit is 0 or 1. One differing position suffices to show two sequences are unequal."
+      ],
+      "options": {
+        "a": "d differs from sₖ at every bit position",
+        "b": "Their bits at position k are opposite",
+        "c": "d is always the bitwise complement of the first row"
+      }
+    },
+    "cs-u8-q11": {
+      "title": "Reject an attempted patch",
+      "statement": "After constructing the missing d, someone inserts it at the beginning of the list and shifts all old rows down. Why does this not yield a list of every infinite binary sequence?",
+      "prompt": "Choose one answer.",
+      "hint": "The proof begins with an arbitrary list, not a permanently fixed one.",
+      "explanation": "The modified list is a valid countable list and now includes the old d. But the diagonal argument applies to every proposed list, including this one, and constructs a sequence outside its range.",
+      "solutionSteps": [
+        "The modified list is a valid countable list and now includes the old d. But the diagonal argument applies to every proposed list, including this one, and constructs a sequence outside its range."
+      ],
+      "options": {
+        "a": "The new list is no longer indexed by N",
+        "b": "The original d is still necessarily missing",
+        "c": "Applying diagonalization to the new list produces another sequence missing from it"
+      }
+    },
+    "cs-u8-q12": {
+      "title": "Keep finite and infinite objects distinct",
+      "statement": "Which comparison is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "An individual object’s length changes which enumeration argument applies.",
+      "explanation": "Finite strings have a length-first listing. Infinite binary sequences have no such exhaustive listing by diagonalization. A finite alphabet does not limit the number of infinite sequences to a countable set.",
+      "solutionSteps": [
+        "Finite strings have a length-first listing. Infinite binary sequences have no such exhaustive listing by diagonalization. A finite alphabet does not limit the number of infinite sequences to a countable set."
+      ],
+      "options": {
+        "a": "All finite binary strings form a countably infinite set; all infinite binary sequences form an uncountable set",
+        "b": "Both sets are finite because the alphabet has only two symbols",
+        "c": "Both are countable because each uses only two symbols"
+      }
+    },
+    "cs-u8-q13": {
+      "title": "Construct the omitted subset",
+      "statement": "Let A={0,1,2}, with g(0)={1}, g(1)={0,1}, and g(2)=∅. What is D={a∈A:a∉g(a)}?",
+      "prompt": "Choose one answer.",
+      "hint": "For each a, test membership in its own image g(a), not another image.",
+      "explanation": "0 is not in g(0), so include 0. 1 is in g(1), so exclude 1. 2 is not in g(2), so include 2. The resulting subset {0,2} is absent from g’s outputs.",
+      "solutionSteps": [
+        "0 is not in g(0), so include 0. 1 is in g(1), so exclude 1. 2 is not in g(2), so include 2. The resulting subset {0,2} is absent from g’s outputs."
+      ],
+      "options": {
+        "a": "{1}",
+        "b": "{0,1,2}",
+        "c": "{0,2}"
+      }
+    },
+    "cs-u8-q14": {
+      "title": "Identify the contradiction",
+      "statement": "For arbitrary total g:A→P(A), set D={a∈A:a∉g(a)}. If D=g(t) for some t∈A, what follows?",
+      "prompt": "Choose one answer.",
+      "hint": "Apply the defining predicate to the alleged preimage itself.",
+      "explanation": "By definition, t∈D iff t∉g(t). Substituting g(t)=D gives a proposition equivalent to its own negation, so the assumed preimage t cannot exist.",
+      "solutionSteps": [
+        "By definition, t∈D iff t∉g(t). Substituting g(t)=D gives a proposition equivalent to its own negation, so the assumed preimage t cannot exist."
+      ],
+      "options": {
+        "a": "t∈D if and only if t∉D",
+        "b": "t must be an integer",
+        "c": "D must be empty"
+      }
+    },
+    "cs-u8-q15": {
+      "title": "Count algorithms against languages",
+      "statement": "Let Σ={0,1}. Programs have finite descriptions, and a decider must halt on every input and correctly answer membership in one language L⊆Σ*. Which conclusion follows from counting?",
+      "prompt": "Choose one answer.",
+      "hint": "Count sets of strings separately from individual strings.",
+      "explanation": "There are countably many finite program descriptions and hence at most countably many languages decided by them. P(Σ*) is uncountable. Many infinite languages are decidable, such as strings of even length.",
+      "solutionSteps": [
+        "There are countably many finite program descriptions and hence at most countably many languages decided by them. P(Σ*) is uncountable. Many infinite languages are decidable, such as strings of even length."
+      ],
+      "options": {
+        "a": "Every language has a decider because every input string is finite",
+        "b": "Some languages have no decider: there are only countably many programs but uncountably many languages",
+        "c": "All infinite languages are undecidable"
+      }
+    },
+    "cs-u8-q16": {
+      "title": "Know what the existence argument does not identify",
+      "statement": "There are countably many finite program descriptions and uncountably many languages. Does this counting argument, by itself, determine whether a particular explicitly described language L has a decider?",
+      "prompt": "Choose one answer.",
+      "hint": "Distinguish an existence statement from a classification of a named example.",
+      "explanation": "The cardinality mismatch establishes existence. It does not select a particular language or analyze its membership rule. A separate construction, algorithm or reduction is needed for the chosen L.",
+      "solutionSteps": [
+        "The cardinality mismatch establishes existence. It does not select a particular language or analyze its membership rule. A separate construction, algorithm or reduction is needed for the chosen L."
+      ],
+      "options": {
+        "a": "Yes; every explicitly described language is undecidable",
+        "b": "Yes; counting produces a deciding program for L",
+        "c": "No; it proves some languages are undecidable, but classifying this L needs another argument"
+      }
+    },
+    "cs-u8-q17": {
+      "title": "Complete both sides of self-reference",
+      "statement": "Assume H correctly decides all halting questions. D(x) loops forever if H(x,x) says “halts”, and halts otherwise. Let d be D’s code. What happens when H predicts D(d)?",
+      "prompt": "Choose one answer.",
+      "hint": "Analyze the two possible outputs of H separately.",
+      "explanation": "Substitute x=d into D’s rule. Each possible Boolean answer makes D behave oppositely to the prediction. Finite code can be represented as input data in the assumed model.",
+      "solutionSteps": [
+        "Substitute x=d into D’s rule. Each possible Boolean answer makes D behave oppositely to the prediction. Finite code can be represented as input data in the assumed model."
+      ],
+      "options": {
+        "a": "A “halts” prediction forces nontermination; a “does not halt” prediction forces termination, so either prediction is wrong",
+        "b": "Only the “halts” prediction leads to a contradiction",
+        "c": "There is no contradiction because programs cannot receive program descriptions as input"
+      }
+    },
+    "cs-u8-q18": {
+      "title": "Interpret a timeout",
+      "statement": "A general program has not halted after 10,000 simulated steps. Without any further argument, what may you conclude?",
+      "prompt": "Choose one answer.",
+      "hint": "State exactly the finite event that was observed.",
+      "explanation": "Finite observation cannot distinguish a run that halts later from one that runs forever. Some programs admit separate proofs of nontermination, but the timeout alone supplies none.",
+      "solutionSteps": [
+        "Finite observation cannot distinguish a run that halts later from one that runs forever. Some programs admit separate proofs of nontermination, but the timeout alone supplies none."
+      ],
+      "options": {
+        "a": "It will never halt",
+        "b": "It did not halt within those 10,000 steps; later behavior is unresolved",
+        "c": "It must halt on step 10,001"
+      }
+    },
+    "cs-u8-q19": {
+      "title": "Find a decidable restriction",
+      "statement": "Which task can always be decided by finite simulation for an arbitrary program p, input x and supplied t∈N?",
+      "prompt": "Choose one answer.",
+      "hint": "A supplied finite bound changes the question.",
+      "explanation": "Inspect the initial configuration and at most t transitions, then return whether a halt occurred by the bound. The procedure terminates because t is finite; it makes no assertion about later steps.",
+      "solutionSteps": [
+        "Inspect the initial configuration and at most t transitions, then return whether a halt occurred by the bound. The procedure terminates because t is finite; it makes no assertion about later steps."
+      ],
+      "options": {
+        "a": "Whether p ever halts on x, with no step bound",
+        "b": "Whether p never halts on x",
+        "c": "Whether p halts on x within at most t steps"
+      }
+    },
+    "cs-u8-q20": {
+      "title": "Turn two recognizers into a decider",
+      "statement": "Suppose L and its complement within Σ* both have recognizers that accept every member and never accept a nonmember. Which strategy decides membership in L?",
+      "prompt": "Choose one answer.",
+      "hint": "Avoid waiting forever on one simulation before giving the other a turn.",
+      "explanation": "Every input belongs to exactly one of the two sets, so its corresponding recognizer eventually accepts. Interleaving prevents an infinite run of the other recognizer from blocking that event. Soundness gives the correct answer.",
+      "solutionSteps": [
+        "Every input belongs to exactly one of the two sets, so its corresponding recognizer eventually accepts. Interleaving prevents an infinite run of the other recognizer from blocking that event. Soundness gives the correct answer."
+      ],
+      "options": {
+        "a": "Alternate one simulation step of each recognizer; answer yes if L’s accepts and no if its complement’s accepts",
+        "b": "Run L’s recognizer to completion before starting the other",
+        "c": "Reject whenever L’s recognizer has taken more than 100 steps"
+      }
+    },
+    "cs-u8-q21": {
+      "title": "Identify the bounded construction",
+      "statement": "Which expression directly uses separation inside an already specified set?",
+      "prompt": "Choose one answer.",
+      "hint": "Look for an existing set after the membership symbol.",
+      "explanation": "The last expression selects elements of the existing set N. The other expressions assume an unrestricted collection is itself a set, which ordinary set theory does not permit.",
+      "solutionSteps": [
+        "The last expression selects elements of the existing set N. The other expressions assume an unrestricted collection is itself a set, which ordinary set theory does not permit."
+      ],
+      "options": {
+        "a": "{S : S is any set and S∉S}, with no ambient set",
+        "b": "The set of all sets, assumed to exist without an axiom",
+        "c": "{n∈N : n²<10}"
+      }
+    },
+    "cs-u8-q22": {
+      "title": "Diagnose the failed definition",
+      "statement": "Assume R is a set satisfying S∈R iff S∉S for every set S. Which substitution produces the contradiction?",
+      "prompt": "Choose one answer.",
+      "hint": "Use the alleged set as the input to its own membership rule.",
+      "explanation": "Because the defining claim covers every set and assumes R is one, it must apply to R itself. The resulting equivalence cannot be true.",
+      "solutionSteps": [
+        "Because the defining claim covers every set and assumes R is one, it must apply to R itself. The resulting equivalence cannot be true."
+      ],
+      "options": {
+        "a": "S=∅ only",
+        "b": "S=R, giving R∈R iff R∉R",
+        "c": "S=N only"
+      }
+    },
+    "cs-u8-q23": {
+      "title": "Why restricted separation is different",
+      "statement": "For an existing set A, form B={x∈A:x∉x}. Which conclusion follows from the same self-membership reasoning?",
+      "prompt": "Choose one answer.",
+      "hint": "Do not confuse an element of A with a subset of A.",
+      "explanation": "Separation gives a legitimate subset B of A. If B were also an element of A, its membership rule applied to B would yield a contradiction. Subsethood B⊆A does not imply membership B∈A.",
+      "solutionSteps": [
+        "Separation gives a legitimate subset B of A. If B were also an element of A, its membership rule applied to B would yield a contradiction. Subsethood B⊆A does not imply membership B∈A."
+      ],
+      "options": {
+        "a": "B∉A; assuming B∈A would force B∈B iff B∉B",
+        "b": "B cannot be a set under any circumstances",
+        "c": "B must be an element of A because B⊆A"
+      }
+    },
+    "cs-u8-q24": {
+      "title": "State the logical limit of the repair",
+      "statement": "A restricted set-formation rule avoids Russell’s contradiction. What has this fact alone established?",
+      "prompt": "Choose one answer.",
+      "hint": "Ruling out one bug is different from proving that no bug is possible.",
+      "explanation": "Preventing one known paradox does not check every possible derivation from an axiom system. The conclusion must be limited to what the argument actually proves.",
+      "solutionSteps": [
+        "Preventing one known paradox does not check every possible derivation from an axiom system. The conclusion must be limited to what the argument actually proves."
+      ],
+      "options": {
+        "a": "A proof that every mathematical statement is decidable",
+        "b": "A proof that no contradiction can ever follow from any of the remaining axioms",
+        "c": "That this specific contradictory construction is blocked; full consistency requires a separate argument"
+      }
+    },
+    "cs-u9-q01": {
+      "title": "Supply the divisibility witness",
+      "statement": "Which integer k establishes 8|-56 by the definition -56=8k?",
+      "prompt": "Enter an integer.",
+      "hint": "Divisibility uses integer multipliers, not only nonnegative ones.",
+      "explanation": "Taking k=-7 gives 8·(-7)=-56. The multiplier in a divisibility witness may be negative.",
+      "solutionSteps": [
+        "Taking k=-7 gives 8·(-7)=-56. The multiplier in a divisibility witness may be negative."
+      ]
+    },
+    "cs-u9-q02": {
+      "title": "Prove closure under linear combinations",
+      "statement": "Suppose d|a and d|b, with a=d·u and b=d·v for integers u,v. Which equality proves d|(3a-2b)?",
+      "prompt": "Choose one answer.",
+      "hint": "Substitute both divisibility witnesses before factoring.",
+      "explanation": "Substitution and factoring give 3du-2dv=d(3u-2v). The multiplier 3u-2v is an integer, exactly as required.",
+      "solutionSteps": [
+        "Substitution and factoring give 3du-2dv=d(3u-2v). The multiplier 3u-2v is an integer, exactly as required."
+      ],
+      "options": {
+        "a": "3a-2b=d(3u-2v)",
+        "b": "3a-2b=(3d-2d)(u-v)",
+        "c": "3a-2b=d(3u+2v)"
+      }
+    },
+    "cs-u9-q03": {
+      "title": "Reject unrestricted product cancellation",
+      "statement": "Which example disproves the claim “for every positive d, d|ab implies d|a or d|b”?",
+      "prompt": "Choose one answer.",
+      "hint": "The premise must be true while both alternatives in the conclusion are false.",
+      "explanation": "6 divides 2·3=6, but it divides neither 2 nor 3. The other examples satisfy the claimed conclusion and therefore do not refute it.",
+      "solutionSteps": [
+        "6 divides 2·3=6, but it divides neither 2 nor 3. The other examples satisfy the claimed conclusion and therefore do not refute it."
+      ],
+      "options": {
+        "a": "d=5, a=5, b=2",
+        "b": "d=6, a=2, b=3",
+        "c": "d=7, a=1, b=7"
+      }
+    },
+    "cs-u9-q04": {
+      "title": "Normalize a negative remainder",
+      "statement": "Write -29=6q+r with integers q,r and 0≤r<6. What is r?",
+      "prompt": "Enter an integer.",
+      "hint": "Choose the multiple of 6 immediately below -29.",
+      "explanation": "-29=6·(-5)+1, and 1 lies in the required range. A programming language’s signed remainder convention is not being used here.",
+      "solutionSteps": [
+        "-29=6·(-5)+1, and 1 lies in the required range. A programming language’s signed remainder convention is not being used here."
+      ]
+    },
+    "cs-u9-q05": {
+      "title": "Take one Euclidean step",
+      "statement": "Euclid’s state is (x,y)=(221,85). With update (x,y)→(y,x mod y), which state comes next?",
+      "prompt": "Choose one answer.",
+      "hint": "Find the remainder before swapping the roles of the coordinates.",
+      "explanation": "221=2·85+51, so the next state is (85,51). The old second coordinate becomes the first.",
+      "solutionSteps": [
+        "221=2·85+51, so the next state is (85,51). The old second coordinate becomes the first."
+      ],
+      "options": {
+        "a": "(85,34)",
+        "b": "(51,85)",
+        "c": "(85,51)"
+      }
+    },
+    "cs-u9-q06": {
+      "title": "Finish the trace",
+      "statement": "What is gcd(221,85)? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Continue until the second coordinate is 0.",
+      "explanation": "The successive states are (221,85)→(85,51)→(51,34)→(34,17)→(17,0). The last nonzero remainder is 17.",
+      "solutionSteps": [
+        "The successive states are (221,85)→(85,51)→(51,34)→(34,17)→(17,0). The last nonzero remainder is 17."
+      ]
+    },
+    "cs-u9-q07": {
+      "title": "Prove the invariant in both directions",
+      "statement": "Let a=qb+r. Which argument justifies gcd(a,b)=gcd(b,r)?",
+      "prompt": "Choose one answer.",
+      "hint": "Proving only one implication would show containment of divisor sets, not equality.",
+      "explanation": "The two implications show the sets of positive common divisors are identical. Therefore their greatest elements agree.",
+      "solutionSteps": [
+        "The two implications show the sets of positive common divisors are identical. Therefore their greatest elements agree."
+      ],
+      "options": {
+        "a": "A common divisor of a,b divides r=a-qb, and a common divisor of b,r divides a=qb+r",
+        "b": "Because r<b, every divisor of r must also divide a",
+        "c": "The gcd always equals the smaller input b"
+      }
+    },
+    "cs-u9-q08": {
+      "title": "Certify termination and the output",
+      "statement": "In Euclid’s algorithm, which pair of facts completes the proof?",
+      "prompt": "Choose one answer.",
+      "hint": "Use one fact for termination and another for the returned value.",
+      "explanation": "The second coordinate strictly decreases through N while the guard is true, so the loop terminates. The preserved gcd then equals the terminal first coordinate x. Digit count need not fall on each step.",
+      "solutionSteps": [
+        "The second coordinate strictly decreases through N while the guard is true, so the loop terminates. The preserved gcd then equals the terminal first coordinate x. Digit count need not fall on each step."
+      ],
+      "options": {
+        "a": "x+y stays constant, and the program stops when x=0",
+        "b": "For y>0, the new y lies in [0,y); on exit gcd(x,0)=x",
+        "c": "The number of digits of x strictly decreases on every step"
+      }
+    },
+    "cs-u9-q09": {
+      "title": "Verify a coefficient",
+      "statement": "Complete the integer identity 1=-7·65+t·24. What is t?",
+      "prompt": "Enter an integer.",
+      "hint": "The coefficient is checked by an exact equality, not an approximation.",
+      "explanation": "1+455=456, and 456/24=19. Substituting verifies -455+456=1.",
+      "solutionSteps": [
+        "1+455=456, and 456/24=19. Substituting verifies -455+456=1."
+      ]
+    },
+    "cs-u9-q10": {
+      "title": "Choose a feasible target",
+      "statement": "For integers x,y, which of these equations has a solution?",
+      "prompt": "Choose one answer.",
+      "hint": "Find the gcd and test divisibility of each right-hand side.",
+      "explanation": "gcd(18,30)=6, so exactly multiples of 6 are possible targets. For target 6, x=2 and y=-1 give 36-30=6.",
+      "solutionSteps": [
+        "gcd(18,30)=6, so exactly multiples of 6 are possible targets. For target 6, x=2 and y=-1 give 36-30=6."
+      ],
+      "options": {
+        "a": "18x+30y=7",
+        "b": "18x+30y=6",
+        "c": "18x+30y=11"
+      }
+    },
+    "cs-u9-q11": {
+      "title": "Respect the sign constraint",
+      "statement": "The equation 6x+10y=2 has the integer solution x=2,y=-1. Does it have a solution with both x,y∈N?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the smallest positive value allowed by the extra constraint.",
+      "explanation": "The gcd criterion concerns integer coefficients of either sign. With nonnegative coefficients, every nonzero combination is at least 6, so 2 is impossible.",
+      "solutionSteps": [
+        "The gcd criterion concerns integer coefficients of either sign. With nonnegative coefficients, every nonzero combination is at least 6, so 2 is impossible."
+      ],
+      "options": {
+        "a": "Yes; existence over Z always implies existence over N",
+        "b": "Yes; replace -1 by 1 without changing the sum",
+        "c": "No; the sum is 0 if both are 0, and at least 6 if either is positive"
+      }
+    },
+    "cs-u9-q12": {
+      "title": "Audit a gcd certificate",
+      "statement": "For positive a,b,g, which evidence is sufficient to prove g=gcd(a,b)?",
+      "prompt": "Choose one answer.",
+      "hint": "One condition gives a lower bound on the gcd; the other gives an upper bound.",
+      "explanation": "The first condition makes g a positive common divisor. Every common divisor divides the displayed integer combination g and therefore is at most g. These two facts establish maximality.",
+      "solutionSteps": [
+        "The first condition makes g a positive common divisor. Every common divisor divides the displayed integer combination g and therefore is at most g. These two facts establish maximality."
+      ],
+      "options": {
+        "a": "g divides both a and b, and g=u·a+v·b for some integers u,v",
+        "b": "g is any positive linear combination of a and b",
+        "c": "g divides a, without any condition on b"
+      }
+    },
+    "cs-u9-q13": {
+      "title": "Apply the prime-divisor property",
+      "statement": "Integers a,b satisfy 7|ab and 7 does not divide a. What follows?",
+      "prompt": "Choose one answer.",
+      "hint": "Use the primality of the stated divisor.",
+      "explanation": "Because 7 is prime, 7|ab implies 7|a or 7|b. The first possibility is excluded, leaving the second.",
+      "solutionSteps": [
+        "Because 7 is prime, 7|ab implies 7|a or 7|b. The first possibility is excluded, leaving the second."
+      ],
+      "options": {
+        "a": "7 divides a+b",
+        "b": "a and b must be coprime",
+        "c": "7 divides b"
+      }
+    },
+    "cs-u9-q14": {
+      "title": "Read a gcd from factorizations",
+      "statement": "Let a=2³·3² and b=2²·3·5. What is gcd(a,b)? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "A common divisor can use no more copies of a prime than either input provides.",
+      "explanation": "Take minimum exponents: 2^min(3,2)·3^min(2,1)·5^min(0,1)=2²·3=12.",
+      "solutionSteps": [
+        "Take minimum exponents: 2^min(3,2)·3^min(2,1)·5^min(0,1)=2²·3=12."
+      ]
+    },
+    "cs-u9-q15": {
+      "title": "Repair Euclid’s prime proof",
+      "statement": "Given a claimed complete finite list of primes p₁,...,pₖ, set N=p₁...pₖ+1. Which conclusion is actually needed?",
+      "prompt": "Choose one answer.",
+      "hint": "Separate “has a new prime factor” from “is a new prime.”",
+      "explanation": "Every listed prime leaves remainder 1 when dividing N. Since N>1 has some prime factor, that factor cannot be listed. This contradicts completeness without asserting that N is prime.",
+      "solutionSteps": [
+        "Every listed prime leaves remainder 1 when dividing N. Since N>1 has some prime factor, that factor cannot be listed. This contradicts completeness without asserting that N is prime."
+      ],
+      "options": {
+        "a": "N is automatically prime",
+        "b": "N has a prime factor outside the list, whether or not N itself is prime",
+        "c": "N is divisible by every listed prime"
+      }
+    },
+    "cs-u9-q16": {
+      "title": "Complete a primality check",
+      "statement": "To test 97 by trial division, an engineer has checked primes 2,3,5. Which additional prime at most sqrt(97) must be checked to complete this method? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "List primes, not every integer, below the square-root bound.",
+      "explanation": "sqrt(97) lies between 9 and 10. The primes at most this bound are 2,3,5,7. Since 97 is also not divisible by 7, no possible small prime divisor remains.",
+      "solutionSteps": [
+        "sqrt(97) lies between 9 and 10. The primes at most this bound are 2,3,5,7. Since 97 is also not divisible by 7, no possible small prime divisor remains."
+      ]
+    },
+    "cs-u9-q17": {
+      "title": "Reduce before multiplying",
+      "statement": "What is the canonical remainder of 17·23+8 modulo 11? Enter an integer from 0 to 10.",
+      "prompt": "Enter an integer.",
+      "hint": "Replace each factor by its remainder first.",
+      "explanation": "17≡6 and 23≡1 modulo 11. Thus 17·23+8≡6·1+8=14≡3. Directly, 399=36·11+3.",
+      "solutionSteps": [
+        "17≡6 and 23≡1 modulo 11. Thus 17·23+8≡6·1+8=14≡3. Directly, 399=36·11+3."
+      ]
+    },
+    "cs-u9-q18": {
+      "title": "Interpret a hash collision",
+      "statement": "An integer-key hash is h(x)=x mod 8, using canonical remainders. Since h(13)=h(21)=5, what follows?",
+      "prompt": "Choose one answer.",
+      "hint": "A many-to-one map cannot certify equality of its inputs.",
+      "explanation": "The difference 21-13=8 is divisible by 8, so the residues agree. The hash discards information and is not injective over all integer keys.",
+      "solutionSteps": [
+        "The difference 21-13=8 is divisible by 8, so the residues agree. The hash discards information and is not injective over all integer keys."
+      ],
+      "options": {
+        "a": "13≡21 (mod 8), but the keys are distinct",
+        "b": "13=21 as integers",
+        "c": "No such hash function can exist"
+      }
+    },
+    "cs-u9-q19": {
+      "title": "Choose a valid congruence rule",
+      "statement": "For any n≥2, assume a≡b (mod n) and c≡d (mod n). Which conclusion is always valid?",
+      "prompt": "Choose one answer.",
+      "hint": "Write the difference of the two proposed results.",
+      "explanation": "Differences of the sums are multiples of n. For products, ac-bd=a(c-d)+d(a-b), also a multiple of n. Division may be undefined or invalid modulo n.",
+      "solutionSteps": [
+        "Differences of the sums are multiples of n. For products, ac-bd=a(c-d)+d(a-b), also a multiple of n. Division may be undefined or invalid modulo n."
+      ],
+      "options": {
+        "a": "a=b and c=d as integers",
+        "b": "a+c≡b+d and ac≡bd (mod n)",
+        "c": "a/c≡b/d (mod n), with no further assumptions"
+      }
+    },
+    "cs-u9-q20": {
+      "title": "Use repeated squaring",
+      "statement": "Compute 3¹³ mod 17 as a canonical remainder. Enter an integer from 0 to 16.",
+      "prompt": "Enter an integer.",
+      "hint": "Write 13 as a sum of powers of 2.",
+      "explanation": "3²≡9, 3⁴≡13, and 3⁸≡16 modulo 17. Since 13=8+4+1, 3¹³≡16·13·3≡4·3≡12.",
+      "solutionSteps": [
+        "3²≡9, 3⁴≡13, and 3⁸≡16 modulo 17. Since 13=8+4+1, 3¹³≡16·13·3≡4·3≡12."
+      ]
+    },
+    "cs-u9-q21": {
+      "title": "Find the modular inverse",
+      "statement": "What is the multiplicative inverse of 7 modulo 26, written from 0 to 25?",
+      "prompt": "Enter an integer.",
+      "hint": "Seek a multiple of 7 that is one more than a multiple of 26.",
+      "explanation": "7·15=105=4·26+1, so 15 is an inverse. It is unique modulo 26 because gcd(7,26)=1.",
+      "solutionSteps": [
+        "7·15=105=4·26+1, so 15 is an inverse. It is unique modulo 26 because gcd(7,26)=1."
+      ]
+    },
+    "cs-u9-q22": {
+      "title": "Reject an impossible inverse equation",
+      "statement": "Does 6x≡1 (mod 15) have an integer solution?",
+      "prompt": "Choose one answer.",
+      "hint": "Translate the congruence into an integer linear-combination equation.",
+      "explanation": "The congruence would give 6x-15k=1 for some integer k. Its left side is divisible by 3, while its right side is not.",
+      "solutionSteps": [
+        "The congruence would give 6x-15k=1 for some integer k. Its left side is divisible by 3, while its right side is not."
+      ],
+      "options": {
+        "a": "Yes; x=3",
+        "b": "Yes; every nonzero residue has an inverse",
+        "c": "No; gcd(6,15)=3 does not divide 1"
+      }
+    },
+    "cs-u9-q23": {
+      "title": "Keep all solutions after dividing",
+      "statement": "Which condition gives exactly all integer solutions of 6x≡12 (mod 18)?",
+      "prompt": "Choose one answer.",
+      "hint": "Divide the modulus by the same common factor.",
+      "explanation": "18|6(x-2) is equivalent to 3|(x-2). Thus x≡2 modulo 3. Keeping modulus 18 would discard valid solutions such as x=5.",
+      "solutionSteps": [
+        "18|6(x-2) is equivalent to 3|(x-2). Thus x≡2 modulo 3. Keeping modulus 18 would discard valid solutions such as x=5."
+      ],
+      "options": {
+        "a": "x≡2 (mod 3)",
+        "b": "x≡2 (mod 18)",
+        "c": "There are no solutions"
+      }
+    },
+    "cs-u9-q24": {
+      "title": "Explain a permutation of residues",
+      "statement": "Define f:{0,...,25}→{0,...,25} by f(x)=7x mod 26. Why is f a bijection?",
+      "prompt": "Choose one answer.",
+      "hint": "Use the modular inverse to undo the map.",
+      "explanation": "Since 7·15≡1 modulo 26, multiplying an output by 15 recovers its unique input residue. This proves both injectivity and surjectivity.",
+      "solutionSteps": [
+        "Since 7·15≡1 modulo 26, multiplying an output by 15 recovers its unique input residue. This proves both injectivity and surjectivity."
+      ],
+      "options": {
+        "a": "Every multiplication map modulo every n is bijective",
+        "b": "Multiplication by 15 modulo 26 is its inverse function",
+        "c": "Reducing modulo 26 always preserves distinct integer products"
+      }
+    },
+    "cs-u9-q25": {
+      "title": "Compute the totient",
+      "statement": "What is φ(45)? Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "Factor into coprime prime powers.",
+      "explanation": "45=9·5 with coprime factors. φ(9)=9-3=6 and φ(5)=5-1=4, so φ(45)=6·4=24.",
+      "solutionSteps": [
+        "45=9·5 with coprime factors. φ(9)=9-3=6 and φ(5)=5-1=4, so φ(45)=6·4=24."
+      ]
+    },
+    "cs-u9-q26": {
+      "title": "Reduce a large power lawfully",
+      "statement": "Compute 7¹⁰¹ mod 15 as a canonical remainder. You may use φ(15)=8.",
+      "prompt": "Enter an integer.",
+      "hint": "Check coprimality before using the supplied totient.",
+      "explanation": "gcd(7,15)=1, so reduce 101 modulo 8 to 5. Also 7²≡4 and 7⁴≡1 modulo 15; hence 7¹⁰¹≡7⁵≡7.",
+      "solutionSteps": [
+        "gcd(7,15)=1, so reduce 101 modulo 8 to 5. Also 7²≡4 and 7⁴≡1 modulo 15; hence 7¹⁰¹≡7⁵≡7."
+      ]
+    },
+    "cs-u9-q27": {
+      "title": "Find the missing hypothesis",
+      "statement": "Someone claims 6^φ(9)≡1 (mod 9) by Euler’s theorem. What is wrong?",
+      "prompt": "Choose one answer.",
+      "hint": "Check the gcd of the base and modulus, not only the exponent.",
+      "explanation": "φ(9)=6, but 6 is not coprime to 9. Since 6²=36 is divisible by 9, every higher positive power starting at exponent 2 also has remainder 0.",
+      "solutionSteps": [
+        "φ(9)=6, but 6 is not coprime to 9. Since 6²=36 is divisible by 9, every higher positive power starting at exponent 2 also has remainder 0."
+      ],
+      "options": {
+        "a": "Euler’s theorem applies only when the exponent is odd",
+        "b": "gcd(6,9)=3, so the theorem does not apply; in fact 6⁶≡0 (mod 9)",
+        "c": "φ(9)=9"
+      }
+    },
+    "cs-u9-q28": {
+      "title": "Disprove a primality shortcut",
+      "statement": "A proposed primality test accepts odd n whenever 2^(n-1)≡1 (mod n). For n=341 this congruence holds, but 341=11·31. What does that show?",
+      "prompt": "Choose one answer.",
+      "hint": "Distinguish “prime implies the congruence” from the reverse implication.",
+      "explanation": "The theorem gives a necessary condition for an odd prime modulus, not its converse. Here 2¹⁰=1024≡1 modulo 341, so 2³⁴⁰≡1, yet the displayed factorization proves compositeness.",
+      "solutionSteps": [
+        "The theorem gives a necessary condition for an odd prime modulus, not its converse. Here 2¹⁰=1024≡1 modulo 341, so 2³⁴⁰≡1, yet the displayed factorization proves compositeness."
+      ],
+      "options": {
+        "a": "Every number accepted by this test is prime",
+        "b": "Fermat’s little theorem is false",
+        "c": "This single congruence is insufficient to establish primality"
+      }
+    },
+    "cs-u9-q29": {
+      "title": "Choose the correct inverse modulus",
+      "statement": "For p=7,q=13,e=5, find d in {1,...,71} such that 5d≡1 (mod φ(91)). Enter an integer.",
+      "prompt": "Enter an integer.",
+      "hint": "First calculate the modulus used by the private-exponent equation.",
+      "explanation": "φ(91)=6·12=72. Since 5·29=145=2·72+1, d=29. The inverse is computed modulo the totient 72, not modulo 91.",
+      "solutionSteps": [
+        "φ(91)=6·12=72. Since 5·29=145=2·72+1, d=29. The inverse is computed modulo the totient 72, not modulo 91."
+      ]
+    },
+    "cs-u9-q30": {
+      "title": "Encrypt a message",
+      "statement": "With public key (n,e)=(91,5), encrypt m=10. What is c=10⁵ mod 91 in {0,...,90}?",
+      "prompt": "Enter an integer.",
+      "hint": "Use repeated squaring and reduce after each multiplication.",
+      "explanation": "10²≡9 modulo 91, so 10⁴≡81 and 10⁵≡810≡82. The final remainder lies in the required range.",
+      "solutionSteps": [
+        "10²≡9 modulo 91, so 10⁴≡81 and 10⁵≡810≡82. The final remainder lies in the required range."
+      ]
+    },
+    "cs-u9-q31": {
+      "title": "Decrypt using supplied powers",
+      "statement": "For c=82 and d=29, use 82¹⁶≡9, 82⁸≡81 and 82⁴≡9 (mod 91). What is 82²⁹ mod 91?",
+      "prompt": "Enter an integer.",
+      "hint": "Split 29 into the exponents supplied, then reduce the product in pairs.",
+      "explanation": "29=16+8+4+1, so the result is 9·81·9·82 mod 91. Since 9·81=729≡1 and 9·82=738≡10, the remainder is 10.",
+      "solutionSteps": [
+        "29=16+8+4+1, so the result is 9·81·9·82 mod 91. Since 9·81=729≡1 and 9·82=738≡10, the remainder is 10."
+      ]
+    },
+    "cs-u9-q32": {
+      "title": "Repair the all-message proof",
+      "statement": "For this toy key, ed=145. The message m=7 is not coprime to n=91, so Euler modulo 91 cannot be applied directly. Which argument still proves m¹⁴⁵≡m (mod 91)?",
+      "prompt": "Choose one answer.",
+      "hint": "Prove the result modulo each prime before combining the conclusions.",
+      "explanation": "Modulo 7, 7¹⁴⁵ and 7 are both 0. Modulo 13, 7¹⁴⁵=7·(7¹²)¹²≡7. Hence their difference is divisible by 7 and by 13, and therefore by 91. The general proof similarly separates zero and nonzero residues for each prime.",
+      "solutionSteps": [
+        "Modulo 7, 7¹⁴⁵ and 7 are both 0. Modulo 13, 7¹⁴⁵=7·(7¹²)¹²≡7. Hence their difference is divisible by 7 and by 13, and therefore by 91. The general proof similarly separates zero and nonzero residues for each prime."
+      ],
+      "options": {
+        "a": "Modulo 7 both sides are 0; modulo 13, Fermat gives 7¹²≡1 and 145=1+12·12; agreement modulo coprime 7 and 13 implies agreement modulo 91",
+        "b": "Euler modulo 91 applies to every integer without any hypothesis",
+        "c": "A message sharing a prime factor with n can never be recovered"
       }
     }
   },

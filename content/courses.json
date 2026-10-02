@@ -33,12 +33,41 @@
       "cs-u5-strengthening",
       "cs-u5-strong",
       "cs-u5-bases",
-      "cs-u5-principles"
+      "cs-u5-principles",
+      "cs-u6-model",
+      "cs-u6-invariants",
+      "cs-u6-partial-correctness",
+      "cs-u6-termination",
+      "cs-u6-matching-trace",
+      "cs-u6-matching-proof",
+      "cs-u7-recursive-definitions",
+      "cs-u7-structural-induction",
+      "cs-u7-brackets",
+      "cs-u7-recursive-functions",
+      "cs-u7-expressions",
+      "cs-u7-finite-games",
+      "cs-u7-search-trees",
+      "cs-u8-bijections",
+      "cs-u8-enumeration",
+      "cs-u8-diagonal",
+      "cs-u8-power-sets",
+      "cs-u8-halting",
+      "cs-u8-set-foundations",
+      "cs-u9-divisibility",
+      "cs-u9-euclid",
+      "cs-u9-bezout",
+      "cs-u9-primes",
+      "cs-u9-modular-arithmetic",
+      "cs-u9-inverses",
+      "cs-u9-euler",
+      "cs-u9-rsa"
     ]
   },
   {
     "id": "ml",
     "icon": "vectors",
-    "moduleIds": ["ml-vectors"]
+    "moduleIds": [
+      "ml-vectors"
+    ]
   }
 ]
