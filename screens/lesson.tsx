@@ -9,6 +9,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { SaveIndicator, type SaveStatus } from "@/components/almath/shell";
+import { MathText } from "@/components/almath/math-text";
 import { getExercise, locale, t } from "@/learning/content";
 import { emptyDraft, getConceptPosition } from "@/learning/progress";
 import type { Session } from "@/learning/types";
@@ -112,16 +113,28 @@ export function LessonScreen({
                     exercise.conceptId.startsWith("cs") ? "cs" : "ml"
                   ].category}
             </span>
-            <h1 tabIndex={-1}>{theory.title}</h1>
-            <p className="theory-body">{theory.body}</p>
-            {theory.formula && <div className="formula">{theory.formula}</div>}
+            <h1 tabIndex={-1}>
+              <MathText>{theory.title}</MathText>
+            </h1>
+            <p className="theory-body">
+              <MathText>{theory.body}</MathText>
+            </p>
+            {theory.formula && (
+              <div className="formula">
+                <MathText>{theory.formula}</MathText>
+              </div>
+            )}
             <section className="example-panel">
               <h2>{t("example")}</h2>
-              <p>{theory.example}</p>
+              <p>
+                <MathText>{theory.example}</MathText>
+              </p>
               {theory.exampleSteps.length > 0 && (
                 <ul>
                   {theory.exampleSteps.map((step) => (
-                    <li key={step}>{step}</li>
+                    <li key={step}>
+                      <MathText>{step}</MathText>
+                    </li>
                   ))}
                 </ul>
               )}
@@ -132,7 +145,9 @@ export function LessonScreen({
               </span>
               <div>
                 <h2>{t("takeaway")}</h2>
-                <p>{theory.takeaway}</p>
+                <p>
+                  <MathText>{theory.takeaway}</MathText>
+                </p>
               </div>
             </aside>
             <div className="lesson-actions">
@@ -151,10 +166,14 @@ export function LessonScreen({
                 total: position.questionCount,
               })}
             </span>
-            <h1 tabIndex={-1}>{text.title}</h1>
-            <div className="question-statement">{text.statement}</div>
+            <h1 tabIndex={-1}>
+              <MathText>{text.title}</MathText>
+            </h1>
+            <div className="question-statement">
+              <MathText>{text.statement}</MathText>
+            </div>
             <p className="question-prompt" id="question-prompt">
-              {text.prompt}
+              <MathText>{text.prompt}</MathText>
             </p>
             <form
               onSubmit={(event) => {
@@ -181,7 +200,8 @@ export function LessonScreen({
                         id={`answer-${exercise.id}-${id}`}
                       />
                       <span>
-                        {id.toUpperCase()}. {text.options![id]}
+                        {id.toUpperCase()}.{" "}
+                        <MathText>{text.options![id]}</MathText>
                       </span>
                     </label>
                   ))}
@@ -234,29 +254,33 @@ export function LessonScreen({
                     {t(draft.feedback)}
                   </h2>
                   <p>
-                    {draft.feedback === "correct"
-                      ? text.explanation
-                      : text.hint}
+                    <MathText>
+                      {draft.feedback === "correct"
+                        ? text.explanation
+                        : text.hint}
+                    </MathText>
                   </p>
                 </div>
               )}
-              {draft.hintUsed &&
-                draft.feedback !== "incorrect" &&
-                !finished && (
-                  <aside className="hint-panel">
-                    <h2>
-                      <Lightbulb size={19} />
-                      {t("hint")}
-                    </h2>
-                    <p>{text.hint}</p>
-                  </aside>
-                )}
+              {draft.hintUsed && !finished && (
+                <aside className="hint-panel">
+                  <h2>
+                    <Lightbulb size={19} />
+                    {t("hint")}
+                  </h2>
+                  <p>
+                    <MathText>{text.hint}</MathText>
+                  </p>
+                </aside>
+              )}
               {draft.solutionRevealed && (
                 <section className="solution-panel">
                   <h2>{t("solutionTitle")}</h2>
                   <ol>
                     {text.solutionSteps.map((step) => (
-                      <li key={step}>{step}</li>
+                      <li key={step}>
+                        <MathText>{step}</MathText>
+                      </li>
                     ))}
                   </ol>
                   <p className="small-note">{t("solutionNote")}</p>
