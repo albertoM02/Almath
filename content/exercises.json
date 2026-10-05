@@ -3161,5 +3161,188 @@
       "b",
       "c"
     ]
+  },
+  {
+    "id": "ml-lr-q01",
+    "conceptId": "ml-linear-regression",
+    "type": "number",
+    "answer": 2,
+    "sourceId": "almath-original",
+    "version": 1,
+    "tolerance": 0
+  },
+  {
+    "id": "ml-lr-q02",
+    "conceptId": "ml-linear-regression",
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-lr-q03",
+    "conceptId": "ml-linear-regression",
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-lr-q04",
+    "conceptId": "ml-linear-regression",
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-gd-q01",
+    "conceptId": "ml-gradient-descent",
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-gd-q02",
+    "conceptId": "ml-gradient-descent",
+    "type": "number",
+    "answer": 3,
+    "sourceId": "almath-original",
+    "version": 1,
+    "tolerance": 0
+  },
+  {
+    "id": "ml-gd-q03",
+    "conceptId": "ml-gradient-descent",
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-gd-q04",
+    "conceptId": "ml-gradient-descent",
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-lr-q05",
+    "conceptId": "ml-linear-regression",
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-lr-q06",
+    "conceptId": "ml-linear-regression",
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-lr-q07",
+    "conceptId": "ml-linear-regression",
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-gd-q05",
+    "conceptId": "ml-gradient-descent",
+    "type": "number",
+    "answer": 0,
+    "sourceId": "almath-original",
+    "version": 1,
+    "tolerance": 0
+  },
+  {
+    "id": "ml-gd-q06",
+    "conceptId": "ml-gradient-descent",
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-gd-q07",
+    "conceptId": "ml-gradient-descent",
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-gd-q08",
+    "conceptId": "ml-gradient-descent",
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "version": 1,
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   }
 ]

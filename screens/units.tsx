@@ -123,6 +123,11 @@ function PartSection({
                 </span>
               </AccordionTrigger>
               <AccordionContent className="unit-content">
+                {locale.units[unit.id].description && (
+                  <p className="small-note">
+                    {locale.units[unit.id].description}
+                  </p>
+                )}
                 {unit.moduleIds.length ? (
                   <UnitModules
                     moduleIds={unit.moduleIds}

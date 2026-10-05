@@ -66,11 +66,58 @@ export function createSession(
     mode,
     exerciseIds,
     baseExerciseIds: [...learningModule.exerciseIds],
+    exerciseVersions: Object.fromEntries(
+      exerciseIds.map((id) => [
+        id,
+        exercises.find((exercise) => exercise.id === id)!.version,
+      ]),
+    ),
     index: startAt,
     stage: "theory",
     drafts: {},
     finished: false,
   };
+}
+
+export function refreshSession(
+  learningModule: Module,
+  exercises: Exercise[],
+  progress: ProgressState,
+  previous: Session,
+): Session {
+  if (previous.contentVersion === learningModule.version) return previous;
+  const next = createSession(
+    learningModule,
+    exercises,
+    progress,
+    previous.mode,
+  );
+  for (const id of next.exerciseIds) {
+    // Sessions saved before version tracking contain the original version-one questions.
+    const previousVersion = previous.exerciseVersions?.[id] ?? 1;
+    if (previous.drafts[id] && previousVersion === next.exerciseVersions![id])
+      next.drafts[id] = previous.drafts[id];
+  }
+  const currentId = previous.exerciseIds[previous.index];
+  const currentIndex = next.exerciseIds.indexOf(currentId);
+  const firstUnfinished = next.exerciseIds.findIndex(
+    (id) =>
+      next.drafts[id]?.feedback !== "correct" &&
+      !next.drafts[id]?.solutionRevealed,
+  );
+  next.index =
+    !previous.finished && currentIndex >= 0
+      ? currentIndex
+      : Math.max(0, firstUnfinished);
+  const previousConcept = exercises.find(
+    (exercise) => exercise.id === currentId,
+  )?.conceptId;
+  const nextConcept = exercises.find(
+    (exercise) => exercise.id === next.exerciseIds[next.index],
+  )?.conceptId;
+  next.stage = previousConcept === nextConcept ? previous.stage : "theory";
+  next.finished = previous.finished && firstUnfinished === -1;
+  return next;
 }
 
 export function markCompleted(

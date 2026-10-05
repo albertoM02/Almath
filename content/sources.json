@@ -8,7 +8,11 @@
     "id": "mcs-2018",
     "kind": "concept-reference",
     "title": "Mathematics for Computer Science",
-    "authors": ["Eric Lehman", "F. Thomson Leighton", "Albert R. Meyer"],
+    "authors": [
+      "Eric Lehman",
+      "F. Thomson Leighton",
+      "Albert R. Meyer"
+    ],
     "edition": "2018-06-06",
     "url": "https://courses.csail.mit.edu/6.042/spring18/mcs.pdf",
     "license": "CC-BY-SA-3.0",
@@ -26,5 +30,18 @@
     ],
     "checked": "2026-09-29",
     "note": "Skills evidence, not a company interview question bank."
+  },
+  {
+    "id": "ml-model-foundations",
+    "kind": "concept-reference",
+    "title": "Google ML Crash Course and Stanford CS229: linear regression and optimization",
+    "urls": [
+      "https://developers.google.com/machine-learning/crash-course/linear-regression/loss",
+      "https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent",
+      "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
+      "https://cs229.stanford.edu/summer2023/cs229-notes1.pdf"
+    ],
+    "checked": "2026-10-02",
+    "note": "Original explanations, examples and questions in docs/question-banks/ML_Modules_1_2_Revision_Approved.json. The revised bank has 12 questions; the original 8-question approval is retained for history. References inform mathematical concepts; no source questions are copied or adapted. These are preparation exercises, not confirmed company interview questions."
   }
 ]

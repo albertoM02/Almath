@@ -224,6 +224,62 @@
             "moduleIds": [
               "ml-vectors"
             ]
+          },
+          {
+            "id": "ml-unit-02",
+            "number": 2,
+            "moduleIds": [
+              "ml-linear-regression"
+            ]
+          },
+          {
+            "id": "ml-unit-03",
+            "number": 3,
+            "moduleIds": [
+              "ml-gradient-descent"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ml-quality",
+        "label": "II",
+        "units": [
+          {
+            "id": "ml-unit-04",
+            "number": 4,
+            "moduleIds": []
+          },
+          {
+            "id": "ml-unit-05",
+            "number": 5,
+            "moduleIds": []
+          },
+          {
+            "id": "ml-unit-06",
+            "number": 6,
+            "moduleIds": []
+          }
+        ]
+      },
+      {
+        "id": "ml-advanced",
+        "label": "III",
+        "units": [
+          {
+            "id": "ml-unit-07",
+            "number": 7,
+            "moduleIds": []
+          },
+          {
+            "id": "ml-unit-08",
+            "number": 8,
+            "moduleIds": []
+          },
+          {
+            "id": "ml-unit-09",
+            "number": 9,
+            "moduleIds": []
           }
         ]
       }

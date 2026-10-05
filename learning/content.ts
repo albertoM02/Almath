@@ -27,7 +27,7 @@ export const locale = english as {
   >;
   modules: Record<string, { title: string; description: string }>;
   parts: Record<string, { title: string }>;
-  units: Record<string, { title: string }>;
+  units: Record<string, { title: string; description?: string }>;
   concepts: Record<string, ConceptText>;
   exercises: Record<string, ExerciseText>;
 };

@@ -67,7 +67,9 @@
     "id": "ml",
     "icon": "vectors",
     "moduleIds": [
-      "ml-vectors"
+      "ml-vectors",
+      "ml-linear-regression",
+      "ml-gradient-descent"
     ]
   }
 ]

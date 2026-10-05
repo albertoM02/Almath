@@ -19,6 +19,7 @@ import {
   emptyDraft,
   emptyProgress,
   markCompleted,
+  refreshSession,
 } from "@/learning/progress";
 import { loadProgress, saveProgress } from "@/learning/storage";
 import type { Draft, ProgressState, Session, View } from "@/learning/types";
@@ -64,7 +65,25 @@ export function AlmathApp() {
   }, []);
 
   const restoreProgress = useCallback((loaded: ProgressState) => {
-    // Content edits preserve completions; changed sessions are rebuilt when reopened.
+    for (const [key, session] of Object.entries(loaded.sessions)) {
+      const learningModule = modules.find(
+        (item) => item.id === session.moduleId,
+      );
+      if (learningModule)
+        loaded.sessions[key] = refreshSession(
+          learningModule,
+          exercises,
+          loaded,
+          session,
+        );
+    }
+    if (
+      loaded.view.screen === "complete" &&
+      loaded.view.sessionKey &&
+      loaded.sessions[loaded.view.sessionKey] &&
+      !loaded.sessions[loaded.view.sessionKey].finished
+    )
+      loaded.view = { ...loaded.view, screen: "lesson" };
     if (loaded.view.sessionKey && !loaded.sessions[loaded.view.sessionKey])
       loaded.view = { screen: "courses" };
     if (
@@ -131,7 +150,10 @@ export function AlmathApp() {
       const learningModule = getModule(moduleId);
       const key = `${moduleId}:${mode}`;
       const current = state.current;
-      const previous = current.sessions[key];
+      const saved = current.sessions[key];
+      const previous = saved
+        ? refreshSession(learningModule, exercises, current, saved)
+        : undefined;
       const compatible =
         previous &&
         previous.contentVersion === learningModule.version &&

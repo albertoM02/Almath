@@ -667,5 +667,31 @@
       "cs-u9-q31",
       "cs-u9-q32"
     ]
+  },
+  {
+    "id": "ml-linear-regression",
+    "courseId": "ml",
+    "version": 2,
+    "exerciseIds": [
+      "ml-lr-q01",
+      "ml-lr-q02",
+      "ml-lr-q03",
+      "ml-lr-q05",
+      "ml-lr-q06",
+      "ml-lr-q07"
+    ]
+  },
+  {
+    "id": "ml-gradient-descent",
+    "courseId": "ml",
+    "version": 2,
+    "exerciseIds": [
+      "ml-gd-q05",
+      "ml-gd-q06",
+      "ml-gd-q02",
+      "ml-gd-q07",
+      "ml-gd-q08",
+      "ml-gd-q04"
+    ]
   }
 ]

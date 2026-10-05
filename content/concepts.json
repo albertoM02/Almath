@@ -520,5 +520,21 @@
       "cs-u9-euler"
     ],
     "sourceId": "mcs-2018"
+  },
+  {
+    "id": "ml-linear-regression",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-dot"
+    ],
+    "sourceId": "ml-model-foundations"
+  },
+  {
+    "id": "ml-gradient-descent",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-linear-regression"
+    ],
+    "sourceId": "ml-model-foundations"
   }
 ]

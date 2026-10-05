@@ -130,7 +130,7 @@
     },
     "ml": {
       "title": "Mathematics for Machine Learning",
-      "description": "Build intuition for the mathematics behind models.",
+      "description": "Understand model objectives, optimization, evaluation and the mathematics behind ML technical interviews.",
       "category": "MACHINE LEARNING"
     }
   },
@@ -374,6 +374,14 @@
     "cs-u9-rsa": {
       "title": "Toy RSA: assemble and audit the mathematics",
       "description": "Connect totients, modular inverses and exponentiation, and repair a correctness proof for a noncoprime message."
+    },
+    "ml-linear-regression": {
+      "title": "Linear regression: predictions and loss",
+      "description": "Compute a regression objective and reason about scaling, identifiability and large residuals."
+    },
+    "ml-gradient-descent": {
+      "title": "Gradient descent: updates and step size",
+      "description": "Calculate a full-batch gradient update and diagnose instability and feature-scale effects."
     }
   },
   "concepts": {
@@ -961,6 +969,22 @@
       "example": "Take p=7, q=13. Then n=91 and φ(n)=72. With e=5, choose d=29 because 5·29=145=1+2·72. Thus encryption uses a fifth power and decryption a twenty-ninth power, both modulo 91.",
       "exampleSteps": [],
       "takeaway": "Can the learner identify each modulus and prove recovery without silently assuming the message is coprime to n?"
+    },
+    "ml-linear-regression": {
+      "title": "Linear regression: predictions and loss",
+      "body": "Predict with y_hat = b + w^T x. A residual is prediction minus target: r_i = y_hat_i - y_i. For n examples, use L = (1/(2n)) sum_i r_i^2. This is half-MSE: the same minimizers as MSE, with half its gradient.\n\nFor an unregularized model, rescaling a feature to c*x preserves predictions when its weight becomes w/c (c != 0). Keep the bias unchanged. Dependent feature columns can give many optimal weight vectors; full column rank, including any bias column, makes the least-squares optimum unique.\n\nSquared loss emphasizes large residuals. MAE = (1/n) sum_i |r_i| penalizes their absolute sizes. The two objectives can rank models differently. Equal training predictions need not mean equal predictions on new inputs.",
+      "formula": "",
+      "example": "Model: y_hat = 1 + x. Data: (x,y) = (0,1), (2,5). Predictions: 1, 3. Residuals: 0, -2. L = (0^2 + (-2)^2)/4 = 1; MSE = 2.",
+      "exampleSteps": [],
+      "takeaway": "Distinguish predictions, residuals, loss and weights. Check the loss normalization."
+    },
+    "ml-gradient-descent": {
+      "title": "Gradient descent: updates and step size",
+      "body": "For half-MSE, a full-batch gradient averages over all examples. With r_i = b + w*x_i - y_i, the bias gradient is mean(r_i); the weight gradient is mean(r_i*x_i). Compute both at the old parameters, then update simultaneously: parameter_new = parameter - alpha*gradient.\n\nIn matrix form, L = ||X*theta-y||^2/(2n) and gradient = X^T(X*theta-y)/n. Rows are examples; a column of ones includes a bias. For L = (h/2)(theta-theta_star)^2, h > 0, error e = theta-theta_star updates as e_new = (1-alpha*h)e. All starts converge when 0 < alpha < 2/h. At the boundary, nonzero error cycles; above it, nonzero error grows. At the minimum, it stays zero.\n\nFor scalar least squares without a bias or penalty, replacing x by c*x (c != 0) multiplies curvature by c^2. Rescale the initial weight by 1/c and alpha by 1/c^2 to preserve predictions. This is not a universal rule for rescaling one column of a multi-feature model.",
+      "formula": "",
+      "example": "Loss: L(theta) = (theta-2)^2. Start: theta = 0, alpha = 1/4. Gradient: 2(0-2) = -4. Update: theta_new = 0 - (1/4)(-4) = 1. Loss falls from 4 to 1.",
+      "exampleSteps": [],
+      "takeaway": "Check the loss normalization. Subtract a gradient computed at the old parameters. Step size depends on curvature."
     }
   },
   "exercises": {
@@ -4655,6 +4679,216 @@
         "b": "Euler modulo 91 applies to every integer without any hypothesis",
         "c": "A message sharing a prime factor with n can never be recovered"
       }
+    },
+    "ml-lr-q01": {
+      "title": "Calculate the loss",
+      "statement": "Model: y_hat = 1 + 2x.\nData (x,y): (1,1), (2,7).\nLoss: L = (1/(2n)) sum_i (y_hat_i - y_i)^2; n = 2.",
+      "prompt": "What is L? Enter an integer.",
+      "hint": "Square the two residuals, then divide their sum by 4.",
+      "explanation": "Predictions are 3 and 5. Residuals are 2 and -2. L = (4 + 4)/4 = 2. MSE would be 4; opposite residuals do not cancel after squaring.",
+      "solutionSteps": [
+        "Predictions are 3 and 5. Residuals are 2 and -2. L = (4 + 4)/4 = 2. MSE would be 4; opposite residuals do not cancel after squaring."
+      ]
+    },
+    "ml-lr-q02": {
+      "title": "Change feature units",
+      "statement": "Model: y_hat = 1 + 2x.\nNew feature: x_prime = 10x.",
+      "prompt": "Which model preserves every prediction?",
+      "hint": "Replace x by x_prime/10.",
+      "explanation": "Substitution gives 1 + 2(x_prime/10) = 1 + 0.2x_prime. Divide the weight by 10; leave the bias unchanged. Preserving predictions does not imply preserving an added weight penalty.",
+      "solutionSteps": [
+        "Substitution gives 1 + 2(x_prime/10) = 1 + 0.2x_prime. Divide the weight by 10; leave the bias unchanged. Preserving predictions does not imply preserving an added weight penalty."
+      ],
+      "options": {
+        "a": "y_hat = 1 + 20x_prime",
+        "b": "y_hat = 1 + 0.2x_prime",
+        "c": "y_hat = 0.1 + 0.2x_prime"
+      }
+    },
+    "ml-lr-q03": {
+      "title": "Are the weights unique?",
+      "statement": "Model: y_hat = w1*x1 + w2*x2; no bias or regularization.\nTraining data: (x1,x2) = (1,1), target 2; (2,2), target 4.",
+      "prompt": "Which weights minimize squared loss?",
+      "hint": "Both training predictions depend only on w1 + w2.",
+      "explanation": "The predictions are w1 + w2 and 2(w1 + w2). Every pair summing to 2 fits both targets exactly, so the minimum loss is zero. The optimum exists but the weights are not unique.",
+      "solutionSteps": [
+        "The predictions are w1 + w2 and 2(w1 + w2). Every pair summing to 2 fits both targets exactly, so the minimum loss is zero. The optimum exists but the weights are not unique."
+      ],
+      "options": {
+        "a": "Only w1 = w2 = 1.",
+        "b": "No weights: the columns are dependent.",
+        "c": "Every pair with w1 + w2 = 2."
+      }
+    },
+    "ml-lr-q04": {
+      "title": "Compare objectives on the same examples",
+      "statement": "Two candidate models have residuals A=(0,0,4) and B=(2,2,2) on the same three examples. Compare L=(1/(2n)) sum_i r_i^2 and MAE=(1/n) sum_i |r_i|, with n=3. Which conclusion is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Compare sums of squares, then compare sums of absolute values.",
+      "explanation": "L_A=16/6=8/3 and L_B=12/6=2, so B has lower squared loss. MAE_A=4/3 and MAE_B=6/3=2, so A has lower MAE. The single residual of magnitude 4 changes the squared-loss ordering. These batch metrics alone do not establish which model will generalize better.",
+      "solutionSteps": [
+        "L_A=16/6=8/3 and L_B=12/6=2, so B has lower squared loss. MAE_A=4/3 and MAE_B=6/3=2, so A has lower MAE. The single residual of magnitude 4 changes the squared-loss ordering. These batch metrics alone do not establish which model will generalize better."
+      ],
+      "options": {
+        "a": "B has lower L, but A has lower MAE.",
+        "b": "A has lower L and lower MAE.",
+        "c": "Their L values are equal because both have three residuals."
+      }
+    },
+    "ml-gd-q01": {
+      "title": "Update a bias and weight together",
+      "statement": "The model is y_hat=b+w*x, with current (b,w)=(0,1). The batch is (x,y)=(1,2), (3,2). Use L=(1/(2n)) sum_i (b+w*x_i-y_i)^2, n=2, and a full-batch simultaneous update with alpha=1/2. What is (b_new,w_new)?",
+      "prompt": "Choose one answer.",
+      "hint": "The bias gradient averages residuals; the weight gradient averages residual times x.",
+      "explanation": "Predictions 1 and 3 give residuals -1 and 1. The bias gradient is (-1+1)/2=0. The weight gradient is ((-1)*1+1*3)/2=1. Thus b_new=0 and w_new=1-(1/2)*1=1/2. Choice A drops the averaging factor; choice C moves uphill by adding the gradient.",
+      "solutionSteps": [
+        "Predictions 1 and 3 give residuals -1 and 1. The bias gradient is (-1+1)/2=0. The weight gradient is ((-1)*1+1*3)/2=1. Thus b_new=0 and w_new=1-(1/2)*1=1/2. Choice A drops the averaging factor; choice C moves uphill by adding the gradient."
+      ],
+      "options": {
+        "a": "(0,0)",
+        "b": "(0,1/2)",
+        "c": "(0,3/2)"
+      }
+    },
+    "ml-gd-q02": {
+      "title": "Take one exact step",
+      "statement": "Loss: L(theta) = 2(theta-3)^2.\nStart: theta = 1. Learning rate: alpha = 1/4.",
+      "prompt": "After one gradient step, what is theta_new? Enter an integer.",
+      "hint": "Differentiate the entire loss before substituting theta = 1.",
+      "explanation": "The derivative is 4(theta-3); at theta = 1 it is -8. The update is 1 - (1/4)(-8) = 3, reaching the minimum. Loss falls from 8 to 0.",
+      "solutionSteps": [
+        "The derivative is 4(theta-3); at theta = 1 it is -8. The update is 1 - (1/4)(-8) = 3, reaching the minimum. Loss falls from 8 to 0."
+      ]
+    },
+    "ml-gd-q03": {
+      "title": "Convex does not mean every step size works",
+      "statement": "For L(theta)=2(theta-3)^2, repeatedly apply exact full-batch gradient descent from theta_0=0 using a constant positive alpha. Which statement is correct?",
+      "prompt": "Choose one answer.",
+      "hint": "Write the update for the error e=theta-3. Its multiplier is 1-4*alpha.",
+      "explanation": "The update satisfies e_new=(1-4*alpha)e. Alpha=1/4 makes the multiplier 0. Alpha=1/2 makes it -1, so starting at 0 cycles between 0 and 6. Alpha=3/5 makes it -7/5, so the nonzero error alternates and grows. These statements use the given start; starting exactly at 3 would stay there for every alpha.",
+      "solutionSteps": [
+        "The update satisfies e_new=(1-4*alpha)e. Alpha=1/4 makes the multiplier 0. Alpha=1/2 makes it -1, so starting at 0 cycles between 0 and 6. Alpha=3/5 makes it -7/5, so the nonzero error alternates and grows. These statements use the given start; starting exactly at 3 would stay there for every alpha."
+      ],
+      "options": {
+        "a": "Every positive alpha converges because the loss is convex.",
+        "b": "Alpha=1/2 converges; alpha=1/4 only oscillates.",
+        "c": "Alpha=1/4 reaches 3 in one step; alpha=1/2 cycles; alpha=3/5 diverges."
+      }
+    },
+    "ml-gd-q04": {
+      "title": "Rescale the learning rate",
+      "statement": "Scalar model: y_hat = w*x; no bias or regularization.\nLoss: L = (1/(2n)) sum_i (w*x_i-y_i)^2.\nFull-batch gradient descent; alpha > 0.\nRescale x_prime_i = 10*x_i; start w_prime_0 = w_0/10.",
+      "prompt": "Which alpha_prime preserves every prediction step for any dataset and initial weight? Assume exact arithmetic.",
+      "hint": "At corresponding weights, predictions agree but the new gradient is 10 times larger.",
+      "explanation": "At w_prime = w/10, residuals agree and g_prime = 10*g. Matching the next weights requires w/10 - alpha_prime*10*g = (w - alpha*g)/10, so alpha_prime = alpha/100. The correspondence repeats at every step. The guarantee applies to any dataset, including nonstationary starts; it is specific to this scalar, no-bias model.",
+      "solutionSteps": [
+        "At w_prime = w/10, residuals agree and g_prime = 10*g. Matching the next weights requires w/10 - alpha_prime*10*g = (w - alpha*g)/10, so alpha_prime = alpha/100. The correspondence repeats at every step. The guarantee applies to any dataset, including nonstationary starts; it is specific to this scalar, no-bias model."
+      ],
+      "options": {
+        "a": "alpha/100",
+        "b": "alpha/10",
+        "c": "100*alpha"
+      }
+    },
+    "ml-lr-q05": {
+      "title": "Equal training fit, different prediction",
+      "statement": "Both models use y_hat = w1*x1 + w2*x2 and fit the same training data.\nModel P: (w1,w2) = (2,0). Model Q: (w1,w2) = (1,1).\nNew input: (x1,x2) = (1,0).",
+      "prompt": "What are the predictions (P,Q)?",
+      "hint": "Apply each weight vector to the new input.",
+      "explanation": "P predicts 2*1 + 0*0 = 2; Q predicts 1*1 + 1*0 = 1. Equal training predictions do not guarantee agreement when the feature values are no longer equal.",
+      "solutionSteps": [
+        "P predicts 2*1 + 0*0 = 2; Q predicts 1*1 + 1*0 = 1. Equal training predictions do not guarantee agreement when the feature values are no longer equal."
+      ],
+      "options": {
+        "a": "(2,2)",
+        "b": "(2,1)",
+        "c": "(1,1)"
+      }
+    },
+    "ml-lr-q06": {
+      "title": "Which model has lower squared loss?",
+      "statement": "Residuals on the same three examples: A = (0,0,4), B = (2,2,2).\nLoss: L = (1/(2n)) sum_i r_i^2; n = 3.",
+      "prompt": "Which model has lower L?",
+      "hint": "Compare sums of squares; the denominator is the same.",
+      "explanation": "L_A = 16/6 = 8/3; L_B = 12/6 = 2. B has lower squared loss. The single large residual contributes disproportionately. These batch losses do not establish which model generalizes better.",
+      "solutionSteps": [
+        "L_A = 16/6 = 8/3; L_B = 12/6 = 2. B has lower squared loss. The single large residual contributes disproportionately. These batch losses do not establish which model generalizes better."
+      ],
+      "options": {
+        "a": "Model A",
+        "b": "Model B",
+        "c": "Equal loss."
+      }
+    },
+    "ml-lr-q07": {
+      "title": "Change the objective",
+      "statement": "Same residuals: A = (0,0,4), B = (2,2,2).\nMAE = (1/n) sum_i |r_i|; n = 3.",
+      "prompt": "Which model has lower MAE?",
+      "hint": "Add absolute residuals rather than their squares.",
+      "explanation": "MAE_A = 4/3; MAE_B = 6/3 = 2. A wins under MAE, while B won under squared loss. Choosing an objective changes how errors are penalized; neither batch metric alone proves better generalization.",
+      "solutionSteps": [
+        "MAE_A = 4/3; MAE_B = 6/3 = 2. A wins under MAE, while B won under squared loss. Choosing an objective changes how errors are penalized; neither batch metric alone proves better generalization."
+      ],
+      "options": {
+        "a": "Model A",
+        "b": "Model B",
+        "c": "Equal MAE."
+      }
+    },
+    "ml-gd-q05": {
+      "title": "Find the bias gradient",
+      "statement": "Model: y_hat = b + w*x; (b,w) = (0,1).\nBatch (x,y): (1,2), (3,2).\nLoss: L = (1/(2n)) sum_i (b+w*x_i-y_i)^2; n = 2.",
+      "prompt": "What is the full-batch bias gradient? Enter an integer.",
+      "hint": "Average the residuals at the current parameters.",
+      "explanation": "Predictions are 1 and 3, so residuals are -1 and 1. The bias gradient is (-1 + 1)/2 = 0. The weight gradient can still be nonzero.",
+      "solutionSteps": [
+        "Predictions are 1 and 3, so residuals are -1 and 1. The bias gradient is (-1 + 1)/2 = 0. The weight gradient can still be nonzero."
+      ]
+    },
+    "ml-gd-q06": {
+      "title": "Update the weight",
+      "statement": "Model: y_hat = b + w*x; (b,w) = (0,1).\nBatch (x,y): (1,2), (3,2).\nHalf-MSE: L = (1/(2n)) sum_i (b+w*x_i-y_i)^2; n = 2.\nFull-batch simultaneous update: alpha = 1/2.",
+      "prompt": "What is w_new?",
+      "hint": "Average residual times x, then subtract alpha times that gradient.",
+      "explanation": "At the old parameters, residuals are -1 and 1. The weight gradient is ((-1)*1 + 1*3)/2 = 1. Thus w_new = 1 - (1/2)*1 = 1/2; the bias remains 0. Omitting the average gives 0; adding the gradient gives 3/2.",
+      "solutionSteps": [
+        "At the old parameters, residuals are -1 and 1. The weight gradient is ((-1)*1 + 1*3)/2 = 1. Thus w_new = 1 - (1/2)*1 = 1/2; the bias remains 0. Omitting the average gives 0; adding the gradient gives 3/2."
+      ],
+      "options": {
+        "a": "0",
+        "b": "1/2",
+        "c": "3/2"
+      }
+    },
+    "ml-gd-q07": {
+      "title": "Will it converge?",
+      "statement": "Loss: L(theta) = 2(theta-3)^2.\nExact gradient descent: theta_0 = 0, fixed alpha = 1/2.",
+      "prompt": "What happens after repeated steps?",
+      "hint": "The error multiplier is 1 - 4*alpha.",
+      "explanation": "The error multiplier is -1, so the error changes sign without shrinking. Starting at 0 gives 0, 6, 0, 6, ... . Convexity does not guarantee convergence for every step size. Starting exactly at 3 would stay there.",
+      "solutionSteps": [
+        "The error multiplier is -1, so the error changes sign without shrinking. Starting at 0 gives 0, 6, 0, 6, ... . Convexity does not guarantee convergence for every step size. Starting exactly at 3 would stay there."
+      ],
+      "options": {
+        "a": "Converges to 3.",
+        "b": "Cycles between 0 and 6.",
+        "c": "The distance from 3 grows."
+      }
+    },
+    "ml-gd-q08": {
+      "title": "Increase the step size",
+      "statement": "Same loss: L(theta) = 2(theta-3)^2.\nExact gradient descent: theta_0 = 0, fixed alpha = 3/5.",
+      "prompt": "What happens to the distance from 3?",
+      "hint": "Evaluate the magnitude of 1 - 4*alpha.",
+      "explanation": "The error multiplier is 1 - 12/5 = -7/5. Since its magnitude exceeds 1, the nonzero starting error alternates in sign and grows without bound. In contrast, alpha = 1/4 makes the multiplier zero and reaches 3 in one step.",
+      "solutionSteps": [
+        "The error multiplier is 1 - 12/5 = -7/5. Since its magnitude exceeds 1, the nonzero starting error alternates in sign and grows without bound. In contrast, alpha = 1/4 makes the multiplier zero and reaches 3 in one step."
+      ],
+      "options": {
+        "a": "Shrinks to zero.",
+        "b": "Stays constant.",
+        "c": "Grows without bound."
+      }
     }
   },
   "parts": {
@@ -4674,7 +4908,13 @@
       "title": "Recurrences"
     },
     "ml-foundations": {
-      "title": "Foundations"
+      "title": "Model foundations"
+    },
+    "ml-quality": {
+      "title": "Statistics and model quality"
+    },
+    "ml-advanced": {
+      "title": "Advanced models and systems"
     }
   },
   "units": {
@@ -4746,6 +4986,38 @@
     },
     "ml-unit-01": {
       "title": "Vectors and linear algebra"
+    },
+    "ml-unit-02": {
+      "title": "Models and objectives",
+      "description": "Linear regression: predictions and squared loss; logistic regression: probabilities and log loss; model assumptions and comparisons."
+    },
+    "ml-unit-03": {
+      "title": "Optimization",
+      "description": "Gradient descent: gradients, updates and learning-rate behavior; feature scaling, stochastic gradients and optimizer choices."
+    },
+    "ml-unit-04": {
+      "title": "Probability and statistics",
+      "description": "Conditional probability, expectation, variance, likelihood, estimation and uncertainty."
+    },
+    "ml-unit-05": {
+      "title": "Generalization",
+      "description": "Underfitting and overfitting, regularization, sample size and validation."
+    },
+    "ml-unit-06": {
+      "title": "Evaluation and data",
+      "description": "Metrics, thresholds, class imbalance, data leakage and appropriate data splits."
+    },
+    "ml-unit-07": {
+      "title": "Neural networks",
+      "description": "Tensor dimensions, activations, backpropagation, initialization and training failures."
+    },
+    "ml-unit-08": {
+      "title": "ML specializations",
+      "description": "Ranking and recommendations, computer vision, and transformers and language models."
+    },
+    "ml-unit-09": {
+      "title": "ML systems and experiments",
+      "description": "Latency, memory, deployment, monitoring and reliable experimental comparisons."
     }
   }
 }

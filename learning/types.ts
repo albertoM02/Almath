@@ -71,6 +71,7 @@ export type Session = {
   mode: "learn" | "review";
   exerciseIds: string[];
   baseExerciseIds: string[];
+  exerciseVersions?: Record<string, number>;
   index: number;
   stage: "theory" | "practice";
   drafts: Record<string, Draft>;
