@@ -43,5 +43,62 @@
     ],
     "checked": "2026-10-02",
     "note": "Original explanations, examples and questions in docs/question-banks/ML_Modules_1_2_Revision_Approved.json. The revised bank has 12 questions; the original 8-question approval is retained for history. References inform mathematical concepts; no source questions are copied or adapted. These are preparation exercises, not confirmed company interview questions."
+  },
+  {
+    "id": "ml-classifier-foundations",
+    "kind": "concept-reference",
+    "title": "Logistic regression, probability, regularization and validation",
+    "urls": [
+      "https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html",
+      "https://developers.google.com/machine-learning/crash-course/logistic-regression/sigmoid-function",
+      "https://cs229.stanford.edu/summer2023/cs229-notes1.pdf",
+      "https://scikit-learn.org/stable/modules/naive_bayes.html",
+      "https://cs229.stanford.edu/main_notes.pdf",
+      "https://scikit-learn.org/stable/modules/linear_model.html",
+      "https://developers.google.com/machine-learning/crash-course/overfitting/regularization",
+      "https://scikit-learn.org/stable/common_pitfalls.html"
+    ],
+    "checked": "2026-10-05",
+    "note": "Original theory, examples and 18 questions approved on 2026-10-06. References verify mathematical concepts and interview preparation skills; these are not copied or verified company interview questions."
+  },
+  {
+    "id": "ml-interview-statistics-evaluation",
+    "kind": "concept-reference",
+    "title": "Expectation, generalization and model evaluation: interview preparation",
+    "urls": [
+      "https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html",
+      "https://www.amazon.jobs/content/en/how-we-hire/applied-scientist-interview-prep",
+      "https://www.anthropic.com/research/statistical-approach-to-model-evals",
+      "https://cs229.stanford.edu/section/cs229-prob.pdf",
+      "https://scikit-learn.org/stable/auto_examples/ensemble/plot_bias_variance.html",
+      "https://scikit-learn.org/stable/modules/learning_curve.html",
+      "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "https://scikit-learn.org/stable/modules/classification_threshold.html",
+      "https://scikit-learn.org/stable/modules/calibration.html",
+      "https://scikit-learn.org/stable/modules/cross_validation.html"
+    ],
+    "checked": "2026-10-06",
+    "note": "Original explanations, scenarios and exercises. Primary references inform skills and mathematical checks. No question is claimed to have been asked by a named company. Microsoft provides direct interview evidence; Amazon guidance is for an adjacent Applied Scientist role. Google, Anthropic, Stanford and scikit-learn material verifies technical content, not employer question frequency. The 18 questions were approved on 2026-10-06; optional verbal follow-ups remain in the review record."
+  },
+  {
+    "id": "ml-interview-neural-attention-systems",
+    "kind": "concept-reference",
+    "title": "Neural networks, attention and ML systems: interview preparation",
+    "urls": [
+      "https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html",
+      "https://www.amazon.jobs/content/en/how-we-hire/applied-scientist-interview-prep",
+      "https://docs.pytorch.org/docs/2.14/generated/torch.nn.Linear.html",
+      "https://developers.google.com/machine-learning/crash-course/neural-networks/backpropagation",
+      "https://docs.pytorch.org/docs/2.14/generated/torch.nn.CrossEntropyLoss.html",
+      "https://arxiv.org/abs/1706.03762",
+      "https://docs.pytorch.org/docs/2.14/generated/torch.nn.functional.scaled_dot_product_attention.html",
+      "https://huggingface.co/docs/transformers/cache_explanation",
+      "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/batcher.html",
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2020/08/2017-08-KDDMetricInterpretationPitfalls.pdf",
+      "https://www.microsoft.com/en-us/research/publication/trustworthy-analysis-of-online-a-b-tests-pitfalls-challenges-and-solutions/",
+      "https://www.microsoft.com/en-us/research/publication/continuous-monitoring-of-a-b-tests-without-pain-optional-stopping-in-bayesian-testing/"
+    ],
+    "checked": "2026-10-06",
+    "note": "Original explanations and exercises. Sources verify skills and mathematics; no copied interview questions or claim that a named company asked these questions. This is the ML track, not the CS textbook curriculum. The 18 questions were approved on 2026-10-06; optional verbal follow-ups remain in the review record."
   }
 ]

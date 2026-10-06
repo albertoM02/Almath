@@ -69,7 +69,16 @@
     "moduleIds": [
       "ml-vectors",
       "ml-linear-regression",
-      "ml-gradient-descent"
+      "ml-gradient-descent",
+      "ml-logistic-regression",
+      "ml-probability-classifiers",
+      "ml-regularization-validation",
+      "ml-expectation-variance",
+      "ml-bias-variance",
+      "ml-metrics-thresholds",
+      "ml-neural-network-foundations",
+      "ml-attention-foundations",
+      "ml-serving-experiments"
     ]
   }
 ]

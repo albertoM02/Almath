@@ -536,5 +536,226 @@
       "ml-linear-regression"
     ],
     "sourceId": "ml-model-foundations"
+  },
+  {
+    "id": "ml-logistic-regression-odds",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-gradient-descent"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-logistic-regression-loss",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-logistic-regression-odds"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-logistic-regression-limits",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-logistic-regression-loss"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-probability-classifiers-conditioning",
+    "courseId": "ml",
+    "prerequisites": [],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-probability-classifiers-evidence",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-probability-classifiers-conditioning"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-probability-classifiers-estimation",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-probability-classifiers-evidence"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-regularization-validation-l2",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-linear-regression"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-regularization-validation-l1",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-regularization-validation-l2"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-regularization-validation-validation",
+    "courseId": "ml",
+    "prerequisites": [
+      "ml-regularization-validation-l1"
+    ],
+    "sourceId": "ml-classifier-foundations"
+  },
+  {
+    "id": "ml-expectation-variance-sampling",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-probability-classifiers-estimation",
+      "ml-gradient-descent"
+    ]
+  },
+  {
+    "id": "ml-expectation-variance-averaging",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-expectation-variance-sampling"
+    ]
+  },
+  {
+    "id": "ml-expectation-variance-uncertainty",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-expectation-variance-averaging"
+    ]
+  },
+  {
+    "id": "ml-bias-variance-decomposition",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-regularization-validation-validation",
+      "ml-expectation-variance-averaging"
+    ]
+  },
+  {
+    "id": "ml-bias-variance-learning-curves",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-bias-variance-decomposition"
+    ]
+  },
+  {
+    "id": "ml-bias-variance-ensembles",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-bias-variance-learning-curves"
+    ]
+  },
+  {
+    "id": "ml-metrics-thresholds-metrics",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-logistic-regression-odds",
+      "ml-regularization-validation-validation"
+    ]
+  },
+  {
+    "id": "ml-metrics-thresholds-thresholds",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-metrics-thresholds-metrics"
+    ]
+  },
+  {
+    "id": "ml-metrics-thresholds-comparisons",
+    "courseId": "ml",
+    "sourceId": "ml-interview-statistics-evaluation",
+    "prerequisites": [
+      "ml-metrics-thresholds-thresholds"
+    ]
+  },
+  {
+    "id": "ml-neural-network-foundations-shapes",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-linear-regression",
+      "ml-gradient-descent",
+      "ml-logistic-regression-loss"
+    ]
+  },
+  {
+    "id": "ml-neural-network-foundations-relu",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-neural-network-foundations-shapes"
+    ]
+  },
+  {
+    "id": "ml-neural-network-foundations-softmax",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-neural-network-foundations-relu"
+    ]
+  },
+  {
+    "id": "ml-attention-foundations-computation",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-neural-network-foundations-softmax",
+      "ml-expectation-variance-averaging"
+    ]
+  },
+  {
+    "id": "ml-attention-foundations-scaling",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-attention-foundations-computation"
+    ]
+  },
+  {
+    "id": "ml-attention-foundations-memory",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-attention-foundations-scaling"
+    ]
+  },
+  {
+    "id": "ml-serving-experiments-performance",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-metrics-thresholds-comparisons",
+      "ml-expectation-variance-uncertainty"
+    ]
+  },
+  {
+    "id": "ml-serving-experiments-effects",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-serving-experiments-performance"
+    ]
+  },
+  {
+    "id": "ml-serving-experiments-design",
+    "courseId": "ml",
+    "sourceId": "ml-interview-neural-attention-systems",
+    "prerequisites": [
+      "ml-serving-experiments-effects"
+    ]
   }
 ]

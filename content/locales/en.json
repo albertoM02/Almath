@@ -382,6 +382,42 @@
     "ml-gradient-descent": {
       "title": "Gradient descent: updates and step size",
       "description": "Calculate a full-batch gradient update and diagnose instability and feature-scale effects."
+    },
+    "ml-logistic-regression": {
+      "title": "Logistic regression: probabilities and log loss",
+      "description": "Interpret probabilities and odds, calculate logistic gradients, and recognize model limits."
+    },
+    "ml-probability-classifiers": {
+      "title": "Probability for classifiers: evidence and estimation",
+      "description": "Apply Bayes rule, handle dependent evidence, and estimate binary probabilities."
+    },
+    "ml-regularization-validation": {
+      "title": "Regularization: penalties and honest validation",
+      "description": "Compare L1 and L2 penalties and select regularization without validation leakage."
+    },
+    "ml-expectation-variance": {
+      "title": "Expectation, sampling and uncertainty",
+      "description": "Reason about unbiased sampling, effective sample size and uncertainty in model comparisons."
+    },
+    "ml-bias-variance": {
+      "title": "Bias, learning curves and ensembles",
+      "description": "Separate error sources, choose diagnostic experiments, and understand when averaging helps."
+    },
+    "ml-metrics-thresholds": {
+      "title": "Metrics, thresholds and valid comparisons",
+      "description": "Connect confusion-matrix metrics to decisions, distinguish ranking from calibration, and choose valid splits."
+    },
+    "ml-neural-network-foundations": {
+      "title": "Neural networks: shapes and gradients",
+      "description": "Track dimensions, differentiate a small network, and reason about stable classification losses."
+    },
+    "ml-attention-foundations": {
+      "title": "Attention: computation and memory",
+      "description": "Calculate attention outputs, apply a causal mask, and distinguish score storage from the KV cache."
+    },
+    "ml-serving-experiments": {
+      "title": "Serving and trustworthy experiments",
+      "description": "Separate throughput from tail latency, interpret an experiment effect, and spot invalid analysis shortcuts."
     }
   },
   "concepts": {
@@ -985,6 +1021,222 @@
       "example": "Loss: \\(L(\\theta)=(\\theta-2)^2\\). Start: \\(\\theta=0\\), \\(\\alpha=\\frac{1}{4}\\). Gradient: \\(2(0-2)=-4\\). Update: \\(\\theta_{\\mathrm{new}}=0-\\frac{1}{4}(-4)=1\\). Loss falls from \\(4\\) to \\(1\\).",
       "exampleSteps": [],
       "takeaway": "Check the loss normalization. Subtract a gradient computed at the old parameters. Step size depends on curvature."
+    },
+    "ml-logistic-regression-odds": {
+      "title": "Scores, probabilities and odds",
+      "body": "A binary logistic model uses \\(z=w^T x+b\\) and \\(p=\\sigma(z)=1/(1+e^{-z})\\). Its output estimates the probability of class 1. Odds are \\(p/(1-p)\\), so \\(\\ln(p/(1-p))=z\\). Increasing feature \\(x_j\\) by 1 multiplies the odds by \\(e^{w_j}\\), holding other features fixed. It does not multiply the probability by that factor.",
+      "formula": "",
+      "example": "If \\(z=\\ln 4\\), odds are 4 and \\(p=4/5\\). Here \\(\\ln\\) is the natural logarithm, inverse to \\(e^z\\).",
+      "exampleSteps": [],
+      "takeaway": "It does not multiply the probability by that factor."
+    },
+    "ml-logistic-regression-loss": {
+      "title": "Penalize confident mistakes",
+      "body": "For one label \\(y\\in\\{0,1\\}\\), binary cross-entropy is \\(\\ell=-y\\ln p-(1-y)\\ln(1-p)\\). It is the negative log of the probability assigned to the observed label. With \\(p=\\sigma(w^Tx+b)\\), the chain rule gives \\(\\partial\\ell/\\partial w_j=(p-y)x_j\\). No regularization is included.",
+      "formula": "",
+      "example": "For \\(y=1\\) and \\(p=0.5\\), loss is \\(\\ln 2\\). If \\(x_j=4\\), its weight gradient is \\((0.5-1)4=-2\\).",
+      "exampleSteps": [],
+      "takeaway": "No regularization is included."
+    },
+    "ml-logistic-regression-limits": {
+      "title": "Know the limits of the model",
+      "body": "With raw features and a fixed probability threshold, logistic regression has a linear decision boundary in those features. More training cannot remove this restriction. Separately, on strictly separable data, unregularized log loss can approach zero as weights grow without bound. A convex objective need not attain its minimum at finite parameters.",
+      "formula": "",
+      "example": "For \\(p=\\sigma(2x-4)\\), a threshold of 0.5 predicts class 1 exactly when \\(x\\geq2\\). A nonlinear feature transformation changes the model being considered.",
+      "exampleSteps": [],
+      "takeaway": "A convex objective need not attain its minimum at finite parameters."
+    },
+    "ml-probability-classifiers-conditioning": {
+      "title": "Reverse the conditioning carefully",
+      "body": "\\(P(A\\mid B)\\) means the probability of A among cases where B holds. Bayes gives \\(P(A\\mid B)=P(B\\mid A)P(A)/P(B)\\) when \\(P(B)>0\\). A false-positive rate conditions on genuinely negative cases. The fraction of flags that are correct instead conditions on flagged cases. Base rates matter because these are different groups.",
+      "formula": "",
+      "example": "If 6 flagged cases are positive and 9 are negative, a uniformly selected flag is positive with probability 6/15, or 0.4.",
+      "exampleSteps": [],
+      "takeaway": "Base rates matter because these are different groups."
+    },
+    "ml-probability-classifiers-evidence": {
+      "title": "Independent evidence and duplicate evidence",
+      "body": "Naive Bayes multiplies feature likelihoods only under the conditional-independence assumption: \\(P(A,B\\mid Y)=P(A\\mid Y)P(B\\mid Y)\\). Multiply by the class prior, then normalize across classes. A duplicated feature is not new evidence; treating it as independent can make a posterior excessively confident.",
+      "formula": "",
+      "example": "With equal priors and likelihoods 0.6 versus 0.3 for one observed event, the posterior is \\(0.6/(0.6+0.3)=2/3\\). Copying that event into a second column should not change it.",
+      "exampleSteps": [],
+      "takeaway": "A duplicated feature is not new evidence; treating it as independent can make a posterior excessively confident."
+    },
+    "ml-probability-classifiers-estimation": {
+      "title": "Estimate a Bernoulli probability",
+      "body": "For independent, identically distributed binary observations with success probability \\(\\theta\\), k successes in n observations give likelihood proportional to \\(\\theta^k(1-\\theta)^{n-k}\\). The maximum-likelihood estimate is \\(k/n\\) for \\(n>0\\). Binary add-one smoothing instead uses \\((k+1)/(n+2)\\). Smoothing avoids an estimate of zero merely because an event was absent from a finite sample.",
+      "formula": "",
+      "example": "With 1 success in 4 observations, the MLE is 1/4; the add-one estimate is 2/6 = 1/3. These are different estimators.",
+      "exampleSteps": [],
+      "takeaway": "Smoothing avoids an estimate of zero merely because an event was absent from a finite sample."
+    },
+    "ml-regularization-validation-l2": {
+      "title": "L2 changes the objective",
+      "body": "L2 regularization adds \\((\\lambda/2)\\sum_j w_j^2\\) to the data loss, with \\(\\lambda\\geq0\\). Its weight gradient is \\(\\lambda w_j\\). For \\(J(w)=(w-a)^2/2+\\lambda w^2/2\\), the minimizer is \\(a/(1+\\lambda)\\). Penalty normalization and feature units matter. Throughout these exercises, biases, if present, are not penalized.",
+      "formula": "",
+      "example": "If \\(a=4\\) and \\(\\lambda=1\\), then J is minimized at \\(w=2\\), rather than the unpenalized value 4.",
+      "exampleSteps": [],
+      "takeaway": "Throughout these exercises, biases, if present, are not penalized."
+    },
+    "ml-regularization-validation-l1": {
+      "title": "Sparsity is a property, not a promise",
+      "body": "L1 adds \\(\\lambda\\sum_j|w_j|\\); L2 uses squared weights. For the scalar objective \\((w-a)^2/2+\\lambda|w|\\), the optimum is \\(\\mathrm{sign}(a)\\max(|a|-\\lambda,0)\\). L1 can therefore produce exact zeros. But correlated or duplicate features can create ties: L1 does not always uniquely prefer the sparsest representation.",
+      "formula": "",
+      "example": "For the scalar L1 objective with \\(a=3\\) and \\(\\lambda=1\\), the optimum is 2. With \\(a=0.4\\), it is 0.",
+      "exampleSteps": [],
+      "takeaway": "But correlated or duplicate features can create ties: L1 does not always uniquely prefer the sparsest representation."
+    },
+    "ml-regularization-validation-validation": {
+      "title": "Select strength using unseen examples",
+      "body": "Use training data to fit parameters and validation data to select regularization strength. Compare the same predictive loss, excluding the penalty, on held-out examples. In cross-validation, estimate preprocessing statistics inside each training fold, then apply that fitted transform to its validation fold. Keep a separate test set for final evaluation; tuning on it also turns it into validation data.",
+      "formula": "",
+      "example": "If candidate A has training/validation loss 0.12/0.31 and B has 0.19/0.24, validation favors B despite its higher training loss.",
+      "exampleSteps": [],
+      "takeaway": "Keep a separate test set for final evaluation; tuning on it also turns it into validation data."
+    },
+    "ml-expectation-variance-sampling": {
+      "title": "Sampling changes the expectation",
+      "body": "For a discrete random variable, \\(E[G]=\\sum_g gP(G=g)\\). At fixed model parameters, uniform sampling of training rows makes a sampled gradient unbiased for the mean training loss gradient. An unweighted average from a different sampling distribution generally targets a different objective. Independence is not required for linearity of expectation.",
+      "formula": "",
+      "example": "If a gradient component is 0 with probability 0.6 and 5 with probability 0.4, its expectation is 2. An unbiased batch average can still differ from 2 on a particular batch.",
+      "exampleSteps": [],
+      "takeaway": "Independence is not required for linearity of expectation."
+    },
+    "ml-expectation-variance-averaging": {
+      "title": "Correlation limits averaging",
+      "body": "For independent, identically distributed variables with variance \\(\\sigma^2\\), \\(\\mathrm{Var}(\\bar G)=\\sigma^2/b\\) for an average of b draws. In general, \\(\\mathrm{Var}(\\sum_i G_i)=\\sum_i\\mathrm{Var}(G_i)+2\\sum_{i<j}\\mathrm{Cov}(G_i,G_j)\\). Repeating an observation does not create an independent draw.",
+      "formula": "",
+      "example": "Four independent draws with variance 4 have mean variance 1. Copying every draw once creates eight entries but leaves their mean, and its variance, unchanged.",
+      "exampleSteps": [],
+      "takeaway": "Repeating an observation does not create an independent draw."
+    },
+    "ml-expectation-variance-uncertainty": {
+      "title": "Quantify uncertainty in evaluation",
+      "body": "For n independent Bernoulli outcomes with common success probability p, the sample mean has standard error \\(\\sqrt{p(1-p)/n}\\). This is the standard deviation across repeated samples; it is not the spread of individual binary outcomes. When comparing two fixed models on the same independent cases, analyze paired differences: \\(\\mathrm{Var}(A-B)=\\mathrm{Var}(A)+\\mathrm{Var}(B)-2\\mathrm{Cov}(A,B)\\).",
+      "formula": "",
+      "example": "For true success probability 0.5 and 100 independent cases, the accuracy standard error is 0.05, or five percentage points.",
+      "exampleSteps": [],
+      "takeaway": "When comparing two fixed models on the same independent cases, analyze paired differences: \\(\\mathrm{Var}(A-B)=\\mathrm{Var}(A)+\\mathrm{Var}(B)-2\\mathrm{Cov}(A,B)\\)."
+    },
+    "ml-bias-variance-decomposition": {
+      "title": "Decompose squared prediction error",
+      "body": "At a fixed input x, let a fresh label be \\(Y=f(x)+\\epsilon\\), with zero-mean noise of variance \\(\\sigma^2\\) independent of training. Across random training samples D, expected test squared error is \\(\\mathrm{Bias}^2+\\mathrm{Var}_D(\\hat f_D(x))+\\sigma^2\\), where bias is \\(E_D[\\hat f_D(x)]-f(x)\\). This standard additive decomposition is for squared error, not a universal formula for accuracy.",
+      "formula": "",
+      "example": "If the true conditional mean is 4, mean prediction is 3, prediction variance is 2 and noise variance is 0.5, expected test squared error is \\(1+2+0.5=3.5\\).",
+      "exampleSteps": [],
+      "takeaway": "This standard additive decomposition is for squared error, not a universal formula for accuracy."
+    },
+    "ml-bias-variance-learning-curves": {
+      "title": "Diagnose with learning curves",
+      "body": "Compare the same unpenalized loss on training and held-out data. Curves over training-set size help choose experiments. If both losses plateau well above an attainable reference, investigate model capacity, features or excessive regularization. A small gap alone does not prove high bias: optimization failure, noise and distribution differences are alternative explanations. Check them before diagnosing.",
+      "formula": "",
+      "example": "A wider training-validation gap that shrinks as more IID data is added suggests a useful data-size experiment. It is evidence, not a guarantee that further data will keep helping.",
+      "exampleSteps": [],
+      "takeaway": "Check them before diagnosing."
+    },
+    "ml-bias-variance-ensembles": {
+      "title": "Diversity matters in an ensemble",
+      "body": "At fixed x, suppose M model predictions have equal variance v and every distinct pair has correlation \\(\\rho\\). Their equally weighted mean has variance \\(v[\\rho+(1-\\rho)/M]\\). Positive correlation leaves a variance floor. Randomizing tree features can change correlation, individual variance and bias; lowering correlation alone does not guarantee lower test error.",
+      "formula": "",
+      "example": "With \\(v=4\\), \\(\\rho=0.5\\) and \\(M=2\\), ensemble variance is \\(4(0.5+0.5/2)=3\\). Independent predictions would give variance 2.",
+      "exampleSteps": [],
+      "takeaway": "Randomizing tree features can change correlation, individual variance and bias; lowering correlation alone does not guarantee lower test error."
+    },
+    "ml-metrics-thresholds-metrics": {
+      "title": "Measure the positive class correctly",
+      "body": "TP and FP count true and false positive predictions; FN counts missed positives. Precision is \\(TP/(TP+FP)\\), recall is \\(TP/(TP+FN)\\), and \\(F_1=2TP/(2TP+FP+FN)\\) when these denominators are nonzero. Accuracy can hide rare-class failures. F1 ignores true negatives and does not encode arbitrary business error costs.",
+      "formula": "",
+      "example": "For TP = 6, FP = 4 and FN = 4, precision, recall and F1 are all 0.6. Stating only accuracy would omit these distinctions.",
+      "exampleSteps": [],
+      "takeaway": "F1 ignores true negatives and does not encode arbitrary business error costs."
+    },
+    "ml-metrics-thresholds-thresholds": {
+      "title": "A threshold is a decision rule",
+      "body": "If p is the true deployment posterior probability, predicting positive incurs expected cost \\(C_{FP}(1-p)\\) and predicting negative costs \\(C_{FN}p\\), assuming correct decisions cost zero. Choose positive when \\(p\\geq C_{FP}/(C_{FP}+C_{FN})\\), breaking ties toward positive. This rule assumes fixed positive costs and no capacity constraints. On fixed scores, lowering a threshold cannot reduce recall, but precision need not move monotonically.",
+      "formula": "",
+      "example": "If a false positive costs 3 and a false negative 9, the cost-optimal threshold is \\(3/(3+9)=0.25\\), not 0.5. An estimated score requires appropriate probability calibration.",
+      "exampleSteps": [],
+      "takeaway": "On fixed scores, lowering a threshold cannot reduce recall, but precision need not move monotonically."
+    },
+    "ml-metrics-thresholds-comparisons": {
+      "title": "Match the metric and the split to the claim",
+      "body": "Empirical ROC-AUC measures positive-negative score ordering, counting ties as half. A strictly increasing score transform preserves it; it need not preserve probability calibration or fixed-threshold decisions. Calibration asks whether predicted probabilities match event frequencies. Separately, an evaluation split must match deployment: testing on entirely unseen users requires user-disjoint data, not merely different rows from the same users.",
+      "formula": "",
+      "example": "Squaring scores in [0,1] preserves order. A calibrated 0.8 group then reports 0.64 even though its event frequency is still 0.8. For a new-user task, all rows from a user belong in one split.",
+      "exampleSteps": [],
+      "takeaway": "Separately, an evaluation split must match deployment: testing on entirely unseen users requires user-disjoint data, not merely different rows from the same users."
+    },
+    "ml-neural-network-foundations-shapes": {
+      "title": "Shapes and trainable parameters",
+      "body": "A dense layer uses \\(Z=XW+b\\). Rows of \\(X\\) are examples: if \\(X\\) is \\(B\\times d\\), then \\(W\\) is \\(d\\times h\\) and \\(Z\\) is \\(B\\times h\\). The bias has h entries and is shared across rows. There are \\(dh+h\\) trainable parameters, independent of batch size.",
+      "formula": "",
+      "example": "A layer with 3 inputs and 2 outputs has \\(3\\cdot2+2=8\\) parameters, including biases.",
+      "exampleSteps": [],
+      "takeaway": "Batch size changes activation rows, not the number of trainable parameters."
+    },
+    "ml-neural-network-foundations-relu": {
+      "title": "Backpropagate through ReLU",
+      "body": "Use \\(z=wx+b\\), \\(h=\\max(0,z)\\), \\(\\hat y=vh\\), and \\(L=(\\hat y-t)^2/2\\). For \\(z>0\\), the chain rule gives \\(\\partial L/\\partial w=(\\hat y-t)vx\\). For \\(z<0\\), ReLU has zero derivative, so this weight gradient is zero. No regularization is included; we avoid the corner at \\(z=0\\).",
+      "formula": "",
+      "example": "If \\(x=1,w=2,b=0,v=1,t=1\\), then \\(\\hat y=2\\) and the weight gradient is 1.",
+      "exampleSteps": [],
+      "takeaway": "A nonzero loss can coexist with a zero gradient through an inactive ReLU."
+    },
+    "ml-neural-network-foundations-softmax": {
+      "title": "Stable softmax and cross-entropy",
+      "body": "Softmax gives \\(p_i=e^{z_i}/\\sum_j e^{z_j}\\). Subtracting the same constant from every logit preserves the probabilities; subtracting the maximum avoids exponential overflow. For one unweighted example with true class c, \\(L=-\\ln p_c\\) and \\(\\partial L/\\partial z_i=p_i-y_i\\), where \\(y_c=1\\) and other targets are 0. No label smoothing.",
+      "formula": "",
+      "example": "Logits \\((3,5)\\) can be replaced by \\((-2,0)\\). For probabilities \\((0.4,0.6)\\) and true class 1, the first logit gradient is -0.6.",
+      "exampleSteps": [],
+      "takeaway": "Subtract the maximum logit before softmax; use the input convention required by the loss."
+    },
+    "ml-attention-foundations-computation": {
+      "title": "Scores become weighted values",
+      "body": "One attention head computes \\(A=\\mathrm{softmax}(QK^T/\\sqrt{d_k})\\) row by row, then outputs \\(AV\\). Q has shape \\(N_q\\times d_k\\), K has \\(N_k\\times d_k\\), and V has \\(N_k\\times d_v\\). The output is \\(N_q\\times d_v\\). Here there is no dropout or output projection.",
+      "formula": "",
+      "example": "Attention weights \\((0.6,0.4)\\) over scalar values \\((1,6)\\) produce \\(0.6\\cdot1+0.4\\cdot6=3\\).",
+      "exampleSteps": [],
+      "takeaway": "Attention combines values using normalized query-key scores."
+    },
+    "ml-attention-foundations-scaling": {
+      "title": "Scaling and causal masking",
+      "body": "If all query/key coordinates are mutually independent, with mean 0 and variance 1, then \\(\\mathrm{Var}(q^Tk)=d_k\\). Dividing the dot product by \\(\\sqrt{d_k}\\) makes its variance 1. This is a motivating model, not an exact claim about trained vectors. A causal mask removes future keys before softmax, using \\(-\\infty\\) logits; the current and earlier keys remain.",
+      "formula": "",
+      "example": "A dot product with variance 9 has variance 1 after division by 3. A masked key receives zero weight, and the allowed weights are renormalized.",
+      "exampleSteps": [],
+      "takeaway": "Remove future scores before normalizing; divide dot products by the square root of the key dimension."
+    },
+    "ml-attention-foundations-memory": {
+      "title": "Two different memory costs",
+      "body": "An explicitly stored dense self-attention score matrix has \\(N^2\\) entries per head. Efficient kernels can avoid storing that full matrix. Separately, decoding can cache past keys and values. With batch B, T cached tokens, H key/value heads, d entries per head and s bytes per entry, one layer stores \\(2BTHds\\) bytes of K/V data.",
+      "formula": "",
+      "example": "Tripling N multiplies the dense score-entry count by 9. Doubling cached tokens doubles raw K/V storage when all other dimensions stay fixed.",
+      "exampleSteps": [],
+      "takeaway": "Raw KV storage grows linearly with cached tokens; an explicitly stored dense score matrix grows quadratically."
+    },
+    "ml-serving-experiments-performance": {
+      "title": "Throughput is not tail latency",
+      "body": "For one worker processing full batches serially, a batch of b requests taking t seconds gives ideal compute-limited throughput \\(b/t\\). Real end-to-end latency includes waiting and overhead. p99 is the 99th percentile of latency; a mean alone cannot determine it. Measure under representative load.",
+      "formula": "",
+      "example": "A full batch of 10 requests every 50 ms gives an ideal 200 requests/s. That rate alone does not reveal how long an individual request waited.",
+      "exampleSteps": [],
+      "takeaway": "Measure tail latency under representative load; ideal throughput alone cannot certify a latency target."
+    },
+    "ml-serving-experiments-effects": {
+      "title": "Effect size and uncertainty",
+      "body": "For conversion rates \\(p_T,p_C\\), absolute change is \\(p_T-p_C\\); relative uplift is \\((p_T-p_C)/p_C\\) for \\(p_C>0\\). A valid 95% frequentist confidence-interval procedure covers the fixed true effect in 95% of repeated studies under its assumptions. An interval spanning zero does not establish a positive effect or prove no effect.",
+      "formula": "",
+      "example": "A change from 20% to 21% is 1 percentage point, but 5% relative uplift. These answer different questions.",
+      "exampleSteps": [],
+      "takeaway": "Relative uplift and percentage-point change differ; an interval spanning zero does not prove no effect."
+    },
+    "ml-serving-experiments-design": {
+      "title": "Respect the experiment design",
+      "body": "If treatment is assigned by user, repeated sessions from one user may be correlated. For a mean per-user outcome, aggregate each user over the test window and analyze users as units. Separately, an ordinary fixed-horizon significance test does not preserve its advertised false-positive rate if you repeatedly stop at the first significant result. Use the planned endpoint or a valid sequential procedure.",
+      "formula": "",
+      "example": "One user generating 50 sessions is still one randomized user, not 50 independently randomized observations.",
+      "exampleSteps": [],
+      "takeaway": "Respect the randomized analysis unit and use inference compatible with the stopping rule."
     }
   },
   "exercises": {
@@ -1185,7 +1437,9 @@
       "prompt": "What is the second component?",
       "hint": "Read from left to right, starting with the first component.",
       "explanation": "The ordered entries are \\(4\\), \\(-2\\), and \\(7\\); the second is \\(-2\\).",
-      "solutionSteps": ["First: \\(4\\). Second: \\(-2\\). Third: \\(7\\)."]
+      "solutionSteps": [
+        "First: \\(4\\). Second: \\(-2\\). Third: \\(7\\)."
+      ]
     },
     "ml-02": {
       "title": "Check the dimensions",
@@ -1292,7 +1546,9 @@
       "prompt": "What is the third component?",
       "hint": "Count entries from left to right.",
       "explanation": "The third entry is \\(9\\).",
-      "solutionSteps": ["First: \\(-5\\). Second: \\(0\\). Third: \\(9\\)."]
+      "solutionSteps": [
+        "First: \\(-5\\). Second: \\(0\\). Third: \\(9\\)."
+      ]
     },
     "ml-03b": {
       "title": "Compute another dot product",
@@ -4884,6 +5140,691 @@
         "a": "Shrinks to zero.",
         "b": "Stays constant.",
         "c": "Grows without bound."
+      }
+    },
+    "ml-logistic-q01": {
+      "title": "Turn a score into a probability",
+      "statement": "A logistic model produces \\(z=\\ln 3\\).",
+      "prompt": "What probability does it predict? Enter a decimal.",
+      "hint": "Use \\(e^{-\\ln 3}=1/3\\).",
+      "explanation": "\\(p=1/(1+1/3)=3/4=0.75\\). This is a model probability, not a guarantee that the event occurs.",
+      "solutionSteps": [
+        "\\(p=1/(1+1/3)=3/4=0.75\\). This is a model probability, not a guarantee that the event occurs."
+      ]
+    },
+    "ml-logistic-q02": {
+      "title": "Interpret a feature weight",
+      "statement": "A logistic model has \\(w_j=\\ln 2\\). Increase \\(x_j\\) by 1 and hold every other feature fixed.",
+      "prompt": "What must happen?",
+      "hint": "The linear score is the log of the odds.",
+      "explanation": "The score increases by \\(\\ln 2\\), so odds are multiplied by \\(e^{\\ln 2}=2\\). For example, odds 1 become 2: probability changes from \\(1/2\\) to \\(2/3\\), not to 1.",
+      "solutionSteps": [
+        "The score increases by \\(\\ln 2\\), so odds are multiplied by \\(e^{\\ln 2}=2\\). For example, odds 1 become 2: probability changes from \\(1/2\\) to \\(2/3\\), not to 1."
+      ],
+      "options": {
+        "a": "The probability doubles.",
+        "b": "The odds double.",
+        "c": "The probability increases by 0.5."
+      }
+    },
+    "ml-logistic-q03": {
+      "title": "A confidently wrong prediction",
+      "statement": "The true label is \\(y=0\\), but the model predicts \\(p=0.9\\). Use natural-log cross-entropy.",
+      "prompt": "What is the loss for this example?",
+      "hint": "Use the probability assigned to the true label, which is class 0.",
+      "explanation": "The loss is \\(-\\ln(1-0.9)=-\\ln(0.1)=\\ln 10\\). A confident wrong prediction receives a larger penalty than a less confident one.",
+      "solutionSteps": [
+        "The loss is \\(-\\ln(1-0.9)=-\\ln(0.1)=\\ln 10\\). A confident wrong prediction receives a larger penalty than a less confident one."
+      ],
+      "options": {
+        "a": "\\(\\ln 10\\)",
+        "b": "\\(\\ln(0.9)\\)",
+        "c": "0.1"
+      }
+    },
+    "ml-logistic-q04": {
+      "title": "Find the weight gradient",
+      "statement": "One example has \\(x_j=2\\), \\(y=1\\), and current predicted probability \\(p=0.75\\). Use binary cross-entropy with no penalty.",
+      "prompt": "What is \\(\\partial\\ell/\\partial w_j\\)? Enter a decimal.",
+      "hint": "Multiply \\(p-y\\) by the feature value.",
+      "explanation": "\\((0.75-1)\\cdot2=-0.5\\). A gradient-descent step increases this weight. With the positive feature, this raises the score and moves the probability toward the true label.",
+      "solutionSteps": [
+        "\\((0.75-1)\\cdot2=-0.5\\). A gradient-descent step increases this weight. With the positive feature, this raises the score and moves the probability toward the true label."
+      ]
+    },
+    "ml-logistic-q05": {
+      "title": "Can more training solve this pattern",
+      "statement": "Use \\(p=\\sigma(w_1x_1+w_2x_2+b)\\); predict 1 when \\(p\\geq0.5\\). Positive points: \\((1,0),(0,1)\\). Negative points: \\((0,0),(1,1)\\). Only these two raw features are available.",
+      "prompt": "Can this model classify all four points correctly?",
+      "hint": "Translate the four labels into inequalities on the linear score.",
+      "explanation": "The positive points require \\(w_1+b\\geq0\\) and \\(w_2+b\\geq0\\), so \\(w_1+w_2+2b\\geq0\\). The negatives require \\(b<0\\) and \\(w_1+w_2+b<0\\), whose sum gives \\(w_1+w_2+2b<0\\): a contradiction.",
+      "solutionSteps": [
+        "The positive points require \\(w_1+b\\geq0\\) and \\(w_2+b\\geq0\\), so \\(w_1+w_2+2b\\geq0\\). The negatives require \\(b<0\\) and \\(w_1+w_2+b<0\\), whose sum gives \\(w_1+w_2+2b<0\\): a contradiction."
+      ],
+      "options": {
+        "a": "Yes, by increasing every weight sufficiently.",
+        "b": "Yes, with a sufficiently small learning rate.",
+        "c": "No, these raw features cannot give the required linear boundary."
+      }
+    },
+    "ml-logistic-q06": {
+      "title": "Does the best finite weight exist",
+      "statement": "Model: \\(p=\\sigma(wx)\\), with no bias or penalty. Training examples: \\((x,y)=(-1,0),(1,1)\\). Minimize mean binary cross-entropy.",
+      "prompt": "Which statement is correct?",
+      "hint": "Both examples have the same loss. Examine it as the weight increases.",
+      "explanation": "Both losses equal \\(\\ln(1+e^{-w})\\). This is positive and strictly decreasing for every finite \\(w\\). It tends to 0 as \\(w\\to+\\infty\\). The infimum is 0, but no finite weight attains it.",
+      "solutionSteps": [
+        "Both losses equal \\(\\ln(1+e^{-w})\\). This is positive and strictly decreasing for every finite \\(w\\). It tends to 0 as \\(w\\to+\\infty\\). The infimum is 0, but no finite weight attains it."
+      ],
+      "options": {
+        "a": "The unique best weight is \\(w=0\\).",
+        "b": "The loss approaches zero, but no finite best weight exists.",
+        "c": "A finite positive weight makes the loss exactly zero."
+      }
+    },
+    "ml-prob-q01": {
+      "title": "Count the false alarms",
+      "statement": "A batch has 1,000 transactions: 20 fraudulent and 980 legitimate. A detector flags exactly 10% of legitimate transactions.",
+      "prompt": "How many false positives are there? Enter an integer.",
+      "hint": "The false-positive rate applies to legitimate transactions.",
+      "explanation": "There are 0.10 × 980 = 98 false positives. Multiplying by all 1,000 transactions uses the wrong conditioning group.",
+      "solutionSteps": [
+        "There are 0.10 × 980 = 98 false positives. Multiplying by all 1,000 transactions uses the wrong conditioning group."
+      ]
+    },
+    "ml-prob-q02": {
+      "title": "How reliable is a flag",
+      "statement": "Among flagged transactions, 16 are fraudulent and 98 are legitimate. Select one flagged transaction uniformly at random.",
+      "prompt": "What is the probability that it is fraudulent?",
+      "hint": "The denominator is the total number of flags.",
+      "explanation": "There are \\(16+98=114\\) flags, so the probability is \\(16/114=8/57\\), about 14.0%. A detector can find a high fraction of fraud while many of its flags are still false alarms.",
+      "solutionSteps": [
+        "There are \\(16+98=114\\) flags, so the probability is \\(16/114=8/57\\), about 14.0%. A detector can find a high fraction of fraud while many of its flags are still false alarms."
+      ],
+      "options": {
+        "a": "16/20",
+        "b": "16/98",
+        "c": "16/114"
+      }
+    },
+    "ml-prob-q03": {
+      "title": "Combine two independent signals",
+      "statement": "\\(P(Y=1)=P(Y=0)=0.5\\). Binary signals A and B are independent given Y. \\(P(A=1\\mid Y=1)=P(B=1\\mid Y=1)=0.8\\). Both corresponding probabilities given \\(Y=0\\) are 0.2.",
+      "prompt": "When both signals are 1, what is \\(P(Y=1\\mid A=1,B=1)\\)?",
+      "hint": "Compute a joint likelihood for each class, then normalize.",
+      "explanation": "The joint likelihoods are \\(0.8^2=0.64\\) and \\(0.2^2=0.04\\). Equal priors cancel. The posterior is \\(0.64/(0.64+0.04)=16/17\\). The value 0.64 alone is an unnormalized likelihood.",
+      "solutionSteps": [
+        "The joint likelihoods are \\(0.8^2=0.64\\) and \\(0.2^2=0.04\\). Equal priors cancel. The posterior is \\(0.64/(0.64+0.04)=16/17\\). The value 0.64 alone is an unnormalized likelihood."
+      ],
+      "options": {
+        "a": "0.8",
+        "b": "16/17",
+        "c": "0.64"
+      }
+    },
+    "ml-prob-q04": {
+      "title": "Do not count a copied feature twice",
+      "statement": "\\(P(Y=1)=P(Y=0)=0.5\\). This time B is an exact copy of A. \\(P(A=1\\mid Y=1)=0.8\\) and \\(P(A=1\\mid Y=0)=0.2\\).",
+      "prompt": "Given \\(A=B=1\\), what is the correct posterior probability of class 1? Enter a decimal.",
+      "hint": "Observing the copy adds no information beyond observing A.",
+      "explanation": "The event \\(A=B=1\\) is exactly the event \\(A=1\\). The posterior is \\(0.8/(0.8+0.2)=0.8\\). Squaring the likelihoods would wrongly assume conditional independence and produce 16/17.",
+      "solutionSteps": [
+        "The event \\(A=B=1\\) is exactly the event \\(A=1\\). The posterior is \\(0.8/(0.8+0.2)=0.8\\). Squaring the likelihoods would wrongly assume conditional independence and produce 16/17."
+      ]
+    },
+    "ml-prob-q05": {
+      "title": "Fit the class probability",
+      "statement": "Eight independent Bernoulli observations contain three 1s and five 0s. Fit the shared success probability by maximum likelihood, with no prior or penalty.",
+      "prompt": "What is the estimate? Enter a decimal.",
+      "hint": "Count successes and divide by sample size.",
+      "explanation": "The likelihood is \\(\\theta^3(1-\\theta)^5\\). Its log derivative is \\(3/\\theta-5/(1-\\theta)\\). Setting it to zero gives \\(\\theta=3/8=0.375\\). The log-likelihood is strictly concave in the interior, and the endpoints have zero likelihood.",
+      "solutionSteps": [
+        "The likelihood is \\(\\theta^3(1-\\theta)^5\\). Its log derivative is \\(3/\\theta-5/(1-\\theta)\\). Setting it to zero gives \\(\\theta=3/8=0.375\\). The log-likelihood is strictly concave in the interior, and the endpoints have zero likelihood."
+      ]
+    },
+    "ml-prob-q06": {
+      "title": "An event never appeared",
+      "statement": "Five binary observations contain no successes. Use binary add-one smoothing.",
+      "prompt": "What estimated probability should be assigned to success?",
+      "hint": "Add one count to each of the two possible outcomes.",
+      "explanation": "The estimate is \\((0+1)/(5+2)=1/7\\). Adding one only to the numerator would fail to account for both outcomes. This estimate is not proof of the true event probability.",
+      "solutionSteps": [
+        "The estimate is \\((0+1)/(5+2)=1/7\\). Adding one only to the numerator would fail to account for both outcomes. This estimate is not proof of the true event probability."
+      ],
+      "options": {
+        "a": "1/7",
+        "b": "0",
+        "c": "1/5"
+      }
+    },
+    "ml-reg-q01": {
+      "title": "Find the penalized optimum",
+      "statement": "\\(J(w)=(w-3)^2/2+\\lambda w^2/2\\), with \\(\\lambda=2\\) and \\(w\\in\\mathbb{R}\\).",
+      "prompt": "Which weight minimizes J? Enter an integer.",
+      "hint": "Set the derivative of the complete objective to zero.",
+      "explanation": "\\(J'(w)=w-3+2w=3w-3\\), so \\(w=1\\). The second derivative is 3, making this the unique minimum. Minimizing only the data loss would give 3.",
+      "solutionSteps": [
+        "\\(J'(w)=w-3+2w=3w-3\\), so \\(w=1\\). The second derivative is 3, making this the unique minimum. Minimizing only the data loss would give 3."
+      ]
+    },
+    "ml-reg-q02": {
+      "title": "Keep the same penalty after rescaling",
+      "statement": "A scalar model predicts \\(wx\\) and has penalty \\(\\lambda w^2/2\\), with \\(\\lambda>0\\). Re-express it using \\(x'=10x\\) and \\(w'=w/10\\).",
+      "prompt": "Which \\(\\lambda'\\) preserves the penalty for every w?",
+      "hint": "Match the coefficient of squared w in the penalty.",
+      "explanation": "The new penalty is \\(\\lambda' w^2/200\\). Matching \\(\\lambda w^2/2\\) for every w requires \\(\\lambda'=100\\lambda\\). Keeping the same coefficient makes the penalty 100 times weaker at corresponding predictions. This concerns the objective, not the learning rate.",
+      "solutionSteps": [
+        "The new penalty is \\(\\lambda' w^2/200\\). Matching \\(\\lambda w^2/2\\) for every w requires \\(\\lambda'=100\\lambda\\). Keeping the same coefficient makes the penalty 100 times weaker at corresponding predictions. This concerns the objective, not the learning rate."
+      ],
+      "options": {
+        "a": "\\(\\lambda/100\\)",
+        "b": "\\(100\\lambda\\)",
+        "c": "\\(\\lambda\\)"
+      }
+    },
+    "ml-reg-q03": {
+      "title": "When does a coefficient become zero",
+      "statement": "\\(J(w)=(w-0.6)^2/2+|w|\\), for \\(w\\in\\mathbb{R}\\).",
+      "prompt": "What is the minimizing weight? Enter a decimal or integer.",
+      "hint": "Apply soft thresholding with a threshold of 1.",
+      "explanation": "\\(\\max(0.6-1,0)=0\\), so the minimizer is zero. The objective decreases as we approach zero from the left and increases to the right. Do not differentiate the absolute value at zero as though it were smooth.",
+      "solutionSteps": [
+        "\\(\\max(0.6-1,0)=0\\), so the minimizer is zero. The objective decreases as we approach zero from the left and increases to the right. Do not differentiate the absolute value at zero as though it were smooth."
+      ]
+    },
+    "ml-reg-q04": {
+      "title": "Compare two equivalent representations",
+      "statement": "Two feature columns are identical. Compare weights A = (2, 0) and B = (1, 1), with the same bias. Use the same data loss and a strictly positive penalty strength \\(\\lambda\\).",
+      "prompt": "How do L1 and L2 compare these two candidates?",
+      "hint": "Their predictions agree. Compare absolute sums and sums of squares.",
+      "explanation": "Both candidates have total weight 2, so identical columns give identical predictions. Their L1 sums both equal 2. The squared sums are 4 for A and 2 for B. L1 ties; L2 strictly prefers B among these two candidates. This does not identify the global best fit.",
+      "solutionSteps": [
+        "Both candidates have total weight 2, so identical columns give identical predictions. Their L1 sums both equal 2. The squared sums are 4 for A and 2 for B. L1 ties; L2 strictly prefers B among these two candidates. This does not identify the global best fit."
+      ],
+      "options": {
+        "a": "L1 strictly prefers A; L2 strictly prefers B.",
+        "b": "Both penalties strictly prefer B.",
+        "c": "L1 ties; L2 strictly prefers B."
+      }
+    },
+    "ml-reg-q05": {
+      "title": "Choose the strength, not the training fit",
+      "statement": "Three converged fits use the same training/validation split and unpenalized predictive loss. \\(\\lambda=0\\): train 0.10, validation 0.25. \\(\\lambda=1\\): train 0.15, validation 0.18. \\(\\lambda=10\\): train 0.25, validation 0.24.",
+      "prompt": "Select the candidate with the lowest validation loss. Enter its \\(\\lambda\\).",
+      "hint": "The regularization strength is selected using held-out predictive performance.",
+      "explanation": "The smallest validation loss is 0.18, achieved at \\(\\lambda=1\\). The lowest training loss does not win this selection rule. The choice is supported by this split; it is not a guarantee about every future sample.",
+      "solutionSteps": [
+        "The smallest validation loss is 0.18, achieved at \\(\\lambda=1\\). The lowest training loss does not win this selection rule. The choice is supported by this split; it is not a guarantee about every future sample."
+      ]
+    },
+    "ml-reg-q06": {
+      "title": "Keep cross-validation honest",
+      "statement": "You compare regularization strengths by cross-validation on IID rows. Each fit standardizes features using an estimated mean and variance.",
+      "prompt": "Where should those statistics be fitted in each split?",
+      "hint": "Keep separate what is fitted from how performance is evaluated.",
+      "explanation": "Fit the scaler on the training fold and reuse it on the validation fold. Validation may score the candidate, but its values must not fit the scaler. Fitting before the split leaks held-out information; fitting a separate validation scaler changes the transformation.",
+      "solutionSteps": [
+        "Fit the scaler on the training fold and reuse it on the validation fold. Validation may score the candidate, but its values must not fit the scaler. Fitting before the split leaks held-out information; fitting a separate validation scaler changes the transformation."
+      ],
+      "options": {
+        "a": "On the training fold only; reuse them on the validation fold.",
+        "b": "On training and validation rows together, since labels are unused.",
+        "c": "Separately on training rows and on validation rows."
+      }
+    },
+    "ml-moments-q01": {
+      "title": "Expected stochastic gradient",
+      "statement": "At fixed weights, one randomly sampled example has scalar gradient \\(G=-2\\) with probability 0.25 and \\(G=2\\) with probability 0.75.",
+      "prompt": "What is \\(E[G]\\)? Enter a number.",
+      "hint": "Weight each gradient by its sampling probability.",
+      "explanation": "\\(E[G]=0.25(-2)+0.75(2)=1\\). The two possible values are not equally likely, so their unweighted average would be wrong.",
+      "solutionSteps": [
+        "\\(E[G]=0.25(-2)+0.75(2)=1\\). The two possible values are not equally likely, so their unweighted average would be wrong."
+      ]
+    },
+    "ml-moments-q02": {
+      "title": "Does class balancing preserve the objective",
+      "statement": "Target: the unweighted mean loss over 10 rows. At fixed weights, the 2 rare-class rows each have scalar gradient 8; the other 8 rows each have gradient -2. A sampler selects each class with probability 0.5, uniformly within class. No importance weights are used.",
+      "prompt": "Is its sampled gradient unbiased for the target gradient?",
+      "hint": "Compare the original row-weighted mean with the sampler-weighted mean.",
+      "explanation": "The target gradient is \\((2\\cdot8+8\\cdot(-2))/10=0\\). The sampled gradient has expectation \\(0.5(8)+0.5(-2)=3\\). Balancing classes changes the objective here; it may be intentional, but it is not an unbiased estimator of the stated target.",
+      "solutionSteps": [
+        "The target gradient is \\((2\\cdot8+8\\cdot(-2))/10=0\\). The sampled gradient has expectation \\(0.5(8)+0.5(-2)=3\\). Balancing classes changes the objective here; it may be intentional, but it is not an unbiased estimator of the stated target."
+      ],
+      "options": {
+        "a": "Yes; sampling both classes equally always preserves the mean gradient.",
+        "b": "No; its expected gradient is 3, while the target gradient is 0.",
+        "c": "Yes; a larger batch removes the change in expectation."
+      }
+    },
+    "ml-moments-q03": {
+      "title": "Variance of an independent mini-batch",
+      "statement": "A mini-batch averages 36 independent draws of a scalar gradient component. Each draw has variance 9; sampling is with replacement at fixed model parameters.",
+      "prompt": "What is \\(\\mathrm{Var}(\\bar G)\\)? Enter a decimal.",
+      "hint": "The question asks for variance, not standard deviation.",
+      "explanation": "Independence makes cross-covariances zero. \\(\\mathrm{Var}(\\bar G)=9/36=0.25\\). Its standard deviation is 0.5.",
+      "solutionSteps": [
+        "Independence makes cross-covariances zero. \\(\\mathrm{Var}(\\bar G)=9/36=0.25\\). Its standard deviation is 0.5."
+      ]
+    },
+    "ml-moments-q04": {
+      "title": "A larger batch with no new information",
+      "statement": "Draw 18 independent scalar gradients, each with variance 9. Copy each draw exactly once, giving 36 entries. Average all 36 entries.",
+      "prompt": "What is the variance of this average?",
+      "hint": "The average of the duplicated entries equals the average of the original draws.",
+      "explanation": "Writing the original draws as \\(G_1,\\ldots,G_{18}\\), the new mean is \\(2\\sum_iG_i/36=\\sum_iG_i/18\\). Its variance is \\(9/18=0.5\\), not \\(9/36\\).",
+      "solutionSteps": [
+        "Writing the original draws as \\(G_1,\\ldots,G_{18}\\), the new mean is \\(2\\sum_iG_i/36=\\sum_iG_i/18\\). Its variance is \\(9/18=0.5\\), not \\(9/36\\)."
+      ],
+      "options": {
+        "a": "0.25",
+        "b": "0.5",
+        "c": "9"
+      }
+    },
+    "ml-moments-q05": {
+      "title": "Accuracy standard error",
+      "statement": "A fixed model has true success probability \\(p=0.8\\) on each of 400 independent, identically distributed test cases.",
+      "prompt": "What is the standard error of its test accuracy? Enter probability units, not a percentage.",
+      "hint": "Use \\(\\sqrt{p(1-p)/n}\\).",
+      "explanation": "\\(\\sqrt{0.8\\cdot0.2/400}=\\sqrt{0.0004}=0.02\\): two percentage points. If p were unknown, substituting observed accuracy would give a plug-in estimate, not this known-p calculation.",
+      "solutionSteps": [
+        "\\(\\sqrt{0.8\\cdot0.2/400}=\\sqrt{0.0004}=0.02\\): two percentage points. If p were unknown, substituting observed accuracy would give a plug-in estimate, not this known-p calculation."
+      ]
+    },
+    "ml-moments-q06": {
+      "title": "Equal accuracy is not enough",
+      "statement": "Two fixed models each score 80% accuracy on the same 400 IID test cases. Only these two aggregate scores are retained.",
+      "prompt": "Can these scores alone determine the paired standard-error estimate for their accuracy difference?",
+      "hint": "The two models may agree or fail on different examples.",
+      "explanation": "No. With identical per-case outcomes, every paired difference is zero. Alternatively, 60% of cases can be correct for both and 20% for each model alone; both still score 80%, but differences vary. The covariance, or equivalent paired disagreement information, is missing.",
+      "solutionSteps": [
+        "No. With identical per-case outcomes, every paired difference is zero. Alternatively, 60% of cases can be correct for both and 20% for each model alone; both still score 80%, but differences vary. The covariance, or equivalent paired disagreement information, is missing."
+      ],
+      "options": {
+        "a": "Yes; equal accuracies force a standard error of zero.",
+        "b": "Yes; always add two independent accuracy variances.",
+        "c": "No; the paired agreement and disagreement pattern is needed."
+      }
+    },
+    "ml-generalization-q01": {
+      "title": "Compute expected test error",
+      "statement": "At one fixed input, \\(f(x)=2\\). Across random training sets, the fitted prediction is 1 or 5 with equal probability. Fresh independent label noise has mean 0 and variance 1.",
+      "prompt": "What is the expected squared error against a fresh label? Enter a number.",
+      "hint": "First find the mean and variance of the fitted prediction.",
+      "explanation": "Mean prediction is 3, so squared bias is \\((3-2)^2=1\\). Prediction variance is \\(((1-3)^2+(5-3)^2)/2=4\\). Expected test error is \\(1+4+1=6\\).",
+      "solutionSteps": [
+        "Mean prediction is 3, so squared bias is \\((3-2)^2=1\\). Prediction variance is \\(((1-3)^2+(5-3)^2)/2=4\\). Expected test error is \\(1+4+1=6\\)."
+      ]
+    },
+    "ml-generalization-q02": {
+      "title": "Can averaging remove every error",
+      "statement": "At one fixed input, independently trained models each have mean prediction 3 and variance 4. The true conditional mean is 2; fresh independent label noise has variance 1. Average M independent model predictions.",
+      "prompt": "As M grows without bound, what does expected squared test error approach?",
+      "hint": "Averaging reduces variance but does not move the mean prediction to the truth.",
+      "explanation": "The average still has mean 3 and squared bias 1. Its variance is \\(4/M\\). Thus expected error is \\(1+4/M+1\\), tending to 2. Independence of these model predictions is an explicit assumption.",
+      "solutionSteps": [
+        "The average still has mean 3 and squared bias 1. Its variance is \\(4/M\\). Thus expected error is \\(1+4/M+1\\), tending to 2. Independence of these model predictions is an explicit assumption."
+      ],
+      "options": {
+        "a": "0",
+        "b": "2",
+        "c": "1"
+      }
+    },
+    "ml-generalization-q03": {
+      "title": "Choose the next experiment",
+      "statement": "At training sizes 2,000 and 20,000, reliable train/validation losses both plateau near 0.28/0.30. Optimization converged, splits are IID, and a reference model reaches 0.10 using the same available features.",
+      "prompt": "Which next experiment is best supported?",
+      "hint": "The small gap is not the only evidence: the reference shows room for improvement.",
+      "explanation": "Test greater capacity or weaker regularization, and compare held-out loss. The supplied checks make an underfitting investigation reasonable. These curves do not guarantee that the proposed change will succeed.",
+      "solutionSteps": [
+        "Test greater capacity or weaker regularization, and compare held-out loss. The supplied checks make an underfitting investigation reasonable. These curves do not guarantee that the proposed change will succeed."
+      ],
+      "options": {
+        "a": "Test greater capacity or weaker regularization, then validate.",
+        "b": "Keep the model unchanged and assume more IID data must solve it.",
+        "c": "Treat 0.30 as irreducible noise because the two losses are close."
+      }
+    },
+    "ml-generalization-q04": {
+      "title": "Training loss rose; is the model worse",
+      "statement": "With the same learning procedure and evaluation protocol, increasing IID training data from 500 to 4,000 changes mean train/validation loss from 0.01/0.25 to 0.06/0.13. Repeated-split averages make this change reliable.",
+      "prompt": "Which interpretation is justified?",
+      "hint": "Model selection depends on held-out performance, not just training fit.",
+      "explanation": "Held-out loss improved from 0.25 to 0.13 even though fitting the larger training set gave a higher training loss. The gap shrank from 0.24 to 0.07. This supports the benefit of the added data here, without proving a unique cause or unlimited future gains.",
+      "solutionSteps": [
+        "Held-out loss improved from 0.25 to 0.13 even though fitting the larger training set gave a higher training loss. The gap shrank from 0.24 to 0.07. This supports the benefit of the added data here, without proving a unique cause or unlimited future gains."
+      ],
+      "options": {
+        "a": "The model is worse because training loss increased.",
+        "b": "Held-out performance improved despite a higher training loss.",
+        "c": "The new model has zero bias because its validation loss decreased."
+      }
+    },
+    "ml-generalization-q05": {
+      "title": "Average correlated predictions",
+      "statement": "At a fixed input, four model predictions each have variance 8. Every pair has correlation 0.25. Form their equally weighted average.",
+      "prompt": "What is its prediction variance? Enter a decimal.",
+      "hint": "Each pair has covariance 0.25 × 8 = 2.",
+      "explanation": "\\(\\mathrm{Var}(\\bar f)=(4\\cdot8+2\\cdot6\\cdot2)/16=56/16=3.5\\). There are six distinct pairs. Ignoring their covariance would incorrectly give 2.",
+      "solutionSteps": [
+        "\\(\\mathrm{Var}(\\bar f)=(4\\cdot8+2\\cdot6\\cdot2)/16=56/16=3.5\\). There are six distinct pairs. Ignoring their covariance would incorrectly give 2."
+      ]
+    },
+    "ml-generalization-q06": {
+      "title": "Does more randomization guarantee improvement",
+      "statement": "A random-forest change considers fewer candidate features per split. Measured pairwise prediction correlation decreases. Bias and individual-tree prediction variance may also change.",
+      "prompt": "Does lower correlation alone guarantee lower expected squared test error?",
+      "hint": "Separate ensemble variance from total expected error.",
+      "explanation": "No. Lower correlation helps the variance formula only with the other quantities controlled. Individual variance can rise and squared bias can increase enough to offset the benefit. Evaluate the complete change on suitable held-out data.",
+      "solutionSteps": [
+        "No. Lower correlation helps the variance formula only with the other quantities controlled. Individual variance can rise and squared bias can increase enough to offset the benefit. Evaluate the complete change on suitable held-out data."
+      ],
+      "options": {
+        "a": "Yes; any reduction in tree correlation lowers total test error.",
+        "b": "Yes; averaging always removes model bias.",
+        "c": "No; individual variance and bias can offset the correlation benefit."
+      }
+    },
+    "ml-metrics-q01": {
+      "title": "How many alerts are correct",
+      "statement": "A classifier produces TP = 30, FP = 10, FN = 20 and TN = 940 on a held-out set.",
+      "prompt": "What is precision for the positive class? Enter a decimal.",
+      "hint": "Condition on positive predictions, not actual positives.",
+      "explanation": "\\(30/(30+10)=0.75\\). Recall would be \\(30/(30+20)=0.6\\); these answer different questions.",
+      "solutionSteps": [
+        "\\(30/(30+10)=0.75\\). Recall would be \\(30/(30+20)=0.6\\); these answer different questions."
+      ]
+    },
+    "ml-metrics-q02": {
+      "title": "Combine precision and recall",
+      "statement": "On a held-out set, TP = 30, FP = 10, FN = 20 and TN = 940.",
+      "prompt": "What is the positive-class \\(F_1\\) score?",
+      "hint": "Use the count form rather than the arithmetic mean of precision and recall.",
+      "explanation": "\\(F_1=60/(60+10+20)=2/3\\). The arithmetic mean of precision 0.75 and recall 0.6 is 0.675, which is not F1. TN does not enter this formula.",
+      "solutionSteps": [
+        "\\(F_1=60/(60+10+20)=2/3\\). The arithmetic mean of precision 0.75 and recall 0.6 is 0.675, which is not F1. TN does not enter this formula."
+      ],
+      "options": {
+        "a": "2/3",
+        "b": "0.675",
+        "c": "0.97"
+      }
+    },
+    "ml-metrics-q03": {
+      "title": "Choose a cost-sensitive threshold",
+      "statement": "Use true deployment posterior probabilities. A false positive costs 2 and a false negative costs 8. Correct decisions cost zero; there are no capacity constraints. Break equal-cost ties toward positive.",
+      "prompt": "Predict positive when \\(p\\geq t\\). What is t? Enter a decimal.",
+      "hint": "Compare the two conditional expected costs.",
+      "explanation": "Choose positive when \\(2(1-p)\\leq8p\\), equivalent to \\(p\\geq0.2\\). This is a cost-minimizing threshold under the stated assumptions, not a universal threshold for every classifier.",
+      "solutionSteps": [
+        "Choose positive when \\(2(1-p)\\leq8p\\), equivalent to \\(p\\geq0.2\\). This is a cost-minimizing threshold under the stated assumptions, not a universal threshold for every classifier."
+      ]
+    },
+    "ml-metrics-q04": {
+      "title": "Lower the threshold",
+      "statement": "On the same labeled dataset, keep model scores fixed and lower the positive-prediction threshold. The dataset has positives; both thresholds produce at least one positive prediction.",
+      "prompt": "Which statement must hold?",
+      "hint": "The lower threshold only adds predicted positives; those added cases may have either label.",
+      "explanation": "True positives cannot decrease, and the number of actual positives is fixed, so recall cannot decrease. Precision can rise or fall depending on the newly included labels. For example, adding only true positives can raise it, while adding only false positives can lower it.",
+      "solutionSteps": [
+        "True positives cannot decrease, and the number of actual positives is fixed, so recall cannot decrease. Precision can rise or fall depending on the newly included labels. For example, adding only true positives can raise it, while adding only false positives can lower it."
+      ],
+      "options": {
+        "a": "Recall and precision must both increase strictly.",
+        "b": "Recall cannot decrease; precision may increase or decrease.",
+        "c": "ROC-AUC must increase because more positives are predicted."
+      }
+    },
+    "ml-metrics-q05": {
+      "title": "Same ranking, different probabilities",
+      "statement": "Both labels are present in a fixed evaluation set. Transform every score \\(s\\in[0,1]\\) into \\(s^2\\), using exact arithmetic.",
+      "prompt": "What must happen to empirical ROC-AUC?",
+      "hint": "Squaring is strictly increasing on [0,1], including preservation of ties.",
+      "explanation": "All positive-negative orderings and ties are preserved, so ROC-AUC is unchanged. Calibration need not survive, and predictions at a fixed numerical threshold can change. The result does not require the original scores to be calibrated.",
+      "solutionSteps": [
+        "All positive-negative orderings and ties are preserved, so ROC-AUC is unchanged. Calibration need not survive, and predictions at a fixed numerical threshold can change. The result does not require the original scores to be calibrated."
+      ],
+      "options": {
+        "a": "It remains unchanged.",
+        "b": "It decreases because every score becomes smaller or equal.",
+        "c": "It increases because squaring makes predictions more confident."
+      }
+    },
+    "ml-metrics-q06": {
+      "title": "Evaluate generalization to new users",
+      "statement": "A dataset has many rows per user. The deployment target is entirely unseen users from the same user population. No future-time extrapolation is being claimed.",
+      "prompt": "Which split best matches that target?",
+      "hint": "Prevent a user identity from appearing in more than one split.",
+      "explanation": "Use user-disjoint training, validation and test sets. Random row splits can place the same user in both training and evaluation, answering an easier seen-user question. Fit preprocessing on training data; use validation for selection and keep the final test untouched.",
+      "solutionSteps": [
+        "Use user-disjoint training, validation and test sets. Random row splits can place the same user in both training and evaluation, answering an easier seen-user question. Fit preprocessing on training data; use validation for selection and keep the final test untouched."
+      ],
+      "options": {
+        "a": "Randomly split rows, allowing each user in all sets.",
+        "b": "Group rows by user, but choose the best model repeatedly on the test set.",
+        "c": "Split by user into disjoint train, validation and test groups."
+      }
+    },
+    "ml-nn-weight-shape": {
+      "title": "Choose the weight shape",
+      "statement": "Use \\(Z=XW+b\\). A batch X has shape \\(8\\times6\\). The layer must output 4 features per example.",
+      "prompt": "Which shape must W have?",
+      "hint": "The inner dimensions must match; each input row becomes one output row.",
+      "explanation": "\\((8\\times6)(6\\times4)\\) produces \\(8\\times4\\). This convention defines W directly; a library may store its transpose.",
+      "solutionSteps": [
+        "\\((8\\times6)(6\\times4)\\) produces \\(8\\times4\\). This convention defines W directly; a library may store its transpose."
+      ],
+      "options": {
+        "a": "\\(4\\times6\\)",
+        "b": "\\(6\\times4\\)",
+        "c": "\\(8\\times4\\)"
+      }
+    },
+    "ml-nn-parameter-count": {
+      "title": "Count the trainable parameters",
+      "statement": "A fully connected network has 6 input features, 4 hidden units, and 3 outputs. Each layer has one bias per output unit. Activations add no parameters.",
+      "prompt": "How many trainable scalar parameters are there?",
+      "hint": "Count weights and biases separately for each of the two layers.",
+      "explanation": "The first layer has \\(6\\cdot4+4=28\\) parameters; the second has \\(4\\cdot3+3=15\\). Total: 43.",
+      "solutionSteps": [
+        "The first layer has \\(6\\cdot4+4=28\\) parameters; the second has \\(4\\cdot3+3=15\\). Total: 43."
+      ]
+    },
+    "ml-nn-active-gradient": {
+      "title": "Follow the active path",
+      "statement": "\\(z=wx+b\\), \\(\\hat y=v\\max(0,z)\\), \\(L=(\\hat y-t)^2/2\\). Set \\(x=2,w=1,b=-1,v=3,t=1\\). No penalty.",
+      "prompt": "What is \\(\\partial L/\\partial w\\)?",
+      "hint": "Compute the prediction first, then multiply the error by v and x.",
+      "explanation": "\\(z=1\\) and \\(\\hat y=3\\). Thus \\((3-1)\\cdot3\\cdot2=12\\). Forgetting the output weight v would give the wrong gradient.",
+      "solutionSteps": [
+        "\\(z=1\\) and \\(\\hat y=3\\). Thus \\((3-1)\\cdot3\\cdot2=12\\). Forgetting the output weight v would give the wrong gradient."
+      ]
+    },
+    "ml-nn-inactive-gradient": {
+      "title": "A mistake with no incoming gradient",
+      "statement": "\\(z=wx+b\\), \\(\\hat y=v\\max(0,z)\\), \\(L=(\\hat y-t)^2/2\\). Set \\(x=2,w=-1,b=1,v=3,t=1\\). No penalty.",
+      "prompt": "What is \\(\\partial L/\\partial w\\)?",
+      "hint": "Check whether the preactivation is positive before using the active-path formula.",
+      "explanation": "\\(z=-1\\), so \\(\\hat y=0\\) and \\(L=1/2\\). ReLU is locally flat: the gradient is 0 despite the positive loss.",
+      "solutionSteps": [
+        "\\(z=-1\\), so \\(\\hat y=0\\) and \\(L=1/2\\). ReLU is locally flat: the gradient is 0 despite the positive loss."
+      ]
+    },
+    "ml-nn-stable-softmax": {
+      "title": "Avoid exponential overflow",
+      "statement": "A classifier produces logits \\((1000,1001,999)\\). You will evaluate softmax.",
+      "prompt": "Which replacement subtracts the maximum and preserves the probabilities?",
+      "hint": "Subtract 1001 from each entry, keeping the order.",
+      "explanation": "The replacement is \\((-1,0,-2)\\). A common shift cancels between numerator and denominator in exact arithmetic; all resulting exponentials are at most 1.",
+      "solutionSteps": [
+        "The replacement is \\((-1,0,-2)\\). A common shift cancels between numerator and denominator in exact arithmetic; all resulting exponentials are at most 1."
+      ],
+      "options": {
+        "a": "\\((0,1,0)\\)",
+        "b": "\\((1,0,2)\\)",
+        "c": "\\((-1,0,-2)\\)"
+      }
+    },
+    "ml-nn-cross-entropy-gradient": {
+      "title": "Differentiate the correct-class logit",
+      "statement": "Softmax probabilities are \\((0.2,0.5,0.3)\\). The true class is the second class. Use one-example, unweighted cross-entropy with no label smoothing.",
+      "prompt": "What is \\(\\partial L/\\partial z_2\\)? Enter a decimal.",
+      "hint": "Subtract the second target entry from the second probability.",
+      "explanation": "\\(p_2-y_2=0.5-1=-0.5\\). Gradient descent increases this logit when other logits are treated as fixed.",
+      "solutionSteps": [
+        "\\(p_2-y_2=0.5-1=-0.5\\). Gradient descent increases this logit when other logits are treated as fixed."
+      ]
+    },
+    "ml-attention-output-shape": {
+      "title": "Track the output shape",
+      "statement": "For one head, Q and K both have shape \\(4\\times3\\); V has shape \\(4\\times2\\). Compute \\(\\mathrm{softmax}(QK^T/\\sqrt{3})V\\). No output projection.",
+      "prompt": "What is the output shape?",
+      "hint": "First find the score-matrix shape; then multiply the attention weights by V.",
+      "explanation": "The score matrix is \\(4\\times4\\). Multiplying it by \\(4\\times2\\) gives \\(4\\times2\\): one value-sized output per query.",
+      "solutionSteps": [
+        "The score matrix is \\(4\\times4\\). Multiplying it by \\(4\\times2\\) gives \\(4\\times2\\): one value-sized output per query."
+      ],
+      "options": {
+        "a": "\\(4\\times2\\)",
+        "b": "\\(4\\times4\\)",
+        "c": "\\(3\\times2\\)"
+      }
+    },
+    "ml-attention-weighted-value": {
+      "title": "Calculate one attention output",
+      "statement": "One query has already-scaled logits \\((0,\\ln3)\\) and scalar values \\((2,6)\\). Neither key is masked. No dropout.",
+      "prompt": "What scalar output does attention produce?",
+      "hint": "Exponentiate the two logits, normalize, and combine the values.",
+      "explanation": "Exponentials are \\((1,3)\\), so weights are \\((1/4,3/4)\\). The output is \\(2/4+18/4=5\\).",
+      "solutionSteps": [
+        "Exponentials are \\((1,3)\\), so weights are \\((1/4,3/4)\\). The output is \\(2/4+18/4=5\\)."
+      ]
+    },
+    "ml-attention-scaled-variance": {
+      "title": "Check the attention scale",
+      "statement": "Vectors q and k have 64 coordinates each. All 128 coordinates are mutually independent with mean 0 and variance 1.",
+      "prompt": "What is \\(\\mathrm{Var}(q^Tk/\\sqrt{64})\\)?",
+      "hint": "Variance scales by the square of the multiplier.",
+      "explanation": "Each product has variance 1, and the 64 products are independent. The sum has variance 64. Dividing by 8 gives variance \\(64/8^2=1\\).",
+      "solutionSteps": [
+        "Each product has variance 1, and the 64 products are independent. The sum has variance 64. Dividing by 8 gives variance \\(64/8^2=1\\)."
+      ]
+    },
+    "ml-attention-causal-output": {
+      "title": "Remove the future token",
+      "statement": "At query position 2 of 3, already-scaled logits are \\((\\ln2,0,\\ln5)\\) and scalar values are \\((3,9,100)\\). A causal mask allows positions 1 and 2 only. No dropout.",
+      "prompt": "What scalar attention output is correct?",
+      "hint": "Remove the third score before computing the softmax denominator.",
+      "explanation": "Allowed exponentials are 2 and 1, so weights are \\((2/3,1/3,0)\\). The output is \\(2+3=5\\). Unmasked attention gives 64.375; zeroing the future weight afterward without renormalizing gives 1.875.",
+      "solutionSteps": [
+        "Allowed exponentials are 2 and 1, so weights are \\((2/3,1/3,0)\\). The output is \\(2+3=5\\). Unmasked attention gives 64.375; zeroing the future weight afterward without renormalizing gives 1.875."
+      ],
+      "options": {
+        "a": "1.875",
+        "b": "5",
+        "c": "64.375"
+      }
+    },
+    "ml-attention-score-memory": {
+      "title": "Extend the context",
+      "statement": "An implementation explicitly stores the complete dense self-attention score tensor. Increase sequence length from 1,024 to 2,048; batch size, head count and data type stay fixed.",
+      "prompt": "By what factor does this tensor grow?",
+      "hint": "Both the query and key dimensions double.",
+      "explanation": "\\((2048/1024)^2=4\\). This is the score tensor, not a claim that all model memory grows by four.",
+      "solutionSteps": [
+        "\\((2048/1024)^2=4\\). This is the score tensor, not a claim that all model memory grows by four."
+      ]
+    },
+    "ml-attention-kv-cache": {
+      "title": "Budget one layer of KV cache",
+      "statement": "One layer caches 1,024 tokens for one sequence. It has 8 key/value heads with 64 entries per key and per value; each entry uses 2 bytes. Count K and V only, with no extra capacity or overhead.",
+      "prompt": "How many MiB are stored? Use \\(1\\ \\mathrm{MiB}=2^{20}\\) bytes.",
+      "hint": "Multiply tokens, heads, entries, and bytes; include both K and V.",
+      "explanation": "\\(2\\cdot1\\cdot1024\\cdot8\\cdot64\\cdot2=2{,}097{,}152\\) bytes, or 2 MiB. Model weights and temporary activations are excluded.",
+      "solutionSteps": [
+        "\\(2\\cdot1\\cdot1024\\cdot8\\cdot64\\cdot2=2{,}097{,}152\\) bytes, or 2 MiB. Model weights and temporary activations are excluded."
+      ]
+    },
+    "ml-serving-throughput": {
+      "title": "Calculate ideal throughput",
+      "statement": "A worker processes full batches of 32 requests in 40 ms each, serially. Each request contains one example. Assume constant backlog, no overhead, and no overlap.",
+      "prompt": "What is its ideal throughput in requests per second?",
+      "hint": "Convert milliseconds to seconds before dividing.",
+      "explanation": "\\(32/0.040=800\\) requests/s. This is an ideal service rate, not a sustainable arrival-rate guarantee with a latency target.",
+      "solutionSteps": [
+        "\\(32/0.040=800\\) requests/s. This is an ideal service rate, not a sustainable arrival-rate guarantee with a latency target."
+      ]
+    },
+    "ml-serving-tail-latency": {
+      "title": "Can the mean certify the target?",
+      "statement": "At the intended load, a service has mean end-to-end latency 20 ms. The target is p99 at most 100 ms.",
+      "prompt": "Does the mean establish that the target is met?",
+      "hint": "A small fraction of very slow requests can coexist with a low mean.",
+      "explanation": "No. For example, 98% of requests at 10 ms and 2% at 510 ms have mean 20 ms but p99 510 ms. Constant 20 ms latency has the same mean and a different p99.",
+      "solutionSteps": [
+        "No. For example, 98% of requests at 10 ms and 2% at 510 ms have mean 20 ms but p99 510 ms. Constant 20 ms latency has the same mean and a different p99."
+      ],
+      "options": {
+        "a": "Yes, because 20 is below 100.",
+        "b": "Yes, if throughput exceeds 100 requests/s.",
+        "c": "No; the latency distribution or p99 measurement is needed."
+      }
+    },
+    "ml-experiment-relative-uplift": {
+      "title": "Report the relative improvement",
+      "statement": "In a randomized test, 100 of 1,000 control users convert and 120 of 1,000 treatment users convert. Each user contributes one binary outcome.",
+      "prompt": "What is the observed relative uplift, as a percentage? Enter 20 for 20%.",
+      "hint": "Divide the difference in rates by the control rate.",
+      "explanation": "\\((0.12-0.10)/0.10=0.20\\), or 20%. The absolute change is 0.02, or 2 percentage points. This point estimate alone does not establish significance.",
+      "solutionSteps": [
+        "\\((0.12-0.10)/0.10=0.20\\), or 20%. The absolute change is 0.02, or 2 percentage points. This point estimate alone does not establish significance."
+      ]
+    },
+    "ml-experiment-interval": {
+      "title": "Interpret an inconclusive interval",
+      "statement": "A planned fixed-horizon test reports a valid 95% confidence interval of [-1, 5] percentage points for treatment minus control conversion. The analysis uses one prespecified metric.",
+      "prompt": "Which conclusion is justified?",
+      "hint": "The interval includes negative, zero, and positive effects.",
+      "explanation": "The interval does not establish a positive effect and does not prove zero effect. It is not a 95% posterior probability that this particular true effect lies in the reported interval.",
+      "solutionSteps": [
+        "The interval does not establish a positive effect and does not prove zero effect. It is not a 95% posterior probability that this particular true effect lies in the reported interval."
+      ],
+      "options": {
+        "a": "The result does not establish a positive effect or prove no effect.",
+        "b": "The treatment has no effect because zero is included.",
+        "c": "The treatment is beneficial because the upper bound is positive."
+      }
+    },
+    "ml-experiment-analysis-unit": {
+      "title": "Use the right analysis unit",
+      "statement": "An experiment randomizes independent users, each with many correlated sessions. The target is mean total clicks per user during a fixed window. Assume no spillovers between users.",
+      "prompt": "Which analysis matches this design?",
+      "hint": "Keep the randomized user as the unit and include users with zero clicks.",
+      "explanation": "Compute total clicks for every assigned user, including zeros, and compare user-level means with user-level uncertainty. Treating sessions as independent both ignores within-user dependence and changes the weighting.",
+      "solutionSteps": [
+        "Compute total clicks for every assigned user, including zeros, and compare user-level means with user-level uncertainty. Treating sessions as independent both ignores within-user dependence and changes the weighting."
+      ],
+      "options": {
+        "a": "Treat every session as an independent sample.",
+        "b": "Aggregate clicks per assigned user and analyze those user totals.",
+        "c": "Keep only users who clicked at least once."
+      }
+    },
+    "ml-experiment-optional-stopping": {
+      "title": "Avoid a false-positive shortcut",
+      "statement": "A team uses an ordinary fixed-horizon test at the 5% significance level. It checks hourly and stops as soon as a positive result has p < 0.05, without a sequential correction.",
+      "prompt": "Is the usual 5% false-positive guarantee preserved?",
+      "hint": "The stopping rule is now chosen using the observed results.",
+      "explanation": "No. Repeated success-based stopping can increase the false-positive probability. Prespecifying that rule alone is insufficient: use a valid sequential method or the planned fixed-horizon analysis. The exact inflation depends on the testing process.",
+      "solutionSteps": [
+        "No. Repeated success-based stopping can increase the false-positive probability. Prespecifying that rule alone is insufficient: use a valid sequential method or the planned fixed-horizon analysis. The exact inflation depends on the testing process."
+      ],
+      "options": {
+        "a": "Yes, because every individual check uses 0.05.",
+        "b": "Yes, if the hourly schedule was announced in advance.",
+        "c": "No; this stopping rule requires an appropriate sequential procedure."
       }
     }
   },

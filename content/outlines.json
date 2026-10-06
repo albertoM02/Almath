@@ -229,7 +229,8 @@
             "id": "ml-unit-02",
             "number": 2,
             "moduleIds": [
-              "ml-linear-regression"
+              "ml-linear-regression",
+              "ml-logistic-regression"
             ]
           },
           {
@@ -248,17 +249,25 @@
           {
             "id": "ml-unit-04",
             "number": 4,
-            "moduleIds": []
+            "moduleIds": [
+              "ml-probability-classifiers",
+              "ml-expectation-variance"
+            ]
           },
           {
             "id": "ml-unit-05",
             "number": 5,
-            "moduleIds": []
+            "moduleIds": [
+              "ml-regularization-validation",
+              "ml-bias-variance"
+            ]
           },
           {
             "id": "ml-unit-06",
             "number": 6,
-            "moduleIds": []
+            "moduleIds": [
+              "ml-metrics-thresholds"
+            ]
           }
         ]
       },
@@ -269,17 +278,23 @@
           {
             "id": "ml-unit-07",
             "number": 7,
-            "moduleIds": []
+            "moduleIds": [
+              "ml-neural-network-foundations"
+            ]
           },
           {
             "id": "ml-unit-08",
             "number": 8,
-            "moduleIds": []
+            "moduleIds": [
+              "ml-attention-foundations"
+            ]
           },
           {
             "id": "ml-unit-09",
             "number": 9,
-            "moduleIds": []
+            "moduleIds": [
+              "ml-serving-experiments"
+            ]
           }
         ]
       }

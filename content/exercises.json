@@ -3344,5 +3344,607 @@
       "b",
       "c"
     ]
+  },
+  {
+    "id": "ml-logistic-q01",
+    "conceptId": "ml-logistic-regression-odds",
+    "version": 1,
+    "type": "number",
+    "answer": 0.75,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-logistic-q02",
+    "conceptId": "ml-logistic-regression-odds",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-logistic-q03",
+    "conceptId": "ml-logistic-regression-loss",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-logistic-q04",
+    "conceptId": "ml-logistic-regression-loss",
+    "version": 1,
+    "type": "number",
+    "answer": -0.5,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-logistic-q05",
+    "conceptId": "ml-logistic-regression-limits",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-logistic-q06",
+    "conceptId": "ml-logistic-regression-limits",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-prob-q01",
+    "conceptId": "ml-probability-classifiers-conditioning",
+    "version": 1,
+    "type": "number",
+    "answer": 98,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-prob-q02",
+    "conceptId": "ml-probability-classifiers-conditioning",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-prob-q03",
+    "conceptId": "ml-probability-classifiers-evidence",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-prob-q04",
+    "conceptId": "ml-probability-classifiers-evidence",
+    "version": 1,
+    "type": "number",
+    "answer": 0.8,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-prob-q05",
+    "conceptId": "ml-probability-classifiers-estimation",
+    "version": 1,
+    "type": "number",
+    "answer": 0.375,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-prob-q06",
+    "conceptId": "ml-probability-classifiers-estimation",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-reg-q01",
+    "conceptId": "ml-regularization-validation-l2",
+    "version": 1,
+    "type": "number",
+    "answer": 1,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-reg-q02",
+    "conceptId": "ml-regularization-validation-l2",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-reg-q03",
+    "conceptId": "ml-regularization-validation-l1",
+    "version": 1,
+    "type": "number",
+    "answer": 0,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-reg-q04",
+    "conceptId": "ml-regularization-validation-l1",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-reg-q05",
+    "conceptId": "ml-regularization-validation-validation",
+    "version": 1,
+    "type": "number",
+    "answer": 1,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-reg-q06",
+    "conceptId": "ml-regularization-validation-validation",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-moments-q01",
+    "conceptId": "ml-expectation-variance-sampling",
+    "version": 1,
+    "type": "number",
+    "answer": 1,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-moments-q02",
+    "conceptId": "ml-expectation-variance-sampling",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-moments-q03",
+    "conceptId": "ml-expectation-variance-averaging",
+    "version": 1,
+    "type": "number",
+    "answer": 0.25,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-moments-q04",
+    "conceptId": "ml-expectation-variance-averaging",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-moments-q05",
+    "conceptId": "ml-expectation-variance-uncertainty",
+    "version": 1,
+    "type": "number",
+    "answer": 0.02,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-moments-q06",
+    "conceptId": "ml-expectation-variance-uncertainty",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-generalization-q01",
+    "conceptId": "ml-bias-variance-decomposition",
+    "version": 1,
+    "type": "number",
+    "answer": 6,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-generalization-q02",
+    "conceptId": "ml-bias-variance-decomposition",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-generalization-q03",
+    "conceptId": "ml-bias-variance-learning-curves",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-generalization-q04",
+    "conceptId": "ml-bias-variance-learning-curves",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-generalization-q05",
+    "conceptId": "ml-bias-variance-ensembles",
+    "version": 1,
+    "type": "number",
+    "answer": 3.5,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-generalization-q06",
+    "conceptId": "ml-bias-variance-ensembles",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-metrics-q01",
+    "conceptId": "ml-metrics-thresholds-metrics",
+    "version": 1,
+    "type": "number",
+    "answer": 0.75,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-metrics-q02",
+    "conceptId": "ml-metrics-thresholds-metrics",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-metrics-q03",
+    "conceptId": "ml-metrics-thresholds-thresholds",
+    "version": 1,
+    "type": "number",
+    "answer": 0.2,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-metrics-q04",
+    "conceptId": "ml-metrics-thresholds-thresholds",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-metrics-q05",
+    "conceptId": "ml-metrics-thresholds-comparisons",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-metrics-q06",
+    "conceptId": "ml-metrics-thresholds-comparisons",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-nn-weight-shape",
+    "conceptId": "ml-neural-network-foundations-shapes",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-nn-parameter-count",
+    "conceptId": "ml-neural-network-foundations-shapes",
+    "version": 1,
+    "type": "number",
+    "answer": 43,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-nn-active-gradient",
+    "conceptId": "ml-neural-network-foundations-relu",
+    "version": 1,
+    "type": "number",
+    "answer": 12,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-nn-inactive-gradient",
+    "conceptId": "ml-neural-network-foundations-relu",
+    "version": 1,
+    "type": "number",
+    "answer": 0,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-nn-stable-softmax",
+    "conceptId": "ml-neural-network-foundations-softmax",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-nn-cross-entropy-gradient",
+    "conceptId": "ml-neural-network-foundations-softmax",
+    "version": 1,
+    "type": "number",
+    "answer": -0.5,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-attention-output-shape",
+    "conceptId": "ml-attention-foundations-computation",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-attention-weighted-value",
+    "conceptId": "ml-attention-foundations-computation",
+    "version": 1,
+    "type": "number",
+    "answer": 5,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-attention-scaled-variance",
+    "conceptId": "ml-attention-foundations-scaling",
+    "version": 1,
+    "type": "number",
+    "answer": 1,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-attention-causal-output",
+    "conceptId": "ml-attention-foundations-scaling",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-attention-score-memory",
+    "conceptId": "ml-attention-foundations-memory",
+    "version": 1,
+    "type": "number",
+    "answer": 4,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-attention-kv-cache",
+    "conceptId": "ml-attention-foundations-memory",
+    "version": 1,
+    "type": "number",
+    "answer": 2,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-serving-throughput",
+    "conceptId": "ml-serving-experiments-performance",
+    "version": 1,
+    "type": "number",
+    "answer": 800,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-serving-tail-latency",
+    "conceptId": "ml-serving-experiments-performance",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-experiment-relative-uplift",
+    "conceptId": "ml-serving-experiments-effects",
+    "version": 1,
+    "type": "number",
+    "answer": 20,
+    "sourceId": "almath-original",
+    "tolerance": 0
+  },
+  {
+    "id": "ml-experiment-interval",
+    "conceptId": "ml-serving-experiments-effects",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-experiment-analysis-unit",
+    "conceptId": "ml-serving-experiments-design",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "ml-experiment-optional-stopping",
+    "conceptId": "ml-serving-experiments-design",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "almath-original",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   }
 ]

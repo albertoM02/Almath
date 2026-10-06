@@ -693,5 +693,122 @@
       "ml-gd-q08",
       "ml-gd-q04"
     ]
+  },
+  {
+    "id": "ml-logistic-regression",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-logistic-q01",
+      "ml-logistic-q02",
+      "ml-logistic-q03",
+      "ml-logistic-q04",
+      "ml-logistic-q05",
+      "ml-logistic-q06"
+    ]
+  },
+  {
+    "id": "ml-probability-classifiers",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-prob-q01",
+      "ml-prob-q02",
+      "ml-prob-q03",
+      "ml-prob-q04",
+      "ml-prob-q05",
+      "ml-prob-q06"
+    ]
+  },
+  {
+    "id": "ml-regularization-validation",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-reg-q01",
+      "ml-reg-q02",
+      "ml-reg-q03",
+      "ml-reg-q04",
+      "ml-reg-q05",
+      "ml-reg-q06"
+    ]
+  },
+  {
+    "id": "ml-expectation-variance",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-moments-q01",
+      "ml-moments-q02",
+      "ml-moments-q03",
+      "ml-moments-q04",
+      "ml-moments-q05",
+      "ml-moments-q06"
+    ]
+  },
+  {
+    "id": "ml-bias-variance",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-generalization-q01",
+      "ml-generalization-q02",
+      "ml-generalization-q03",
+      "ml-generalization-q04",
+      "ml-generalization-q05",
+      "ml-generalization-q06"
+    ]
+  },
+  {
+    "id": "ml-metrics-thresholds",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-metrics-q01",
+      "ml-metrics-q02",
+      "ml-metrics-q03",
+      "ml-metrics-q04",
+      "ml-metrics-q05",
+      "ml-metrics-q06"
+    ]
+  },
+  {
+    "id": "ml-neural-network-foundations",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-nn-weight-shape",
+      "ml-nn-parameter-count",
+      "ml-nn-active-gradient",
+      "ml-nn-inactive-gradient",
+      "ml-nn-stable-softmax",
+      "ml-nn-cross-entropy-gradient"
+    ]
+  },
+  {
+    "id": "ml-attention-foundations",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-attention-output-shape",
+      "ml-attention-weighted-value",
+      "ml-attention-scaled-variance",
+      "ml-attention-causal-output",
+      "ml-attention-score-memory",
+      "ml-attention-kv-cache"
+    ]
+  },
+  {
+    "id": "ml-serving-experiments",
+    "courseId": "ml",
+    "version": 1,
+    "exerciseIds": [
+      "ml-serving-throughput",
+      "ml-serving-tail-latency",
+      "ml-experiment-relative-uplift",
+      "ml-experiment-interval",
+      "ml-experiment-analysis-unit",
+      "ml-experiment-optional-stopping"
+    ]
   }
 ]
