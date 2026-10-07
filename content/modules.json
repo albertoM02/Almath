@@ -1134,5 +1134,32 @@
       "cs-u21-q05",
       "cs-u21-q06"
     ]
+  },
+  {
+    "id": "cs-u22-model-verify",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u22-q01",
+      "cs-u22-q02"
+    ]
+  },
+  {
+    "id": "cs-u22-characteristic-roots",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u22-q03",
+      "cs-u22-q04"
+    ]
+  },
+  {
+    "id": "cs-u22-divide-conquer-growth",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u22-q05",
+      "cs-u22-q06"
+    ]
   }
 ]

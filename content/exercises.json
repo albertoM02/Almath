@@ -4758,5 +4758,79 @@
       "b",
       "c"
     ]
+  },
+  {
+    "id": "cs-u22-q01",
+    "conceptId": "cs-u22-model-verify",
+    "version": 1,
+    "type": "number",
+    "answer": 61,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u22-q02",
+    "conceptId": "cs-u22-model-verify",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u22-q03",
+    "conceptId": "cs-u22-characteristic-roots",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u22-q04",
+    "conceptId": "cs-u22-characteristic-roots",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u22-q05",
+    "conceptId": "cs-u22-divide-conquer-growth",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u22-q06",
+    "conceptId": "cs-u22-divide-conquer-growth",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   }
 ]

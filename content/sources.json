@@ -18,7 +18,7 @@
     "license": "CC-BY-SA-3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "checked": "2026-09-29",
-    "coverage": "Chapters 1–9 contain 232 original questions in 58 modules. Selected core ideas of chapters 10–21 add 72 original questions in 36 compact modules, approved on 7 October 2026: 304 questions in 94 active CS modules total. Per-module book sections, printed/PDF pages and deferred topics remain in docs/question-banks/CS_Units_10_11_12_13_Approved.json, docs/question-banks/CS_Units_14_15_16_Approved.json, docs/question-banks/CS_Units_17_18_19_20_21_Approved.json and earlier approved records. Original explanations and exercises; no copied textbook passages or exercise statements. The archived refresher remains available for saved progress. Further coverage, variants and full proof construction remain pending."
+    "coverage": "Chapters 1–9 contain 232 original questions in 58 modules. Selected core ideas of chapters 10–22 add 78 original questions in 39 compact modules, approved on 7 October 2026: 310 questions in 97 active CS modules total. Per-module book sections, printed/PDF pages and deferred topics remain in the approved records under docs/question-banks/, including CS_Unit_22_Approved.json. Original explanations and exercises; no copied textbook passages or exercise statements. The archived refresher remains available for saved progress. Further chapter coverage, variants and full proof construction remain pending."
   },
   {
     "id": "ml-foundations",

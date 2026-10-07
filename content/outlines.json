@@ -253,7 +253,11 @@
           {
             "id": "cs-unit-22",
             "number": 22,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u22-model-verify",
+              "cs-u22-characteristic-roots",
+              "cs-u22-divide-conquer-growth"
+            ]
           }
         ]
       }

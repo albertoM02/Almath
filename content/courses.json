@@ -96,7 +96,10 @@
       "cs-u20-chernoff-assumptions",
       "cs-u21-absorption-probabilities",
       "cs-u21-absorption-times",
-      "cs-u21-stationary-graph-walks"
+      "cs-u21-stationary-graph-walks",
+      "cs-u22-model-verify",
+      "cs-u22-characteristic-roots",
+      "cs-u22-divide-conquer-growth"
     ]
   },
   {

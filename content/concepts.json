@@ -1045,5 +1045,29 @@
     "prerequisites": [
       "cs-u21-absorption-times"
     ]
+  },
+  {
+    "id": "cs-u22-model-verify",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u21-stationary-graph-walks"
+    ]
+  },
+  {
+    "id": "cs-u22-characteristic-roots",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u22-model-verify"
+    ]
+  },
+  {
+    "id": "cs-u22-divide-conquer-growth",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u22-characteristic-roots"
+    ]
   }
 ]

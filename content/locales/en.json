@@ -562,6 +562,18 @@
     "cs-u21-stationary-graph-walks": {
       "title": "Distinguish stationarity from convergence",
       "description": "Balance probability flow on a directed graph and recognize a periodic obstruction to convergence."
+    },
+    "cs-u22-model-verify": {
+      "title": "Model and verify recursive costs",
+      "description": "Count all recursive work and repair an induction hypothesis that leaves unpaid overhead."
+    },
+    "cs-u22-characteristic-roots": {
+      "title": "Use roots and initial conditions together",
+      "description": "Handle repeated roots and recognize when initial conditions eliminate the largest exponential term."
+    },
+    "cs-u22-divide-conquer-growth": {
+      "title": "Add the work across recursion levels",
+      "description": "Distinguish work at one call from work at a whole level and recognize an extra logarithmic factor."
     }
   },
   "concepts": {
@@ -1669,6 +1681,30 @@
       "example": "For two vertices that point only to each other, \\((1/2,1/2)\\) is stationary, but a walk started at one vertex alternates forever.",
       "exampleSteps": [],
       "takeaway": "Check both flow balance and whether the distribution approaches that balance from the stated start."
+    },
+    "cs-u22-model-verify": {
+      "title": "Model and verify recursive costs",
+      "body": "Define the cost and its base case before writing a recurrence. Total work adds the costs of every executed recursive call and the local work. Expanding the recurrence can reveal a formula; verify the base case and inductive step. For an upper bound, substitute the proposed bound into the recurrence and check that the resulting expression stays within it. A true bound can be too weak for that substitution proof: subtracting a constant can provide the needed slack.",
+      "formula": "",
+      "example": "If \\(R_0=0\\) and \\(R_n=3R_{n-1}+1\\) for \\(n\\ge1\\), then \\(R_1=1\\) and \\(R_2=4\\). The three calls all contribute, even if they have equal costs.",
+      "exampleSteps": [],
+      "takeaway": "A plausible growth rate is not a complete proof; account for the base case and every added cost."
+    },
+    "cs-u22-characteristic-roots": {
+      "title": "Use roots and initial conditions together",
+      "body": "For \\(f_n=af_{n-1}+bf_{n-2}\\) with constant coefficients, try \\(f_n=r^n\\) to obtain \\(r^2-ar-b=0\\). Two distinct nonzero real roots give \\(f_n=Ar_1^n+Br_2^n\\). A double nonzero real root r instead gives \\(f_n=(A+Bn)r^n\\). Use both initial values to determine A and B. Do not infer growth from the largest root alone: its coefficient may be zero. A proposed formula must satisfy the recurrence as well as the initial values.",
+      "formula": "",
+      "example": "For roots 1 and 4, the form is \\(f_n=A+B4^n\\). Initial values \\(f_0=f_1=2\\) force B = 0 and A = 2, so the sequence is constant despite the root 4.",
+      "exampleSteps": [],
+      "takeaway": "Roots give possible terms; multiplicities and initial values decide which terms actually appear."
+    },
+    "cs-u22-divide-conquer-growth": {
+      "title": "Add the work across recursion levels",
+      "body": "For \\(T(n)=aT(n/b)+g(n)\\), suppose a and b are integers with \\(a\\ge1\\), \\(b>1\\), and n is a power of b. Level j has \\(a^j\\) calls of size \\(n/b^j\\), so its local work is \\(a^jg(n/b^j)\\). Sum over the internal levels and add the leaves. The height is \\(\\log_b n\\). The Master Theorem packages this comparison, but counting only the root or multiplying its cost by the height can be wrong.",
+      "formula": "",
+      "example": "For \\(T(n)=2T(n/2)+n\\) and \\(T(1)=1\\), each internal level costs n. There are \\(\\log_2 n\\) such levels and n leaves, giving \\(T(n)=n\\log_2 n+n\\).",
+      "exampleSteps": [],
+      "takeaway": "Compare whole-level costs and include the leaves before choosing a tight asymptotic bound."
     }
   },
   "exercises": {
@@ -7182,6 +7218,91 @@
         "a": "Yes: existence of a unique stationary distribution guarantees convergence.",
         "b": "No: the distribution alternates between two different vectors.",
         "c": "No: the displayed stationary distribution fails to sum to 1."
+      }
+    },
+    "cs-u22-q01": {
+      "title": "Count the complete recursion tree",
+      "statement": "A call at depth \\(n>0\\) executes two calls at depth \\(n-1\\), then exactly 3 local operations. A depth-0 call costs 1 operation. Both calls execute fully; no results are reused. These are the only counted operations.",
+      "prompt": "How many operations does one depth-4 call perform?",
+      "hint": "Use \\(T_0=1\\) and \\(T_n=2T_{n-1}+3\\), or count internal calls and leaves separately.",
+      "explanation": "There are \\(2^4=16\\) leaves and \\(1+2+4+8=15\\) internal calls. The total is \\(16+3(15)=61\\). Equivalently, the recurrence gives 1, 5, 13, 29, 61. Following only one branch would miss most of the work.",
+      "solutionSteps": [
+        "There are \\(2^4=16\\) leaves and \\(1+2+4+8=15\\) internal calls. The total is \\(16+3(15)=61\\). Equivalently, the recurrence gives 1, 5, 13, 29, 61. Following only one branch would miss most of the work."
+      ]
+    },
+    "cs-u22-q02": {
+      "title": "Strengthen a bound so the proof closes",
+      "statement": "Let \\(T_0=1\\) and \\(T_n=2T_{n-1}+3\\) for \\(n\\ge1\\). Trying to prove \\(T_n\\le4\\cdot2^n\\) by substitution gives only \\(T_n\\le4\\cdot2^n+3\\).",
+      "prompt": "Which bound satisfies the base case and closes the inductive step?",
+      "hint": "For a candidate \\(T_n\\le4\\cdot2^n-c\\), check both \\(1\\le4-c\\) and the effect of doubling the previous bound and adding 3.",
+      "explanation": "With c = 3, the base bound is \\(1\\le4-3=1\\). The step gives \\(2(4\\cdot2^{n-1}-3)+3=4\\cdot2^n-3\\). Choice A still leaves excess overhead after substitution; choice C fails at n = 0. A failed proof of the original bound does not make that bound false.",
+      "solutionSteps": [
+        "With c = 3, the base bound is \\(1\\le4-3=1\\). The step gives \\(2(4\\cdot2^{n-1}-3)+3=4\\cdot2^n-3\\). Choice A still leaves excess overhead after substitution; choice C fails at n = 0. A failed proof of the original bound does not make that bound false."
+      ],
+      "options": {
+        "a": "\\(T_n\\le4\\cdot2^n+3\\)",
+        "b": "\\(T_n\\le4\\cdot2^n-3\\)",
+        "c": "\\(T_n\\le4\\cdot2^n-4\\)"
+      }
+    },
+    "cs-u22-q03": {
+      "title": "The largest root can disappear",
+      "statement": "A sequence satisfies \\(f_0=1\\), \\(f_1=2\\), and \\(f_n=5f_{n-1}-6f_{n-2}\\) for \\(n\\ge2\\). Its characteristic roots are 2 and 3.",
+      "prompt": "What is the tight asymptotic growth of this sequence?",
+      "hint": "Write \\(f_n=A2^n+B3^n\\) and use both initial values.",
+      "explanation": "The initial values give \\(A+B=1\\) and \\(2A+3B=2\\), hence A = 1 and B = 0. Thus \\(f_n=2^n\\) and its growth is \\(\\Theta(2^n)\\). The largest characteristic root does not contribute because its coefficient vanishes.",
+      "solutionSteps": [
+        "The initial values give \\(A+B=1\\) and \\(2A+3B=2\\), hence A = 1 and B = 0. Thus \\(f_n=2^n\\) and its growth is \\(\\Theta(2^n)\\). The largest characteristic root does not contribute because its coefficient vanishes."
+      ],
+      "options": {
+        "a": "\\(\\Theta(3^n)\\)",
+        "b": "\\(\\Theta(n3^n)\\)",
+        "c": "\\(\\Theta(2^n)\\)"
+      }
+    },
+    "cs-u22-q04": {
+      "title": "Keep the repeated-root term",
+      "statement": "A sequence satisfies \\(f_0=1\\), \\(f_1=6\\), and \\(f_n=6f_{n-1}-9f_{n-2}\\) for \\(n\\ge2\\). Its characteristic polynomial is \\((r-3)^2\\).",
+      "prompt": "Which formula satisfies the recurrence and both initial values?",
+      "hint": "The double root gives \\(f_n=(A+Bn)3^n\\); solve for A and B.",
+      "explanation": "The initial values imply A = 1 and \\(3(A+B)=6\\), so B = 1. Hence \\(f_n=(n+1)3^n\\). All three choices match the two initial values, but at n = 2 the recurrence requires \\(6(6)-9(1)=27\\); choices B and C give 36 and 21.",
+      "solutionSteps": [
+        "The initial values imply A = 1 and \\(3(A+B)=6\\), so B = 1. Hence \\(f_n=(n+1)3^n\\). All three choices match the two initial values, but at n = 2 the recurrence requires \\(6(6)-9(1)=27\\); choices B and C give 36 and 21."
+      ],
+      "options": {
+        "a": "\\(f_n=(n+1)3^n\\)",
+        "b": "\\(f_n=6^n\\)",
+        "c": "\\(f_n=(5\\cdot3^n-3)/2\\)"
+      }
+    },
+    "cs-u22-q05": {
+      "title": "Four half-size calls change the growth",
+      "statement": "For powers of two \\(n\\ge2\\), an algorithm has \\(T(1)=1\\) and \\(T(n)=4T(n/2)+n\\). All four calls execute fully; no results are reused.",
+      "prompt": "What is the tight asymptotic running time?",
+      "hint": "At level j, multiply \\(4^j\\) calls by their local cost \\(n/2^j\\). Also count the leaves.",
+      "explanation": "Level j costs \\(n2^j\\), so later levels are more expensive. There are \\(4^{\\log_2 n}=n^2\\) unit-cost leaves. Internal work sums to \\(n(n-1)\\); total work is \\(2n^2-n=\\Theta(n^2)\\). Halving the size alone does not guarantee Merge Sort's growth rate.",
+      "solutionSteps": [
+        "Level j costs \\(n2^j\\), so later levels are more expensive. There are \\(4^{\\log_2 n}=n^2\\) unit-cost leaves. Internal work sums to \\(n(n-1)\\); total work is \\(2n^2-n=\\Theta(n^2)\\). Halving the size alone does not guarantee Merge Sort's growth rate."
+      ],
+      "options": {
+        "a": "\\(\\Theta(n\\log_2 n)\\)",
+        "b": "\\(\\Theta(n^2)\\)",
+        "c": "\\(\\Theta(n^3)\\)"
+      }
+    },
+    "cs-u22-q06": {
+      "title": "An extra logarithm in the combine step",
+      "statement": "A recursive algorithm has \\(T(1)=1\\) and \\(T(n)=2T(n/2)+n\\log_2 n\\) for powers of two \\(n\\ge2\\).",
+      "prompt": "What is the tight asymptotic running time?",
+      "hint": "Let \\(k=\\log_2 n\\). The combined local work at level j is \\(n(k-j)\\); sum for \\(j=0,\\ldots,k-1\\).",
+      "explanation": "The internal levels cost \\(n(k+(k-1)+\\cdots+1)=nk(k+1)/2\\). Adding n leaves gives \\(T(n)=n(1+k(k+1)/2)=\\Theta(n(\\log_2 n)^2)\\). The extra logarithmic work at each call changes the overall bound.",
+      "solutionSteps": [
+        "The internal levels cost \\(n(k+(k-1)+\\cdots+1)=nk(k+1)/2\\). Adding n leaves gives \\(T(n)=n(1+k(k+1)/2)=\\Theta(n(\\log_2 n)^2)\\). The extra logarithmic work at each call changes the overall bound."
+      ],
+      "options": {
+        "a": "\\(\\Theta(n^2)\\)",
+        "b": "\\(\\Theta(n\\log_2 n)\\)",
+        "c": "\\(\\Theta(n(\\log_2 n)^2)\\)"
       }
     }
   },
