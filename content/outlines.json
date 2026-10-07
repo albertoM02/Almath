@@ -127,22 +127,38 @@
           {
             "id": "cs-unit-10",
             "number": 10,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u10-walks",
+              "cs-u10-scheduling",
+              "cs-u10-relations"
+            ]
           },
           {
             "id": "cs-unit-11",
             "number": 11,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u11-measures",
+              "cs-u11-designs",
+              "cs-u11-benes"
+            ]
           },
           {
             "id": "cs-unit-12",
             "number": 12,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u12-degrees",
+              "cs-u12-matching",
+              "cs-u12-trees-tours"
+            ]
           },
           {
             "id": "cs-unit-13",
             "number": 13,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u13-faces",
+              "cs-u13-obstructions",
+              "cs-u13-consequences"
+            ]
           }
         ]
       },
@@ -153,17 +169,29 @@
           {
             "id": "cs-unit-14",
             "number": 14,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u14-finite-sums",
+              "cs-u14-harmonic-bounds",
+              "cs-u14-asymptotic-claims"
+            ]
           },
           {
             "id": "cs-unit-15",
             "number": 15,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u15-product-division",
+              "cs-u15-repeated-objects",
+              "cs-u15-collisions-coverage"
+            ]
           },
           {
             "id": "cs-unit-16",
             "number": 16,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u16-coefficient-models",
+              "cs-u16-partial-fractions",
+              "cs-u16-recurrence-models"
+            ]
           }
         ]
       },
@@ -174,27 +202,47 @@
           {
             "id": "cs-unit-17",
             "number": 17,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u17-probability-models",
+              "cs-u17-event-bounds",
+              "cs-u17-hash-collisions"
+            ]
           },
           {
             "id": "cs-unit-18",
             "number": 18,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u18-conditioning-evidence",
+              "cs-u18-mixtures-comparisons",
+              "cs-u18-independence-levels"
+            ]
           },
           {
             "id": "cs-unit-19",
             "number": 19,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u19-discrete-distributions",
+              "cs-u19-indicator-expectations",
+              "cs-u19-retry-expectations"
+            ]
           },
           {
             "id": "cs-unit-20",
             "number": 20,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u20-tail-bounds",
+              "cs-u20-sampling-variance",
+              "cs-u20-chernoff-assumptions"
+            ]
           },
           {
             "id": "cs-unit-21",
             "number": 21,
-            "moduleIds": []
+            "moduleIds": [
+              "cs-u21-absorption-probabilities",
+              "cs-u21-absorption-times",
+              "cs-u21-stationary-graph-walks"
+            ]
           }
         ]
       },

@@ -810,5 +810,329 @@
       "ml-experiment-analysis-unit",
       "ml-experiment-optional-stopping"
     ]
+  },
+  {
+    "id": "cs-u10-walks",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u10-q01",
+      "cs-u10-q02"
+    ]
+  },
+  {
+    "id": "cs-u10-scheduling",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u10-q03",
+      "cs-u10-q04"
+    ]
+  },
+  {
+    "id": "cs-u10-relations",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u10-q05",
+      "cs-u10-q06"
+    ]
+  },
+  {
+    "id": "cs-u11-measures",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u11-q01",
+      "cs-u11-q02"
+    ]
+  },
+  {
+    "id": "cs-u11-designs",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u11-q03",
+      "cs-u11-q04"
+    ]
+  },
+  {
+    "id": "cs-u11-benes",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u11-q05",
+      "cs-u11-q06"
+    ]
+  },
+  {
+    "id": "cs-u12-degrees",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u12-q01",
+      "cs-u12-q02"
+    ]
+  },
+  {
+    "id": "cs-u12-matching",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u12-q03",
+      "cs-u12-q04"
+    ]
+  },
+  {
+    "id": "cs-u12-trees-tours",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u12-q05",
+      "cs-u12-q06"
+    ]
+  },
+  {
+    "id": "cs-u13-faces",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u13-q01",
+      "cs-u13-q02"
+    ]
+  },
+  {
+    "id": "cs-u13-obstructions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u13-q03",
+      "cs-u13-q04"
+    ]
+  },
+  {
+    "id": "cs-u13-consequences",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u13-q05",
+      "cs-u13-q06"
+    ]
+  },
+  {
+    "id": "cs-u14-finite-sums",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u14-q01",
+      "cs-u14-q02"
+    ]
+  },
+  {
+    "id": "cs-u14-harmonic-bounds",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u14-q03",
+      "cs-u14-q04"
+    ]
+  },
+  {
+    "id": "cs-u14-asymptotic-claims",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u14-q05",
+      "cs-u14-q06"
+    ]
+  },
+  {
+    "id": "cs-u15-product-division",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u15-q01",
+      "cs-u15-q02"
+    ]
+  },
+  {
+    "id": "cs-u15-repeated-objects",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u15-q03",
+      "cs-u15-q04"
+    ]
+  },
+  {
+    "id": "cs-u15-collisions-coverage",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u15-q05",
+      "cs-u15-q06"
+    ]
+  },
+  {
+    "id": "cs-u16-coefficient-models",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u16-q01",
+      "cs-u16-q02"
+    ]
+  },
+  {
+    "id": "cs-u16-partial-fractions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u16-q03",
+      "cs-u16-q04"
+    ]
+  },
+  {
+    "id": "cs-u16-recurrence-models",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u16-q05",
+      "cs-u16-q06"
+    ]
+  },
+  {
+    "id": "cs-u17-probability-models",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u17-q01",
+      "cs-u17-q02"
+    ]
+  },
+  {
+    "id": "cs-u17-event-bounds",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u17-q03",
+      "cs-u17-q04"
+    ]
+  },
+  {
+    "id": "cs-u17-hash-collisions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u17-q05",
+      "cs-u17-q06"
+    ]
+  },
+  {
+    "id": "cs-u18-conditioning-evidence",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u18-q01",
+      "cs-u18-q02"
+    ]
+  },
+  {
+    "id": "cs-u18-mixtures-comparisons",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u18-q03",
+      "cs-u18-q04"
+    ]
+  },
+  {
+    "id": "cs-u18-independence-levels",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u18-q05",
+      "cs-u18-q06"
+    ]
+  },
+  {
+    "id": "cs-u19-discrete-distributions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u19-q01",
+      "cs-u19-q02"
+    ]
+  },
+  {
+    "id": "cs-u19-indicator-expectations",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u19-q03",
+      "cs-u19-q04"
+    ]
+  },
+  {
+    "id": "cs-u19-retry-expectations",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u19-q05",
+      "cs-u19-q06"
+    ]
+  },
+  {
+    "id": "cs-u20-tail-bounds",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u20-q01",
+      "cs-u20-q02"
+    ]
+  },
+  {
+    "id": "cs-u20-sampling-variance",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u20-q03",
+      "cs-u20-q04"
+    ]
+  },
+  {
+    "id": "cs-u20-chernoff-assumptions",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u20-q05",
+      "cs-u20-q06"
+    ]
+  },
+  {
+    "id": "cs-u21-absorption-probabilities",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u21-q01",
+      "cs-u21-q02"
+    ]
+  },
+  {
+    "id": "cs-u21-absorption-times",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u21-q03",
+      "cs-u21-q04"
+    ]
+  },
+  {
+    "id": "cs-u21-stationary-graph-walks",
+    "courseId": "cs",
+    "version": 1,
+    "exerciseIds": [
+      "cs-u21-q05",
+      "cs-u21-q06"
+    ]
   }
 ]

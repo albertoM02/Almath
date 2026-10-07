@@ -757,5 +757,293 @@
     "prerequisites": [
       "ml-serving-experiments-effects"
     ]
+  },
+  {
+    "id": "cs-u10-walks",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u4-relations"
+    ]
+  },
+  {
+    "id": "cs-u10-scheduling",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u10-walks"
+    ]
+  },
+  {
+    "id": "cs-u10-relations",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u10-scheduling"
+    ]
+  },
+  {
+    "id": "cs-u11-measures",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u10-relations"
+    ]
+  },
+  {
+    "id": "cs-u11-designs",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u11-measures"
+    ]
+  },
+  {
+    "id": "cs-u11-benes",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u11-designs"
+    ]
+  },
+  {
+    "id": "cs-u12-degrees",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u11-benes"
+    ]
+  },
+  {
+    "id": "cs-u12-matching",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u12-degrees"
+    ]
+  },
+  {
+    "id": "cs-u12-trees-tours",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u12-matching"
+    ]
+  },
+  {
+    "id": "cs-u13-faces",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u12-trees-tours"
+    ]
+  },
+  {
+    "id": "cs-u13-obstructions",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u13-faces"
+    ]
+  },
+  {
+    "id": "cs-u13-consequences",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u13-obstructions"
+    ]
+  },
+  {
+    "id": "cs-u14-finite-sums",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u5-ordinary"
+    ]
+  },
+  {
+    "id": "cs-u14-harmonic-bounds",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u14-finite-sums"
+    ]
+  },
+  {
+    "id": "cs-u14-asymptotic-claims",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u14-harmonic-bounds"
+    ]
+  },
+  {
+    "id": "cs-u15-product-division",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u14-asymptotic-claims"
+    ]
+  },
+  {
+    "id": "cs-u15-repeated-objects",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u15-product-division"
+    ]
+  },
+  {
+    "id": "cs-u15-collisions-coverage",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u15-repeated-objects"
+    ]
+  },
+  {
+    "id": "cs-u16-coefficient-models",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u15-collisions-coverage"
+    ]
+  },
+  {
+    "id": "cs-u16-partial-fractions",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u16-coefficient-models"
+    ]
+  },
+  {
+    "id": "cs-u16-recurrence-models",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u16-partial-fractions"
+    ]
+  },
+  {
+    "id": "cs-u17-probability-models",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u15-collisions-coverage"
+    ]
+  },
+  {
+    "id": "cs-u17-event-bounds",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u17-probability-models"
+    ]
+  },
+  {
+    "id": "cs-u17-hash-collisions",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u17-event-bounds"
+    ]
+  },
+  {
+    "id": "cs-u18-conditioning-evidence",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u17-hash-collisions"
+    ]
+  },
+  {
+    "id": "cs-u18-mixtures-comparisons",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u18-conditioning-evidence"
+    ]
+  },
+  {
+    "id": "cs-u18-independence-levels",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u18-mixtures-comparisons"
+    ]
+  },
+  {
+    "id": "cs-u19-discrete-distributions",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u18-independence-levels"
+    ]
+  },
+  {
+    "id": "cs-u19-indicator-expectations",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u19-discrete-distributions"
+    ]
+  },
+  {
+    "id": "cs-u19-retry-expectations",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u19-indicator-expectations"
+    ]
+  },
+  {
+    "id": "cs-u20-tail-bounds",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u19-retry-expectations"
+    ]
+  },
+  {
+    "id": "cs-u20-sampling-variance",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u20-tail-bounds"
+    ]
+  },
+  {
+    "id": "cs-u20-chernoff-assumptions",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u20-sampling-variance"
+    ]
+  },
+  {
+    "id": "cs-u21-absorption-probabilities",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u20-chernoff-assumptions"
+    ]
+  },
+  {
+    "id": "cs-u21-absorption-times",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u21-absorption-probabilities"
+    ]
+  },
+  {
+    "id": "cs-u21-stationary-graph-walks",
+    "courseId": "cs",
+    "sourceId": "mcs-2018",
+    "prerequisites": [
+      "cs-u21-absorption-times"
+    ]
   }
 ]

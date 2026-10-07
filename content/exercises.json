@@ -3946,5 +3946,817 @@
       "b",
       "c"
     ]
+  },
+  {
+    "id": "cs-u10-q01",
+    "conceptId": "cs-u10-walks",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u10-q02",
+    "conceptId": "cs-u10-walks",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u10-q03",
+    "conceptId": "cs-u10-scheduling",
+    "version": 1,
+    "type": "number",
+    "answer": 4,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u10-q04",
+    "conceptId": "cs-u10-scheduling",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u10-q05",
+    "conceptId": "cs-u10-relations",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u10-q06",
+    "conceptId": "cs-u10-relations",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u11-q01",
+    "conceptId": "cs-u11-measures",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u11-q02",
+    "conceptId": "cs-u11-measures",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u11-q03",
+    "conceptId": "cs-u11-designs",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u11-q04",
+    "conceptId": "cs-u11-designs",
+    "version": 1,
+    "type": "number",
+    "answer": 16,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u11-q05",
+    "conceptId": "cs-u11-benes",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u11-q06",
+    "conceptId": "cs-u11-benes",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u12-q01",
+    "conceptId": "cs-u12-degrees",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u12-q02",
+    "conceptId": "cs-u12-degrees",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u12-q03",
+    "conceptId": "cs-u12-matching",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u12-q04",
+    "conceptId": "cs-u12-matching",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u12-q05",
+    "conceptId": "cs-u12-trees-tours",
+    "version": 1,
+    "type": "number",
+    "answer": 3,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u12-q06",
+    "conceptId": "cs-u12-trees-tours",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u13-q01",
+    "conceptId": "cs-u13-faces",
+    "version": 1,
+    "type": "number",
+    "answer": 7,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u13-q02",
+    "conceptId": "cs-u13-faces",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u13-q03",
+    "conceptId": "cs-u13-obstructions",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u13-q04",
+    "conceptId": "cs-u13-obstructions",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u13-q05",
+    "conceptId": "cs-u13-consequences",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u13-q06",
+    "conceptId": "cs-u13-consequences",
+    "version": 1,
+    "type": "number",
+    "answer": 12,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u14-q01",
+    "conceptId": "cs-u14-finite-sums",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u14-q02",
+    "conceptId": "cs-u14-finite-sums",
+    "version": 1,
+    "type": "number",
+    "answer": 511,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u14-q03",
+    "conceptId": "cs-u14-harmonic-bounds",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u14-q04",
+    "conceptId": "cs-u14-harmonic-bounds",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u14-q05",
+    "conceptId": "cs-u14-asymptotic-claims",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u14-q06",
+    "conceptId": "cs-u14-asymptotic-claims",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u15-q01",
+    "conceptId": "cs-u15-product-division",
+    "version": 1,
+    "type": "number",
+    "answer": 168,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u15-q02",
+    "conceptId": "cs-u15-product-division",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u15-q03",
+    "conceptId": "cs-u15-repeated-objects",
+    "version": 1,
+    "type": "number",
+    "answer": 28,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u15-q04",
+    "conceptId": "cs-u15-repeated-objects",
+    "version": 1,
+    "type": "number",
+    "answer": 60,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u15-q05",
+    "conceptId": "cs-u15-collisions-coverage",
+    "version": 1,
+    "type": "number",
+    "answer": 25,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u15-q06",
+    "conceptId": "cs-u15-collisions-coverage",
+    "version": 1,
+    "type": "number",
+    "answer": 150,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u16-q01",
+    "conceptId": "cs-u16-coefficient-models",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u16-q02",
+    "conceptId": "cs-u16-coefficient-models",
+    "version": 1,
+    "type": "number",
+    "answer": 5,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u16-q03",
+    "conceptId": "cs-u16-partial-fractions",
+    "version": 1,
+    "type": "number",
+    "answer": 121,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u16-q04",
+    "conceptId": "cs-u16-partial-fractions",
+    "version": 1,
+    "type": "number",
+    "answer": 32,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u16-q05",
+    "conceptId": "cs-u16-recurrence-models",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u16-q06",
+    "conceptId": "cs-u16-recurrence-models",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u17-q01",
+    "conceptId": "cs-u17-probability-models",
+    "version": 1,
+    "type": "number",
+    "answer": 0.375,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u17-q02",
+    "conceptId": "cs-u17-probability-models",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u17-q03",
+    "conceptId": "cs-u17-event-bounds",
+    "version": 1,
+    "type": "number",
+    "answer": 0.11,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u17-q04",
+    "conceptId": "cs-u17-event-bounds",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u17-q05",
+    "conceptId": "cs-u17-hash-collisions",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u17-q06",
+    "conceptId": "cs-u17-hash-collisions",
+    "version": 1,
+    "type": "number",
+    "answer": 12,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u18-q01",
+    "conceptId": "cs-u18-conditioning-evidence",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u18-q02",
+    "conceptId": "cs-u18-conditioning-evidence",
+    "version": 1,
+    "type": "number",
+    "answer": 0.5,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u18-q03",
+    "conceptId": "cs-u18-mixtures-comparisons",
+    "version": 1,
+    "type": "number",
+    "answer": 0.029,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u18-q04",
+    "conceptId": "cs-u18-mixtures-comparisons",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u18-q05",
+    "conceptId": "cs-u18-independence-levels",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u18-q06",
+    "conceptId": "cs-u18-independence-levels",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u19-q01",
+    "conceptId": "cs-u19-discrete-distributions",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u19-q02",
+    "conceptId": "cs-u19-discrete-distributions",
+    "version": 1,
+    "type": "number",
+    "answer": 0.25,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u19-q03",
+    "conceptId": "cs-u19-indicator-expectations",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u19-q04",
+    "conceptId": "cs-u19-indicator-expectations",
+    "version": 1,
+    "type": "number",
+    "answer": 3.5,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u19-q05",
+    "conceptId": "cs-u19-retry-expectations",
+    "version": 1,
+    "type": "number",
+    "answer": 8,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u19-q06",
+    "conceptId": "cs-u19-retry-expectations",
+    "version": 1,
+    "type": "number",
+    "answer": 1.75,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u20-q01",
+    "conceptId": "cs-u20-tail-bounds",
+    "version": 1,
+    "type": "number",
+    "answer": 0.2,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u20-q02",
+    "conceptId": "cs-u20-tail-bounds",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u20-q03",
+    "conceptId": "cs-u20-sampling-variance",
+    "version": 1,
+    "type": "number",
+    "answer": 9,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u20-q04",
+    "conceptId": "cs-u20-sampling-variance",
+    "version": 1,
+    "type": "number",
+    "answer": 2000,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u20-q05",
+    "conceptId": "cs-u20-chernoff-assumptions",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u20-q06",
+    "conceptId": "cs-u20-chernoff-assumptions",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u21-q01",
+    "conceptId": "cs-u21-absorption-probabilities",
+    "version": 1,
+    "type": "number",
+    "answer": 0.25,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u21-q02",
+    "conceptId": "cs-u21-absorption-probabilities",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u21-q03",
+    "conceptId": "cs-u21-absorption-times",
+    "version": 1,
+    "type": "number",
+    "answer": 10,
+    "sourceId": "mcs-2018",
+    "tolerance": 0
+  },
+  {
+    "id": "cs-u21-q04",
+    "conceptId": "cs-u21-absorption-times",
+    "version": 1,
+    "type": "choice",
+    "answer": "c",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u21-q05",
+    "conceptId": "cs-u21-stationary-graph-walks",
+    "version": 1,
+    "type": "choice",
+    "answer": "a",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "cs-u21-q06",
+    "conceptId": "cs-u21-stationary-graph-walks",
+    "version": 1,
+    "type": "choice",
+    "answer": "b",
+    "sourceId": "mcs-2018",
+    "optionIds": [
+      "a",
+      "b",
+      "c"
+    ]
   }
 ]

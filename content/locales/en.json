@@ -418,6 +418,150 @@
     "ml-serving-experiments": {
       "title": "Serving and trustworthy experiments",
       "description": "Separate throughput from tail latency, interpret an experiment effect, and spot invalid analysis shortcuts."
+    },
+    "cs-u10-walks": {
+      "title": "Count walks without confusing them with paths",
+      "description": "Use adjacency counts and distinguish fixed-length walks from paths with no repeated vertices."
+    },
+    "cs-u10-scheduling": {
+      "title": "Schedule a dependency DAG",
+      "description": "Find a critical-path lower bound and identify tasks that can run concurrently."
+    },
+    "cs-u10-relations": {
+      "title": "Separate equivalence from precedence",
+      "description": "Use mutual reachability as an equivalence relation and test the antisymmetry needed for an order."
+    },
+    "cs-u11-measures": {
+      "title": "Measure routing bottlenecks correctly",
+      "description": "Distinguish switch congestion, the latency of a chosen routing and input-output diameter."
+    },
+    "cs-u11-designs": {
+      "title": "Compare structured network designs",
+      "description": "Apply the book's switch-count and diameter conventions, then expose a tree bottleneck."
+    },
+    "cs-u11-benes": {
+      "title": "Coordinate routes in a Beneš network",
+      "description": "Solve the two-subnetwork constraints and understand the quantifiers in the congestion guarantee."
+    },
+    "cs-u12-degrees": {
+      "title": "Use graph invariants without overclaiming",
+      "description": "Reject impossible degree data and distinguish necessary invariants from a proof of isomorphism."
+    },
+    "cs-u12-matching": {
+      "title": "Find and repair a matching obstruction",
+      "description": "Use Hall's condition to diagnose a failed task assignment and choose a useful repair."
+    },
+    "cs-u12-trees-tours": {
+      "title": "Connect spanning trees and edge tours",
+      "description": "Remove redundant edges while keeping connectivity and distinguish a closed Euler tour from an open trail."
+    },
+    "cs-u13-faces": {
+      "title": "Count faces and treat bridges correctly",
+      "description": "Apply Euler's formula to an embedding and avoid losing the outside face."
+    },
+    "cs-u13-obstructions": {
+      "title": "Disprove planarity without misusing an edge bound",
+      "description": "Use the sharper bipartite bound and recognize an obstruction hidden by subdividing an edge."
+    },
+    "cs-u13-consequences": {
+      "title": "Use Euler's consequences for colors and meshes",
+      "description": "Spot the missing step in a coloring proof and combine vertex, edge and face counts."
+    },
+    "cs-u14-finite-sums": {
+      "title": "Turn operation counts into finite sums",
+      "description": "Count dependent loop bounds and repeated resizing without losing the endpoints."
+    },
+    "cs-u14-harmonic-bounds": {
+      "title": "Bound harmonic work and rounding error",
+      "description": "Use upper and lower bounds to justify a tight growth rate for a loop with rounded limits."
+    },
+    "cs-u14-asymptotic-claims": {
+      "title": "Audit asymptotic comparisons",
+      "description": "Distinguish a constant factor, a tight order and a limiting ratio of one."
+    },
+    "cs-u15-product-division": {
+      "title": "Count choices and justify division",
+      "description": "Separate labeled roles from unordered selections and check uniform overcounting."
+    },
+    "cs-u15-repeated-objects": {
+      "title": "Encode allocations and repeated symbols",
+      "description": "Use separators for identical resources and position choices for repeated symbols."
+    },
+    "cs-u15-collisions-coverage": {
+      "title": "Count collisions and complete coverage",
+      "description": "Separate a worst-case occupancy guarantee from an exact count of assignments covering every target."
+    },
+    "cs-u16-coefficient-models": {
+      "title": "Encode constraints as coefficients",
+      "description": "Build a generating function for permitted sizes and combine independent configurations by convolution."
+    },
+    "cs-u16-partial-fractions": {
+      "title": "Recover coefficients from rational forms",
+      "description": "Use partial fractions, repeated factors and index shifts to read coefficients."
+    },
+    "cs-u16-recurrence-models": {
+      "title": "Translate recurrences and initial conditions",
+      "description": "Preserve initial terms when converting a recurrence into a generating function, then model ordered sequences."
+    },
+    "cs-u17-probability-models": {
+      "title": "Model the random procedure",
+      "description": "Distinguish uniformly sampled inputs from the distribution of their outputs."
+    },
+    "cs-u17-event-bounds": {
+      "title": "Combine events without assuming independence",
+      "description": "Use overlap information for exact probabilities and a union bound when overlap is unknown."
+    },
+    "cs-u17-hash-collisions": {
+      "title": "Reason about hash collisions",
+      "description": "Separate an exact collision probability from a conservative design guarantee."
+    },
+    "cs-u18-conditioning-evidence": {
+      "title": "Condition on the information actually observed",
+      "description": "Choose the correct conditioning event and reverse a conditional probability with base rates."
+    },
+    "cs-u18-mixtures-comparisons": {
+      "title": "Weight mixtures and compare rates fairly",
+      "description": "Compute an overall rate using group weights and recognize a Simpson reversal."
+    },
+    "cs-u18-independence-levels": {
+      "title": "Distinguish disjoint, pairwise and mutual independence",
+      "description": "Check independence algebraically and avoid multiplying a whole family from pairwise evidence."
+    },
+    "cs-u19-discrete-distributions": {
+      "title": "Read discrete distributions correctly",
+      "description": "Distinguish a point probability from a cumulative probability and count binomial outcomes."
+    },
+    "cs-u19-indicator-expectations": {
+      "title": "Count with indicator expectations",
+      "description": "Break a count into indicators even when those indicators depend on one another."
+    },
+    "cs-u19-retry-expectations": {
+      "title": "Condition on the first attempt",
+      "description": "Compute expected retry cost and account for a finite attempt limit."
+    },
+    "cs-u20-tail-bounds": {
+      "title": "Turn moments into tail bounds",
+      "description": "Choose the assumptions and interpret the result of Markov or Chebyshev correctly."
+    },
+    "cs-u20-sampling-variance": {
+      "title": "Check the variance of a sample average",
+      "description": "Distinguish repeated measurements from copied data and size a sample conservatively."
+    },
+    "cs-u20-chernoff-assumptions": {
+      "title": "Use Chernoff with the required independence",
+      "description": "Apply an exponential tail bound and identify when copied indicators invalidate it."
+    },
+    "cs-u21-absorption-probabilities": {
+      "title": "Find which boundary a random walk reaches",
+      "description": "Use boundary conditions and the first step to reason about absorption probabilities."
+    },
+    "cs-u21-absorption-times": {
+      "title": "Separate termination from expected duration",
+      "description": "Compute a finite-boundary mean and interpret almost-sure termination with infinite expectation."
+    },
+    "cs-u21-stationary-graph-walks": {
+      "title": "Distinguish stationarity from convergence",
+      "description": "Balance probability flow on a directed graph and recognize a periodic obstruction to convergence."
     }
   },
   "concepts": {
@@ -1237,6 +1381,294 @@
       "example": "One user generating 50 sessions is still one randomized user, not 50 independently randomized observations.",
       "exampleSteps": [],
       "takeaway": "Respect the randomized analysis unit and use inference compatible with the stopping rule."
+    },
+    "cs-u10-walks": {
+      "title": "Count walks without confusing them with paths",
+      "body": "In a directed graph, a walk follows arrows; its length is its number of edges. Vertices may repeat. A path has no repeated vertices. With \\(A_{uv}=1\\) exactly when \\(u\\to v\\) is an edge, \\((A^k)_{uv}\\) counts length-k walks from u to v. It does not generally count paths. We use ordinary integer matrix arithmetic.",
+      "formula": "",
+      "example": "If the only edges are \\(s\\to t\\) and \\(t\\to s\\), then sts is a length-2 closed walk. It contributes 1 to \\((A^2)_{ss}\\), but is not a path.",
+      "exampleSteps": [],
+      "takeaway": "A matrix-power entry counts walks; inspect repetitions before calling them paths."
+    },
+    "cs-u10-scheduling": {
+      "title": "Schedule a dependency DAG",
+      "body": "A DAG encodes prerequisites: an arrow u to v means u must finish before v starts. A topological order respects all these constraints. With one-time-unit tasks, unlimited processors and no other constraints, the shortest schedule has as many slots as the longest directed path has vertices. Two distinct tasks can share a slot only if neither reaches the other; a set of such tasks is an antichain.",
+      "formula": "",
+      "example": "For prerequisites P to Q and P to R, run P in slot 1, then Q and R in slot 2. The longest path has two tasks, so two slots are both necessary and sufficient.",
+      "exampleSteps": [],
+      "takeaway": "The unit-time, unlimited-processor assumptions are essential to this scheduling rule."
+    },
+    "cs-u10-relations": {
+      "title": "Separate equivalence from precedence",
+      "body": "Include zero-length walks in reachability. The relation \\(u\\sim v\\) defined by mutual reachability is reflexive, symmetric and transitive; its classes are strongly connected components. A nonstrict partial order instead requires reflexivity, transitivity and antisymmetry: \\(uRv\\) and \\(vRu\\) must imply \\(u=v\\). DAG reachability meets this condition; a graph with a cycle through distinct vertices does not.",
+      "formula": "",
+      "example": "For \\(p\\leftrightarrow q\\) and \\(q\\to r\\), mutual reachability gives classes {p,q} and {r}. Reachability on the original vertices is not antisymmetric.",
+      "exampleSteps": [],
+      "takeaway": "Mutual reachability can group different vertices; antisymmetry does not permit that in an order."
+    },
+    "cs-u11-measures": {
+      "title": "Measure routing bottlenecks correctly",
+      "body": "A permutation routing sends one packet from each input to a different output. Its congestion is the largest number of packet paths passing through one switch, not the number of edges on a path. Its latency is the longest selected path, measured in edges. Network diameter is the maximum shortest-path distance over input-output pairs. A selected detour can exceed that diameter.",
+      "formula": "",
+      "example": "Two paths using switches (s,t) and (u,t) give switch t load 2, so their routing congestion is 2. This does not say either path has length 2 including its terminal links.",
+      "exampleSteps": [],
+      "takeaway": "Always specify whether a number describes selected routes or the network itself."
+    },
+    "cs-u11-designs": {
+      "title": "Compare structured network designs",
+      "body": "For \\(N=2^n\\) inputs and outputs, the book counts terminal links in diameter. Binary tree: \\(2N-1\\) switches, diameter \\(2\\log_2 N+2\\), worst permutation congestion N. Grid: \\(N^2\\) switches and diameter 2N. Butterfly: \\(N(\\log_2 N+1)\\) switches and diameter \\(\\log_2 N+2\\). Low diameter alone does not ensure low congestion.",
+      "formula": "",
+      "example": "With \\(N=8\\), a butterfly has \\(8(3+1)=32\\) switches and diameter 5, including the two terminal links.",
+      "exampleSteps": [],
+      "takeaway": "Evaluate the stated resource limits and the routing bottleneck separately."
+    },
+    "cs-u11-benes": {
+      "title": "Coordinate routes in a Beneš network",
+      "body": "A Beneš network can route every input-output permutation with congestion 1 when paths are chosen together. Recursively, each packet goes through an upper or lower subnetwork. Packets that compete at the input or output boundary must choose opposite subnetworks. Each packet has at most one partner of each kind; alternating these constraints permits a two-color assignment. The theorem guarantees a suitable routing, not that arbitrary route choices work.",
+      "formula": "",
+      "example": "If packets p and q must take opposite subnetworks and p takes the upper one, q must take the lower one. A second constraint between q and r then puts r in the upper one.",
+      "exampleSteps": [],
+      "takeaway": "A jointly chosen set of paths is the object covered by the congestion-1 guarantee."
+    },
+    "cs-u12-degrees": {
+      "title": "Use graph invariants without overclaiming",
+      "body": "For a finite simple undirected graph, \\(\\sum_v\\deg(v)=2m\\), where m is the number of edges. The degree sum is even. An isomorphism is a bijection preserving adjacency, so it preserves degrees, edges and connectedness. Equal degree sequences are necessary but not sufficient for isomorphism. A cycle visits its distinct vertices in order and returns to its start.",
+      "formula": "",
+      "example": "A proposed degree list (3,2,2,2) cannot describe an undirected graph: its sum is 9, whereas every edge contributes twice.",
+      "exampleSteps": [],
+      "takeaway": "An invariant can disprove isomorphism; one matching invariant does not prove it."
+    },
+    "cs-u12-matching": {
+      "title": "Find and repair a matching obstruction",
+      "body": "In a bipartite graph, tasks are on the left and eligible workers on the right. A matching assigns at most one task to each worker. Hall's theorem says a matching covering every task exists exactly when \\(|N(S)|\\geq|S|\\) for every task subset S, where N(S) is the union of its eligible workers. Checking each task separately is insufficient.",
+      "formula": "",
+      "example": "If three tasks together can use only two workers, those tasks cannot all be assigned, even if other workers elsewhere are idle.",
+      "exampleSteps": [],
+      "takeaway": "Repair the overloaded subset's access to workers; adding an irrelevant edge may not help."
+    },
+    "cs-u12-trees-tours": {
+      "title": "Connect spanning trees and edge tours",
+      "body": "A tree is connected and acyclic. A finite connected graph with n vertices has a spanning tree with \\(n-1\\) edges. A bridge is an edge whose deletion disconnects the graph; it lies on no cycle. In a connected graph with edges, a closed Euler tour uses every edge once and returns to its start; it exists exactly when every vertex has even degree.",
+      "formula": "",
+      "example": "A four-vertex cycle has four edges. Delete one edge to get a spanning tree with three. The original cycle has a closed Euler tour; the resulting tree does not.",
+      "exampleSteps": [],
+      "takeaway": "A spanning tree preserves vertices and connectivity; an Euler tour must use every original edge."
+    },
+    "cs-u13-faces": {
+      "title": "Count faces and treat bridges correctly",
+      "body": "A planar graph has a drawing without crossings; a plane graph is a particular such drawing. Count the unbounded outside region as a face. For a connected finite plane graph, \\(n-m+f=2\\). With c connected components, \\(n-m+f=c+1\\). The latter follows by adding \\(c-1\\) connecting edges without creating faces. A bridge borders the same face on both sides.",
+      "formula": "",
+      "example": "A triangle has n = 3, m = 3 and f = 2: one bounded face and the outside face. Attaching a new leaf adds one vertex and one edge but no face.",
+      "exampleSteps": [],
+      "takeaway": "Euler counts every face, including the outside; connectedness affects the constant."
+    },
+    "cs-u13-obstructions": {
+      "title": "Disprove planarity without misusing an edge bound",
+      "body": "For a finite simple planar graph with \\(n\\geq3\\), \\(m\\leq3n-6\\). If it is bipartite, the sharper bound is \\(m\\leq2n-4\\). Violating a bound disproves planarity; satisfying one does not prove it. \\(K_5\\) is nonplanar since it has 10 edges but \\(3\\cdot5-6=9\\). Contracting an edge preserves planarity, so inserting a degree-2 vertex into a \\(K_5\\) edge cannot make it planar.",
+      "formula": "",
+      "example": "A simple bipartite graph with n = 7 and m = 11 is nonplanar because 11 exceeds 10, although it does not exceed the general bound of 15.",
+      "exampleSteps": [],
+      "takeaway": "Edge bounds are necessary conditions; contraction can expose a nonplanar obstruction."
+    },
+    "cs-u13-consequences": {
+      "title": "Use Euler's consequences for colors and meshes",
+      "body": "The planar edge bound implies that some vertex has degree at most 5. The same holds in every nonempty subgraph. Removing such a vertex and reinserting it in reverse order directly gives six-colorability. A five-color proof needs an extra argument. For a convex polyhedron, its vertex-edge graph is planar; vertex-degree sums and face-boundary lengths both total 2m, and \\(n-m+f=2\\).",
+      "formula": "",
+      "example": "A cube has 8 vertices, 12 edges and 6 square faces: \\(3\\cdot8=2\\cdot12=4\\cdot6\\), and \\(8-12+6=2\\).",
+      "exampleSteps": [],
+      "takeaway": "A local degree bound and a global counting identity are useful only with their proof conditions."
+    },
+    "cs-u14-finite-sums": {
+      "title": "Turn operation counts into finite sums",
+      "body": "Add the work done at each iteration or stage. Arithmetic sums satisfy \\(\\sum_{i=1}^{m}i=m(m+1)/2\\). For \\(r\\ne1\\), a finite geometric sum is \\(\\sum_{i=0}^{k}r^i=(r^{k+1}-1)/(r-1)\\). The exponent endpoints determine the number of terms. These are exact counts; an asymptotic label alone can hide an indexing error.",
+      "formula": "",
+      "example": "If stage i performs i operations for \\(i=1,\\ldots,4\\), the total is 10. If stages cost 1, 3 and 9 operations, the total is \\((3^3-1)/(3-1)=13\\).",
+      "exampleSteps": [],
+      "takeaway": "Write the first and last contribution before applying a sum formula."
+    },
+    "cs-u14-harmonic-bounds": {
+      "title": "Bound harmonic work and rounding error",
+      "body": "Write \\(H_n=\\sum_{i=1}^{n}1/i\\). Integral comparison gives \\(\\ln n+1/n\\le H_n\\le\\ln n+1\\) for integers \\(n\\ge1\\). Also, \\(x-1<\\lfloor x\\rfloor\\le x\\), so rounding down n terms loses less than n in total. For positive work functions, \\(T(n)=\\Theta(g(n))\\) means eventual upper and lower bounds by positive constant multiples of g. Both bounds matter.",
+      "formula": "",
+      "example": "\\(H_3=11/6\\), lying between \\(\\ln 3+1/3\\) and \\(\\ln 3+1\\). For any four nonnegative values, their floors sum to at most their sum and more than their sum minus 4.",
+      "exampleSteps": [],
+      "takeaway": "Control the total approximation error before drawing a growth-rate conclusion."
+    },
+    "cs-u14-asymptotic-claims": {
+      "title": "Audit asymptotic comparisons",
+      "body": "For eventually positive f and g, \\(f=O(g)\\) means \\(f(n)\\le Cg(n)\\) for a fixed C and all sufficiently large n. Theta also requires a positive constant lower bound. The stronger statement \\(f\\sim g\\) means \\(f(n)/g(n)\\to1\\). A bounded ratio need not converge. Constants must not depend on n; changing an exponent by a constant differs from multiplying that exponent.",
+      "formula": "",
+      "example": "\\(7n+2=\\Theta(n)\\), but \\((7n+2)/n\\to7\\), so \\(7n+2\\not\\sim n\\). By contrast, \\((7n+2)/(7n)\\to1\\).",
+      "exampleSteps": [],
+      "takeaway": "Inspect the ratio; do not silently treat a growing factor as a constant."
+    },
+    "cs-u15-product-division": {
+      "title": "Count choices and justify division",
+      "body": "The generalized product rule multiplies the number of choices at each stage when that number is the same for every valid prefix. Choosing k distinct items without order gives \\(\\binom{n}{k}=n!/(k!(n-k)!)\\). Dividing a count by d is justified only when every desired outcome has exactly d counted representations. Symmetry alone does not guarantee that equal multiplicity.",
+      "formula": "",
+      "example": "Choose a coordinator and one assistant from 4 people: \\(4\\cdot3=12\\) role assignments. An unordered pair has exactly two such assignments, giving \\(12/2=6\\) pairs.",
+      "exampleSteps": [],
+      "takeaway": "Identify exactly what makes two outcomes different before multiplying or dividing."
+    },
+    "cs-u15-repeated-objects": {
+      "title": "Encode allocations and repeated symbols",
+      "body": "Allocating n identical items among k labeled groups corresponds to a nonnegative integer tuple summing to n. Stars and separators give \\(\\binom{n+k-1}{k-1}\\) possibilities for \\(k\\ge1\\). If each group needs one item, reserve those first. Separately, sequences with symbol counts \\(k_1,\\ldots,k_r\\) totaling n number \\(n!/(k_1!\\cdots k_r!)\\). Identical copies do not carry hidden identities.",
+      "formula": "",
+      "example": "Allocating 5 identical slots to 2 named queues, each nonempty, gives \\(\\binom{4}{1}=4\\) allocations. The three strings AAB, ABA and BAA illustrate \\(3!/(2!1!)=3\\) arrangements.",
+      "exampleSteps": [],
+      "takeaway": "Decide whether you count group totals or ordered positions; the models differ."
+    },
+    "cs-u15-collisions-coverage": {
+      "title": "Count collisions and complete coverage",
+      "body": "If N objects occupy m buckets, keeping every bucket at size at most r permits at most mr objects. Thus \\(N>mr\\) forces some bucket to contain at least \\(r+1\\) objects; no randomness is assumed. For exact counts, use inclusion-exclusion: \\(|A\\cup B\\cup C|=|A|+|B|+|C|-|A\\cap B|-|A\\cap C|-|B\\cap C|+|A\\cap B\\cap C|\\). Count forbidden assignments and subtract them from the total.",
+      "formula": "",
+      "example": "With 4 buckets, 9 objects force a bucket of size at least 3; 8 can fit as 2 per bucket. If two defect sets contain 10 and 7 items with an overlap of 3, their union contains \\(10+7-3=14\\) items.",
+      "exampleSteps": [],
+      "takeaway": "A guarantee needs a capacity argument; an exact union count must correct every overlap."
+    },
+    "cs-u16-coefficient-models": {
+      "title": "Encode constraints as coefficients",
+      "body": "An ordinary generating function \\(F(x)=\\sum_{n\\ge0}a_nx^n\\) stores counts by size; \\([x^n]F(x)=a_n\\). Multiplication combines independent configurations whose sizes add: \\([x^n](AB)=\\sum_{i=0}^{n}a_i b_{n-i}\\). It does not multiply matching coefficients coordinatewise. Here x is a formal marker, not a probability or a value to substitute; computing one coefficient uses only finitely many terms.",
+      "formula": "",
+      "example": "Choosing either zero or one item of size 1 gives \\(1+x\\). Choosing any number of identical size-3 items gives \\(1/(1-x^3)\\). Their product has coefficient 1 at \\(x^4\\), representing one of each.",
+      "exampleSteps": [],
+      "takeaway": "Exponents record size; coefficients record how many choices have that size."
+    },
+    "cs-u16-partial-fractions": {
+      "title": "Recover coefficients from rational forms",
+      "body": "As formal series, \\([x^n](1-rx)^{-1}=r^n\\) and \\([x^n](1-rx)^{-2}=(n+1)r^n\\) for \\(n\\ge0\\). Partial fractions express a rational function as a sum of such terms; coefficients add. Multiplying by \\(x^d\\) shifts every coefficient d places: \\([x^n](x^dF)=[x^{n-d}]F\\) for \\(n\\ge d\\), and gives zero otherwise.",
+      "formula": "",
+      "example": "\\(1/((1-x)(1-2x))=-1/(1-x)+2/(1-2x)\\), so its coefficient at \\(x^n\\) is \\(2^{n+1}-1\\). A prefactor \\(x^2\\) would shift that index by two.",
+      "exampleSteps": [],
+      "takeaway": "A repeated denominator factor contributes a polynomial factor; a leading power shifts the index."
+    },
+    "cs-u16-recurrence-models": {
+      "title": "Translate recurrences and initial conditions",
+      "body": "For \\(F(x)=\\sum_{n\\ge0}a_nx^n\\) and \\(a_n=pa_{n-1}+qa_{n-2}\\) for \\(n\\ge2\\), shifting and subtracting gives \\((1-px-qx^2)F(x)=a_0+(a_1-pa_0)x\\). The numerator encodes the initial conditions. Ordered token sequences can instead be split into the empty sequence and disjoint cases for their first token; the remaining suffix is another valid sequence.",
+      "formula": "",
+      "example": "If \\(a_0=1\\), \\(a_1=4\\) and \\(a_n=2a_{n-1}+a_{n-2}\\), then \\((1-2x-x^2)F(x)=1+2x\\). The linear numerator coefficient is \\(4-2\\cdot1\\), not 4.",
+      "exampleSteps": [],
+      "takeaway": "Check the constant and linear terms; recurrence cancellation begins only at its stated starting index."
+    },
+    "cs-u17-probability-models": {
+      "title": "Model the random procedure",
+      "body": "A probability model specifies outcomes and their probabilities, which sum to 1. An event is a set of outcomes; add their probabilities. The ratio \\(P(A)=|A|/|S|\\) requires equally likely outcomes in S. A deterministic map can merge several random inputs into one output, so uniform inputs need not produce uniform outputs. In a staged procedure, multiply the stated branch probabilities along each path, then add paths with the same result.",
+      "formula": "",
+      "example": "A uniform integer in \\(\\{0,1,2,3,4\\}\\) is even with probability \\(3/5\\): three of the five inputs produce that result.",
+      "exampleSteps": [],
+      "takeaway": "Attach probabilities to the actual sampling procedure before counting output labels."
+    },
+    "cs-u17-event-bounds": {
+      "title": "Combine events without assuming independence",
+      "body": "For events A and B, \\(P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\). Subtract the intersection because it was counted twice. For any finite collection, \\(P(\\bigcup_i A_i)\\le\\sum_i P(A_i)\\), capped at 1. This union bound needs no independence; it is an upper bound, not usually the exact probability. Also, \\(P(A^c)=1-P(A)\\).",
+      "formula": "",
+      "example": "If two alerts each occur with probability 0.1 and both occur with probability 0.04, at least one occurs with probability \\(0.1+0.1-0.04=0.16\\).",
+      "exampleSteps": [],
+      "takeaway": "Ask whether the data determine overlap before turning a bound into an equality."
+    },
+    "cs-u17-hash-collisions": {
+      "title": "Reason about hash collisions",
+      "body": "Assume n keys hash mutually independently and uniformly into m buckets. For \\(n\\le m\\), no collision has probability \\(\\prod_{j=0}^{n-1}(1-j/m)\\); subtract from 1 for any collision. Alternatively, each pair collides with probability \\(1/m\\), so the union bound gives \\(P(\\text{any collision})\\le\\binom{n}{2}/m\\). Pair-collision events need not be mutually independent. The bound can exceed 1; then it gives no useful improvement over 1.",
+      "formula": "",
+      "example": "Three keys in four buckets avoid a collision with probability \\((4/4)(3/4)(2/4)=3/8\\).",
+      "exampleSteps": [],
+      "takeaway": "There are pairs of keys to compare, not just one comparison per key."
+    },
+    "cs-u18-conditioning-evidence": {
+      "title": "Condition on the information actually observed",
+      "body": "For \\(P(B)>0\\), \\(P(A\\mid B)=P(A\\cap B)/P(B)\\). Restrict attention to outcomes compatible with all observed information, then renormalize. Bayes gives \\(P(A\\mid B)=P(B\\mid A)P(A)/P(B)\\). A denominator can be computed by splitting B into disjoint cases: \\(P(B)=P(B\\mid A)P(A)+P(B\\mid A^c)P(A^c)\\). Reversing the conditioning without this adjustment is invalid.",
+      "formula": "",
+      "example": "Among 20 flagged requests, 5 came from server A. Conditional on a flag, the probability of A is 5/20, regardless of how many unflagged requests A served.",
+      "exampleSteps": [],
+      "takeaway": "Name the conditioning event in words before choosing the denominator."
+    },
+    "cs-u18-mixtures-comparisons": {
+      "title": "Weight mixtures and compare rates fairly",
+      "body": "If groups \\(G_i\\) partition the outcomes, \\(P(A)=\\sum_iP(A\\mid G_i)P(G_i)\\). Overall rates are weighted averages, not unweighted averages of group rates. Two systems can reverse their ranking when evaluated on different group mixtures, even if one has the higher rate in every group. A comparison under common weights removes that mixture difference; these rates alone do not establish a causal effect.",
+      "formula": "",
+      "example": "A workload is 75% light tasks with a 0.02 failure rate and 25% heavy tasks with a 0.10 rate. Overall failure probability is \\(0.75(0.02)+0.25(0.10)=0.04\\).",
+      "exampleSteps": [],
+      "takeaway": "Check the denominators and group weights before interpreting an aggregate rate."
+    },
+    "cs-u18-independence-levels": {
+      "title": "Distinguish disjoint, pairwise and mutual independence",
+      "body": "Events A and B are independent exactly when \\(P(A\\cap B)=P(A)P(B)\\). Disjoint events with positive probabilities fail this test. Pairwise independence checks every pair. Mutual independence requires \\(P(\\bigcap_{i\\in I}A_i)=\\prod_{i\\in I}P(A_i)\\) for every nonempty subfamily I, not just pairs or the full family. Pairwise independence alone does not justify a three-event product.",
+      "formula": "",
+      "example": "If \\(P(A)=0.2\\), \\(P(B)=0.5\\) and \\(P(A\\cap B)=0.1\\), the pair passes the independence test.",
+      "exampleSteps": [],
+      "takeaway": "State which intersections are justified before multiplying probabilities."
+    },
+    "cs-u19-discrete-distributions": {
+      "title": "Read discrete distributions correctly",
+      "body": "A discrete random variable maps outcomes to numbers. Its probability mass function is \\(p_X(x)=P(X=x)\\); its CDF is \\(F_X(t)=P(X\\le t)\\). For integer-valued X, \\(P(X=k)=F_X(k)-F_X(k-1)\\). If X counts successes in n mutually independent trials, each with success probability p, then \\(P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}\\). The binomial coefficient counts which trials succeed.",
+      "formula": "",
+      "example": "For integer-valued X, \\(F_X(1)=0.3\\) and \\(F_X(2)=0.7\\) imply \\(P(X=2)=0.4\\).",
+      "exampleSteps": [],
+      "takeaway": "Identify whether a number describes one value or all values below a threshold."
+    },
+    "cs-u19-indicator-expectations": {
+      "title": "Count with indicator expectations",
+      "body": "An indicator \\(I_A\\) is 1 when event A occurs and 0 otherwise, so \\(E[I_A]=P(A)\\). For a finite sum, \\(E[\\sum_iX_i]=\\sum_iE[X_i]\\) when each expectation is finite. Independence is not required. To find an expected count, define one indicator per item being counted and sum its probability. Choose the items carefully: occupied buckets, colliding pairs and keys are different counts.",
+      "formula": "",
+      "example": "Ten components each have failure probability 0.03. Their expected number of failures is \\(10(0.03)=0.3\\), even if their failure events are dependent.",
+      "exampleSteps": [],
+      "takeaway": "Linearity needs well-defined expectations, not independent indicators."
+    },
+    "cs-u19-retry-expectations": {
+      "title": "Condition on the first attempt",
+      "body": "Conditioning on the first outcome can produce a recurrence for an expected cost. With independent attempts and constant success probability \\(p>0\\), the number N of attempts through the first success is geometric: \\(E[N]=1+(1-p)E[N]=1/p\\). If at most k attempts are allowed, write \\(E_k=1+(1-p)E_{k-1}\\) with \\(E_0=0\\). These counts include the successful attempt or the last allowed attempt.",
+      "formula": "",
+      "example": "With success probability 0.4 and at most two attempts, \\(E_2=1+0.6(1)=1.6\\).",
+      "exampleSteps": [],
+      "takeaway": "State the stopping rule and whether the final attempt is included."
+    },
+    "cs-u20-tail-bounds": {
+      "title": "Turn moments into tail bounds",
+      "body": "Markov: if \\(X\\ge0\\) and \\(t>0\\), then \\(P(X\\ge t)\\le E[X]/t\\). Variance is \\(\\operatorname{Var}(X)=E[(X-E[X])^2]\\). Chebyshev: for finite variance and \\(a>0\\), \\(P(|X-E[X]|\\ge a)\\le\\operatorname{Var}(X)/a^2\\). Both give upper bounds, capped at 1, rather than exact probabilities. Chebyshev needs no normal-distribution assumption; Markov needs nonnegativity.",
+      "formula": "",
+      "example": "A nonnegative cost with mean 4 exceeds or equals 20 with probability at most \\(4/20=0.2\\).",
+      "exampleSteps": [],
+      "takeaway": "Check nonnegativity or variance, the threshold, and whether the claim is a bound or an equality."
+    },
+    "cs-u20-sampling-variance": {
+      "title": "Check the variance of a sample average",
+      "body": "Variance scales as \\(\\operatorname{Var}(aX+b)=a^2\\operatorname{Var}(X)\\). For pairwise independent variables, variances add. Thus n pairwise independent observations of common variance \\(\\sigma^2\\) have average variance \\(\\sigma^2/n\\). Copies of one observation do not gain this reduction. Bernoulli(p) variance is \\(p(1-p)\\le1/4\\), so Chebyshev gives \\(P(|\\bar X-p|\\ge\\varepsilon)\\le1/(4n\\varepsilon^2)\\) for pairwise independent samples with the same p.",
+      "formula": "",
+      "example": "Nine independent observations with variance 4 have average variance \\(4/9\\). Nine copies of one observation still average to that observation.",
+      "exampleSteps": [],
+      "takeaway": "Variance reduction comes from the dependence structure, not the row count."
+    },
+    "cs-u20-chernoff-assumptions": {
+      "title": "Use Chernoff with the required independence",
+      "body": "Let \\(S=\\sum_iX_i\\) where the \\(X_i\\) are mutually independent, take values in \\([0,1]\\), and \\(\\mu=E[S]>0\\). For \\(c\\ge1\\), the book gives \\(P(S\\ge c\\mu)\\le\\exp(-\\mu(c\\ln c-c+1))\\). For \\(c=2\\), this is \\((e/4)^\\mu\\). The bound uses mutual independence; pairwise independence or matching individual distributions alone does not establish its hypotheses. Here e is the natural exponential base.",
+      "formula": "",
+      "example": "If the assumptions hold and \\(\\mu=3\\), then \\(P(S\\ge6)\\le(e/4)^3\\).",
+      "exampleSteps": [],
+      "takeaway": "Verify the summands and independence before substituting the mean and threshold."
+    },
+    "cs-u21-absorption-probabilities": {
+      "title": "Find which boundary a random walk reaches",
+      "body": "A walk on integer states \\(0,\\ldots,N\\) stops at 0 or N. At each interior state it moves +1 with probability p and -1 with probability \\(1-p\\), using independent choices, with \\(0<p<1\\). Let \\(h_i\\) be the probability of reaching N first. Then \\(h_0=0\\), \\(h_N=1\\) and \\(h_i=ph_{i+1}+(1-p)h_{i-1}\\). For \\(p=1/2\\), \\(h_i=i/N\\). Otherwise \\(h_i=(1-r^i)/(1-r^N)\\), where \\(r=(1-p)/p\\).",
+      "formula": "",
+      "example": "For a fair walk between 0 and 5, starting at 2, the chance of reaching 5 first is \\(2/5\\).",
+      "exampleSteps": [],
+      "takeaway": "Set the boundary values before solving the interior recurrence."
+    },
+    "cs-u21-absorption-times": {
+      "title": "Separate termination from expected duration",
+      "body": "For a fair walk absorbed at 0 or N, the expected remaining number of steps satisfies \\(e_0=e_N=0\\) and \\(e_i=1+(e_{i-1}+e_{i+1})/2\\). Its solution is \\(e_i=i(N-i)\\). Removing the upper boundary changes the problem: a fair walk on nonnegative integers starting above 0 reaches 0 with probability 1, yet its expected hitting time is infinite. Almost-sure finiteness and finite expectation are different claims.",
+      "formula": "",
+      "example": "Between 0 and 6, starting at 1, the expected duration is \\(1(6-1)=5\\) steps, including the step into a boundary.",
+      "exampleSteps": [],
+      "takeaway": "A statement about the chance of eventually stopping does not determine the mean stopping time."
+    },
+    "cs-u21-stationary-graph-walks": {
+      "title": "Distinguish stationarity from convergence",
+      "body": "A graph walk chooses an outgoing edge uniformly at each step. With no dead ends, probability arriving at y is \\(p_{t+1}(y)=\\sum_{x\\to y}p_t(x)/\\operatorname{outdeg}(x)\\). A stationary distribution is nonnegative, sums to 1, and is unchanged by this update. Having a stationary distribution, even a unique one, does not imply convergence from every starting state: probabilities can oscillate. The book motivates restart mechanisms to improve graph-walk behavior.",
+      "formula": "",
+      "example": "For two vertices that point only to each other, \\((1/2,1/2)\\) is stationary, but a walk started at one vertex alternates forever.",
+      "exampleSteps": [],
+      "takeaway": "Check both flow balance and whether the distribution approaches that balance from the stated start."
     }
   },
   "exercises": {
@@ -5825,6 +6257,931 @@
         "a": "Yes, because every individual check uses 0.05.",
         "b": "Yes, if the hourly schedule was announced in advance.",
         "c": "No; this stopping rule requires an appropriate sequential procedure."
+      }
+    },
+    "cs-u10-q01": {
+      "title": "Count three transitions",
+      "statement": "Three services a, b and c have directed edges in both directions between every distinct pair, and no loops. A is their adjacency matrix.",
+      "prompt": "What is \\((A^3)_{ab}\\)?",
+      "hint": "List all three-edge walks starting at a and ending at b; intermediate vertices may repeat.",
+      "explanation": "The walks are abab, abcb and acab. Each follows three edges, and there are no others. The count is 3.",
+      "solutionSteps": [
+        "The walks are abab, abcb and acab. Each follows three edges, and there are no others. The count is 3."
+      ]
+    },
+    "cs-u10-q02": {
+      "title": "Debug a path-counting claim",
+      "statement": "A loop-free directed graph has only three vertices a, b and c. Both directions exist between every distinct pair. Its adjacency matrix satisfies \\((A^3)_{ab}=3\\).",
+      "prompt": "A programmer reports three paths of length 3 from a to b. What is wrong?",
+      "hint": "A length-3 path would need four distinct vertices.",
+      "explanation": "The matrix entry counts three walks. A path of length 3 requires four distinct vertices, but this graph has only three. Thus there are no length-3 paths.",
+      "solutionSteps": [
+        "The matrix entry counts three walks. A path of length 3 requires four distinct vertices, but this graph has only three. Thus there are no length-3 paths."
+      ],
+      "options": {
+        "a": "The matrix must be multiplied using Boolean arithmetic to count walks.",
+        "b": "Those are walks with repetitions; none is a length-3 path.",
+        "c": "The entry counts paths from b to a instead."
+      }
+    },
+    "cs-u10-q03": {
+      "title": "Find the minimum number of slots",
+      "statement": "Tasks A-F each take one slot. Prerequisites: \\(A\\to C\\), \\(B\\to C\\), \\(B\\to D\\), \\(C\\to E\\), \\(D\\to E\\), \\(E\\to F\\). Processors are unlimited; a task starts only after all prerequisites finish.",
+      "prompt": "What is the minimum number of slots?",
+      "hint": "Give both a chain that forces the lower bound and a schedule attaining it.",
+      "explanation": "The chain \\(A\\to C\\to E\\to F\\) forces four slots. The schedule {A,B}, {C,D}, {E}, {F} meets every dependency and uses four slots.",
+      "solutionSteps": [
+        "The chain \\(A\\to C\\to E\\to F\\) forces four slots. The schedule {A,B}, {C,D}, {E}, {F} meets every dependency and uses four slots."
+      ]
+    },
+    "cs-u10-q04": {
+      "title": "Look beyond direct dependencies",
+      "statement": "Tasks A-F each take one slot, with unlimited processors. Edges: \\(A\\to B\\), \\(A\\to C\\), \\(B\\to D\\), \\(C\\to E\\), \\(D\\to F\\), \\(E\\to F\\).",
+      "prompt": "Which pair can occupy the same slot in some valid schedule?",
+      "hint": "Check for a directed path in either direction, not just a direct edge.",
+      "explanation": "B and E are incomparable. A valid schedule is {A}, {C}, {B,E}, {D}, {F}. In contrast, \\(A\\to C\\to E\\) and \\(C\\to E\\to F\\) forbid the other two pairs.",
+      "solutionSteps": [
+        "B and E are incomparable. A valid schedule is {A}, {C}, {B,E}, {D}, {F}. In contrast, \\(A\\to C\\to E\\) and \\(C\\to E\\to F\\) forbid the other two pairs."
+      ],
+      "options": {
+        "a": "B and E",
+        "b": "A and E",
+        "c": "C and F"
+      }
+    },
+    "cs-u10-q05": {
+      "title": "Count the mutual-reachability classes",
+      "statement": "The vertices are A-F. The only edges are \\(A\\to B\\), \\(B\\to C\\), \\(C\\to A\\), \\(C\\to D\\), \\(D\\to E\\), \\(E\\to D\\), \\(E\\to F\\).",
+      "prompt": "How many strongly connected components are there?",
+      "hint": "Group vertices that can reach each other in both directions; singletons count.",
+      "explanation": "The classes are {A,B,C}, {D,E}, and {F}. Edges between these groups go only forward, so no two groups can merge into one mutual-reachability class.",
+      "solutionSteps": [
+        "The classes are {A,B,C}, {D,E}, and {F}. Edges between these groups go only forward, so no two groups can merge into one mutual-reachability class."
+      ]
+    },
+    "cs-u10-q06": {
+      "title": "Find the failed order axiom",
+      "statement": "A graph has edges \\(a\\to b\\), \\(b\\to a\\), and \\(b\\to c\\). Define uRv to mean v is reachable from u, including zero-length walks.",
+      "prompt": "Which requirement prevents R from being a nonstrict partial order?",
+      "hint": "Test the two distinct vertices that reach each other.",
+      "explanation": "Reachability is reflexive because zero-length walks are allowed, and transitive by concatenation. Antisymmetry fails: aRb and bRa hold although a and b are distinct.",
+      "solutionSteps": [
+        "Reachability is reflexive because zero-length walks are allowed, and transitive by concatenation. Antisymmetry fails: aRb and bRa hold although a and b are distinct."
+      ],
+      "options": {
+        "a": "Reflexivity fails.",
+        "b": "Transitivity fails.",
+        "c": "Antisymmetry fails."
+      }
+    },
+    "cs-u11-q01": {
+      "title": "Count the busiest switch",
+      "statement": "Four packets have distinct input and output terminals. Their switch sequences are (a,x,d), (b,x,e), (c,y,f), and (g,x,h). All listed switches are distinct except the repeated x.",
+      "prompt": "What is this routing's congestion?",
+      "hint": "Count how many paths contain each switch.",
+      "explanation": "Switch x lies on three packet paths. Every other switch lies on one. The maximum switch load is therefore 3; path length is a different measure.",
+      "solutionSteps": [
+        "Switch x lies on three packet paths. Every other switch lies on one. The maximum switch load is therefore 3; path length is a different measure."
+      ]
+    },
+    "cs-u11-q02": {
+      "title": "Do detours redefine diameter?",
+      "statement": "A network has a shortest path of at most 4 edges for every input-output pair. One chosen permutation routing deliberately uses a 7-edge path.",
+      "prompt": "What follows about its input-output diameter?",
+      "hint": "Diameter uses shortest paths, even when the actual routing selects another path.",
+      "explanation": "The diameter is at most 4. The selected routing has latency at least 7, but that detour does not change any shortest-path distance.",
+      "solutionSteps": [
+        "The diameter is at most 4. The selected routing has latency at least 7, but that detour does not change any shortest-path distance."
+      ],
+      "options": {
+        "a": "The diameter must be at least 7.",
+        "b": "The diameter is at most 4.",
+        "c": "The diameter equals the routing congestion."
+      }
+    },
+    "cs-u11-q03": {
+      "title": "Meet a switch budget and a hop limit",
+      "statement": "Choose one of the book's binary-tree, grid or butterfly designs for N = 16. The budget is at most 100 switches and the input-output diameter must be at most 8 edges, including terminal links.",
+      "prompt": "Which design meets both limits?",
+      "hint": "Use \\(\\log_2 16=4\\) and check both columns for every design.",
+      "explanation": "Tree: 31 switches, diameter 10. Grid: 256 switches, diameter 32. Butterfly: 80 switches, diameter 6. Only the butterfly satisfies both limits.",
+      "solutionSteps": [
+        "Tree: 31 switches, diameter 10. Grid: 256 switches, diameter 32. Butterfly: 80 switches, diameter 6. Only the butterfly satisfies both limits."
+      ],
+      "options": {
+        "a": "Binary tree",
+        "b": "Grid",
+        "c": "Butterfly"
+      }
+    },
+    "cs-u11-q04": {
+      "title": "A shallow tree can still bottleneck",
+      "statement": "In the book's N = 16 binary-tree network, a permutation sends every input in the left half to an output in the right half, and every right-half input to a left-half output. Routes through the tree are unique.",
+      "prompt": "How many packet paths must pass through the root switch?",
+      "hint": "Removing the root separates the two halves; count traffic in both directions.",
+      "explanation": "All 16 packets cross between halves. Every route therefore uses the root, giving it load 16. Counting only left-to-right packets would miss half the traffic.",
+      "solutionSteps": [
+        "All 16 packets cross between halves. Every route therefore uses the root, giving it load 16. Counting only left-to-right packets would miss half the traffic."
+      ]
+    },
+    "cs-u11-q05": {
+      "title": "Propagate the routing constraints",
+      "statement": "Packets a-f must be split between Upper and Lower. Input-conflict pairs: (a,b), (c,d), (e,f). Output-conflict pairs: (b,c), (d,e), (f,a). Each pair must be split. Packet a takes Upper.",
+      "prompt": "Which other packets must take Upper?",
+      "hint": "Follow the alternating cycle a-b-c-d-e-f-a.",
+      "explanation": "The constraints force b to Lower, c to Upper, d to Lower, e to Upper and f to Lower. The last pair (f,a) is consistent. Thus c and e join a.",
+      "solutionSteps": [
+        "The constraints force b to Lower, c to Upper, d to Lower, e to Upper and f to Lower. The last pair (f,a) is consistent. Thus c and e join a."
+      ],
+      "options": {
+        "a": "c and e",
+        "b": "b and d",
+        "c": "b and f"
+      }
+    },
+    "cs-u11-q06": {
+      "title": "Read the guarantee precisely",
+      "statement": "A Beneš network has congestion 1 in the book's sense. A programmer lets each packet independently choose any path to its assigned output.",
+      "prompt": "Does the theorem guarantee congestion 1 for those choices?",
+      "hint": "Distinguish existence of a good routing from every routing being good.",
+      "explanation": "No. For each permutation, a coordinated choice of paths with congestion 1 exists. Arbitrary independent paths may share switches. The theorem does not turn every choice into an optimal routing.",
+      "solutionSteps": [
+        "No. For each permutation, a coordinated choice of paths with congestion 1 exists. Arbitrary independent paths may share switches. The theorem does not turn every choice into an optimal routing."
+      ],
+      "options": {
+        "a": "Yes; every path selection has congestion 1.",
+        "b": "No; the paths may need to be coordinated.",
+        "c": "No; some permutations have no congestion-1 routing."
+      }
+    },
+    "cs-u12-q01": {
+      "title": "Reject an inconsistent degree report",
+      "statement": "A report describes a simple undirected graph with 8 vertices. Seven vertices have degree 3; the remaining vertex has degree 4.",
+      "prompt": "Can this degree report be correct?",
+      "hint": "Add the degrees before trying to draw the graph.",
+      "explanation": "The sum is \\(7\\cdot3+4=25\\), which is odd. It cannot equal twice an integer number of edges. Hence no such graph exists.",
+      "solutionSteps": [
+        "The sum is \\(7\\cdot3+4=25\\), which is odd. It cannot equal twice an integer number of edges. Hence no such graph exists."
+      ],
+      "options": {
+        "a": "Yes; every reported degree is below 8.",
+        "b": "Yes; the graph must have 25 edges.",
+        "c": "No; its degree sum is odd."
+      }
+    },
+    "cs-u12-q02": {
+      "title": "Same degrees, different graph",
+      "statement": "Graph G is one cycle on six vertices. Graph H is two disjoint triangles. Both graphs have six vertices, six edges, and degree 2 at every vertex.",
+      "prompt": "Are G and H isomorphic?",
+      "hint": "Check whether every pair of vertices can be connected by a walk.",
+      "explanation": "No. G is connected, whereas H has two components. An adjacency-preserving bijection preserves walks and therefore connectedness, so matching degree lists do not suffice.",
+      "solutionSteps": [
+        "No. G is connected, whereas H has two components. An adjacency-preserving bijection preserves walks and therefore connectedness, so matching degree lists do not suffice."
+      ],
+      "options": {
+        "a": "No; their numbers of connected components differ.",
+        "b": "Yes; the identical degree sequence is sufficient.",
+        "c": "Yes; their equal edge counts are sufficient."
+      }
+    },
+    "cs-u12-q03": {
+      "title": "Identify the Hall obstruction",
+      "statement": "Tasks A, B and C can each use workers {1,2}. Task D can use workers {3,4}. Every worker can take at most one task.",
+      "prompt": "Which listed task subset violates Hall's condition?",
+      "hint": "Compare the size of each subset with the size of its combined worker set.",
+      "explanation": "For {A,B,C}, the neighbor set is {1,2}: three tasks have only two workers. {A,D} has four neighbors for two tasks; all four tasks have four neighbors. The smaller obstructing subset is decisive.",
+      "solutionSteps": [
+        "For {A,B,C}, the neighbor set is {1,2}: three tasks have only two workers. {A,D} has four neighbors for two tasks; all four tasks have four neighbors. The smaller obstructing subset is decisive."
+      ],
+      "options": {
+        "a": "{A,D}",
+        "b": "{A,B,C}",
+        "c": "{A,B,C,D}"
+      }
+    },
+    "cs-u12-q04": {
+      "title": "Choose an edge that actually fixes the assignment",
+      "statement": "Tasks A, B and C can each use workers {1,2}; D can use {3,4}. Add exactly one new eligibility edge. Workers can take at most one task.",
+      "prompt": "Which addition makes it possible to assign every task?",
+      "hint": "The added edge must help the subset {A,B,C} reach a third worker.",
+      "explanation": "Adding \\(C\\to3\\) permits A-1, B-2, C-3, D-4. Adding an edge from D to 1 or 2 leaves {A,B,C} with only {1,2}, so the obstruction survives.",
+      "solutionSteps": [
+        "Adding \\(C\\to3\\) permits A-1, B-2, C-3, D-4. Adding an edge from D to 1 or 2 leaves {A,B,C} with only {1,2}, so the obstruction survives."
+      ],
+      "options": {
+        "a": "\\(D\\to1\\)",
+        "b": "\\(D\\to2\\)",
+        "c": "\\(C\\to3\\)"
+      }
+    },
+    "cs-u12-q05": {
+      "title": "Keep connectivity with no cycles",
+      "statement": "A connected simple undirected graph has 9 vertices and 11 edges. You may delete edges but must retain all vertices and end with a tree.",
+      "prompt": "How many edges must be deleted?",
+      "hint": "A spanning tree has one fewer edge than vertices.",
+      "explanation": "Every spanning tree has \\(9-1=8\\) edges, so exactly \\(11-8=3\\) edges must be deleted. Connectivity guarantees a spanning tree exists; selecting arbitrary edges to delete would not guarantee success.",
+      "solutionSteps": [
+        "Every spanning tree has \\(9-1=8\\) edges, so exactly \\(11-8=3\\) edges must be deleted. Connectivity guarantees a spanning tree exists; selecting arbitrary edges to delete would not guarantee success."
+      ]
+    },
+    "cs-u12-q06": {
+      "title": "Can an edge-once route return to its start?",
+      "statement": "The graph consists of triangles abc and def, joined by the single edge cd. There are no other edges.",
+      "prompt": "Does it have a closed Euler tour?",
+      "hint": "Inspect the degrees at the endpoints of the joining edge.",
+      "explanation": "No. Vertices c and d have degree 3; the other four have degree 2. A closed Euler tour requires all degrees to be even. An open edge-once trail does exist, for example c-a-b-c-d-e-f-d.",
+      "solutionSteps": [
+        "No. Vertices c and d have degree 3; the other four have degree 2. A closed Euler tour requires all degrees to be even. An open edge-once trail does exist, for example c-a-b-c-d-e-f-d."
+      ],
+      "options": {
+        "a": "Yes; connectedness alone guarantees it.",
+        "b": "No; c and d have odd degree.",
+        "c": "No; a graph containing cycles cannot have an Euler tour."
+      }
+    },
+    "cs-u13-q01": {
+      "title": "Count only the bounded faces",
+      "statement": "A connected simple graph is drawn in the plane without crossings. It has 11 vertices and 17 edges.",
+      "prompt": "How many bounded faces does this drawing have?",
+      "hint": "Use Euler to count all faces, then exclude the outside one.",
+      "explanation": "\\(f=2-11+17=8\\). Exactly one is the outside face, so there are 7 bounded faces.",
+      "solutionSteps": [
+        "\\(f=2-11+17=8\\). Exactly one is the outside face, so there are 7 bounded faces."
+      ]
+    },
+    "cs-u13-q02": {
+      "title": "Delete a bridge",
+      "statement": "A connected plane graph has a bridge e. Erase that edge from the drawing, keeping all vertices. The graph now has two components.",
+      "prompt": "How does the total number of faces change?",
+      "hint": "The erased edge had the same face on both sides.",
+      "explanation": "The face count stays the same. Both \\(m\\) decreases by 1 and \\(c\\) increases by 1 in \\(n-m+f=c+1\\), so f does not change. The connected-only equation cannot be reused with constant 2.",
+      "solutionSteps": [
+        "The face count stays the same. Both \\(m\\) decreases by 1 and \\(c\\) increases by 1 in \\(n-m+f=c+1\\), so f does not change. The connected-only equation cannot be reused with constant 2."
+      ],
+      "options": {
+        "a": "It stays the same.",
+        "b": "It decreases by 1.",
+        "c": "It increases by 1."
+      }
+    },
+    "cs-u13-q03": {
+      "title": "Apply the right edge bound",
+      "statement": "A finite simple bipartite graph has 8 vertices and 13 edges.",
+      "prompt": "Can it be planar?",
+      "hint": "Use the bipartite bound, not only the general planar bound.",
+      "explanation": "No: \\(2\\cdot8-4=12\\), but the graph has 13 edges. Satisfying the looser bound \\(3\\cdot8-6=18\\) cannot rescue it.",
+      "solutionSteps": [
+        "No: \\(2\\cdot8-4=12\\), but the graph has 13 edges. Satisfying the looser bound \\(3\\cdot8-6=18\\) cannot rescue it."
+      ],
+      "options": {
+        "a": "Yes; 13 is below 18.",
+        "b": "The vertex and edge counts cannot rule it out.",
+        "c": "No; 13 exceeds the bipartite planar limit of 12."
+      }
+    },
+    "cs-u13-q04": {
+      "title": "A new routing vertex does not remove the obstruction",
+      "statement": "Start with \\(K_5\\). Replace one edge uv with undirected edges ux and xv, where x is a new vertex. The result has n = 6 and m = 11, satisfying \\(m\\leq3n-6\\).",
+      "prompt": "Is the resulting graph planar?",
+      "hint": "Contract one of the two replacement edges and identify the graph recovered.",
+      "explanation": "No. Contracting ux recovers \\(K_5\\). If the subdivided graph were planar, contraction would give a planar \\(K_5\\), a contradiction. Passing the edge bound is not sufficient.",
+      "solutionSteps": [
+        "No. Contracting ux recovers \\(K_5\\). If the subdivided graph were planar, contraction would give a planar \\(K_5\\), a contradiction. Passing the edge bound is not sufficient."
+      ],
+      "options": {
+        "a": "Yes; passing the edge bound proves planarity.",
+        "b": "No; contracting ux recovers the nonplanar \\(K_5\\).",
+        "c": "Yes; adding any degree-2 vertex makes a graph planar."
+      }
+    },
+    "cs-u13-q05": {
+      "title": "Find the gap in the coloring proof",
+      "statement": "A proposed proof deletes a vertex of degree at most 5, five-colors the remaining planar graph, then claims an unused color must remain for the deleted vertex. Existing colors are kept fixed.",
+      "prompt": "What is missing from this argument?",
+      "hint": "Consider a deleted vertex with exactly five neighbors.",
+      "explanation": "Its five neighbors could use all five colors. A sixth color would suffice directly, but a five-color proof needs an additional argument. The five-color theorem is true; this step alone does not prove it.",
+      "solutionSteps": [
+        "Its five neighbors could use all five colors. A sixth color would suffice directly, but a five-color proof needs an additional argument. The five-color theorem is true; this step alone does not prove it."
+      ],
+      "options": {
+        "a": "Five neighbors might already use all five available colors.",
+        "b": "Deleting a vertex necessarily destroys planarity.",
+        "c": "A planar graph cannot have a degree-5 vertex."
+      }
+    },
+    "cs-u13-q06": {
+      "title": "Count the necessary pentagons",
+      "statement": "A convex polyhedron has only pentagonal and hexagonal faces, and exactly three edges meet at every vertex. Let p and h be the face counts.",
+      "prompt": "How many pentagonal faces must it have?",
+      "hint": "Combine \\(3n=2m\\), \\(5p+6h=2m\\), and \\(f=p+h\\) with Euler.",
+      "explanation": "Substitute \\(n=2m/3\\) and \\(f=p+h\\) into Euler: \\(p+h-m/3=2\\). Multiply by 6 to obtain \\(6p+6h-2m=12\\). Using \\(2m=5p+6h\\) leaves \\(p=12\\), regardless of h.",
+      "solutionSteps": [
+        "Substitute \\(n=2m/3\\) and \\(f=p+h\\) into Euler: \\(p+h-m/3=2\\). Multiply by 6 to obtain \\(6p+6h-2m=12\\). Using \\(2m=5p+6h\\) leaves \\(p=12\\), regardless of h."
+      ]
+    },
+    "cs-u14-q01": {
+      "title": "Count a triangular loop",
+      "statement": "For every integer \\(i=1,\\ldots,n\\), a loop processes \\(j=1,\\ldots,i-1\\). Each pair (i,j) performs one comparison; \\(n\\ge1\\). An empty inner range performs none.",
+      "prompt": "Which expression is the exact number of comparisons?",
+      "hint": "The inner loop lengths are 0, 1, ..., n-1.",
+      "explanation": "The count is \\(\\sum_{i=1}^{n}(i-1)=\\sum_{j=0}^{n-1}j=n(n-1)/2\\). In particular, n = 1 gives zero comparisons. Counting n comparisons for every outer iteration ignores the changing bound.",
+      "solutionSteps": [
+        "The count is \\(\\sum_{i=1}^{n}(i-1)=\\sum_{j=0}^{n-1}j=n(n-1)/2\\). In particular, n = 1 gives zero comparisons. Counting n comparisons for every outer iteration ignores the changing bound."
+      ],
+      "options": {
+        "a": "\\(n^2\\)",
+        "b": "\\(n(n+1)/2\\)",
+        "c": "\\(n(n-1)/2\\)"
+      }
+    },
+    "cs-u14-q02": {
+      "title": "Total the copies during growth",
+      "statement": "An array starts full at capacity 1. An append doubles its capacity only when the array is full, copying every existing item. Count copies through the resize that first reaches capacity 512; exclude writing new items.",
+      "prompt": "How many item copies occur in total?",
+      "hint": "Each resize copies the old capacity, including 256 on the final resize.",
+      "explanation": "The copied counts are \\(1,2,4,\\ldots,256\\), so the total is \\(\\sum_{i=0}^{8}2^i=2^9-1=511\\). The new capacity 512 is not itself copied during that final resize.",
+      "solutionSteps": [
+        "The copied counts are \\(1,2,4,\\ldots,256\\), so the total is \\(\\sum_{i=0}^{8}2^i=2^9-1=511\\). The new capacity 512 is not itself copied during that final resize."
+      ]
+    },
+    "cs-u14-q03": {
+      "title": "Keep the approximation error",
+      "statement": "A cost model is \\(R(n)=n\\sum_{i=1}^{n}1/i=nH_n\\) for integers \\(n\\ge2\\). Use the stated harmonic bounds; ln denotes the natural logarithm.",
+      "prompt": "Which two-sided bound is guaranteed?",
+      "hint": "Multiply both sides of each harmonic bound by n, including the endpoint correction.",
+      "explanation": "Multiplying by n gives \\(n\\ln n+1\\le R(n)\\le n\\ln n+n\\). The upper error term grows with n, so replacing it by 1 or treating the logarithmic expression as exact is unjustified.",
+      "solutionSteps": [
+        "Multiplying by n gives \\(n\\ln n+1\\le R(n)\\le n\\ln n+n\\). The upper error term grows with n, so replacing it by 1 or treating the logarithmic expression as exact is unjustified."
+      ],
+      "options": {
+        "a": "\\(n\\ln n+1\\le R(n)\\le n\\ln n+n\\)",
+        "b": "\\(n\\ln n\\le R(n)\\le n\\ln n+1\\)",
+        "c": "\\(R(n)=n\\ln n\\)"
+      }
+    },
+    "cs-u14-q04": {
+      "title": "Analyze a loop with integer division",
+      "statement": "For \\(i=1,\\ldots,n\\), a loop performs exactly \\(\\lfloor n/i\\rfloor\\) operations. Thus \\(T(n)=\\sum_{i=1}^{n}\\lfloor n/i\\rfloor\\). Consider positive integer n growing without bound.",
+      "prompt": "Which is the tight asymptotic order?",
+      "hint": "Compare T(n) with \\(nH_n\\). The sum of all rounding losses is less than n.",
+      "explanation": "The floor bounds give \\(nH_n-n<T(n)\\le nH_n\\). Using the harmonic bounds gives \\(n\\ln n-n+1<T(n)\\le n\\ln n+n\\). For sufficiently large n, both sides are positive constant multiples of \\(n\\ln n\\). Therefore \\(T(n)=\\Theta(n\\log n)\\) for any fixed logarithm base greater than 1.",
+      "solutionSteps": [
+        "The floor bounds give \\(nH_n-n<T(n)\\le nH_n\\). Using the harmonic bounds gives \\(n\\ln n-n+1<T(n)\\le n\\ln n+n\\). For sufficiently large n, both sides are positive constant multiples of \\(n\\ln n\\). Therefore \\(T(n)=\\Theta(n\\log n)\\) for any fixed logarithm base greater than 1."
+      ],
+      "options": {
+        "a": "\\(\\Theta(n)\\)",
+        "b": "\\(\\Theta(n\\log n)\\)",
+        "c": "\\(\\Theta(n^2)\\)"
+      }
+    },
+    "cs-u14-q05": {
+      "title": "A constant shift or a growing factor?",
+      "statement": "Compare three candidate work functions with \\(3^n\\) as positive integer n grows. An O-bound must use one constant independent of n.",
+      "prompt": "Which function is \\(O(3^n)\\)?",
+      "hint": "Divide each candidate by \\(3^n\\). Which ratio stays bounded?",
+      "explanation": "\\(3^{n+2}/3^n=9\\), a fixed constant. The other ratios are n and \\(3^n\\), both unbounded. Only the constant shift in the exponent preserves this O-bound.",
+      "solutionSteps": [
+        "\\(3^{n+2}/3^n=9\\), a fixed constant. The other ratios are n and \\(3^n\\), both unbounded. Only the constant shift in the exponent preserves this O-bound."
+      ],
+      "options": {
+        "a": "\\(n3^n\\)",
+        "b": "\\(3^{n+2}\\)",
+        "c": "\\(9^n\\)"
+      }
+    },
+    "cs-u14-q06": {
+      "title": "Does a tight order imply a limiting ratio?",
+      "statement": "A work function has \\(T(n)=n\\) when n is even and \\(T(n)=3n\\) when n is odd, for integers \\(n\\ge1\\).",
+      "prompt": "Which statement is correct?",
+      "hint": "Compare the ratio along even and odd inputs, then check constant upper and lower bounds.",
+      "explanation": "For every n, \\(n\\le T(n)\\le3n\\), proving \\(T(n)=\\Theta(n)\\). However, \\(T(n)/n\\) alternates between 1 and 3 and has no limit. In particular, it does not tend to 1.",
+      "solutionSteps": [
+        "For every n, \\(n\\le T(n)\\le3n\\), proving \\(T(n)=\\Theta(n)\\). However, \\(T(n)/n\\) alternates between 1 and 3 and has no limit. In particular, it does not tend to 1."
+      ],
+      "options": {
+        "a": "\\(T(n)\\sim n\\)",
+        "b": "\\(T(n)\\) is not \\(O(n)\\) because its ratio oscillates.",
+        "c": "\\(T(n)=\\Theta(n)\\), but \\(T(n)\\not\\sim n\\)."
+      }
+    },
+    "cs-u15-q01": {
+      "title": "One leader, two equivalent followers",
+      "statement": "Choose 3 distinct servers from 8 and designate one selected server as leader. The other two are followers with no order between them. Server identities and the leader identity distinguish configurations.",
+      "prompt": "How many configurations are possible?",
+      "hint": "Choose the leader first, then an unordered pair from the remaining servers.",
+      "explanation": "There are \\(8\\binom{7}{2}=8\\cdot21=168\\) configurations. Equivalently, \\(8\\cdot7\\cdot6/2=168\\): swapping the two followers is exactly the twofold overcount. Dividing by \\(3!\\) would also erase the leader role.",
+      "solutionSteps": [
+        "There are \\(8\\binom{7}{2}=8\\cdot21=168\\) configurations. Equivalently, \\(8\\cdot7\\cdot6/2=168\\): swapping the two followers is exactly the twofold overcount. Dividing by \\(3!\\) would also erase the leader role."
+      ]
+    },
+    "cs-u15-q02": {
+      "title": "Why dividing by the symmetry count fails",
+      "statement": "Two 4-bit strings are considered equivalent if one is a cyclic rotation of the other. A programmer counts all \\(2^4=16\\) strings, then divides by 4 because four rotation operations exist.",
+      "prompt": "Why is that division unjustified?",
+      "hint": "Compare the distinct rotations of 0000 and 0001.",
+      "explanation": "The class of 0000 contains one string; the class of 0001 contains four. The map from strings to rotation classes is not four-to-one. Counting four operations does not give four distinct representations for every class.",
+      "solutionSteps": [
+        "The class of 0000 contains one string; the class of 0001 contains four. The map from strings to rotation classes is not four-to-one. Counting four operations does not give four distinct representations for every class."
+      ],
+      "options": {
+        "a": "Division can never be used when objects are arranged cyclically.",
+        "b": "Different rotation classes contain different numbers of strings.",
+        "c": "Rotating a string changes its number of 1s."
+      }
+    },
+    "cs-u15-q03": {
+      "title": "Reserve the minimum allocation first",
+      "statement": "Distribute 9 identical capacity slots among 3 named queues. Every queue must receive at least one slot; there is no upper limit. Only the three slot counts distinguish allocations.",
+      "prompt": "How many allocations satisfy the requirements?",
+      "hint": "Give each queue one slot, then distribute the six remaining identical slots.",
+      "explanation": "After reserving 3 slots, the remaining counts are nonnegative and sum to 6. Two separators among eight positions give \\(\\binom{6+3-1}{3-1}=\\binom{8}{2}=28\\). Treating the slots as individually labeled would count a different problem.",
+      "solutionSteps": [
+        "After reserving 3 slots, the remaining counts are nonnegative and sum to 6. Two separators among eight positions give \\(\\binom{6+3-1}{3-1}=\\binom{8}{2}=28\\). Treating the slots as individually labeled would count a different problem."
+      ]
+    },
+    "cs-u15-q04": {
+      "title": "Fix a prefix before counting the rest",
+      "statement": "A 7-symbol log contains exactly three A symbols, two B symbols and two C symbols. Its first symbol must be C. Order matters; copies of the same symbol are indistinguishable.",
+      "prompt": "How many different logs are possible?",
+      "hint": "The fixed first C leaves six positions with counts 3, 2 and 1.",
+      "explanation": "The remaining positions contain three A symbols, two B symbols and one C. Their number is \\(6!/(3!2!1!)=60\\). The two C copies are identical, so there is no extra factor of 2 for choosing the first C.",
+      "solutionSteps": [
+        "The remaining positions contain three A symbols, two B symbols and one C. Their number is \\(6!/(3!2!1!)=60\\). The two C copies are identical, so there is no extra factor of 2 for choosing the first C."
+      ]
+    },
+    "cs-u15-q05": {
+      "title": "Force a four-way hash collision",
+      "statement": "A hash function maps distinct keys into 8 possible buckets. Make no assumption about its distribution. Count how many keys are sufficient to force at least four keys in some bucket, for every possible assignment.",
+      "prompt": "What is the smallest such number of keys?",
+      "hint": "Find the largest total that can fit with at most three keys in each bucket.",
+      "explanation": "At most \\(8\\cdot3=24\\) keys can fit with no bucket containing four. Thus 25 force a four-key bucket. With 24 keys, an assignment of three per bucket avoids it, proving that 25 is the smallest guarantee.",
+      "solutionSteps": [
+        "At most \\(8\\cdot3=24\\) keys can fit with no bucket containing four. Thus 25 force a four-key bucket. With 24 keys, an assignment of three per bucket avoids it, proving that 25 is the smallest guarantee."
+      ]
+    },
+    "cs-u15-q06": {
+      "title": "Assign jobs without leaving a worker idle",
+      "statement": "Assign 5 distinct jobs to 3 named workers. Each job goes to exactly one worker, and each worker must receive at least one job. Order within a worker is irrelevant; there are no capacity limits.",
+      "prompt": "How many assignments are possible?",
+      "hint": "Start with all assignments. Subtract those missing a worker, then restore the overlaps.",
+      "explanation": "There are \\(3^5\\) unrestricted assignments. For each of three omitted workers there are \\(2^5\\) assignments. For each of three pairs of omitted workers there is \\(1^5\\) assignment. Omitting all workers is impossible because jobs exist. Inclusion-exclusion gives \\(3^5-3\\cdot2^5+3\\cdot1^5=150\\).",
+      "solutionSteps": [
+        "There are \\(3^5\\) unrestricted assignments. For each of three omitted workers there are \\(2^5\\) assignments. For each of three pairs of omitted workers there is \\(1^5\\) assignment. Omitting all workers is impossible because jobs exist. Inclusion-exclusion gives \\(3^5-3\\cdot2^5+3\\cdot1^5=150\\)."
+      ]
+    },
+    "cs-u16-q01": {
+      "title": "Encode two independent capacity choices",
+      "statement": "A configuration is determined by a pair of counts (a,b). The allowed A count is 0, 1 or 2; the allowed B count is any nonnegative even integer. Total size is a+b. Each permitted pair counts once, and order is irrelevant.",
+      "prompt": "Which generating function counts configurations by total size?",
+      "hint": "Write one series for each allowed count, then multiply them.",
+      "explanation": "A contributes \\(1+x+x^2\\) and B contributes \\(1+x^2+x^4+\\cdots=1/(1-x^2)\\). Therefore the product is \\((1+x+x^2)/(1-x^2)\\). Squaring \\(1+x\\) would count two different ways to obtain A count 1.",
+      "solutionSteps": [
+        "A contributes \\(1+x+x^2\\) and B contributes \\(1+x^2+x^4+\\cdots=1/(1-x^2)\\). Therefore the product is \\((1+x+x^2)/(1-x^2)\\). Squaring \\(1+x\\) would count two different ways to obtain A count 1."
+      ],
+      "options": {
+        "a": "\\((1+x)^2/(1-x^2)\\)",
+        "b": "\\((1+x+x^2)/(1-x^2)\\)",
+        "c": "\\((1+x+x^2)/(1-x)\\)"
+      }
+    },
+    "cs-u16-q02": {
+      "title": "Convolve sizes instead of matching positions",
+      "statement": "\\(A(x)=1+3x+2x^2\\) and \\(B(x)=1+2x^2+x^4\\) count configurations of two independent components by size. Combining components adds their sizes.",
+      "prompt": "What is \\([x^4](A(x)B(x))\\)?",
+      "hint": "Only pairs of exponents summing to 4 contribute.",
+      "explanation": "The size pairs (0,4) and (2,2) contribute \\(1\\cdot1\\) and \\(2\\cdot2\\). The pair (1,3) contributes zero because B has no size-3 term. The total is \\(1+4=5\\), not the product of the two size-4 coefficients.",
+      "solutionSteps": [
+        "The size pairs (0,4) and (2,2) contribute \\(1\\cdot1\\) and \\(2\\cdot2\\). The pair (1,3) contributes zero because B has no size-3 term. The total is \\(1+4=5\\), not the product of the two size-4 coefficients."
+      ]
+    },
+    "cs-u16-q03": {
+      "title": "Extract a coefficient after decomposition",
+      "statement": "Let \\(F(x)=1/((1-x)(1-3x))\\) and interpret it as an ordinary formal power series.",
+      "prompt": "What is \\([x^4]F(x)\\)?",
+      "hint": "Write \\(F=A/(1-x)+B/(1-3x)\\) and solve \\(1=A(1-3x)+B(1-x)\\).",
+      "explanation": "The constants are \\(A=-1/2\\) and \\(B=3/2\\). Thus \\([x^4]F=-1/2+(3/2)3^4=121\\). Equivalently, convolution gives \\(1+3+9+27+81=121\\).",
+      "solutionSteps": [
+        "The constants are \\(A=-1/2\\) and \\(B=3/2\\). Thus \\([x^4]F=-1/2+(3/2)3^4=121\\). Equivalently, convolution gives \\(1+3+9+27+81=121\\)."
+      ]
+    },
+    "cs-u16-q04": {
+      "title": "Handle a repeated factor and an index shift",
+      "statement": "Let \\(G(x)=x^2/(1-2x)^2\\).",
+      "prompt": "What is \\([x^5]G(x)\\)?",
+      "hint": "The factor \\(x^2\\) means you need the coefficient at \\(x^3\\) in the remaining series.",
+      "explanation": "The shifted index is \\(5-2=3\\). The repeated-factor formula gives \\((3+1)2^3=32\\). Using index 5 ignores the shift; using only \\(2^3\\) ignores the second denominator factor.",
+      "solutionSteps": [
+        "The shifted index is \\(5-2=3\\). The repeated-factor formula gives \\((3+1)2^3=32\\). Using index 5 ignores the shift; using only \\(2^3\\) ignores the second denominator factor."
+      ]
+    },
+    "cs-u16-q05": {
+      "title": "Find the missing initial-condition correction",
+      "statement": "A sequence satisfies \\(a_0=2\\), \\(a_1=5\\), and \\(a_n=3a_{n-1}-2a_{n-2}\\) for \\(n\\ge2\\). Let \\(F(x)=\\sum_{n\\ge0}a_nx^n\\).",
+      "prompt": "Which generating function has these initial terms and recurrence?",
+      "hint": "After shifting and subtracting, the linear term is \\(a_1-3a_0\\).",
+      "explanation": "All coefficients from degree 2 onward cancel in \\((1-3x+2x^2)F\\). The remaining terms are \\(a_0+(a_1-3a_0)x=2-x\\). Thus \\(F=(2-x)/(1-3x+2x^2)\\). The other numerators give the wrong coefficient at x.",
+      "solutionSteps": [
+        "All coefficients from degree 2 onward cancel in \\((1-3x+2x^2)F\\). The remaining terms are \\(a_0+(a_1-3a_0)x=2-x\\). Thus \\(F=(2-x)/(1-3x+2x^2)\\). The other numerators give the wrong coefficient at x."
+      ],
+      "options": {
+        "a": "\\(2/(1-3x+2x^2)\\)",
+        "b": "\\((2+5x)/(1-3x+2x^2)\\)",
+        "c": "\\((2-x)/(1-3x+2x^2)\\)"
+      }
+    },
+    "cs-u16-q06": {
+      "title": "Count ordered token sequences",
+      "statement": "Tokens A, B and C have sizes 1, 2 and 2 respectively. Count finite ordered sequences of these tokens by total size, including the empty sequence. B and C are distinct, tokens may repeat, and different token sequences count separately.",
+      "prompt": "Which generating function counts these sequences?",
+      "hint": "A nonempty sequence begins with A, B or C, followed by an arbitrary valid suffix.",
+      "explanation": "The empty sequence contributes 1. Starting with A contributes \\(xF\\); starting with B or C contributes \\(2x^2F\\). Therefore \\(F=1+xF+2x^2F\\), giving \\(F=1/(1-x-2x^2)\\). For example, size 2 has AA, B and C. A product of separate geometric series does not account for all interleavings of tokens of different sizes.",
+      "solutionSteps": [
+        "The empty sequence contributes 1. Starting with A contributes \\(xF\\); starting with B or C contributes \\(2x^2F\\). Therefore \\(F=1+xF+2x^2F\\), giving \\(F=1/(1-x-2x^2)\\). For example, size 2 has AA, B and C. A product of separate geometric series does not account for all interleavings of tokens of different sizes."
+      ],
+      "options": {
+        "a": "\\(1/(1-x-2x^2)\\)",
+        "b": "\\(1/((1-x)(1-2x^2))\\)",
+        "c": "\\(x/(1-x-2x^2)\\)"
+      }
+    },
+    "cs-u17-q01": {
+      "title": "Spot modulo bias",
+      "statement": "A generator chooses an integer S uniformly from \\(\\{0,1,\\ldots,7\\}\\) and returns \\(S\\bmod3\\).",
+      "prompt": "What is the probability that it returns 0? Enter a decimal.",
+      "hint": "List the seeds whose remainder is 0.",
+      "explanation": "The seeds 0, 3 and 6 produce 0, so the probability is \\(3/8=0.375\\). The three output labels are not equally likely: their preimage sizes are 3, 3 and 2.",
+      "solutionSteps": [
+        "The seeds 0, 3 and 6 produce 0, so the probability is \\(3/8=0.375\\). The three output labels are not equally likely: their preimage sizes are 3, 3 and 2."
+      ]
+    },
+    "cs-u17-q02": {
+      "title": "Does uniform size mean uniform subset?",
+      "statement": "A test generator chooses a size K uniformly from \\(\\{0,1,2\\}\\). It then chooses uniformly among the K-element subsets of \\(\\{a,b\\}\\). Let X be the output subset.",
+      "prompt": "Which statement about its output distribution is correct?",
+      "hint": "The empty set has only one path of size 0; the two singleton sets share the size-1 probability.",
+      "explanation": "The empty set has probability \\(1/3\\), while the singleton \\(\\{a\\}\\) has probability \\((1/3)(1/2)=1/6\\). Similarly, \\(\\{b\\}\\) has probability \\(1/6\\) and \\(\\{a,b\\}\\) has probability \\(1/3\\). Uniform choice at each stage does not make all four outputs equally likely.",
+      "solutionSteps": [
+        "The empty set has probability \\(1/3\\), while the singleton \\(\\{a\\}\\) has probability \\((1/3)(1/2)=1/6\\). Similarly, \\(\\{b\\}\\) has probability \\(1/6\\) and \\(\\{a,b\\}\\) has probability \\(1/3\\). Uniform choice at each stage does not make all four outputs equally likely."
+      ],
+      "options": {
+        "a": "Every subset has probability \\(1/4\\).",
+        "b": "\\(P(X=\\varnothing)=1/3\\) and \\(P(X=\\{a\\})=1/6\\).",
+        "c": "\\(P(X=\\varnothing)=1/6\\) and \\(P(X=\\{a\\})=1/3\\)."
+      }
+    },
+    "cs-u17-q03": {
+      "title": "Account for overlapping failures",
+      "statement": "For a randomly selected request, \\(P(A)=0.08\\), \\(P(B)=0.05\\) and \\(P(A\\cap B)=0.02\\). A and B are two failure events.",
+      "prompt": "What is the probability of at least one failure? Enter a decimal.",
+      "hint": "Subtract the probability that both failures occur from the sum of the two probabilities.",
+      "explanation": "\\(P(A\\cup B)=0.08+0.05-0.02=0.11\\). Multiplying the marginal probabilities would introduce an independence assumption not supported by these data.",
+      "solutionSteps": [
+        "\\(P(A\\cup B)=0.08+0.05-0.02=0.11\\). Multiplying the marginal probabilities would introduce an independence assumption not supported by these data."
+      ]
+    },
+    "cs-u17-q04": {
+      "title": "Bound risk with unknown dependence",
+      "statement": "Four checks each fail with probability 0.02 on a randomly selected run. Their dependence is unknown.",
+      "prompt": "What is the smallest universal upper bound on at least one failure from this information?",
+      "hint": "Add the four probabilities. Could four disjoint failure events attain that sum?",
+      "explanation": "The union bound gives \\(P(\\text{at least one})\\le4(0.02)=0.08\\). Equality is possible if the four failure events are disjoint, so no smaller universal upper bound follows. The product formula would require independence.",
+      "solutionSteps": [
+        "The union bound gives \\(P(\\text{at least one})\\le4(0.02)=0.08\\). Equality is possible if the four failure events are disjoint, so no smaller universal upper bound follows. The product formula would require independence."
+      ],
+      "options": {
+        "a": "\\(0.02\\)",
+        "b": "\\(1-0.98^4\\)",
+        "c": "\\(0.08\\)"
+      }
+    },
+    "cs-u17-q05": {
+      "title": "Find the exact collision probability",
+      "statement": "Four distinct keys hash independently and uniformly into eight buckets. A collision means that some two keys land in the same bucket.",
+      "prompt": "What is the probability of at least one collision?",
+      "hint": "Compute the probability that all four buckets chosen are distinct, then take its complement.",
+      "explanation": "The no-collision probability is \\((8\\cdot7\\cdot6\\cdot5)/8^4=105/256\\). The complement is \\(151/256\\). The value \\(6/8\\) is a union bound, not the exact probability.",
+      "solutionSteps": [
+        "The no-collision probability is \\((8\\cdot7\\cdot6\\cdot5)/8^4=105/256\\). The complement is \\(151/256\\). The value \\(6/8\\) is a union bound, not the exact probability."
+      ],
+      "options": {
+        "a": "\\(151/256\\)",
+        "b": "\\(6/8\\)",
+        "c": "\\(1/8\\)"
+      }
+    },
+    "cs-u17-q06": {
+      "title": "Choose enough hash bits for a bound",
+      "statement": "Sixteen distinct keys hash independently and uniformly into \\(2^b\\) buckets, where b is a positive integer. Use the pairwise union bound to certify collision probability at most \\(1/32\\).",
+      "prompt": "What is the smallest b certified by this bound?",
+      "hint": "There are \\(\\binom{16}{2}=120\\) pairs. Require \\(120/2^b\\le1/32\\).",
+      "explanation": "The bound requires \\(2^b\\ge3840\\). Since \\(2^{11}=2048<3840\\le4096=2^{12}\\), b = 12 is the smallest certified value. This answers the stated bound-based design question, not a claim about arbitrary hash functions.",
+      "solutionSteps": [
+        "The bound requires \\(2^b\\ge3840\\). Since \\(2^{11}=2048<3840\\le4096=2^{12}\\), b = 12 is the smallest certified value. This answers the stated bound-based design question, not a claim about arbitrary hash functions."
+      ]
+    },
+    "cs-u18-q01": {
+      "title": "Both failed, given at least one failed",
+      "statement": "Two attempts fail independently, each with probability \\(1/4\\). You learn that at least one failed; no particular attempt is identified.",
+      "prompt": "What is the probability that both failed?",
+      "hint": "The conditioning event excludes only the outcome in which both succeed.",
+      "explanation": "\\(P(\\text{both fail})=1/16\\), while \\(P(\\text{at least one fails})=1-(3/4)^2=7/16\\). Their ratio is \\(1/7\\). Conditioning on a named attempt failing would be different information.",
+      "solutionSteps": [
+        "\\(P(\\text{both fail})=1/16\\), while \\(P(\\text{at least one fails})=1-(3/4)^2=7/16\\). Their ratio is \\(1/7\\). Conditioning on a named attempt failing would be different information."
+      ],
+      "options": {
+        "a": "\\(1/16\\)",
+        "b": "\\(1/7\\)",
+        "c": "\\(1/4\\)"
+      }
+    },
+    "cs-u18-q02": {
+      "title": "Which deployment produced the failure?",
+      "statement": "A handles 20% of requests and B handles 80%. Failure probabilities are 0.04 on A and 0.01 on B. Select a request at random and observe that it failed.",
+      "prompt": "What is the probability that it came from A? Enter a decimal.",
+      "hint": "Weight each deployment failure rate by its share of traffic, then normalize.",
+      "explanation": "A contributes \\(0.2(0.04)=0.008\\) to the failure probability; B contributes \\(0.8(0.01)=0.008\\). Thus \\(P(A\\mid\\text{failure})=0.008/0.016=0.5\\). The 0.04 rate conditions in the opposite direction.",
+      "solutionSteps": [
+        "A contributes \\(0.2(0.04)=0.008\\) to the failure probability; B contributes \\(0.8(0.01)=0.008\\). Thus \\(P(A\\mid\\text{failure})=0.008/0.016=0.5\\). The 0.04 rate conditions in the opposite direction."
+      ]
+    },
+    "cs-u18-q03": {
+      "title": "Weight the actual traffic mix",
+      "statement": "90% of requests are small and fail with probability 0.01. The remaining 10% are large and fail with probability 0.20.",
+      "prompt": "What is the overall failure probability? Enter a decimal.",
+      "hint": "Use the traffic share as the weight for each conditional rate.",
+      "explanation": "\\(0.9(0.01)+0.1(0.20)=0.029\\). The unweighted average 0.105 would describe a 50/50 traffic mixture, not the stated one.",
+      "solutionSteps": [
+        "\\(0.9(0.01)+0.1(0.20)=0.029\\). The unweighted average 0.105 would describe a 50/50 traffic mixture, not the stated one."
+      ]
+    },
+    "cs-u18-q04": {
+      "title": "Explain a reversed aggregate ranking",
+      "statement": "Observed successes: A has 9/10 on easy tasks and 4/10 on hard tasks. B has 80/100 on easy tasks and 1/5 on hard tasks. Each fraction is successes divided by tasks.",
+      "prompt": "A has the higher success rate in both groups. Why does B have the higher overall rate?",
+      "hint": "Compare how much of each system workload is in the easier group.",
+      "explanation": "A succeeds on \\(13/20=0.65\\) overall; B on \\(81/105\\approx0.771\\). B was evaluated mostly on easy tasks. With the same easy/hard weights, A would have the higher weighted rate because both its group rates are higher. The observed aggregates alone do not establish which system causes better outcomes.",
+      "solutionSteps": [
+        "A succeeds on \\(13/20=0.65\\) overall; B on \\(81/105\\approx0.771\\). B was evaluated mostly on easy tasks. With the same easy/hard weights, A would have the higher weighted rate because both its group rates are higher. The observed aggregates alone do not establish which system causes better outcomes."
+      ],
+      "options": {
+        "a": "A higher rate in both groups makes this aggregate reversal mathematically impossible.",
+        "b": "Overall rates are always the unweighted averages of the two group rates.",
+        "c": "The systems were evaluated with different easy/hard workload proportions."
+      }
+    },
+    "cs-u18-q05": {
+      "title": "Can two exclusive error codes be independent?",
+      "statement": "A request returns exactly one status code. Let A mean code 400 and B mean code 500, with probabilities 0.2 and 0.3 respectively.",
+      "prompt": "Are A and B independent?",
+      "hint": "A request cannot return both of these mutually exclusive codes.",
+      "explanation": "\\(P(A\\cap B)=0\\), whereas \\(P(A)P(B)=0.06\\). The events are disjoint but not independent: observing either rules out the other.",
+      "solutionSteps": [
+        "\\(P(A\\cap B)=0\\), whereas \\(P(A)P(B)=0.06\\). The events are disjoint but not independent: observing either rules out the other."
+      ],
+      "options": {
+        "a": "No: \\(0\\ne0.2\\cdot0.3\\).",
+        "b": "Yes: distinct status codes cannot influence each other.",
+        "c": "Yes: all disjoint events are independent."
+      }
+    },
+    "cs-u18-q06": {
+      "title": "Pairwise checks miss a parity constraint",
+      "statement": "A generator chooses uniformly from \\(000,011,101,110\\). Let \\(A_i\\) be the event that bit i is 1, for \\(i=1,2,3\\).",
+      "prompt": "Which statement is correct?",
+      "hint": "Count the probability of a 1 in any position, two specified 1s, and three 1s.",
+      "explanation": "Each event has probability \\(1/2\\) and each pair intersection has probability \\(1/4\\), so all pairs are independent. But \\(P(A_1\\cap A_2\\cap A_3)=0\\ne(1/2)^3\\). Thus the family is not mutually independent.",
+      "solutionSteps": [
+        "Each event has probability \\(1/2\\) and each pair intersection has probability \\(1/4\\), so all pairs are independent. But \\(P(A_1\\cap A_2\\cap A_3)=0\\ne(1/2)^3\\). Thus the family is not mutually independent."
+      ],
+      "options": {
+        "a": "The three events are mutually independent.",
+        "b": "No pair of these events is independent.",
+        "c": "They are pairwise independent but not mutually independent."
+      }
+    },
+    "cs-u19-q01": {
+      "title": "Count exactly one failure",
+      "statement": "Four checks fail mutually independently, each with probability \\(1/4\\). X counts the failed checks.",
+      "prompt": "What is the probability that X equals 1?",
+      "hint": "There are four choices for which check fails.",
+      "explanation": "\\(P(X=1)=\\binom{4}{1}(1/4)(3/4)^3=27/64\\). The single-path probability \\(27/256\\) omits the other three possible failed checks.",
+      "solutionSteps": [
+        "\\(P(X=1)=\\binom{4}{1}(1/4)(3/4)^3=27/64\\). The single-path probability \\(27/256\\) omits the other three possible failed checks."
+      ],
+      "options": {
+        "a": "\\(27/256\\)",
+        "b": "\\(27/64\\)",
+        "c": "\\(1-(3/4)^4\\)"
+      }
+    },
+    "cs-u19-q02": {
+      "title": "Recover the probability at one value",
+      "statement": "R is an integer-valued retry count. Its CDF satisfies \\(F_R(3)=0.60\\) and \\(F_R(4)=0.85\\).",
+      "prompt": "What is the probability that R equals 4? Enter a decimal.",
+      "hint": "Remove the probability of values at most 3 from the probability of values at most 4.",
+      "explanation": "\\(P(R=4)=F_R(4)-F_R(3)=0.85-0.60=0.25\\). The integer-valued assumption ensures there are no possible values strictly between 3 and 4.",
+      "solutionSteps": [
+        "\\(P(R=4)=F_R(4)-F_R(3)=0.85-0.60=0.25\\). The integer-valued assumption ensures there are no possible values strictly between 3 and 4."
+      ]
+    },
+    "cs-u19-q03": {
+      "title": "Expected occupied buckets",
+      "statement": "Three distinct keys hash independently and uniformly into four buckets. O is the number of buckets containing at least one key.",
+      "prompt": "What is the expected value of O?",
+      "hint": "For one fixed bucket, compute the probability that all three keys miss it.",
+      "explanation": "A fixed bucket is occupied with probability \\(1-(3/4)^3=37/64\\). Summing four bucket indicators gives \\(E[O]=4(37/64)=37/16\\). The occupancy indicators are dependent, but linearity still applies.",
+      "solutionSteps": [
+        "A fixed bucket is occupied with probability \\(1-(3/4)^3=37/64\\). Summing four bucket indicators gives \\(E[O]=4(37/64)=37/16\\). The occupancy indicators are dependent, but linearity still applies."
+      ],
+      "options": {
+        "a": "\\(37/16\\)",
+        "b": "\\(3\\)",
+        "c": "\\(37/64\\)"
+      }
+    },
+    "cs-u19-q04": {
+      "title": "Count adjacent descents without independence",
+      "statement": "A scheduler uniformly shuffles tasks with distinct IDs 1 through 8. D counts adjacent positions where the left ID is larger than the right ID.",
+      "prompt": "What is the expected value of D? Enter a decimal.",
+      "hint": "There are seven adjacent pairs of positions. By symmetry, each is a descent with probability one half.",
+      "explanation": "Write D as the sum of seven descent indicators. Swapping the IDs in a fixed pair of positions shows that its descent probability is \\(1/2\\). Thus \\(E[D]=7/2=3.5\\). Overlapping pair indicators need not be independent.",
+      "solutionSteps": [
+        "Write D as the sum of seven descent indicators. Swapping the IDs in a fixed pair of positions shows that its descent probability is \\(1/2\\). Thus \\(E[D]=7/2=3.5\\). Overlapping pair indicators need not be independent."
+      ]
+    },
+    "cs-u19-q05": {
+      "title": "Expected time with unlimited retries",
+      "statement": "Independent attempts succeed with probability \\(1/4\\). Each attempt takes exactly 2 ms, whether it succeeds or fails. Retry until the first success; there is no other overhead.",
+      "prompt": "What is the expected total time, in milliseconds?",
+      "hint": "Let T be the expected time. The first attempt costs 2 ms; after a failure the same problem restarts.",
+      "explanation": "\\(T=2+(3/4)T\\), so \\(T=8\\) ms. Equivalently, the expected number of attempts is 4 and each costs 2 ms. The successful attempt is included.",
+      "solutionSteps": [
+        "\\(T=2+(3/4)T\\), so \\(T=8\\) ms. Equivalently, the expected number of attempts is 4 and each costs 2 ms. The successful attempt is included."
+      ]
+    },
+    "cs-u19-q06": {
+      "title": "Do not use the unlimited-retry mean after a cap",
+      "statement": "Independent attempts succeed with probability 0.5. Stop at the first success or after three attempts, whichever occurs first. N counts attempts actually made.",
+      "prompt": "What is the expected value of N? Enter a decimal.",
+      "hint": "Attempt 1 always occurs, attempt 2 requires one failure, and attempt 3 requires two failures.",
+      "explanation": "\\(E[N]=1+1/2+1/4=7/4=1.75\\). Equivalently, \\(P(N=1)=1/2\\), \\(P(N=2)=1/4\\) and \\(P(N=3)=1/4\\). The last case includes both success and failure on attempt 3.",
+      "solutionSteps": [
+        "\\(E[N]=1+1/2+1/4=7/4=1.75\\). Equivalently, \\(P(N=1)=1/2\\), \\(P(N=2)=1/4\\) and \\(P(N=3)=1/4\\). The last case includes both success and failure on attempt 3."
+      ]
+    },
+    "cs-u20-q01": {
+      "title": "A latency guarantee from its mean",
+      "statement": "Latency T is nonnegative and \\(E[T]=12\\) ms. No other distribution information is available.",
+      "prompt": "What upper bound does Markov give for latency at least 60 ms? Enter a decimal.",
+      "hint": "Divide the mean by the threshold.",
+      "explanation": "\\(P(T\\ge60)\\le12/60=0.2\\). This bound can be attained by a distribution with T = 60 with probability 0.2 and T = 0 otherwise; the mean alone cannot give a smaller universal bound.",
+      "solutionSteps": [
+        "\\(P(T\\ge60)\\le12/60=0.2\\). This bound can be attained by a distribution with T = 60 with probability 0.2 and T = 0 otherwise; the mean alone cannot give a smaller universal bound."
+      ]
+    },
+    "cs-u20-q02": {
+      "title": "A two-sided deviation bound",
+      "statement": "A counter X has \\(E[X]=100\\) and \\(\\operatorname{Var}(X)=9\\). Its distribution is otherwise unspecified.",
+      "prompt": "What does Chebyshev guarantee?",
+      "hint": "Divide the variance by the square of the deviation threshold, 6.",
+      "explanation": "\\(P(|X-100|\\ge6)\\le9/6^2=1/4\\). This is an upper bound; the probability need not equal it. No Gaussian assumption is supplied or needed.",
+      "solutionSteps": [
+        "\\(P(|X-100|\\ge6)\\le9/6^2=1/4\\). This is an upper bound; the probability need not equal it. No Gaussian assumption is supplied or needed."
+      ],
+      "options": {
+        "a": "\\(P(|X-100|\\ge6)=1/4\\).",
+        "b": "\\(P(|X-100|\\ge6)\\le1/4\\).",
+        "c": "\\(P(|X-100|\\ge6)\\le1/36\\)."
+      }
+    },
+    "cs-u20-q03": {
+      "title": "Copying a measurement adds no precision",
+      "statement": "A measurement X has variance 9. A program copies this same realized value into four rows and computes \\(Z=(X+X+X+X)/4\\).",
+      "prompt": "What is the variance of Z?",
+      "hint": "Simplify the random variable Z before using a variance formula.",
+      "explanation": "\\(Z=X\\) for every outcome, so \\(\\operatorname{Var}(Z)=9\\). The four rows are identical copies, not independent measurements; dividing 9 by 4 would be unjustified.",
+      "solutionSteps": [
+        "\\(Z=X\\) for every outcome, so \\(\\operatorname{Var}(Z)=9\\). The four rows are identical copies, not independent measurements; dividing 9 by 4 would be unjustified."
+      ]
+    },
+    "cs-u20-q04": {
+      "title": "Size a conservative Bernoulli sample",
+      "statement": "\\(X_1,\\ldots,X_n\\) are pairwise independent Bernoulli(p) observations with unknown common p. Use the bound \\(P(|\\bar X-p|\\ge0.05)\\le1/(4n(0.05)^2)\\).",
+      "prompt": "What is the smallest integer n making this bound at most 0.05?",
+      "hint": "Solve \\(1/(4n(0.05)^2)\\le0.05\\).",
+      "explanation": "The bound equals \\(100/n\\), so \\(100/n\\le0.05\\) requires \\(n\\ge2000\\). This is the minimum certified by this conservative bound, not a claim that every estimation method needs 2000 observations.",
+      "solutionSteps": [
+        "The bound equals \\(100/n\\), so \\(100/n\\le0.05\\) requires \\(n\\ge2000\\). This is the minimum certified by this conservative bound, not a claim that every estimation method needs 2000 observations."
+      ]
+    },
+    "cs-u20-q05": {
+      "title": "Bound a high failure count",
+      "statement": "There are 200 mutually independent checks, each failing with probability 0.05. S counts failures.",
+      "prompt": "Which upper bound follows from the stated Chernoff formula for at least 20 failures?",
+      "hint": "Compute the mean, then the threshold divided by that mean.",
+      "explanation": "\\(\\mu=200(0.05)=10\\) and \\(c=20/10=2\\). Hence \\(P(S\\ge20)\\le\\exp(-10(2\\ln2-1))=(e/4)^{10}\\). This is a bound, not an exact binomial tail probability.",
+      "solutionSteps": [
+        "\\(\\mu=200(0.05)=10\\) and \\(c=20/10=2\\). Hence \\(P(S\\ge20)\\le\\exp(-10(2\\ln2-1))=(e/4)^{10}\\). This is a bound, not an exact binomial tail probability."
+      ],
+      "options": {
+        "a": "\\((e/4)^{200}\\)",
+        "b": "\\((e/4)^{20}\\)",
+        "c": "\\((e/4)^{10}\\)"
+      }
+    },
+    "cs-u20-q06": {
+      "title": "Reject a bound on cloned indicators",
+      "statement": "One Bernoulli variable B equals 1 with probability 0.1. Set \\(X_1=\\cdots=X_{100}=B\\) and \\(S=\\sum_iX_i\\). Someone uses \\(E[S]=10\\) to claim \\(P(S\\ge20)\\le(e/4)^{10}\\).",
+      "prompt": "Why is that use of Chernoff invalid?",
+      "hint": "All 100 summands change together. What is the actual event that S is at least 20?",
+      "explanation": "The summands are not mutually independent. In fact \\(S=100B\\), so \\(P(S\\ge20)=0.1\\), exceeding \\((e/4)^{10}\\approx0.021\\). Correct bounds on individual summands and the correct mean do not replace the independence assumption.",
+      "solutionSteps": [
+        "The summands are not mutually independent. In fact \\(S=100B\\), so \\(P(S\\ge20)=0.1\\), exceeding \\((e/4)^{10}\\approx0.021\\). Correct bounds on individual summands and the correct mean do not replace the independence assumption."
+      ],
+      "options": {
+        "a": "The summands are identical copies and are not mutually independent.",
+        "b": "The summands take values outside the interval [0,1].",
+        "c": "Their sum has mean 100 rather than 10."
+      }
+    },
+    "cs-u21-q01": {
+      "title": "A fair walk need not give a 50/50 outcome",
+      "statement": "A walk starts at 3 and stops on reaching 0 or 12. Each step independently moves +1 or -1 with equal probability.",
+      "prompt": "What is the probability of reaching 12 first? Enter a decimal.",
+      "hint": "The step direction is fair, but the starting point is not halfway between the boundaries.",
+      "explanation": "For the fair walk, \\(h_i=i/N\\), so \\(h_3=3/12=0.25\\). Equal step probabilities do not make unequally distant absorbing boundaries equally likely.",
+      "solutionSteps": [
+        "For the fair walk, \\(h_i=i/N\\), so \\(h_3=3/12=0.25\\). Equal step probabilities do not make unequally distant absorbing boundaries equally likely."
+      ]
+    },
+    "cs-u21-q02": {
+      "title": "Solve a small biased walk",
+      "statement": "A walk starts at 1 and stops at 0 or 3. Each step independently moves +1 with probability \\(1/3\\) and -1 with probability \\(2/3\\).",
+      "prompt": "What is the probability of reaching 3 first?",
+      "hint": "Use \\(h_1=h_2/3\\) and \\(h_2=1/3+(2/3)h_1\\).",
+      "explanation": "Substitution gives \\(h_1=1/9+(2/9)h_1\\), hence \\(h_1=1/7\\). The general formula agrees: \\(r=2\\) and \\((1-2)/(1-2^3)=1/7\\).",
+      "solutionSteps": [
+        "Substitution gives \\(h_1=1/9+(2/9)h_1\\), hence \\(h_1=1/7\\). The general formula agrees: \\(r=2\\) and \\((1-2)/(1-2^3)=1/7\\)."
+      ],
+      "options": {
+        "a": "\\(1/3\\)",
+        "b": "\\(1/7\\)",
+        "c": "\\(1/9\\)"
+      }
+    },
+    "cs-u21-q03": {
+      "title": "Include the final step into a boundary",
+      "statement": "A walk starts at 2 and stops at 0 or 7. Each step independently moves +1 or -1 with equal probability. Count every step up to absorption.",
+      "prompt": "What is the expected number of steps?",
+      "hint": "Use the initial distance to each boundary in the fair-walk formula.",
+      "explanation": "\\(e_2=2(7-2)=10\\). This is an average over paths ending at either boundary; it is not merely the distance to the nearer one.",
+      "solutionSteps": [
+        "\\(e_2=2(7-2)=10\\). This is an average over paths ending at either boundary; it is not merely the distance to the nearer one."
+      ]
+    },
+    "cs-u21-q04": {
+      "title": "Infinite mean does not mean never stopping",
+      "statement": "A fair walk starts at 1 on the nonnegative integers and stops at 0. Steps are independent; there is no upper boundary.",
+      "prompt": "Which statement is correct?",
+      "hint": "Compare with walks stopped at 0 or N, and let N grow.",
+      "explanation": "The chance of reaching 0 is at least \\(1-1/N\\) for every N, so it is 1. The unbounded hitting time is at least the time to reach 0 or N, whose mean from 1 is \\(N-1\\). Its mean is therefore infinite, even though it is finite with probability 1.",
+      "solutionSteps": [
+        "The chance of reaching 0 is at least \\(1-1/N\\) for every N, so it is 1. The unbounded hitting time is at least the time to reach 0 or N, whose mean from 1 is \\(N-1\\). Its mean is therefore infinite, even though it is finite with probability 1."
+      ],
+      "options": {
+        "a": "It reaches 0 with probability 1 and has a finite expected hitting time.",
+        "b": "Infinite expected time means a positive probability of never reaching 0.",
+        "c": "It reaches 0 with probability 1 but has infinite expected hitting time."
+      }
+    },
+    "cs-u21-q05": {
+      "title": "Balance flow on a three-vertex graph",
+      "statement": "The only directed edges are \\(A\\to B\\), \\(A\\to C\\), \\(B\\to A\\), \\(C\\to A\\). At each step choose an outgoing edge uniformly.",
+      "prompt": "Which probability vector, in the order (A,B,C), is stationary?",
+      "hint": "A sends half its probability to each leaf; both leaves send all their probability to A.",
+      "explanation": "Stationarity requires \\(\\pi_B=\\pi_A/2\\), \\(\\pi_C=\\pi_A/2\\) and \\(\\pi_A=\\pi_B+\\pi_C\\). Normalization gives \\(2\\pi_A=1\\), hence \\((1/2,1/4,1/4)\\). Substitution verifies the one-step balance.",
+      "solutionSteps": [
+        "Stationarity requires \\(\\pi_B=\\pi_A/2\\), \\(\\pi_C=\\pi_A/2\\) and \\(\\pi_A=\\pi_B+\\pi_C\\). Normalization gives \\(2\\pi_A=1\\), hence \\((1/2,1/4,1/4)\\). Substitution verifies the one-step balance."
+      ],
+      "options": {
+        "a": "\\((1/2,1/4,1/4)\\)",
+        "b": "\\((1/3,1/3,1/3)\\)",
+        "c": "\\((1/4,3/8,3/8)\\)"
+      }
+    },
+    "cs-u21-q06": {
+      "title": "A unique stationary distribution is not enough",
+      "statement": "The only edges are \\(A\\to B\\), \\(A\\to C\\), \\(B\\to A\\), \\(C\\to A\\), with uniform outgoing choices. Start at A with probability 1. The stationary distribution is \\((1/2,1/4,1/4)\\).",
+      "prompt": "Does the distribution at step t converge to that stationary distribution?",
+      "hint": "Track the probability of being at A at even and odd times.",
+      "explanation": "At even times the distribution is \\((1,0,0)\\); at odd times it is \\((0,1/2,1/2)\\). It does not converge. Flow balance describes what happens when initialized at stationarity, not what every starting distribution must approach.",
+      "solutionSteps": [
+        "At even times the distribution is \\((1,0,0)\\); at odd times it is \\((0,1/2,1/2)\\). It does not converge. Flow balance describes what happens when initialized at stationarity, not what every starting distribution must approach."
+      ],
+      "options": {
+        "a": "Yes: existence of a unique stationary distribution guarantees convergence.",
+        "b": "No: the distribution alternates between two different vectors.",
+        "c": "No: the displayed stationary distribution fails to sum to 1."
       }
     }
   },
