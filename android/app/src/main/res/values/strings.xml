@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Almath</string>
+    <string name="title_activity_main">Almath</string>
+    <string name="package_name">io.github.albertom02.almath</string>
+    <string name="custom_url_scheme">io.github.albertom02.almath</string>
+</resources>

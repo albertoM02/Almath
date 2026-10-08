@@ -1,6 +1,6 @@
 {
   "name": "almath",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -12,10 +12,18 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "check:content": "node scripts/check-content.mjs",
     "test": "node --experimental-strip-types --test tests/learning.test.mjs tests/approved-content.test.mjs && node tests/interface.test.mjs",
-    "format": "prettier --write app components/almath screens learning content docs tests scripts/check-content.mjs"
+    "format": "prettier --write app components/almath screens learning content docs tests scripts/check-content.mjs",
+    "typecheck": "tsc --noEmit",
+    "build:static": "node scripts/build-static.mjs",
+    "android:sync": "pnpm build:static && cap sync android",
+    "android:apk": "pnpm android:sync && node scripts/build-android.mjs",
+    "android:open": "cap open android"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
+    "@capacitor/android": "8.5.3",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.3",
     "@hookform/resolvers": "^5.7.1",
     "@shadcn/react": "^0.3.0",
     "class-variance-authority": "0.7.1",
@@ -41,6 +49,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@capacitor/cli": "8.5.3",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",

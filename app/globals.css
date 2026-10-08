@@ -19,6 +19,19 @@
 }
 
 :root {
+  --almath-safe-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+  --almath-safe-bottom: var(
+    --safe-area-inset-bottom,
+    env(safe-area-inset-bottom, 0px)
+  );
+  --almath-safe-left: var(
+    --safe-area-inset-left,
+    env(safe-area-inset-left, 0px)
+  );
+  --almath-safe-right: var(
+    --safe-area-inset-right,
+    env(safe-area-inset-right, 0px)
+  );
   --background: #f7f3e7;
   --foreground: #1f2937;
   --card: #fffbef;
@@ -173,10 +186,13 @@ a {
 }
 .app-shell {
   min-height: 100dvh;
-  padding-bottom: 86px;
+  padding-bottom: calc(86px + var(--almath-safe-bottom));
+  padding-left: var(--almath-safe-left);
+  padding-right: var(--almath-safe-right);
 }
 .home-header,
 .lesson-header {
+  padding-top: var(--almath-safe-top);
   background: linear-gradient(115deg, #064e36, #0d6646);
   color: #fffbef;
 }
@@ -247,6 +263,250 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   align-items: stretch;
+}
+.daily-goal-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--cream-card);
+  padding: 26px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 18px #173b2810;
+}
+.daily-goal-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.daily-goal-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+}
+.goal-complete .daily-goal-heading h2 svg {
+  color: var(--primary);
+}
+.daily-goal-count {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.daily-goal-count strong {
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+.daily-goal-count span {
+  color: var(--muted-foreground);
+}
+.daily-goal-bar {
+  height: 12px;
+  background: #dbe6d9;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 16px 0 10px;
+}
+.daily-goal-bar span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  border-radius: inherit;
+  transition: width 180ms ease;
+}
+.daily-goal-note {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+.daily-goal-card > .primary-button,
+.daily-goal-card > .secondary-button {
+  width: 100%;
+}
+.daily-reminder-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  min-height: 44px;
+  margin-top: 6px;
+  color: var(--muted-foreground);
+  text-align: left;
+}
+.daily-goal-dialog {
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  background: var(--cream-card);
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(
+    100dvh - 32px - var(--almath-safe-top) - var(--almath-safe-bottom)
+  );
+  margin: auto;
+  padding: 0;
+  border-radius: 24px;
+  overscroll-behavior: contain;
+}
+.daily-goal-dialog::backdrop {
+  background: #142b23a0;
+}
+.daily-goal-form {
+  padding: 24px 28px;
+}
+.daily-sheet-handle {
+  display: none;
+}
+.daily-goal-form .daily-goal-heading {
+  margin-bottom: 24px;
+}
+.daily-goal-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.daily-target-field legend {
+  font-weight: 650;
+  margin-bottom: 4px;
+}
+.daily-target-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  overflow: hidden;
+  margin: 14px 0 10px;
+}
+.daily-target-options button {
+  min-height: 48px;
+  padding: 8px;
+  border-right: 1px solid var(--border);
+}
+.daily-target-options button:last-child {
+  border-right: 0;
+}
+.daily-target-options button[aria-pressed="true"] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.daily-custom-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 14px 0;
+}
+.daily-goal-form input[type="number"],
+.daily-goal-form input[type="time"] {
+  border: 1px solid var(--input);
+  border-radius: 10px;
+  padding: 12px;
+  background: var(--cream-card);
+  color: var(--foreground);
+  min-height: 48px;
+  width: 100%;
+}
+.daily-custom-label input {
+  max-width: 110px;
+}
+.daily-goal-form .daily-reminder-field {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  margin-top: 22px;
+}
+.daily-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.daily-toggle-row label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 650;
+}
+.daily-toggle-row input {
+  appearance: none;
+  flex-shrink: 0;
+  width: 52px;
+  height: 44px;
+  cursor: pointer;
+  background: #aebbb2;
+  background-clip: content-box;
+  padding: 6px 0;
+  border-radius: 22px;
+  position: relative;
+}
+.daily-toggle-row input::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: var(--cream-card);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 4px;
+}
+.daily-toggle-row input:checked {
+  background-color: var(--primary);
+}
+.daily-toggle-row input:checked::after {
+  left: 24px;
+}
+.daily-toggle-row input:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.daily-time-label {
+  display: block;
+  margin: 16px 0 6px;
+}
+.daily-reminder-field .small-note {
+  margin: 8px 0;
+}
+.daily-reminder-field input:disabled {
+  opacity: 0.6;
+}
+.daily-goal-form > .primary-button {
+  width: 100%;
+  margin-top: 22px;
+}
+.daily-settings-error {
+  color: var(--destructive);
+  margin-top: 16px;
+}
+@media (max-width: 680px) {
+  .daily-goal-card {
+    padding: 22px 20px;
+    border-radius: 17px;
+  }
+  .daily-goal-count {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .daily-goal-dialog {
+    width: calc(100% - var(--almath-safe-left) - var(--almath-safe-right));
+    max-width: none;
+    max-height: calc(100dvh - var(--almath-safe-top));
+    margin: auto var(--almath-safe-right) 0 var(--almath-safe-left);
+    border-radius: 24px 24px 0 0;
+  }
+  .daily-goal-form {
+    padding: 16px 24px calc(24px + var(--almath-safe-bottom));
+  }
+  .daily-sheet-handle {
+    display: block;
+    width: 36px;
+    height: 5px;
+    margin: 0 auto 24px;
+    background: #a8afa9;
+    border-radius: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .daily-goal-bar span {
+    transition: none;
+  }
 }
 .course-card,
 .module-card,
@@ -421,7 +681,9 @@ a {
   right: 0;
   bottom: 0;
   z-index: 10;
-  padding-bottom: env(safe-area-inset-bottom, 0);
+  padding-bottom: var(--almath-safe-bottom);
+  padding-left: var(--almath-safe-left);
+  padding-right: var(--almath-safe-right);
 }
 .bottom-navigation button {
   background: none;
@@ -699,7 +961,7 @@ a {
   position: sticky;
   bottom: 0;
   margin-top: 25px;
-  padding: 12px 0 max(12px, env(safe-area-inset-bottom));
+  padding: 12px 0 max(12px, var(--almath-safe-bottom));
   background: linear-gradient(0deg, var(--cream) 80%, transparent);
   z-index: 3;
 }

@@ -3,3 +3,7 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@capacitor/android@8.5.3'
+  - '@capacitor/core@8.5.3'
+  - '@capacitor/cli@8.5.3'

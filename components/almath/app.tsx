@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BookOpen, AlertCircle } from "lucide-react";
 import {
   courses,
@@ -22,7 +22,18 @@ import {
   refreshSession,
 } from "@/learning/progress";
 import { loadProgress, saveProgress } from "@/learning/storage";
-import type { Draft, ProgressState, Session, View } from "@/learning/types";
+import type {
+  DailyGoalPreferences,
+  Draft,
+  ProgressState,
+  Session,
+  View,
+} from "@/learning/types";
+import {
+  dailyGoalPreferences,
+  localDay,
+  solvedToday,
+} from "@/learning/daily-goal";
 import {
   HomeHeader,
   BackButton,
@@ -36,6 +47,16 @@ import { LessonScreen } from "@/screens/lesson";
 import { ReviewScreen, CompletionScreen } from "@/screens/review";
 import { AboutScreen } from "@/screens/about";
 import { registerLearningTools } from "@/learning/webmcp";
+import { registerAndroidBackHandler } from "@/platform/android";
+import {
+  androidRemindersAvailable,
+  registerReminderOpen,
+  registerReminderResume,
+  requestReminderPermission,
+  syncDailyReminder,
+  type ReminderStatus,
+} from "@/platform/reminders";
+import { DailyGoalCard, DailyGoalSettings } from "./daily-goal";
 
 export function AlmathApp() {
   const [progress, setProgress] = useState<ProgressState>(emptyProgress);
@@ -46,11 +67,32 @@ export function AlmathApp() {
   const state = useRef(progress);
   const saveQueue = useRef(Promise.resolve());
   const saveRevision = useRef(0);
+  const saveFailed = useRef(false);
+  const [day, setDay] = useState(() => localDay(new Date()));
+  const [goalSettingsOpen, setGoalSettingsOpen] = useState(false);
+  const goalOverlay = useRef(false);
+  const goalSaving = useRef(false);
+  const [reminderStatus, setReminderStatus] = useState<ReminderStatus>("off");
+  const [reminderRefresh, setReminderRefresh] = useState(0);
+  const syncedReminder = useRef("");
+  const goalPreferences = useMemo(
+    () => dailyGoalPreferences({ dailyGoal: progress.dailyGoal }),
+    [progress.dailyGoal],
+  );
+  const dailySolved = useMemo(
+    () => solvedToday({ attempts: progress.attempts }, day),
+    [progress.attempts, day],
+  );
+
+  useEffect(() => {
+    goalOverlay.current = goalSettingsOpen;
+  }, [goalSettingsOpen]);
 
   const persist = useCallback((next: ProgressState) => {
     state.current = next;
     setProgress(next);
     setSaveStatus("saving");
+    saveFailed.current = false;
     const revision = ++saveRevision.current;
     saveQueue.current = saveQueue.current
       .catch(() => undefined)
@@ -60,7 +102,10 @@ export function AlmathApp() {
       })
       .catch((error) => {
         console.error("Could not save learning progress", error);
-        if (revision === saveRevision.current) setSaveStatus("error");
+        if (revision === saveRevision.current) {
+          saveFailed.current = true;
+          setSaveStatus("error");
+        }
       });
   }, []);
 
@@ -144,6 +189,145 @@ export function AlmathApp() {
     },
     [persist],
   );
+
+  useEffect(() => {
+    const refresh = () => {
+      setDay(localDay(new Date()));
+      setReminderRefresh((value) => value + 1);
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") refresh();
+    };
+    // Also covers a web tab left open across midnight, without writing progress.
+    const timer = window.setInterval(
+      () => setDay(localDay(new Date())),
+      30_000,
+    );
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", onVisible);
+    const removeResume = registerReminderResume(refresh);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", onVisible);
+      removeResume();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!ready || saveStatus !== "saved") return;
+    const completedDay = dailySolved >= goalPreferences.target ? day : "";
+    const signature = `${goalPreferences.target}:${goalPreferences.reminderEnabled}:${goalPreferences.reminderTime}:${day}:${completedDay}:${reminderRefresh}`;
+    if (syncedReminder.current === signature) return;
+    let disposed = false;
+    // The native receiver needs only a small mirror of the committed preferences
+    // and completed day. IndexedDB remains the source of learning progress.
+    void syncDailyReminder(goalPreferences, completedDay)
+      .then((status) => {
+        if (!disposed) {
+          syncedReminder.current = signature;
+          setReminderStatus(status);
+        }
+      })
+      .catch((error) => {
+        console.error("Could not schedule daily reminder", error);
+        if (!disposed) setReminderStatus("error");
+      });
+    return () => {
+      disposed = true;
+    };
+  }, [ready, saveStatus, goalPreferences, dailySolved, day, reminderRefresh]);
+
+  useEffect(() => {
+    if (!ready) return;
+    return registerReminderOpen(() => {
+      setGoalSettingsOpen(false);
+      navigate({ screen: "courses" });
+    });
+  }, [ready, navigate]);
+
+  async function saveGoalPreferences(preferences: DailyGoalPreferences) {
+    goalSaving.current = true;
+    try {
+      if (preferences.reminderEnabled && !(await requestReminderPermission())) {
+        setReminderStatus("blocked");
+        throw new Error(t("dailyNotificationPermission"));
+      }
+      persist({ ...state.current, dailyGoal: preferences });
+      await saveQueue.current;
+      if (saveFailed.current) throw new Error(t("dailySettingsError"));
+    } finally {
+      goalSaving.current = false;
+    }
+  }
+
+  function continueDailyLearning() {
+    const current = state.current;
+    const lastExercise = current.attempts.at(-1)?.exerciseId;
+    const lastModule = modules.find((item) =>
+      item.exerciseIds.includes(lastExercise ?? ""),
+    );
+    const unfinished = Object.values(current.sessions).filter(
+      (session) => !session.finished,
+    );
+    const resume =
+      unfinished.find((session) => session.moduleId === lastModule?.id) ??
+      unfinished.at(-1);
+    if (resume) {
+      start(resume.moduleId, resume.mode);
+      return;
+    }
+    const available = courses.flatMap((course) =>
+      course.moduleIds.map(getModule),
+    );
+    const next = available.find(
+      (item) =>
+        !item.archived && item.exerciseIds.some((id) => !current.completed[id]),
+    );
+    start((next ?? available[0]).id, next ? "learn" : "review");
+  }
+
+  useEffect(() => {
+    if (!ready) return;
+    return registerAndroidBackHandler({
+      dismissOverlay: () => {
+        if (!goalOverlay.current) return false;
+        if (!goalSaving.current) setGoalSettingsOpen(false);
+        return true;
+      },
+      getView: () => state.current.view,
+      getParentView: () => {
+        const view = state.current.view;
+        const session = view.sessionKey
+          ? state.current.sessions[view.sessionKey]
+          : undefined;
+        if (session) {
+          const learningModule = getModule(session.moduleId);
+          return {
+            screen: "units",
+            courseId: learningModule.courseId,
+            moduleId: learningModule.id,
+          };
+        }
+        return { screen: "courses" };
+      },
+      replaceView: (view) => {
+        persist({ ...state.current, view });
+        setValidationError("");
+        window.history.replaceState({ view }, "", `#${view.screen}`);
+        window.scrollTo({ top: 0 });
+      },
+      flushProgress: async () => {
+        // A later keystroke may enqueue another save while the first finishes.
+        let pending;
+        do {
+          pending = saveQueue.current;
+          await pending;
+        } while (pending !== saveQueue.current);
+        return !saveFailed.current;
+      },
+    });
+  }, [persist, ready]);
 
   const start = useCallback(
     (moduleId: string, mode: "learn" | "review", index?: number) => {
@@ -435,7 +619,9 @@ export function AlmathApp() {
                 ? t("reviewIntro")
                 : view.screen === "units"
                   ? getOutlineSummary(view.courseId!)
-                  : undefined
+                  : view.screen === "courses"
+                    ? t("dailyCourseIntro")
+                    : undefined
             }
             onAbout={about}
             onBack={view.screen === "units" ? allCourses : undefined}
@@ -446,6 +632,18 @@ export function AlmathApp() {
           >
             {view.screen === "about" && (
               <BackButton onClick={allCourses}>{t("courseBack")}</BackButton>
+            )}
+            {view.screen === "courses" && (
+              <DailyGoalCard
+                preferences={goalPreferences}
+                solved={dailySolved}
+                reminderStatus={reminderStatus}
+                onSettings={() => {
+                  setGoalSettingsOpen(true);
+                  setReminderRefresh((value) => value + 1);
+                }}
+                onContinue={continueDailyLearning}
+              />
             )}
             {view.screen === "courses" && (
               <CourseScreen
@@ -495,6 +693,15 @@ export function AlmathApp() {
           </main>
           <BottomNavigation view={view} navigate={navigate} />
         </>
+      )}
+      {goalSettingsOpen && (
+        <DailyGoalSettings
+          preferences={goalPreferences}
+          android={androidRemindersAvailable()}
+          reminderStatus={reminderStatus}
+          onSave={saveGoalPreferences}
+          onClose={() => setGoalSettingsOpen(false)}
+        />
       )}
     </div>
   );

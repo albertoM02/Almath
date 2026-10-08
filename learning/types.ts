@@ -92,6 +92,11 @@ export type Attempt = {
   hintUsed: boolean;
   at: string;
 };
+export type DailyGoalPreferences = {
+  target: number;
+  reminderEnabled: boolean;
+  reminderTime: string;
+};
 export type ProgressState = {
   schemaVersion: 1;
   sessions: Record<string, Session>;
@@ -99,4 +104,6 @@ export type ProgressState = {
   attempts: Attempt[];
   reviewCounts: Record<string, number>;
   view: View;
+  // Optional so the first Android release's saved progress needs no migration.
+  dailyGoal?: DailyGoalPreferences;
 };
