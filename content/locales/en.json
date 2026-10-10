@@ -32,6 +32,8 @@
     "nextExercise": "Next question",
     "finishModule": "Finish module",
     "needHint": "Need a hint?",
+    "hintShown": "Hint shown",
+    "incorrectHintOffer": "Need a hint? Tap the hint button below.",
     "reviewTheory": "Review theory",
     "hint": "A little hint",
     "correct": "That’s right.",
@@ -690,14 +692,14 @@
     },
     "ml-projection": {
       "title": "Measure along a direction",
-      "body": "The dot product with a unit vector gives a signed scalar projection: how much a vector points along that direction.",
-      "formula": "signed \\(\\mathrm{amount} = x \\cdot  u\\),  \\(\\lVert u\\rVert  = 1\\)",
-      "example": "Let \\(x = (3, 4)\\) and unit direction \\(u = (1, 0)\\).",
+      "body": "Imagine casting a vector's shadow onto a line. The scalar projection tells you the length of that shadow, with a sign to show its direction. Choose a unit vector \\(u\\) (length 1) to mark the positive direction along the line. Then \\(x \\cdot u\\) measures the part of \\(x\\) along that line: positive in the direction of \\(u\\), negative in the opposite direction, and zero if \\(x\\) has no component along it.",
+      "formula": "\\(s = x \\cdot u, \\qquad \\lVert u\\rVert = 1\\)",
+      "example": "Let \\(x = (3, 4)\\): 3 units right and 4 units up. Choose \\(u = (1, 0)\\), a unit vector pointing right.",
       "exampleSteps": [
         "\\(x \\cdot  u = 3 \\times  1 + 4 \\times  0 = 3\\).",
-        "The signed amount along the horizontal direction is \\(3\\)."
+        "The horizontal shadow is 3 units to the right, so the signed projection is \\(3\\). The 4 units upward do not contribute to this horizontal measurement."
       ],
-      "takeaway": "Use a unit direction. A negative projection means the opposite direction."
+      "takeaway": "A scalar projection is one signed number, not a vector. Use a direction vector of length 1; normalize it first if necessary."
     },
     "cs-u1-claims": {
       "title": "Precise claims and assumptions",

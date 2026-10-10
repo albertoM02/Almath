@@ -253,13 +253,13 @@ export function LessonScreen({
                     {draft.feedback === "correct" && <Check size={21} />}
                     {t(draft.feedback)}
                   </h2>
-                  <p>
-                    <MathText>
-                      {draft.feedback === "correct"
-                        ? text.explanation
-                        : text.hint}
-                    </MathText>
-                  </p>
+                  {draft.feedback === "correct" ? (
+                    <p>
+                      <MathText>{text.explanation}</MathText>
+                    </p>
+                  ) : (
+                    !draft.hintUsed && <p>{t("incorrectHintOffer")}</p>
+                  )}
                 </div>
               )}
               {draft.hintUsed && !finished && (
@@ -295,7 +295,7 @@ export function LessonScreen({
                     disabled={draft.hintUsed}
                   >
                     <HelpCircle size={19} />
-                    {t("needHint")}
+                    {t(draft.hintUsed ? "hintShown" : "needHint")}
                   </button>
                 )}
                 <button
