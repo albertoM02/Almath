@@ -1,4 +1,11 @@
-import type { Draft, Exercise, Module, ProgressState, Session } from "./types";
+import type {
+  Draft,
+  Exercise,
+  Module,
+  ProgressState,
+  Session,
+  View,
+} from "./types";
 
 export function emptyProgress(): ProgressState {
   return {
@@ -137,16 +144,133 @@ export function markCompleted(
   };
 }
 
-export function isProgressState(value: unknown): value is ProgressState {
-  if (!value || typeof value !== "object") return false;
-  const state = value as ProgressState;
+function isRecord(value: unknown): value is Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const prototype = Object.getPrototypeOf(value);
   return (
-    state.schemaVersion === 1 &&
-    !!state.sessions &&
-    !!state.completed &&
-    Array.isArray(state.attempts) &&
-    !!state.reviewCounts &&
-    !!state.view &&
-    typeof state.view.screen === "string"
+    (prototype === Object.prototype || prototype === null) &&
+    Object.keys(value).every(
+      (key) => !["__proto__", "constructor", "prototype"].includes(key),
+    )
+  );
+}
+
+const isId = (value: unknown): value is string =>
+  typeof value === "string" &&
+  value.length > 0 &&
+  !["__proto__", "constructor", "prototype"].includes(value);
+const isCount = (value: unknown): value is number =>
+  Number.isSafeInteger(value) && (value as number) >= 0;
+const isVersion = (value: unknown): value is number =>
+  isCount(value) && value > 0;
+const isDate = (value: unknown): value is string =>
+  typeof value === "string" && Number.isFinite(Date.parse(value));
+const isIds = (value: unknown): value is string[] =>
+  Array.isArray(value) && value.every(isId);
+
+export function isView(value: unknown): value is View {
+  if (
+    !isRecord(value) ||
+    !["courses", "units", "lesson", "review", "complete", "about"].includes(
+      value.screen as string,
+    )
+  )
+    return false;
+  if (
+    !["courseId", "sessionKey", "moduleId"].every(
+      (key) => value[key] === undefined || isId(value[key]),
+    )
+  )
+    return false;
+  if (value.screen === "units" && !isId(value.courseId)) return false;
+  if (
+    ["lesson", "complete"].includes(value.screen as string) &&
+    !isId(value.sessionKey)
+  )
+    return false;
+  return true;
+}
+
+function isDraft(value: unknown): value is Draft {
+  return (
+    isRecord(value) &&
+    typeof value.answer === "string" &&
+    [null, "correct", "incorrect"].includes(value.feedback as null | string) &&
+    typeof value.hintUsed === "boolean" &&
+    typeof value.solutionRevealed === "boolean" &&
+    isCount(value.attempts)
+  );
+}
+
+function isSession(value: unknown): value is Session {
+  return (
+    isRecord(value) &&
+    isId(value.moduleId) &&
+    isVersion(value.contentVersion) &&
+    ["learn", "review"].includes(value.mode as string) &&
+    isIds(value.exerciseIds) &&
+    value.exerciseIds.length > 0 &&
+    isIds(value.baseExerciseIds) &&
+    value.baseExerciseIds.length === value.exerciseIds.length &&
+    isCount(value.index) &&
+    value.index < value.exerciseIds.length &&
+    ["theory", "practice"].includes(value.stage as string) &&
+    typeof value.finished === "boolean" &&
+    isRecord(value.drafts) &&
+    Object.values(value.drafts).every(isDraft) &&
+    (value.exerciseVersions === undefined ||
+      (isRecord(value.exerciseVersions) &&
+        Object.values(value.exerciseVersions).every(isVersion)))
+  );
+}
+
+export function isProgressState(value: unknown): value is ProgressState {
+  // Keep legacy optional fields optional; reject malformed data without replacing it.
+  if (!isRecord(value) || value.schemaVersion !== 1 || !isView(value.view))
+    return false;
+  if (
+    !isRecord(value.sessions) ||
+    !Object.values(value.sessions).every(isSession)
+  )
+    return false;
+  if (
+    !isRecord(value.completed) ||
+    !Object.values(value.completed).every(
+      (item) =>
+        isRecord(item) &&
+        ["solved", "reviewed"].includes(item.result as string) &&
+        isDate(item.completedAt),
+    )
+  )
+    return false;
+  if (
+    !Array.isArray(value.attempts) ||
+    !value.attempts.every(
+      (item) =>
+        isRecord(item) &&
+        isId(item.exerciseId) &&
+        isVersion(item.version) &&
+        typeof item.answer === "string" &&
+        typeof item.correct === "boolean" &&
+        typeof item.hintUsed === "boolean" &&
+        isDate(item.at),
+    )
+  )
+    return false;
+  if (
+    !isRecord(value.reviewCounts) ||
+    !Object.values(value.reviewCounts).every(isCount)
+  )
+    return false;
+  const goal = value.dailyGoal;
+  return (
+    goal === undefined ||
+    (isRecord(goal) &&
+      isCount(goal.target) &&
+      goal.target >= 1 &&
+      goal.target <= 100 &&
+      typeof goal.reminderEnabled === "boolean" &&
+      typeof goal.reminderTime === "string" &&
+      /^([01]\d|2[0-3]):[0-5]\d$/.test(goal.reminderTime))
   );
 }

@@ -160,6 +160,8 @@ export function DailyGoalSettings({
   }
 
   return (
+    // Backdrop click supplements the Close button and native Escape handler.
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
     <dialog
       ref={dialog}
       className="daily-goal-dialog"

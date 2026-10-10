@@ -22,6 +22,7 @@ import {
   refreshSession,
 } from "@/learning/progress";
 import { loadProgress, saveProgress } from "@/learning/storage";
+import { hasCurrentSessionContent, restoredView } from "@/learning/navigation";
 import type {
   DailyGoalPreferences,
   Draft,
@@ -65,6 +66,7 @@ export function AlmathApp() {
   const [saveStatus, setSaveStatus] = useState<SaveStatus>("saved");
   const [validationError, setValidationError] = useState("");
   const state = useRef(progress);
+  const canPersist = useRef(false);
   const saveQueue = useRef(Promise.resolve());
   const saveRevision = useRef(0);
   const saveFailed = useRef(false);
@@ -89,6 +91,8 @@ export function AlmathApp() {
   }, [goalSettingsOpen]);
 
   const persist = useCallback((next: ProgressState) => {
+    // Loading errors and early navigation must never overwrite existing data.
+    if (!canPersist.current) return;
     state.current = next;
     setProgress(next);
     setSaveStatus("saving");
@@ -122,45 +126,21 @@ export function AlmathApp() {
           session,
         );
     }
-    if (
-      loaded.view.screen === "complete" &&
-      loaded.view.sessionKey &&
-      loaded.sessions[loaded.view.sessionKey] &&
-      !loaded.sessions[loaded.view.sessionKey].finished
-    )
-      loaded.view = { ...loaded.view, screen: "lesson" };
-    if (loaded.view.sessionKey && !loaded.sessions[loaded.view.sessionKey])
-      loaded.view = { screen: "courses" };
-    if (
-      loaded.view.courseId &&
-      !courses.some((course) => course.id === loaded.view.courseId)
-    )
-      loaded.view = { screen: "courses" };
-    if (loaded.view.sessionKey) {
-      const session = loaded.sessions[loaded.view.sessionKey];
-      const currentModule = modules.find(
-        (item) => item.id === session.moduleId,
-      );
-      if (
-        !currentModule ||
-        !exercises.some(
-          (exercise) => exercise.id === session.exerciseIds[session.index],
-        ) ||
-        session.contentVersion !== currentModule.version
-      )
-        loaded.view = { screen: "courses" };
-    }
+    loaded.view = restoredView(loaded.view, loaded);
     state.current = loaded;
     setProgress(loaded);
-    setReady(true);
     window.history.replaceState(
       { view: loaded.view },
       "",
       `#${loaded.view.screen}`,
     );
+    canPersist.current = true;
+    setReady(true);
   }, []);
 
   const reportLoadError = useCallback((error: unknown) => {
+    canPersist.current = false;
+    setReady(false);
     console.error("Could not load learning progress", error);
     setLoadFailed(true);
   }, []);
@@ -170,10 +150,9 @@ export function AlmathApp() {
   }, [restoreProgress, reportLoadError]);
   useEffect(() => {
     const onBack = (event: PopStateEvent) => {
-      const view = event.state?.view as View | undefined;
-      if (view && (!view.sessionKey || state.current.sessions[view.sessionKey]))
-        persist({ ...state.current, view });
-      else persist({ ...state.current, view: { screen: "courses" } });
+      if (!canPersist.current) return;
+      const view = restoredView(event.state?.view, state.current);
+      persist({ ...state.current, view });
       setValidationError("");
     };
     window.addEventListener("popstate", onBack);
@@ -182,6 +161,7 @@ export function AlmathApp() {
 
   const navigate = useCallback(
     (view: View) => {
+      if (!canPersist.current) return;
       persist({ ...state.current, view });
       setValidationError("");
       window.history.pushState({ view }, "", `#${view.screen}`);
@@ -331,6 +311,7 @@ export function AlmathApp() {
 
   const start = useCallback(
     (moduleId: string, mode: "learn" | "review", index?: number) => {
+      if (!canPersist.current) return;
       const learningModule = getModule(moduleId);
       const key = `${moduleId}:${mode}`;
       const current = state.current;
@@ -338,12 +319,7 @@ export function AlmathApp() {
       const previous = saved
         ? refreshSession(learningModule, exercises, current, saved)
         : undefined;
-      const compatible =
-        previous &&
-        previous.contentVersion === learningModule.version &&
-        previous.exerciseIds.every((id) =>
-          exercises.some((exercise) => exercise.id === id),
-        );
+      const compatible = previous && hasCurrentSessionContent(previous);
       let session =
         compatible &&
         (!previous.finished || (mode === "learn" && index !== undefined))
@@ -517,15 +493,14 @@ export function AlmathApp() {
     window.scrollTo({ top: 0 });
   }
 
-  useEffect(
-    () =>
-      registerLearningTools({
-        getProgress: () => state.current,
-        navigate,
-        start,
-      }),
-    [navigate, start],
-  );
+  useEffect(() => {
+    if (!ready) return;
+    return registerLearningTools({
+      getProgress: () => state.current,
+      navigate,
+      start,
+    });
+  }, [navigate, start, ready]);
 
   if (!ready)
     return (

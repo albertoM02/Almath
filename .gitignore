@@ -18,7 +18,6 @@ android/capacitor-cordova-android-plugins/
 *.jks
 *.keystore
 
-# Local development records and checks stay outside the app source.
+# Private development records stay outside the app source.
 docs/
-tests/
 *.pdf
