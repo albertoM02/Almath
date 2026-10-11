@@ -7,8 +7,8 @@ android {
         applicationId "io.github.albertom02.almath"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode = (project.findProperty('almathVersionCode') ?: '2').toInteger()
-        versionName = "0.2.0"
+        versionCode = (project.findProperty('almathVersionCode') ?: '4').toInteger()
+        versionName = "0.4.0-beta"
         manifestPlaceholders = [almathAppLabel: '@string/app_name']
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -29,14 +29,6 @@ android {
         }
     }
     buildTypes {
-        debug {
-            // Opt-in side-by-side builds avoid replacing a differently signed app.
-            if (project.findProperty('almathTestInstall') == 'true') {
-                applicationIdSuffix '.test'
-                versionNameSuffix '-test'
-                manifestPlaceholders = [almathAppLabel: 'Almath Test']
-            }
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
