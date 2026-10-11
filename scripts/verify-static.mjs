@@ -8,6 +8,17 @@ assert(
   "Build the static app first.",
 );
 
+for (const name of [
+  "index.html",
+  "GPL-3.0-only.txt",
+  "CC-BY-SA-4.0.txt",
+  "third-party-notices.txt",
+]) {
+  const source = readFileSync(resolve("public/legal", name));
+  const bundled = readFileSync(resolve(output, "legal", name));
+  assert(source.equals(bundled), `Missing or changed offline license: ${name}`);
+}
+
 function files(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const path = resolve(directory, entry.name);

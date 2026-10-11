@@ -40,14 +40,25 @@ export function AboutScreen() {
           </a>
         </li>
       </ul>
-      <a
-        className="secondary-button"
-        href="/Almath_Project_Guide.pdf"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {t("projectGuide")}
-      </a>
+      <h3>License</h3>
+      <p>
+        © 2026 Alberto Moro Carrera. Code: GPLv3 only. Original lessons and
+        documentation: CC BY-SA 4.0. Third-party material retains its own
+        licenses.
+      </p>
+      <p>
+        You may redistribute and modify Almath under the applicable licenses.
+        Almath is provided without warranty.
+      </p>
+      <details className="license-details">
+        <summary>Open-source licenses</summary>
+        <iframe
+          className="license-frame"
+          src="/legal/index.html"
+          title="Almath licenses and third-party notices"
+          sandbox=""
+        />
+      </details>
     </article>
   );
 }

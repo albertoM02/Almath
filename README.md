@@ -43,7 +43,7 @@ Developed using TypeScript, React 19, Next.js 16 and Tailwind CSS 4, with KaTeX 
 Requires Node.js 22.13.0 or later and pnpm 11.25.0.
 
 ```bash
-git clone --branch feature/android https://github.com/albertoM02/Almath.git
+git clone https://github.com/albertoM02/Almath.git
 cd Almath
 pnpm install --frozen-lockfile
 pnpm dev
@@ -83,7 +83,13 @@ This exports and verifies the offline web bundle, synchronizes Capacitor and cre
 
 **Content and attribution:**
 
-The explanations and exercises are written for Almath. The Computer Science curriculum is informed by *Mathematics for Computer Science* by Eric Lehman, F. Thomson Leighton and Albert R. Meyer (June 2018), published under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The book's text and exercises are not reproduced here. Machine Learning references include Google ML Crash Course, Stanford CS229 and other primary technical sources, listed in `content/sources.json`. The exercises are original practice material and are not presented as questions asked by a particular company.
+The explanations and exercises are written for Almath. The Computer Science curriculum is informed by [*Mathematics for Computer Science*](https://courses.csail.mit.edu/6.042/spring18/mcs.pdf) by Eric Lehman, F. Thomson Leighton and Albert R. Meyer (June 2018), published under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The book's text and exercises are not reproduced here. Machine Learning references include Google ML Crash Course, Stanford CS229 and other primary technical sources, listed in [content/sources.json](content/sources.json). The exercises are original practice material and are not presented as questions asked by a particular company.
+
+**License:**
+
+Copyright © 2026 Alberto Moro Carrera. Original Almath code, scripts, configuration and app assets are licensed under [GNU GPL version 3 only](LICENSE). Original educational material in `content/`, this README and the screenshots in `assets/screenshots/` are licensed under [CC BY-SA 4.0](content/LICENSE).
+
+Third-party material retains its own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Almath is provided without warranty. The full licenses and notices are available offline in the app's About screen.
 
 **Contributing:**
 

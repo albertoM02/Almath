@@ -1,5 +1,6 @@
 import { spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
+import "./prepare-licenses.mjs";
 
 const require = createRequire(import.meta.url);
 const build = spawnSync(

@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: MIT
+ * Copyright (c) 2023 shadcn.
+ * See THIRD_PARTY_NOTICES.md for the full license.
+ */
 @theme inline {
   @keyframes accordion-down {
     from {
