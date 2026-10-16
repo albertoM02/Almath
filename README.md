@@ -67,6 +67,21 @@ This exports and verifies the offline web bundle, synchronizes Capacitor, builds
 
 For local development, use `pnpm android:apk:dev`. It creates an **Almath Dev** APK with a separate `.dev` application ID, so contributors' test keys cannot replace an official installation.
 
+**Build an official APK on GitHub:**
+
+The **Build Android APK** workflow runs manually from `main`. It checks the app, release metadata and existing progress storage, then signs with the original release key and verifies the APK's signature, application ID, version and label. The workflow produces an APK and checksum for download; publishing a GitHub release remains a separate step.
+
+Before the first run, create an `android-release` environment in repository **Settings → Environments**. Allow deployments only from `main`, require approval from a release maintainer, and disable bypassing the protection rules. A solo maintainer needs self-review allowed to approve their own run. Add these four **environment secrets**:
+
+- `ALMATH_RELEASE_KEYSTORE_BASE64`: Base64 encoding of the existing PKCS12 keystore.
+- `ALMATH_RELEASE_KEY_ALIAS`: The existing signing alias.
+- `ALMATH_RELEASE_STORE_PASSWORD`: The keystore password.
+- `ALMATH_RELEASE_KEY_PASSWORD`: The private key password.
+
+Base64 is an encoding; GitHub Secrets provides the protected storage. Never commit the keystore, its encoded value or passwords. The workflow decodes the key into a private temporary directory, removes it after signing, and uploads only the verified APK and checksum. Keep an independent encrypted backup of the signing files.
+
+For each new release, update `package.json`, Android's `versionName`, the displayed version and notices, and increase Android's `versionCode`. Once the reviewed changes are in `main`, open **Actions → Build Android APK → Run workflow**, select `main` and approve the protected job. Download the artifact from the completed run. Install its APK over the existing compatible Almath installation to retain progress; uninstalling removes local data.
+
 **Older test installations:**
 
 The earlier temporary signing keys are unavailable. A new release key cannot update an APK signed with one of those keys. Keep the old app installed until its progress has been exported and the encrypted backup verified. Where the old APK exposes WebView debugging, `scripts/export-legacy-progress.mjs` can export its progress over a USB connection without changing the old app's data. It requires Node.js 22.13+, Android platform tools (`adb`), a trusted computer and explicit USB debugging authorization. If that export is unavailable, keep the old installation; this release cannot automatically recover its private data.
