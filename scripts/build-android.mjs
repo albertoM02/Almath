@@ -37,11 +37,10 @@ if (!debug) {
       .replace(/\\\\/g, "\\");
   }
   if (!sdk) throw new Error("Set ANDROID_HOME to the Android SDK directory.");
-  const version = readdirSync(join(sdk, "build-tools"))
-    .filter((name) => /^\d+\.\d+\.\d+$/.test(name))
-    .sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
-    .at(-1);
-  if (!version) throw new Error("Android build tools are not installed.");
+  // Use the same tested verification tools locally and on hosted runners.
+  const version = "36.0.0";
+  if (!readdirSync(join(sdk, "build-tools")).includes(version))
+    throw new Error(`Android build tools ${version} are required.`);
   buildTools = join(sdk, "build-tools", version);
 }
 const build = spawnSync(
@@ -77,7 +76,12 @@ if (!debug) {
   const expected = metadata.certificate;
   if (verification.status !== 0 || certificate !== expected)
     throw new Error(
-      "APK signature verification failed. No distributable APK was created.",
+      [
+        "APK signature verification failed. No distributable APK was created.",
+        `Build tools: 36.0.0; exit status: ${verification.status}; expected certificate: ${expected}; actual certificate: ${certificate ?? "not reported"}.`,
+        verification.stdout?.trim(),
+        verification.stderr?.trim(),
+      ].filter(Boolean).join("\n"),
     );
   const badging = spawnSync(
     join(buildTools, windows ? "aapt.exe" : "aapt"),
