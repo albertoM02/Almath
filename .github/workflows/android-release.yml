@@ -1,0 +1,93 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'albertoM02/Almath' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: android-release
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Check out the selected main commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+          package-manager-cache: false
+
+      - name: Install the pinned package manager and dependencies
+        run: |
+          npm install --global pnpm@11.25.0
+          pnpm install --frozen-lockfile
+
+      - name: Check the app and legacy progress compatibility
+        run: pnpm check
+
+      - name: Verify release identity, storage and version metadata
+        id: release
+        run: node scripts/android-release.mjs --github-output
+
+      - name: Set up Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install the required Android SDK packages
+        run: sdkmanager "platforms;android-36" "build-tools;35.0.0" "build-tools;36.0.0"
+
+      - name: Build and verify the offline web assets
+        run: pnpm android:sync
+
+      - name: Sign and verify the official APK
+        shell: bash
+        env:
+          ALMATH_RELEASE_KEYSTORE_BASE64: ${{ secrets.ALMATH_RELEASE_KEYSTORE_BASE64 }}
+          ALMATH_RELEASE_KEY_ALIAS: ${{ secrets.ALMATH_RELEASE_KEY_ALIAS }}
+          ALMATH_RELEASE_STORE_PASSWORD: ${{ secrets.ALMATH_RELEASE_STORE_PASSWORD }}
+          ALMATH_RELEASE_KEY_PASSWORD: ${{ secrets.ALMATH_RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          for name in ALMATH_RELEASE_KEYSTORE_BASE64 ALMATH_RELEASE_KEY_ALIAS ALMATH_RELEASE_STORE_PASSWORD ALMATH_RELEASE_KEY_PASSWORD; do
+            if [[ -z "${!name}" ]]; then
+              printf 'Missing protected environment secret: %s\n' "$name" >&2
+              exit 1
+            fi
+          done
+          umask 077
+          signing_dir="$(mktemp -d "${RUNNER_TEMP}/almath-signing.XXXXXX")"
+          trap 'rm -rf -- "$signing_dir"' EXIT
+          export ALMATH_RELEASE_KEYSTORE="${signing_dir}/release.p12"
+          printf '%s' "$ALMATH_RELEASE_KEYSTORE_BASE64" | base64 --decode > "$ALMATH_RELEASE_KEYSTORE"
+          unset ALMATH_RELEASE_KEYSTORE_BASE64
+          node scripts/build-android.mjs
+
+      - name: Generate the download checksum
+        working-directory: dist
+        run: sha256sum Almath-*.apk > SHA256SUMS.txt
+
+      - name: Save the verified APK and checksum
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Almath-${{ steps.release.outputs.version }}
+          path: |
+            dist/Almath-${{ steps.release.outputs.version }}.apk
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30

@@ -2,6 +2,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { readFileSync, readdirSync, mkdirSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
+import { releaseMetadata, verifyApkMetadata } from "./android-release.mjs";
 
 const androidDirectory = fileURLToPath(new URL("../android/", import.meta.url));
 const windows = process.platform === "win32";
@@ -10,7 +11,9 @@ const extra = process.argv
   .slice(2)
   .filter((argument) => argument !== "--debug");
 let buildTools;
+let metadata;
 if (!debug) {
+  metadata = releaseMetadata();
   for (const name of [
     "ALMATH_RELEASE_KEYSTORE",
     "ALMATH_RELEASE_KEY_ALIAS",
@@ -71,19 +74,20 @@ if (!debug) {
   const certificate = verification.stdout?.match(
     /Signer #1 certificate SHA-256 digest: ([a-f0-9]+)/,
   )?.[1];
-  const expected = readFileSync(
-    join(androidDirectory, "signing-certificate.sha256"),
-    "utf8",
-  ).trim();
+  const expected = metadata.certificate;
   if (verification.status !== 0 || certificate !== expected)
     throw new Error(
       "APK signature verification failed. No distributable APK was created.",
     );
-  const metadata = JSON.parse(
-    readFileSync(join(androidDirectory, "../package.json"), "utf8"),
+  const badging = spawnSync(
+    join(buildTools, windows ? "aapt.exe" : "aapt"),
+    ["dump", "badging", apk],
+    { encoding: "utf8" },
   );
-  if (!/^[0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z0-9.-]+)?$/.test(metadata.version))
-    throw new Error("Invalid app version.");
+  if (badging.error) throw badging.error;
+  if (badging.status !== 0)
+    throw new Error("Could not inspect the release APK.");
+  verifyApkMetadata(badging.stdout, metadata);
   const destination = fileURLToPath(new URL("../dist/", import.meta.url));
   mkdirSync(destination, { recursive: true });
   copyFileSync(apk, join(destination, `Almath-${metadata.version}.apk`));
