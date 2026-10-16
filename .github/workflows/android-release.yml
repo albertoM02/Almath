@@ -49,7 +49,20 @@ jobs:
           java-version: "21"
 
       - name: Install the required Android SDK packages
-        run: sdkmanager "platforms;android-36" "build-tools;35.0.0" "build-tools;36.0.0"
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdk_root="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
+          if [[ -z "$sdk_root" || ! -d "$sdk_root/cmdline-tools" ]]; then
+            printf 'The runner Android SDK command-line tools are missing.\n' >&2
+            exit 1
+          fi
+          sdkmanager_path="$(find "$sdk_root/cmdline-tools" -type f -path '*/bin/sdkmanager' -print -quit)"
+          if [[ -z "$sdkmanager_path" || ! -x "$sdkmanager_path" ]]; then
+            printf 'Could not locate sdkmanager in the runner Android SDK.\n' >&2
+            exit 1
+          fi
+          "$sdkmanager_path" --sdk_root="$sdk_root" "platforms;android-36" "build-tools;35.0.0" "build-tools;36.0.0"
 
       - name: Build and verify the offline web assets
         run: pnpm android:sync
