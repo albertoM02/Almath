@@ -7,6 +7,7 @@ public class MainActivity extends BridgeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         registerPlugin(DailyReminderPlugin.class);
+        registerPlugin(ProgressBackupPlugin.class);
         super.onCreate(savedInstanceState);
     }
 }

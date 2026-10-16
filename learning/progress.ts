@@ -6,6 +6,7 @@ import type {
   Session,
   View,
 } from "./types";
+import { isStreak } from "./streak";
 
 export function emptyProgress(): ProgressState {
   return {
@@ -263,6 +264,7 @@ export function isProgressState(value: unknown): value is ProgressState {
   )
     return false;
   const goal = value.dailyGoal;
+  if (value.streak !== undefined && !isStreak(value.streak)) return false;
   return (
     goal === undefined ||
     (isRecord(goal) &&

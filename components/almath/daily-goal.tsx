@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Bell, Check, Settings, X } from "lucide-react";
+import { Bell, Check, Flame, Settings, X } from "lucide-react";
 import { t } from "@/learning/content";
 import type { DailyGoalPreferences } from "@/learning/types";
+import type { StreakSummary } from "@/learning/streak";
 import {
   openReminderSettings,
   type ReminderStatus,
@@ -10,64 +11,131 @@ import {
 export function DailyGoalCard({
   preferences,
   solved,
+  streak,
   reminderStatus,
   onSettings,
   onContinue,
 }: {
   preferences: DailyGoalPreferences;
   solved: number;
+  streak: StreakSummary;
   reminderStatus: ReminderStatus;
   onSettings: () => void;
   onContinue: () => void;
 }) {
   const complete = solved >= preferences.target;
-  const reminderText =
+  const reminderNeedsAttention =
+    reminderStatus === "blocked" || reminderStatus === "error";
+  const reminderMessage =
     reminderStatus === "blocked"
       ? t("dailyNotificationsBlocked")
-      : reminderStatus === "error"
-        ? t("dailyReminderError")
-        : reminderStatus === "ready"
-          ? complete
-            ? t("dailyReminderCancelled")
-            : t("dailyReminderAt", { time: preferences.reminderTime })
-          : t("dailySetReminder");
+      : t("dailyReminderError");
   return (
     <section
       className={`daily-goal-card ${complete ? "goal-complete" : ""}`}
-      aria-labelledby="daily-goal-title"
+      aria-labelledby="streak-heading"
+      aria-describedby="streak-rule"
     >
-      <div className="daily-goal-heading">
-        <h2 id="daily-goal-title">
-          {complete ? (
-            <>
-              <Check size={24} aria-hidden="true" />
-              {t("dailyGoalReached")}
-            </>
-          ) : (
-            t("dailyGoal")
-          )}
-        </h2>
+      <div className="streak-heading">
+        <div className="streak-title-block">
+          <h2 id="streak-heading">
+            <Flame
+              size={27}
+              className={`streak-icon ${streak.current ? "active" : ""}`}
+              aria-hidden="true"
+            />
+            <span aria-live="polite">
+              {t(streak.current === 1 ? "streakCountOne" : "streakCountMany", {
+                count: streak.current,
+              })}
+            </span>
+          </h2>
+          <span className="streak-best">
+            {t(streak.best === 1 ? "streakBestOne" : "streakBestMany", {
+              count: streak.best,
+            })}
+          </span>
+        </div>
         <button
-          className="icon-button"
-          aria-label={t("dailyGoalSettings")}
+          className={`icon-button daily-settings-button ${reminderNeedsAttention ? "needs-attention" : ""}`}
+          aria-label={`${t("dailyGoalSettings")}${reminderNeedsAttention ? `. ${reminderMessage}` : ""}`}
+          title={
+            reminderNeedsAttention ? reminderMessage : t("dailyGoalSettings")
+          }
           onClick={onSettings}
         >
-          <Settings size={23} />
+          <Settings size={23} aria-hidden="true" />
         </button>
       </div>
-      <div className="daily-goal-count" aria-live="polite">
-        <strong>
+      <p className="sr-only" id="streak-rule">
+        {t("streakRule")}{" "}
+        {t(streak.earnedToday ? "streakTodayDone" : "streakTodayPending")}
+      </p>
+      <ol className="streak-week" aria-label={t("streakWeek")}>
+        {streak.week.map((item) => {
+          const date = new Date(`${item.day}T12:00:00Z`);
+          const weekday = new Intl.DateTimeFormat("en", {
+            weekday: "long",
+            timeZone: "UTC",
+          }).format(date);
+          const description = new Intl.DateTimeFormat("en", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            timeZone: "UTC",
+          }).format(date);
+          const status = t(
+            item.completed
+              ? "streakDayDone"
+              : item.future
+                ? "streakDayFuture"
+                : item.today
+                  ? "streakTodayPending"
+                  : "streakDayMissed",
+          );
+          return (
+            <li
+              key={item.day}
+              aria-current={item.today ? "date" : undefined}
+              aria-label={`${description}: ${status}`}
+              title={`${description}: ${status}`}
+            >
+              <span className="streak-weekday" aria-hidden="true">
+                {weekday.slice(0, 1)}
+              </span>
+              <span
+                className={`streak-day ${item.completed ? "completed" : ""} ${item.today ? "today" : ""}`}
+                aria-hidden="true"
+              >
+                {item.completed && <Check size={17} strokeWidth={3} />}
+                {!item.completed && !item.today && !item.future && (
+                  <span className="streak-missed" />
+                )}
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+      <div className="daily-goal-summary">
+        <h3 id="daily-goal-title">
+          {complete && <Check size={18} aria-hidden="true" />}
+          {t(complete ? "dailyGoalReached" : "dailyGoal")}
+        </h3>
+        <strong aria-live="polite">
           {solved} / {preferences.target}
         </strong>
-        <span>{t("dailySolvedToday")}</span>
       </div>
       <div
         className="daily-goal-bar"
         role="progressbar"
-        aria-label={t("dailyGoal")}
+        aria-labelledby="daily-goal-title"
         aria-valuenow={Math.min(solved, preferences.target)}
         aria-valuemin={0}
         aria-valuemax={preferences.target}
+        aria-valuetext={t("dailyGoalProgress", {
+          solved,
+          target: preferences.target,
+        })}
       >
         <span
           style={{
@@ -75,23 +143,12 @@ export function DailyGoalCard({
           }}
         />
       </div>
-      <p className="daily-goal-note">
-        {complete
-          ? t("dailyGoalCompleteNote")
-          : t("dailyGoalRemaining", { count: preferences.target - solved })}
-      </p>
       <button
         className={complete ? "secondary-button" : "primary-button"}
         onClick={onContinue}
       >
         {t(complete ? "dailyKeepLearning" : "dailyContinueLearning")}
       </button>
-      {reminderStatus !== "unavailable" && (
-        <button className="daily-reminder-link" onClick={onSettings}>
-          <Bell size={18} aria-hidden="true" />
-          {reminderText}
-        </button>
-      )}
     </section>
   );
 }
@@ -233,6 +290,7 @@ export function DailyGoalSettings({
             </label>
           )}
           <p className="small-note">{t("dailyRevealedExcluded")}</p>
+          <p className="small-note">{t("streakRule")}</p>
         </fieldset>
         <fieldset disabled={busy} className="daily-reminder-field">
           <div className="daily-toggle-row">
@@ -270,6 +328,11 @@ export function DailyGoalSettings({
               <p className="small-note">{t("dailyReminderSkip")}</p>
               <p className="small-note">{t("dailyReminderTiming")}</p>
             </>
+          )}
+          {android && reminderStatus === "error" && (
+            <p className="daily-settings-error" role="status">
+              {t("dailyReminderError")}
+            </p>
           )}
           {android && reminderStatus === "blocked" && (
             <button

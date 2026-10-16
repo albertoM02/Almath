@@ -1,15 +1,53 @@
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { readFileSync, readdirSync, mkdirSync, copyFileSync } from "node:fs";
+import { join } from "node:path";
 
 const androidDirectory = fileURLToPath(new URL("../android/", import.meta.url));
 const windows = process.platform === "win32";
+const debug = process.argv.includes("--debug");
+const extra = process.argv
+  .slice(2)
+  .filter((argument) => argument !== "--debug");
+let buildTools;
+if (!debug) {
+  for (const name of [
+    "ALMATH_RELEASE_KEYSTORE",
+    "ALMATH_RELEASE_KEY_ALIAS",
+    "ALMATH_RELEASE_STORE_PASSWORD",
+    "ALMATH_RELEASE_KEY_PASSWORD",
+  ])
+    if (!process.env[name])
+      throw new Error(
+        `Missing ${name}. Official APKs require the existing private release key.`,
+      );
+  let sdk = process.env.ANDROID_SDK_ROOT || process.env.ANDROID_HOME;
+  if (!sdk) {
+    const properties = readFileSync(
+      join(androidDirectory, "local.properties"),
+      "utf8",
+    );
+    sdk = properties
+      .match(/^sdk\.dir=(.+)$/m)?.[1]
+      .trim()
+      .replace(/\\:/g, ":")
+      .replace(/\\\\/g, "\\");
+  }
+  if (!sdk) throw new Error("Set ANDROID_HOME to the Android SDK directory.");
+  const version = readdirSync(join(sdk, "build-tools"))
+    .filter((name) => /^\d+\.\d+\.\d+$/.test(name))
+    .sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
+    .at(-1);
+  if (!version) throw new Error("Android build tools are not installed.");
+  buildTools = join(sdk, "build-tools", version);
+}
 const build = spawnSync(
   windows ? "gradlew.bat" : "sh",
   [
     ...(windows ? [] : ["./gradlew"]),
     "--no-daemon",
-    "assembleDebug",
-    ...process.argv.slice(2),
+    debug ? "assembleDebug" : "assembleRelease",
+    ...extra,
   ],
   {
     cwd: androidDirectory,
@@ -18,4 +56,36 @@ const build = spawnSync(
   },
 );
 if (build.error) throw build.error;
-process.exit(build.status ?? 1);
+if (build.status !== 0) process.exit(build.status ?? 1);
+if (!debug) {
+  const apk = join(
+    androidDirectory,
+    "app/build/outputs/apk/release/app-release.apk",
+  );
+  const verification = spawnSync(
+    join(buildTools, windows ? "apksigner.bat" : "apksigner"),
+    ["verify", "--print-certs", apk],
+    { encoding: "utf8", shell: windows },
+  );
+  if (verification.error) throw verification.error;
+  const certificate = verification.stdout?.match(
+    /Signer #1 certificate SHA-256 digest: ([a-f0-9]+)/,
+  )?.[1];
+  const expected = readFileSync(
+    join(androidDirectory, "signing-certificate.sha256"),
+    "utf8",
+  ).trim();
+  if (verification.status !== 0 || certificate !== expected)
+    throw new Error(
+      "APK signature verification failed. No distributable APK was created.",
+    );
+  const metadata = JSON.parse(
+    readFileSync(join(androidDirectory, "../package.json"), "utf8"),
+  );
+  if (!/^[0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z0-9.-]+)?$/.test(metadata.version))
+    throw new Error("Invalid app version.");
+  const destination = fileURLToPath(new URL("../dist/", import.meta.url));
+  mkdirSync(destination, { recursive: true });
+  copyFileSync(apk, join(destination, `Almath-${metadata.version}.apk`));
+  console.log(`Verified official APK: dist/Almath-${metadata.version}.apk`);
+}

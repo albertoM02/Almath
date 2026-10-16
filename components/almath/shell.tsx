@@ -37,14 +37,18 @@ export function HomeHeader({
   subtitle,
   onAbout,
   onBack,
+  compact = false,
 }: {
   title: string;
   subtitle?: string;
   onAbout: () => void;
   onBack?: () => void;
+  compact?: boolean;
 }) {
   return (
-    <header className={`home-header ${onBack ? "units-header" : ""}`}>
+    <header
+      className={`home-header ${onBack ? "units-header" : ""} ${compact ? "compact-home-header" : ""}`}
+    >
       <div className="header-inner">
         <div className="brand-row">
           {onBack && (

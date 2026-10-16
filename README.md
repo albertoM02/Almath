@@ -2,7 +2,7 @@
 
 Repository for **Almath — Active Learning Maths**, developed by Alberto Moro Carrera, which helps students and working engineers learn and review mathematics for Computer Science and Machine Learning through short explanations, worked examples and interactive exercises.
 
-The app is designed for short learning sessions: understand a concept, try it yourself and continue from where you stopped. The Android version includes offline learning, daily goals and optional local reminders.
+The app is designed for short learning sessions: understand a concept, try it yourself and continue from where you stopped. The Android version includes offline learning, daily goals, day streaks and optional local reminders.
 
 **Screenshots:**
 
@@ -23,6 +23,8 @@ The app is designed for short learning sessions: understand a concept, try it yo
 - Revisit the theory, resume an unfinished module or use review mode to practise again.
 - Set a daily target between 1 and 100 exercises. Each correctly answered exercise counts once per day; revealed solutions do not count towards the goal.
 - On Android, optionally enable a reminder at your chosen time. Reminders work offline and are skipped when the daily goal has been reached. Delivery time can vary with Android battery settings.
+- Keep a streak by solving at least one exercise a day. Hints and review count; revealed solutions do not.
+- From About, export a password-protected progress backup or import one. Imports merge saved history with existing progress. Files are encrypted locally; Almath does not upload your progress or keep your backup password.
 
 **Current courses:**
 
@@ -30,7 +32,7 @@ The app is designed for short learning sessions: understand a concept, try it yo
 
 **Mathematics for Machine Learning:** 12 modules and 74 original exercises covering vectors, regression, optimization, classification, probability, regularization, evaluation, neural networks, attention and ML systems.
 
-The interface and learning content are in English. An account is not required: progress is saved locally using IndexedDB, with no cross-device synchronization. Clearing browser/app data or uninstalling the app can remove your progress. Android bundles the lessons and mathematical fonts for offline use; external reference links require an internet connection.
+The interface and learning content are in English. An account is not required: progress is saved locally using IndexedDB, with no automatic cross-device synchronization. An encrypted backup can be imported on another device. Clearing browser/app data or uninstalling the app can remove your progress, so export a backup first. Android bundles the lessons and mathematical fonts for offline use; external reference links require an internet connection.
 
 **Try the Android beta:**
 
@@ -59,7 +61,15 @@ Requires JDK 21 and the Android SDK with API 36 and its build tools. Configure `
 pnpm android:apk
 ```
 
-This exports and verifies the offline web bundle, synchronizes Capacitor and creates an APK for local testing at `android/app/build/outputs/apk/debug/app-debug.apk`.
+Official builds require the existing private PKCS12 release keystore. Set `ALMATH_RELEASE_KEYSTORE` (absolute file path), `ALMATH_RELEASE_KEY_ALIAS`, `ALMATH_RELEASE_STORE_PASSWORD` and `ALMATH_RELEASE_KEY_PASSWORD` privately in your build environment. Keep the keystore and passwords out of this repository and public releases. The public fingerprint in `android/signing-certificate.sha256` pins the release identity: builds fail if the key is missing or different.
+
+This exports and verifies the offline web bundle, synchronizes Capacitor, builds a non-debuggable release, verifies its signature and copies it to `dist/Almath-<version>.apk`. Reuse the same key, application ID, WebView origin and progress database, and increase Android's version code for subsequent releases. Keep secure, independent backups of the keystore and its password.
+
+For local development, use `pnpm android:apk:dev`. It creates an **Almath Dev** APK with a separate `.dev` application ID, so contributors' test keys cannot replace an official installation.
+
+**Older test installations:**
+
+The earlier temporary signing keys are unavailable. A new release key cannot update an APK signed with one of those keys. Keep the old app installed until its progress has been exported and the encrypted backup verified. Where the old APK exposes WebView debugging, `scripts/export-legacy-progress.mjs` can export its progress over a USB connection without changing the old app's data. It requires Node.js 22.13+, Android platform tools (`adb`), a trusted computer and explicit USB debugging authorization. If that export is unavailable, keep the old installation; this release cannot automatically recover its private data.
 
 **Folder overview:**
 

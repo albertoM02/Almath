@@ -1,6 +1,10 @@
 import { t } from "@/learning/content";
+import {
+  ProgressBackupSection,
+  type BackupActions,
+} from "@/components/almath/progress-backup";
 
-export function AboutScreen() {
+export function AboutScreen({ backup }: { backup: BackupActions }) {
   return (
     <article className="about-card">
       <span className="eyebrow">{t("version")}</span>
@@ -8,6 +12,7 @@ export function AboutScreen() {
       <p>{t("aboutText")}</p>
       <h3>{t("saved")}</h3>
       <p>{t("storageDetail")}</p>
+      <ProgressBackupSection {...backup} />
       <h3>{t("contentSources")}</h3>
       <p>{t("sourcesText")}</p>
       <p>{t("mlSourcesText")}</p>

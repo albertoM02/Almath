@@ -21,7 +21,11 @@ import {
   markCompleted,
   refreshSession,
 } from "@/learning/progress";
-import { loadProgress, saveProgress } from "@/learning/storage";
+import {
+  loadProgress,
+  saveProgress,
+  restoreProgressBackup,
+} from "@/learning/storage";
 import { hasCurrentSessionContent, restoredView } from "@/learning/navigation";
 import type {
   DailyGoalPreferences,
@@ -35,6 +39,11 @@ import {
   localDay,
   solvedToday,
 } from "@/learning/daily-goal";
+import {
+  practiceDays,
+  recordStreakDay,
+  streakSummary,
+} from "@/learning/streak";
 import {
   HomeHeader,
   BackButton,
@@ -70,6 +79,13 @@ export function AlmathApp() {
   const saveQueue = useRef(Promise.resolve());
   const saveRevision = useRef(0);
   const saveFailed = useRef(false);
+  const backupDismiss = useRef<(() => boolean) | undefined>(undefined);
+  const registerBackupDismiss = useCallback(
+    (handler: (() => boolean) | undefined) => {
+      backupDismiss.current = handler;
+    },
+    [],
+  );
   const [day, setDay] = useState(() => localDay(new Date()));
   const [goalSettingsOpen, setGoalSettingsOpen] = useState(false);
   const goalOverlay = useRef(false);
@@ -85,6 +101,7 @@ export function AlmathApp() {
     () => solvedToday({ attempts: progress.attempts }, day),
     [progress.attempts, day],
   );
+  const streak = useMemo(() => streakSummary(progress, day), [progress, day]);
 
   useEffect(() => {
     goalOverlay.current = goalSettingsOpen;
@@ -114,6 +131,7 @@ export function AlmathApp() {
   }, []);
 
   const restoreProgress = useCallback((loaded: ProgressState) => {
+    loaded.streak ??= { days: practiceDays(loaded) };
     for (const [key, session] of Object.entries(loaded.sessions)) {
       const learningModule = modules.find(
         (item) => item.id === session.moduleId,
@@ -271,6 +289,7 @@ export function AlmathApp() {
     if (!ready) return;
     return registerAndroidBackHandler({
       dismissOverlay: () => {
+        if (backupDismiss.current?.()) return true;
         if (!goalOverlay.current) return false;
         if (!goalSaving.current) setGoalSettingsOpen(false);
         return true;
@@ -382,12 +401,16 @@ export function AlmathApp() {
       );
       return;
     }
-    const now = new Date().toISOString();
+    const date = new Date();
+    const now = date.toISOString();
+    const answerDay = localDay(date);
+    setDay(answerDay);
     const next = correct
       ? markCompleted(current, session, "solved", now)
       : current;
     persist({
       ...next,
+      ...(correct ? { streak: recordStreakDay(current, answerDay) } : {}),
       sessions: {
         ...next.sessions,
         [key]: {
@@ -594,10 +617,9 @@ export function AlmathApp() {
                 ? t("reviewIntro")
                 : view.screen === "units"
                   ? getOutlineSummary(view.courseId!)
-                  : view.screen === "courses"
-                    ? t("dailyCourseIntro")
-                    : undefined
+                  : undefined
             }
+            compact={view.screen === "courses"}
             onAbout={about}
             onBack={view.screen === "units" ? allCourses : undefined}
           />
@@ -610,6 +632,7 @@ export function AlmathApp() {
             )}
             {view.screen === "courses" && (
               <DailyGoalCard
+                streak={streak}
                 preferences={goalPreferences}
                 solved={dailySolved}
                 reminderStatus={reminderStatus}
@@ -658,7 +681,39 @@ export function AlmathApp() {
                 }
               />
             )}
-            {view.screen === "about" && <AboutScreen />}
+            {view.screen === "about" && (
+              <AboutScreen
+                backup={{
+                  registerDismiss: registerBackupDismiss,
+                  read: async () => {
+                    await saveQueue.current;
+                    // An export can also rescue valid work from memory after a
+                    // storage failure; encryption validates the snapshot first.
+                    return state.current;
+                  },
+                  restore: async (imported) => {
+                    if (!canPersist.current)
+                      throw new Error("Progress is not ready.");
+                    canPersist.current = false;
+                    try {
+                      await saveQueue.current;
+                      if (saveFailed.current)
+                        throw new Error("Current progress is not saved.");
+                      const merged = await restoreProgressBackup(imported);
+                      // Stay on About so the completed import remains visible.
+                      merged.view = { screen: "about" };
+                      restoreProgress(merged);
+                      setDay(localDay(new Date()));
+                      setSaveStatus("saved");
+                      syncedReminder.current = "";
+                      setReminderRefresh((value) => value + 1);
+                    } finally {
+                      canPersist.current = true;
+                    }
+                  },
+                }}
+              />
+            )}
             <footer className="content-footer">
               <SaveIndicator status={saveStatus} />
               <button className="text-button" onClick={about}>

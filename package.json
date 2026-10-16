@@ -1,6 +1,6 @@
 {
   "name": "almath",
-  "version": "0.4.1-beta",
+  "version": "0.5.1-beta",
   "license": "GPL-3.0-only",
   "private": true,
   "engines": {
@@ -19,6 +19,7 @@
     "build:static": "node scripts/build-static.mjs",
     "android:sync": "pnpm build:static && cap sync android",
     "android:apk": "pnpm android:sync && node scripts/build-android.mjs",
+    "android:apk:dev": "pnpm android:sync && node scripts/build-android.mjs --debug",
     "android:open": "cap open android",
     "check": "pnpm lint && pnpm typecheck && pnpm check:content && pnpm test"
   },

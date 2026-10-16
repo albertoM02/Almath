@@ -97,6 +97,7 @@ export type DailyGoalPreferences = {
   reminderEnabled: boolean;
   reminderTime: string;
 };
+export type Streak = { days: string[] };
 export type ProgressState = {
   schemaVersion: 1;
   sessions: Record<string, Session>;
@@ -106,4 +107,6 @@ export type ProgressState = {
   view: View;
   // Optional so the first Android release's saved progress needs no migration.
   dailyGoal?: DailyGoalPreferences;
+  // Optional for older saves; qualifying local dates stay stable across updates.
+  streak?: Streak;
 };

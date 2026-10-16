@@ -3,7 +3,6 @@ import test from "node:test";
 import { JSDOM } from "jsdom";
 import { IDBFactory } from "fake-indexeddb";
 import React, { act } from "react";
-import { createRoot } from "react-dom/client";
 import { renderToStaticMarkup } from "react-dom/server";
 import { bundle } from "./helpers.mjs";
 
@@ -51,9 +50,20 @@ async function withApp(factory, run) {
     document: dom.window.document,
     navigator: dom.window.navigator,
     HTMLElement: dom.window.HTMLElement,
+    HTMLFormElement: dom.window.HTMLFormElement,
+    HTMLInputElement: dom.window.HTMLInputElement,
+    DocumentFragment: dom.window.DocumentFragment,
+    Event: dom.window.Event,
+    CustomEvent: dom.window.CustomEvent,
     Element: dom.window.Element,
     Node: dom.window.Node,
     MutationObserver: dom.window.MutationObserver,
+    // JSDOM has no layout engine; radio controls only need the observer API here.
+    ResizeObserver: class {
+      observe() {}
+      unobserve() {}
+      disconnect() {}
+    },
     getComputedStyle: dom.window.getComputedStyle,
     requestAnimationFrame: dom.window.requestAnimationFrame.bind(dom.window),
     cancelAnimationFrame: dom.window.cancelAnimationFrame.bind(dom.window),
@@ -72,6 +82,7 @@ async function withApp(factory, run) {
   dom.window.document.modelContext = {
     registerTool: (tool) => registered.push(tool),
   };
+  const { createRoot } = await import("react-dom/client");
   const root = createRoot(dom.window.document.getElementById("root"));
   const { AlmathApp } = bundle(
     'export { AlmathApp } from "./components/almath/app";',
@@ -98,6 +109,7 @@ test("Unsupported or corrupt saves survive Back, invalid history and retry witho
   for (const original of [
     { schemaVersion: 999, doNotErase: "existing future progress" },
     { ...emptyProgress(), attempts: [null] },
+    { ...emptyProgress(), streak: { days: ["2026-02-30"] } },
   ]) {
     const factory = new IDBFactory();
     await put(factory, original);
@@ -261,4 +273,253 @@ test("Hints stay optional after a wrong answer and appear once when requested", 
       (button) => button.textContent.includes("Hint shown") && button.disabled,
     ),
   );
+});
+
+test("A correct review answer earns one streak day, persists it, and restores it on reopening", async () => {
+  const {
+    emptyProgress,
+    createSession,
+    emptyDraft,
+    modules,
+    exercises,
+    localDay,
+    shiftCalendarDay,
+  } = bundle(`
+    export * from "./learning/progress";
+    export * from "./learning/daily-goal";
+    export * from "./learning/streak";
+    export { modules, exercises } from "./learning/content";
+  `);
+  const factory = new IDBFactory();
+  const original = emptyProgress();
+  const today = localDay(new Date());
+  const previousDays = [
+    shiftCalendarDay(today, -2),
+    shiftCalendarDay(today, -1),
+  ];
+  const session = createSession(modules[0], exercises, original, "review");
+  const id = session.exerciseIds[0];
+  const exercise = exercises.find((item) => item.id === id);
+  session.stage = "practice";
+  session.drafts[id] = {
+    ...emptyDraft(),
+    answer: String(exercise.answer),
+    hintUsed: true,
+  };
+  original.sessions.example = session;
+  original.view = { screen: "lesson", sessionKey: "example" };
+  original.attempts = previousDays.map((day) => ({
+    exerciseId: id,
+    version: 1,
+    answer: String(exercise.answer),
+    correct: true,
+    hintUsed: false,
+    at: new Date(`${day}T12:00:00`).toISOString(),
+  }));
+  await put(factory, original);
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    const check = [...dom.window.document.querySelectorAll("button")].find(
+      (button) => button.textContent === "Check answer",
+    );
+    assert.ok(check);
+    await act(async () => {
+      check.click();
+      check.click();
+      await wait();
+    });
+    const saved = await read(factory);
+    assert.deepEqual(saved.streak.days, [...previousDays, today]);
+    assert.equal(saved.attempts.length, 3);
+    await act(async () => {
+      dom.window.dispatchEvent(
+        new dom.window.PopStateEvent("popstate", {
+          state: { view: { screen: "courses" } },
+        }),
+      );
+      await wait();
+    });
+    assert.match(
+      dom.window.document.querySelector(".daily-goal-card").textContent,
+      /3-day streak/,
+    );
+    assert.equal(
+      dom.window.document.querySelectorAll(".streak-week li").length,
+      7,
+    );
+    assert.ok(
+      !dom.window.document.body.textContent.includes(
+        "A little practice, every day.",
+      ),
+    );
+  });
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    assert.match(
+      dom.window.document.querySelector(".daily-goal-card").textContent,
+      /3-day streak/,
+    );
+    assert.deepEqual((await read(factory)).streak.days, [
+      ...previousDays,
+      today,
+    ]);
+  });
+});
+
+test("Incorrect answers and revealing a solution never earn a streak day", async () => {
+  const { emptyProgress, createSession, emptyDraft, modules, exercises } =
+    bundle(`
+    export * from "./learning/progress";
+    export { modules, exercises } from "./learning/content";
+  `);
+  const factory = new IDBFactory();
+  const original = emptyProgress();
+  const session = createSession(modules[0], exercises, original, "learn");
+  const id = session.exerciseIds[0];
+  const exercise = exercises.find((item) => item.id === id);
+  session.stage = "practice";
+  session.drafts[id] = {
+    ...emptyDraft(),
+    answer:
+      exercise.type === "choice"
+        ? exercise.optionIds.find((option) => option !== exercise.answer)
+        : String(Number(exercise.answer) + 100),
+  };
+  original.sessions.example = session;
+  original.view = { screen: "lesson", sessionKey: "example" };
+  await put(factory, original);
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    const buttons = () => [...dom.window.document.querySelectorAll("button")];
+    await act(async () => {
+      buttons()
+        .find((button) => button.textContent === "Check answer")
+        .click();
+      await wait();
+    });
+    assert.deepEqual((await read(factory)).streak.days, []);
+    await act(async () => {
+      buttons()
+        .find((button) => button.textContent.includes("Show worked solution"))
+        .click();
+      await wait();
+    });
+    const saved = await read(factory);
+    assert.deepEqual(saved.streak.days, []);
+    assert.equal(saved.attempts.length, 1);
+    assert.equal(saved.attempts[0].correct, false);
+  });
+});
+
+test("Backup imports require a valid password and explicit merge confirmation", async () => {
+  const { emptyProgress, encryptProgress } = bundle(`
+    export { emptyProgress } from './learning/progress';
+    export { encryptProgress } from './learning/backup';
+  `);
+  const original = emptyProgress();
+  original.completed.current = {
+    result: "solved",
+    completedAt: "2026-10-15T12:00:00Z",
+  };
+  const imported = emptyProgress();
+  imported.completed.backup = {
+    result: "solved",
+    completedAt: "2026-10-14T12:00:00Z",
+  };
+  const password = "a private backup passphrase";
+  const text = await encryptProgress(imported, password);
+  const factory = new IDBFactory();
+  await put(factory, original);
+  await withApp(factory, async ({ dom }) => {
+    dom.window.HTMLDialogElement.prototype.showModal = function () {
+      this.setAttribute("open", "");
+    };
+    dom.window.HTMLDialogElement.prototype.close = function () {
+      this.removeAttribute("open");
+    };
+    await act(async () => {
+      await wait();
+      dom.window.dispatchEvent(
+        new dom.window.PopStateEvent("popstate", {
+          state: { view: { screen: "about" } },
+        }),
+      );
+      await wait();
+    });
+    const document = dom.window.document;
+    await act(async () => {
+      [...document.querySelectorAll(".backup-section button")]
+        .find((button) => button.textContent.includes("Import progress"))
+        .click();
+      await wait();
+    });
+    const fileInput = document.querySelector('input[type="file"]');
+    Object.defineProperty(fileInput, "files", {
+      configurable: true,
+      value: [
+        {
+          name: "saved.almathbackup",
+          size: text.length,
+          text: async () => text,
+        },
+      ],
+    });
+    await act(async () => {
+      fileInput.dispatchEvent(
+        new dom.window.Event("change", { bubbles: true }),
+      );
+      await wait();
+    });
+    const input = document.querySelector("#backup-password");
+    const setPassword = async (value) => {
+      await act(async () => {
+        Object.getOwnPropertyDescriptor(
+          dom.window.HTMLInputElement.prototype,
+          "value",
+        ).set.call(input, value);
+        input.dispatchEvent(new dom.window.Event("input", { bubbles: true }));
+        await wait();
+      });
+    };
+    const submit = async () =>
+      act(async () => {
+        document
+          .querySelector(".backup-form")
+          .dispatchEvent(
+            new dom.window.Event("submit", { bubbles: true, cancelable: true }),
+          );
+        await wait(450);
+      });
+    await setPassword("a wrong long password");
+    await submit();
+    assert.match(
+      document.querySelector('[role="alert"]').textContent,
+      /password is incorrect/,
+    );
+    assert.deepEqual((await read(factory)).completed, original.completed);
+    await setPassword(password);
+    await submit();
+    assert.ok(document.querySelector(".backup-preview"));
+    assert.deepEqual(
+      (await read(factory)).completed,
+      original.completed,
+      "Preview does not write imported progress",
+    );
+    assert.equal(
+      document.querySelector('input[type="password"]'),
+      null,
+      "The password is cleared before confirmation",
+    );
+    await submit();
+    const restored = await read(factory);
+    assert.deepEqual(Object.keys(restored.completed).sort(), [
+      "backup",
+      "current",
+    ]);
+    assert.match(
+      document.querySelector(".backup-status").textContent,
+      /existing progress has been kept/,
+    );
+    assert.equal(document.querySelector("dialog"), null);
+  });
 });
