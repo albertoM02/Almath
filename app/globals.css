@@ -1219,6 +1219,10 @@ a {
   color: var(--primary);
   margin-bottom: 20px;
 }
+.mixed-review {
+  max-width: 640px;
+  margin: 0 auto;
+}
 .review-card p {
   margin: 12px 0;
   color: #60685f;

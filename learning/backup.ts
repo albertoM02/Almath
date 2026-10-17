@@ -216,6 +216,11 @@ export function mergeProgress(
       // Restoring a file on another device must not opt into notifications.
       reminderEnabled: false,
     });
+  const recentCourse = [current.recentCourse, imported.recentCourse]
+    .filter(
+      (item): item is NonNullable<ProgressState["recentCourse"]> => !!item,
+    )
+    .sort((a, b) => Date.parse(b.at) - Date.parse(a.at))[0];
   return {
     ...current,
     sessions: { ...imported.sessions, ...current.sessions },
@@ -225,6 +230,7 @@ export function mergeProgress(
     ),
     reviewCounts,
     ...(preferences ? { dailyGoal: preferences } : {}),
+    ...(recentCourse ? { recentCourse: { ...recentCourse } } : {}),
     streak: {
       days: [
         ...new Set([...practiceDays(current), ...practiceDays(imported)]),
