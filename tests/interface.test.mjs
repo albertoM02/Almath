@@ -7,6 +7,185 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { bundle } from "./helpers.mjs";
 
 const wait = (ms = 30) => new Promise((resolve) => setTimeout(resolve, ms));
+
+test("Opening a course moves it to the top and keeps that order after reopening", async () => {
+  const { emptyProgress } = bundle(
+    'export { emptyProgress } from "./learning/progress";',
+  );
+  const factory = new IDBFactory();
+  await put(factory, emptyProgress());
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    const cards = [...dom.window.document.querySelectorAll(".course-card")];
+    assert.match(cards[1].textContent, /Machine Learning/);
+    await act(async () => {
+      [...cards[1].querySelectorAll("button")]
+        .find((button) => button.textContent.includes("View units"))
+        .click();
+      await wait();
+    });
+    assert.equal((await read(factory)).recentCourse.id, "ml");
+    await act(async () => {
+      dom.window.dispatchEvent(
+        new dom.window.PopStateEvent("popstate", {
+          state: { view: { screen: "courses" } },
+        }),
+      );
+      await wait();
+    });
+    assert.match(
+      dom.window.document.querySelector(".course-card").textContent,
+      /Machine Learning/,
+    );
+  });
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    assert.match(
+      dom.window.document.querySelector(".course-card").textContent,
+      /Machine Learning/,
+    );
+  });
+});
+
+test("Cross-course Review starts, resumes after reopening, saves answers and reshuffles after completion", async () => {
+  const {
+    emptyProgress,
+    emptyDraft,
+    createSession,
+    modules,
+    exercises,
+    locale,
+    MIXED_REVIEW_KEY,
+  } = bundle(`
+    export * from "./learning/progress";
+    export * from "./learning/review";
+    export { modules, exercises, locale } from "./learning/content";
+  `);
+  const factory = new IDBFactory();
+  const progress = emptyProgress();
+  const cs = modules.find(
+    (module) => module.courseId === "cs" && !module.archived,
+  );
+  const ml = modules.find(
+    (module) => module.courseId === "ml" && !module.archived,
+  );
+  const ids = [...cs.exerciseIds.slice(0, 2), ...ml.exerciseIds.slice(0, 2)];
+  for (const id of ids)
+    progress.completed[id] = {
+      result: "solved",
+      completedAt: "2026-10-15T12:00:00Z",
+    };
+  const learning = createSession(cs, exercises, progress, "learn");
+  learning.drafts[learning.exerciseIds[0]] = {
+    ...emptyDraft(),
+    answer: "existing learning answer",
+    hintUsed: true,
+  };
+  progress.sessions[`${cs.id}:learn`] = learning;
+  progress.view = { screen: "review" };
+  await put(factory, progress);
+  const click = async (dom, text) => {
+    const button = [...dom.window.document.querySelectorAll("button")].find(
+      (item) => item.textContent.trim() === text,
+    );
+    assert.ok(button, `Missing button: ${text}`);
+    await act(async () => {
+      button.click();
+      await wait();
+    });
+  };
+  let order;
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    assert.match(
+      dom.window.document.querySelector(".mixed-review").textContent,
+      new RegExp(`${ids.length} completed questions across 2 courses`),
+    );
+    await click(dom, "Start shuffled review");
+    const saved = await read(factory);
+    const session = saved.sessions[MIXED_REVIEW_KEY];
+    order = [...session.exerciseIds];
+    assert.deepEqual(new Set(order), new Set(ids));
+    assert.equal(session.stage, "practice");
+    assert.match(
+      dom.window.document.body.textContent,
+      new RegExp(`Question 1 of ${ids.length}`),
+    );
+    const sourceModule = modules.find((module) =>
+      module.exerciseIds.includes(order[0]),
+    );
+    assert.equal(
+      dom.window.document.querySelector(".lesson-module-title").textContent,
+      locale.courses[sourceModule.courseId].category,
+    );
+    await click(dom, "Exit");
+    assert.equal((await read(factory)).view.screen, "review");
+    await click(dom, "Resume review");
+    assert.deepEqual(
+      (await read(factory)).sessions[MIXED_REVIEW_KEY].exerciseIds,
+      order,
+    );
+  });
+  // Resume a real saved draft and submit it through the app's normal grading path.
+  const pending = await read(factory);
+  const session = pending.sessions[MIXED_REVIEW_KEY];
+  const first = exercises.find((exercise) => exercise.id === order[0]);
+  session.drafts[first.id] = { ...emptyDraft(), answer: String(first.answer) };
+  await put(factory, pending);
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    assert.deepEqual(
+      (await read(factory)).sessions[MIXED_REVIEW_KEY].exerciseIds,
+      order,
+    );
+    await click(dom, "Check answer");
+    const saved = await read(factory);
+    assert.equal(saved.attempts.at(-1).exerciseId, first.id);
+    assert.equal(saved.attempts.at(-1).correct, true);
+    assert.ok(saved.streak.days.length);
+    assert.deepEqual(saved.sessions[`${cs.id}:learn`], learning);
+    assert.deepEqual(saved.completed, progress.completed);
+    await click(dom, "Next question");
+    assert.equal((await read(factory)).sessions[MIXED_REVIEW_KEY].index, 1);
+    assert.equal(
+      (await read(factory)).sessions[MIXED_REVIEW_KEY].stage,
+      "practice",
+    );
+    await click(dom, "Exit");
+    assert.match(
+      dom.window.document.querySelector(".mixed-review").textContent,
+      new RegExp(`1 of ${ids.length} questions reviewed this round`),
+    );
+    await click(dom, "Resume review");
+    assert.equal((await read(factory)).sessions[MIXED_REVIEW_KEY].index, 1);
+  });
+  const finishing = await read(factory);
+  const round = finishing.sessions[MIXED_REVIEW_KEY];
+  for (const id of round.exerciseIds)
+    round.drafts[id] = { ...emptyDraft(), feedback: "correct" };
+  round.index = round.exerciseIds.length - 1;
+  await put(factory, finishing);
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    await click(dom, "Finish review");
+    assert.equal((await read(factory)).view.screen, "complete");
+    assert.match(
+      dom.window.document.querySelector(".completion-card").textContent,
+      /You’ve reviewed every question in this round/,
+    );
+    await click(dom, "Shuffle again");
+    const saved = await read(factory);
+    const next = saved.sessions[MIXED_REVIEW_KEY];
+    assert.equal(saved.view.screen, "lesson");
+    assert.equal(next.finished, false);
+    assert.deepEqual(new Set(next.exerciseIds), new Set(ids));
+    assert.notEqual(next.exerciseIds[0], order.at(-1));
+    assert.deepEqual(next.drafts, {});
+    assert.deepEqual(saved.sessions[`${cs.id}:learn`], learning);
+    assert.deepEqual(saved.completed, progress.completed);
+  });
+});
+
 async function database(factory) {
   return new Promise((resolve, reject) => {
     const request = factory.open("almath-progress", 1);

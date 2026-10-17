@@ -1,23 +1,23 @@
-import { BookOpen, RotateCcw, Check } from "lucide-react";
-import { modules, locale, t } from "@/learning/content";
-import { completedCount } from "@/learning/progress";
+import { BookOpen, Shuffle, Check } from "lucide-react";
+import { exercises, modules, locale, t } from "@/learning/content";
+import {
+  completedReviewIds,
+  hasCurrentMixedReview,
+  isMixedReview,
+  MIXED_REVIEW_KEY,
+} from "@/learning/review";
 import type { ProgressState } from "@/learning/types";
 
 export function ReviewScreen({
   progress,
-  start,
+  onStart,
   onCourses,
 }: {
   progress: ProgressState;
-  start: (id: string, mode: "learn" | "review") => void;
+  onStart: () => void;
   onCourses: () => void;
 }) {
-  const available = modules.filter(
-    (learningModule) =>
-      completedCount(learningModule, progress) > 0 ||
-      (learningModule.archived &&
-        !!progress.sessions[`${learningModule.id}:learn`]),
-  );
+  const available = completedReviewIds(modules, exercises, progress);
   if (!available.length)
     return (
       <section className="empty-state">
@@ -31,48 +31,55 @@ export function ReviewScreen({
         </button>
       </section>
     );
+  const ids = new Set(available);
+  const courseCount = new Set(
+    modules
+      .filter((module) => module.exerciseIds.some((id) => ids.has(id)))
+      .map((module) => module.courseId),
+  ).size;
+  const saved = progress.sessions[MIXED_REVIEW_KEY];
+  const resume =
+    saved &&
+    !saved.finished &&
+    hasCurrentMixedReview(saved, modules, exercises, progress);
+  const done = resume
+    ? saved.exerciseIds.filter(
+        (id) =>
+          saved.drafts[id]?.feedback === "correct" ||
+          saved.drafts[id]?.solutionRevealed,
+      ).length
+    : 0;
   return (
-    <div className="review-grid">
-      {available.map((learningModule) => {
-        const resume =
-          progress.sessions[`${learningModule.id}:review`] &&
-          !progress.sessions[`${learningModule.id}:review`].finished;
-        const previousLearning =
-          progress.sessions[`${learningModule.id}:learn`];
-        const resumeEarlier =
-          learningModule.archived &&
-          previousLearning &&
-          !previousLearning.finished;
-        return (
-          <article className="review-card" key={learningModule.id}>
-            <RotateCcw size={27} />
-            <span className="eyebrow">
-              {locale.courses[learningModule.courseId].category}
-            </span>
-            <h2>{locale.modules[learningModule.id].title}</h2>
-            {learningModule.archived && (
-              <p className="small-note">{t("legacyModule")}</p>
-            )}
-            <p>{locale.modules[learningModule.id].description}</p>
-            <p className="small-note">{t("reviewHint")}</p>
-            <button
-              className="primary-button"
-              onClick={() =>
-                start(learningModule.id, resumeEarlier ? "learn" : "review")
-              }
-            >
-              {t(
-                resumeEarlier
-                  ? "resumeEarlierModule"
-                  : resume
-                    ? "resumeReview"
-                    : "reviewModule",
-              )}
-            </button>
-          </article>
-        );
-      })}
-    </div>
+    <section className="review-card mixed-review">
+      <Shuffle size={30} aria-hidden="true" />
+      <span className="eyebrow">{t("mixedReviewCourses")}</span>
+      <h2>{t("mixedReviewTitle")}</h2>
+      <p>
+        {t("mixedReviewPool", {
+          questions: t(
+            available.length === 1
+              ? "mixedReviewQuestionOne"
+              : "mixedReviewQuestionMany",
+            { count: available.length },
+          ),
+          courses: t(
+            courseCount === 1
+              ? "mixedReviewCourseOne"
+              : "mixedReviewCourseMany",
+            { count: courseCount },
+          ),
+        })}
+      </p>
+      <p className="small-note">{t("mixedReviewHint")}</p>
+      {resume && (
+        <p className="small-note">
+          {t("mixedReviewProgress", { done, total: saved.exerciseIds.length })}
+        </p>
+      )}
+      <button className="primary-button" onClick={onStart}>
+        {t(resume ? "resumeReview" : "mixedReviewStart")}
+      </button>
+    </section>
   );
 }
 
@@ -94,6 +101,7 @@ export function CompletionScreen({
   onNextModule?: () => void;
 }) {
   const session = progress.sessions[sessionKey];
+  const mixed = isMixedReview(session);
   const solved = session.exerciseIds.filter(
     (id) => session.drafts[id]?.feedback === "correct",
   ).length;
@@ -107,9 +115,11 @@ export function CompletionScreen({
       <span className="completion-icon">
         <Check size={38} strokeWidth={1.5} />
       </span>
-      <span className="eyebrow">{locale.modules[moduleId].title}</span>
+      <span className="eyebrow">
+        {mixed ? t("mixedReviewCourses") : locale.modules[moduleId].title}
+      </span>
       <h1>{t(review ? "reviewComplete" : "moduleComplete")}</h1>
-      <p>{t("completedMessage")}</p>
+      <p>{t(mixed ? "mixedReviewComplete" : "completedMessage")}</p>
       <div className="completion-summary">
         {t("solvedSummary", { solved, reviewed })}
       </div>
@@ -122,10 +132,10 @@ export function CompletionScreen({
         className={onNextModule ? "secondary-button" : "primary-button"}
         onClick={onReview}
       >
-        {t("reviewAgain")}
+        {t(mixed ? "mixedReviewAgain" : "reviewAgain")}
       </button>
       <button className="secondary-button" onClick={onCourses}>
-        {t("backCourses")}
+        {t(mixed ? "mixedReviewBack" : "backCourses")}
       </button>
       <p className="small-note">{t("restartLater")}</p>
     </section>

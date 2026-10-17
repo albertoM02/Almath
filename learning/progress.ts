@@ -7,6 +7,7 @@ import type {
   View,
 } from "./types";
 import { isStreak } from "./streak";
+import { MIXED_REVIEW_MODULE_ID } from "./review";
 
 export function emptyProgress(): ProgressState {
   return {
@@ -209,6 +210,10 @@ function isSession(value: unknown): value is Session {
     isId(value.moduleId) &&
     isVersion(value.contentVersion) &&
     ["learn", "review"].includes(value.mode as string) &&
+    (value.reviewScope === undefined ||
+      (value.reviewScope === "all-courses" &&
+        value.mode === "review" &&
+        value.moduleId === MIXED_REVIEW_MODULE_ID)) &&
     isIds(value.exerciseIds) &&
     value.exerciseIds.length > 0 &&
     isIds(value.baseExerciseIds) &&
@@ -265,6 +270,13 @@ export function isProgressState(value: unknown): value is ProgressState {
     return false;
   const goal = value.dailyGoal;
   if (value.streak !== undefined && !isStreak(value.streak)) return false;
+  if (
+    value.recentCourse !== undefined &&
+    (!isRecord(value.recentCourse) ||
+      !isId(value.recentCourse.id) ||
+      !isDate(value.recentCourse.at))
+  )
+    return false;
   return (
     goal === undefined ||
     (isRecord(goal) &&
