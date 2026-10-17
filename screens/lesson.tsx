@@ -10,8 +10,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { SaveIndicator, type SaveStatus } from "@/components/almath/shell";
 import { MathText } from "@/components/almath/math-text";
-import { getExercise, locale, t } from "@/learning/content";
+import { getExercise, modules, locale, t } from "@/learning/content";
 import { emptyDraft, getConceptPosition } from "@/learning/progress";
+import { isMixedReview } from "@/learning/review";
 import type { Session } from "@/learning/types";
 
 export function LessonScreen({
@@ -42,6 +43,10 @@ export function LessonScreen({
   isLast: boolean;
 }) {
   const exercise = getExercise(session.exerciseIds[session.index]);
+  const mixed = isMixedReview(session);
+  const currentModule = mixed
+    ? modules.find((module) => module.exerciseIds.includes(exercise.id))!
+    : undefined;
   const text = locale.exercises[exercise.id];
   const theory = locale.concepts[exercise.conceptId];
   const position = getConceptPosition(
@@ -65,19 +70,23 @@ export function LessonScreen({
               {t("exit")}
             </button>
             <span className="lesson-module-title">
-              {locale.modules[session.moduleId].title}
+              {mixed
+                ? locale.courses[currentModule!.courseId].category
+                : locale.modules[session.moduleId].title}
             </span>
             <SaveIndicator status={saveStatus} />
           </div>
           <div className="lesson-progress-caption">
             <span>
               {t(
-                session.mode === "review"
-                  ? "reviewPosition"
-                  : "conceptPosition",
+                mixed
+                  ? "mixedReviewPosition"
+                  : session.mode === "review"
+                    ? "reviewPosition"
+                    : "conceptPosition",
                 {
-                  current: position.current,
-                  total: position.total,
+                  current: mixed ? session.index + 1 : position.current,
+                  total: mixed ? session.exerciseIds.length : position.total,
                 },
               )}
             </span>
@@ -162,8 +171,10 @@ export function LessonScreen({
           <TabsContent value="practice" className="practice-content">
             <span className="eyebrow">
               {t("questionPosition", {
-                current: position.question,
-                total: position.questionCount,
+                current: mixed ? session.index + 1 : position.question,
+                total: mixed
+                  ? session.exerciseIds.length
+                  : position.questionCount,
               })}
             </span>
             <h1 tabIndex={-1}>
@@ -323,7 +334,13 @@ export function LessonScreen({
                     className="primary-button"
                     onClick={onNext}
                   >
-                    {t(isLast ? "finishModule" : "nextExercise")}
+                    {t(
+                      isLast
+                        ? mixed
+                          ? "mixedReviewFinish"
+                          : "finishModule"
+                        : "nextExercise",
+                    )}
                   </button>
                 ) : (
                   <button

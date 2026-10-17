@@ -69,6 +69,8 @@ export type Session = {
   moduleId: string;
   contentVersion: number;
   mode: "learn" | "review";
+  // Optional so existing module sessions and backups remain compatible.
+  reviewScope?: "all-courses";
   exerciseIds: string[];
   baseExerciseIds: string[];
   exerciseVersions?: Record<string, number>;
@@ -109,4 +111,6 @@ export type ProgressState = {
   dailyGoal?: DailyGoalPreferences;
   // Optional for older saves; qualifying local dates stay stable across updates.
   streak?: Streak;
+  // Optional for saves created before recent-course ordering was introduced.
+  recentCourse?: { id: string; at: string };
 };

@@ -20,7 +20,7 @@ The app is designed for short learning sessions: understand a concept, try it yo
 
 - Choose a course and module. Read the explanation and follow a worked example before moving on to the exercises.
 - Submit an answer to receive feedback. Hints are optional: an incorrect answer invites you to request one, without duplicating the hint. Solutions include an explanation.
-- Revisit the theory, resume an unfinished module or use review mode to practise again.
+- Your most recently used course appears first. Revisit the theory or resume an unfinished module. Review shuffles completed questions from all courses into one round, without repeats. Pause and resume whenever you like; the next round includes newly completed questions.
 - Set a daily target between 1 and 100 exercises. Each correctly answered exercise counts once per day; revealed solutions do not count towards the goal.
 - On Android, optionally enable a reminder at your chosen time. Reminders work offline and are skipped when the daily goal has been reached. Delivery time can vary with Android battery settings.
 - Keep a streak by solving at least one exercise a day. Hints and review count; revealed solutions do not.

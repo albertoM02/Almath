@@ -1,8 +1,16 @@
 import { courses, exercises, modules } from "./content";
 import { isView } from "./progress";
+import { hasCurrentMixedReview, isMixedReview } from "./review";
 import type { ProgressState, Session, View } from "./types";
 
-export function hasCurrentSessionContent(session: Session): boolean {
+export function hasCurrentSessionContent(
+  session: Session,
+  progress?: ProgressState,
+): boolean {
+  if (isMixedReview(session))
+    return (
+      !!progress && hasCurrentMixedReview(session, modules, exercises, progress)
+    );
   const currentModule = modules.find((item) => item.id === session.moduleId);
   return (
     !!currentModule &&
@@ -31,7 +39,8 @@ export function restoredView(value: unknown, progress: ProgressState): View {
   if (value.sessionKey) {
     const session = progress.sessions[value.sessionKey];
     if (!session) return home;
-    if (!hasCurrentSessionContent(session)) return home;
+    if (!hasCurrentSessionContent(session, progress))
+      return isMixedReview(session) ? { screen: "review" } : home;
     if (value.screen === "complete" && !session.finished)
       return { ...value, screen: "lesson" };
   }

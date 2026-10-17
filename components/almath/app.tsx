@@ -27,6 +27,12 @@ import {
   restoreProgressBackup,
 } from "@/learning/storage";
 import { hasCurrentSessionContent, restoredView } from "@/learning/navigation";
+import {
+  createMixedReview,
+  isMixedReview,
+  MIXED_REVIEW_MODULE_ID,
+  refreshMixedReview,
+} from "@/learning/review";
 import type {
   DailyGoalPreferences,
   Draft,
@@ -133,6 +139,11 @@ export function AlmathApp() {
   const restoreProgress = useCallback((loaded: ProgressState) => {
     loaded.streak ??= { days: practiceDays(loaded) };
     for (const [key, session] of Object.entries(loaded.sessions)) {
+      if (isMixedReview(session)) {
+        loaded.sessions[key] =
+          refreshMixedReview(session, modules, exercises, loaded) ?? session;
+        continue;
+      }
       const learningModule = modules.find(
         (item) => item.id === session.moduleId,
       );
@@ -180,7 +191,16 @@ export function AlmathApp() {
   const navigate = useCallback(
     (view: View) => {
       if (!canPersist.current) return;
-      persist({ ...state.current, view });
+      persist({
+        ...state.current,
+        ...(view.courseId &&
+        courses.some((course) => course.id === view.courseId)
+          ? {
+              recentCourse: { id: view.courseId, at: new Date().toISOString() },
+            }
+          : {}),
+        view,
+      });
       setValidationError("");
       window.history.pushState({ view }, "", `#${view.screen}`);
       window.scrollTo({ top: 0 });
@@ -301,6 +321,7 @@ export function AlmathApp() {
           ? state.current.sessions[view.sessionKey]
           : undefined;
         if (session) {
+          if (isMixedReview(session)) return { screen: "review" };
           const learningModule = getModule(session.moduleId);
           return {
             screen: "units",
@@ -331,29 +352,50 @@ export function AlmathApp() {
   const start = useCallback(
     (moduleId: string, mode: "learn" | "review", index?: number) => {
       if (!canPersist.current) return;
-      const learningModule = getModule(moduleId);
+      const mixed = moduleId === MIXED_REVIEW_MODULE_ID && mode === "review";
+      const learningModule = mixed ? undefined : getModule(moduleId);
       const key = `${moduleId}:${mode}`;
       const current = state.current;
       const saved = current.sessions[key];
       const previous = saved
-        ? refreshSession(learningModule, exercises, current, saved)
+        ? mixed
+          ? refreshMixedReview(saved, modules, exercises, current)
+          : refreshSession(learningModule!, exercises, current, saved)
         : undefined;
-      const compatible = previous && hasCurrentSessionContent(previous);
+      const compatible =
+        previous && hasCurrentSessionContent(previous, current);
       let session =
         compatible &&
         (!previous.finished || (mode === "learn" && index !== undefined))
           ? { ...previous }
-          : createSession(learningModule, exercises, current, mode, index ?? 0);
-      if (index !== undefined)
+          : mixed
+            ? createMixedReview(modules, exercises, current)
+            : createSession(
+                learningModule!,
+                exercises,
+                current,
+                mode,
+                index ?? 0,
+              );
+      if (!session) return;
+      if (index !== undefined && !mixed)
         session = { ...session, index, stage: "theory", finished: false };
       const view: View = {
         screen: "lesson",
-        courseId: learningModule.courseId,
+        ...(learningModule ? { courseId: learningModule.courseId } : {}),
         sessionKey: key,
       };
       persist({
         ...current,
         sessions: { ...current.sessions, [key]: session },
+        ...(learningModule
+          ? {
+              recentCourse: {
+                id: learningModule.courseId,
+                at: new Date().toISOString(),
+              },
+            }
+          : {}),
         view,
       });
       setValidationError("");
@@ -473,7 +515,10 @@ export function AlmathApp() {
     const next = getExercise(session.exerciseIds[index]);
     changeSession({
       index,
-      stage: current.conceptId === next.conceptId ? "practice" : "theory",
+      stage:
+        isMixedReview(session) || current.conceptId === next.conceptId
+          ? "practice"
+          : "theory",
     });
     setValidationError("");
     window.scrollTo({ top: 0 });
@@ -579,11 +624,15 @@ export function AlmathApp() {
           saveStatus={saveStatus}
           validationError={validationError}
           onExit={() =>
-            navigate({
-              screen: "units",
-              courseId: getModule(session.moduleId).courseId,
-              moduleId: session.moduleId,
-            })
+            navigate(
+              isMixedReview(session)
+                ? { screen: "review" }
+                : {
+                    screen: "units",
+                    courseId: getModule(session.moduleId).courseId,
+                    moduleId: session.moduleId,
+                  },
+            )
           }
           onStage={(stage) => {
             changeSession({ stage });
@@ -609,7 +658,9 @@ export function AlmathApp() {
           <HomeHeader
             title={
               view.screen === "complete"
-                ? locale.modules[session!.moduleId].title
+                ? isMixedReview(session!)
+                  ? t("mixedReviewTitle")
+                  : locale.modules[session!.moduleId].title
                 : title
             }
             subtitle={
@@ -662,7 +713,7 @@ export function AlmathApp() {
             {view.screen === "review" && (
               <ReviewScreen
                 progress={progress}
-                start={start}
+                onStart={() => start(MIXED_REVIEW_MODULE_ID, "review")}
                 onCourses={allCourses}
               />
             )}
@@ -672,7 +723,11 @@ export function AlmathApp() {
                 review={session.mode === "review"}
                 progress={progress}
                 sessionKey={view.sessionKey!}
-                onCourses={allCourses}
+                onCourses={
+                  isMixedReview(session)
+                    ? () => navigate({ screen: "review" })
+                    : allCourses
+                }
                 onReview={() => start(session.moduleId, "review")}
                 onNextModule={
                   session.mode === "learn" && getNextModule(session.moduleId)
