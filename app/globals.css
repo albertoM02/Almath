@@ -271,6 +271,16 @@ a {
   gap: 24px;
   align-items: stretch;
 }
+.other-courses {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.other-courses > h2 {
+  margin-bottom: 20px;
+  color: var(--green-dark);
+  font-size: 1.25rem;
+}
 .daily-goal-card {
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -651,6 +661,9 @@ a {
 }
 .course-icon.ml {
   background: #efead4;
+}
+.course-icon.hardware-security {
+  background: #e2eae9;
 }
 .eyebrow {
   font-size: 0.75rem;
