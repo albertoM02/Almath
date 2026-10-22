@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { SaveIndicator, type SaveStatus } from "@/components/almath/shell";
 import { MathText } from "@/components/almath/math-text";
-import { getExercise, modules, locale, t } from "@/learning/content";
+import { getExercise, concepts, modules, locale, t } from "@/learning/content";
 import { emptyDraft, getConceptPosition } from "@/learning/progress";
 import { isMixedReview } from "@/learning/review";
 import type { Session } from "@/learning/types";
@@ -49,6 +49,9 @@ export function LessonScreen({
     : undefined;
   const text = locale.exercises[exercise.id];
   const theory = locale.concepts[exercise.conceptId];
+  const courseId = concepts.find(
+    (concept) => concept.id === exercise.conceptId,
+  )!.courseId;
   const position = getConceptPosition(
     session.exerciseIds.map((id) => getExercise(id).conceptId),
     session.index,
@@ -118,9 +121,7 @@ export function LessonScreen({
             <span className="eyebrow">
               {session.mode === "review"
                 ? t("reviewTag")
-                : locale.courses[
-                    exercise.conceptId.startsWith("cs") ? "cs" : "ml"
-                  ].category}
+                : locale.courses[courseId].category}
             </span>
             <h1 tabIndex={-1}>
               <MathText>{theory.title}</MathText>
