@@ -1,0 +1,3915 @@
+{
+  "courses": [
+    {
+      "id": "hardware-security",
+      "icon": "chip",
+      "section": "other",
+      "moduleIds": [
+        "hw-u1-device",
+        "hw-u1-assets",
+        "hw-u1-trust",
+        "hw-u1-threats",
+        "hw-u1-effort",
+        "hw-u2-electricity",
+        "hw-u2-capacitors",
+        "hw-u2-components",
+        "hw-u2-signals",
+        "hw-u2-measurement",
+        "hw-u3-uart",
+        "hw-u3-spi",
+        "hw-u3-i2c",
+        "hw-u3-interfaces",
+        "hw-u3-evidence",
+        "hw-u4-identification",
+        "hw-u4-mapping",
+        "hw-u4-firmware"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "hw-u1-device",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": [
+        "hw-u1-q01",
+        "hw-u1-q02",
+        "hw-u1-q03",
+        "hw-u1-q04",
+        "hw-u1-q05"
+      ]
+    },
+    {
+      "id": "hw-u1-assets",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": [
+        "hw-u1-q06",
+        "hw-u1-q07",
+        "hw-u1-q08",
+        "hw-u1-q09",
+        "hw-u1-q10"
+      ]
+    },
+    {
+      "id": "hw-u1-trust",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": ["hw-u1-q17", "hw-u1-q18", "hw-u1-q19"]
+    },
+    {
+      "id": "hw-u1-threats",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": [
+        "hw-u1-q11",
+        "hw-u1-q12",
+        "hw-u1-q13",
+        "hw-u1-q14",
+        "hw-u1-q15"
+      ]
+    },
+    {
+      "id": "hw-u1-effort",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": ["hw-u1-q16", "hw-u1-q20"]
+    },
+    {
+      "id": "hw-u2-electricity",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": [
+        "hw-u2-q01",
+        "hw-u2-q02",
+        "hw-u2-q03",
+        "hw-u2-q04",
+        "hw-u2-q05"
+      ]
+    },
+    {
+      "id": "hw-u2-capacitors",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": [
+        "hw-u2-q24",
+        "hw-u2-q16",
+        "hw-u2-q17",
+        "hw-u2-q18",
+        "hw-u2-q19"
+      ]
+    },
+    {
+      "id": "hw-u2-components",
+      "courseId": "hardware-security",
+      "version": 1,
+      "exerciseIds": ["hw-u2-q20", "hw-u2-q21", "hw-u2-q22", "hw-u2-q23"]
+    },
+    {
+      "id": "hw-u2-signals",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u2-q06",
+        "hw-u2-q07",
+        "hw-u2-q08",
+        "hw-u2-q09",
+        "hw-u2-q10",
+        "hw-u2-q25"
+      ]
+    },
+    {
+      "id": "hw-u2-measurement",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u2-q11",
+        "hw-u2-q12",
+        "hw-u2-q13",
+        "hw-u2-q14",
+        "hw-u2-q15",
+        "hw-u2-q26",
+        "hw-u2-q27"
+      ]
+    },
+    {
+      "id": "hw-u3-uart",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u3-q01",
+        "hw-u3-q02",
+        "hw-u3-q20",
+        "hw-u3-q03",
+        "hw-u3-q19",
+        "hw-u3-q04"
+      ]
+    },
+    {
+      "id": "hw-u3-spi",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": ["hw-u3-q05", "hw-u3-q21", "hw-u3-q06", "hw-u3-q07"]
+    },
+    {
+      "id": "hw-u3-i2c",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u3-q08",
+        "hw-u3-q09",
+        "hw-u3-q10",
+        "hw-u3-q22",
+        "hw-u3-q11"
+      ]
+    },
+    {
+      "id": "hw-u3-interfaces",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u3-q12",
+        "hw-u3-q13",
+        "hw-u3-q24",
+        "hw-u3-q14",
+        "hw-u3-q15"
+      ]
+    },
+    {
+      "id": "hw-u3-evidence",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": ["hw-u3-q16", "hw-u3-q23", "hw-u3-q17", "hw-u3-q18"]
+    },
+    {
+      "id": "hw-u4-identification",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u4-q01",
+        "hw-u4-q13",
+        "hw-u4-q02",
+        "hw-u4-q03",
+        "hw-u4-q04",
+        "hw-u4-q14"
+      ]
+    },
+    {
+      "id": "hw-u4-mapping",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u4-q05",
+        "hw-u4-q15",
+        "hw-u4-q16",
+        "hw-u4-q06",
+        "hw-u4-q07",
+        "hw-u4-q08"
+      ]
+    },
+    {
+      "id": "hw-u4-firmware",
+      "courseId": "hardware-security",
+      "version": 2,
+      "exerciseIds": [
+        "hw-u4-q17",
+        "hw-u4-q09",
+        "hw-u4-q10",
+        "hw-u4-q18",
+        "hw-u4-q11",
+        "hw-u4-q12"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "hw-u1-concept-01",
+      "courseId": "hardware-security",
+      "prerequisites": [],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-02",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-01"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-03",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-02"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-04",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-03"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-05",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-04"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-06",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-05"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-07",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-06"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-08",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-07"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-09",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-08"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-10",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-09"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-11",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-19"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-12",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-11"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-13",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-12"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-14",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-13"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u1-concept-15",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-14"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-01",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-20"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-02",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-01"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-03",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-02"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-04",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-03"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-05",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-04"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-06",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-23"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-07",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-06"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-08",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-07"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-09",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-08"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-10",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-09"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-11",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-25"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-12",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-11"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-13",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-12"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-14",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-13"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-15",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-14"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u3-concept-01",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-27"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-02",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-01"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-03",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-20"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-04",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-19"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-05",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-04"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-06",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-21"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-07",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-06"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-08",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-07"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-09",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-08"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-10",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-09"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-11",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-22"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-12",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-11"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-13",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-12"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-14",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-24"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-15",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-14"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-16",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-15"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-17",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-23"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u3-concept-18",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-17"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-01",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-18"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-02",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-13"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-03",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-02"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-04",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-03"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-05",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-14"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-06",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-16"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-07",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-06"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-08",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-07"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-09",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-17"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-10",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-09"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-11",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-18"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u4-concept-12",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-11"],
+      "sourceId": "hardware-security-technical-references"
+    },
+    {
+      "id": "hw-u1-concept-16",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-15"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u1-concept-17",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-10"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u1-concept-18",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-17"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u1-concept-19",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-18"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u1-concept-20",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u1-concept-16"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-16",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-24"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-17",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-16"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-18",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-17"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-19",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-18"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-20",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-19"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-21",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-20"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-22",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-21"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-23",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-22"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-24",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-05"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-25",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-10"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-26",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-15"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-27",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-26"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u3-concept-19",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-03"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u3-concept-20",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-02"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u3-concept-21",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-05"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u3-concept-22",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-10"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u3-concept-23",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-16"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u3-concept-24",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u3-concept-13"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u4-concept-13",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-01"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u4-concept-14",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-04"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u4-concept-15",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-05"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u4-concept-16",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-15"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u4-concept-17",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-08"],
+      "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u4-concept-18",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u4-concept-10"],
+      "sourceId": "hardware-security-book-reviewed"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "hw-u1-q01",
+      "conceptId": "hw-u1-concept-01",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q02",
+      "conceptId": "hw-u1-concept-02",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q03",
+      "conceptId": "hw-u1-concept-03",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q04",
+      "conceptId": "hw-u1-concept-04",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q05",
+      "conceptId": "hw-u1-concept-05",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q06",
+      "conceptId": "hw-u1-concept-06",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q07",
+      "conceptId": "hw-u1-concept-07",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q08",
+      "conceptId": "hw-u1-concept-08",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q09",
+      "conceptId": "hw-u1-concept-09",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q10",
+      "conceptId": "hw-u1-concept-10",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q11",
+      "conceptId": "hw-u1-concept-11",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q12",
+      "conceptId": "hw-u1-concept-12",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q13",
+      "conceptId": "hw-u1-concept-13",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q14",
+      "conceptId": "hw-u1-concept-14",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q15",
+      "conceptId": "hw-u1-concept-15",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q01",
+      "conceptId": "hw-u2-concept-01",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q02",
+      "conceptId": "hw-u2-concept-02",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q03",
+      "conceptId": "hw-u2-concept-03",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q04",
+      "conceptId": "hw-u2-concept-04",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q05",
+      "conceptId": "hw-u2-concept-05",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q06",
+      "conceptId": "hw-u2-concept-06",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q07",
+      "conceptId": "hw-u2-concept-07",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q08",
+      "conceptId": "hw-u2-concept-08",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q09",
+      "conceptId": "hw-u2-concept-09",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q10",
+      "conceptId": "hw-u2-concept-10",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q11",
+      "conceptId": "hw-u2-concept-11",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q12",
+      "conceptId": "hw-u2-concept-12",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q13",
+      "conceptId": "hw-u2-concept-13",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q14",
+      "conceptId": "hw-u2-concept-14",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q15",
+      "conceptId": "hw-u2-concept-15",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q01",
+      "conceptId": "hw-u3-concept-01",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q02",
+      "conceptId": "hw-u3-concept-02",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q03",
+      "conceptId": "hw-u3-concept-03",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q04",
+      "conceptId": "hw-u3-concept-04",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q05",
+      "conceptId": "hw-u3-concept-05",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q06",
+      "conceptId": "hw-u3-concept-06",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q07",
+      "conceptId": "hw-u3-concept-07",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q08",
+      "conceptId": "hw-u3-concept-08",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q09",
+      "conceptId": "hw-u3-concept-09",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q10",
+      "conceptId": "hw-u3-concept-10",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q11",
+      "conceptId": "hw-u3-concept-11",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q12",
+      "conceptId": "hw-u3-concept-12",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q13",
+      "conceptId": "hw-u3-concept-13",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q14",
+      "conceptId": "hw-u3-concept-14",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q15",
+      "conceptId": "hw-u3-concept-15",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q16",
+      "conceptId": "hw-u3-concept-16",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q17",
+      "conceptId": "hw-u3-concept-17",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q18",
+      "conceptId": "hw-u3-concept-18",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q01",
+      "conceptId": "hw-u4-concept-01",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q02",
+      "conceptId": "hw-u4-concept-02",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q03",
+      "conceptId": "hw-u4-concept-03",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q04",
+      "conceptId": "hw-u4-concept-04",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q05",
+      "conceptId": "hw-u4-concept-05",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q06",
+      "conceptId": "hw-u4-concept-06",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q07",
+      "conceptId": "hw-u4-concept-07",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q08",
+      "conceptId": "hw-u4-concept-08",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q09",
+      "conceptId": "hw-u4-concept-09",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q10",
+      "conceptId": "hw-u4-concept-10",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q11",
+      "conceptId": "hw-u4-concept-11",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q12",
+      "conceptId": "hw-u4-concept-12",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q16",
+      "conceptId": "hw-u1-concept-16",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q17",
+      "conceptId": "hw-u1-concept-17",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q18",
+      "conceptId": "hw-u1-concept-18",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q19",
+      "conceptId": "hw-u1-concept-19",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u1-q20",
+      "conceptId": "hw-u1-concept-20",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q16",
+      "conceptId": "hw-u2-concept-16",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q17",
+      "conceptId": "hw-u2-concept-17",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q18",
+      "conceptId": "hw-u2-concept-18",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q19",
+      "conceptId": "hw-u2-concept-19",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q20",
+      "conceptId": "hw-u2-concept-20",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q21",
+      "conceptId": "hw-u2-concept-21",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q22",
+      "conceptId": "hw-u2-concept-22",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q23",
+      "conceptId": "hw-u2-concept-23",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q24",
+      "conceptId": "hw-u2-concept-24",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q25",
+      "conceptId": "hw-u2-concept-25",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q26",
+      "conceptId": "hw-u2-concept-26",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q27",
+      "conceptId": "hw-u2-concept-27",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q19",
+      "conceptId": "hw-u3-concept-19",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q20",
+      "conceptId": "hw-u3-concept-20",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q21",
+      "conceptId": "hw-u3-concept-21",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q22",
+      "conceptId": "hw-u3-concept-22",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q23",
+      "conceptId": "hw-u3-concept-23",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u3-q24",
+      "conceptId": "hw-u3-concept-24",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q13",
+      "conceptId": "hw-u4-concept-13",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q14",
+      "conceptId": "hw-u4-concept-14",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q15",
+      "conceptId": "hw-u4-concept-15",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q16",
+      "conceptId": "hw-u4-concept-16",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q17",
+      "conceptId": "hw-u4-concept-17",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "c",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u4-q18",
+      "conceptId": "hw-u4-concept-18",
+      "version": 1,
+      "type": "choice",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
+    }
+  ],
+  "outlines": [
+    {
+      "courseId": "hardware-security",
+      "parts": [
+        {
+          "id": "hw-foundations",
+          "label": "I",
+          "units": [
+            {
+              "id": "hw-unit-01",
+              "number": 1,
+              "moduleIds": [
+                "hw-u1-device",
+                "hw-u1-assets",
+                "hw-u1-trust",
+                "hw-u1-threats",
+                "hw-u1-effort"
+              ]
+            },
+            {
+              "id": "hw-unit-02",
+              "number": 2,
+              "moduleIds": [
+                "hw-u2-electricity",
+                "hw-u2-capacitors",
+                "hw-u2-components",
+                "hw-u2-signals",
+                "hw-u2-measurement"
+              ]
+            },
+            {
+              "id": "hw-unit-03",
+              "number": 3,
+              "moduleIds": [
+                "hw-u3-uart",
+                "hw-u3-spi",
+                "hw-u3-i2c",
+                "hw-u3-interfaces",
+                "hw-u3-evidence"
+              ]
+            },
+            {
+              "id": "hw-unit-04",
+              "number": 4,
+              "moduleIds": [
+                "hw-u4-identification",
+                "hw-u4-mapping",
+                "hw-u4-firmware"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "hardware-security-outline",
+      "kind": "concept-reference",
+      "title": "The Hardware Hacking Handbook — topic outline",
+      "authors": ["Jasper van Woudenberg", "Colin O’Flynn"],
+      "urls": [
+        "https://nostarch.com/hardwarehacking",
+        "https://nostarch.com/download/samples/HHH_CID.pdf"
+      ],
+      "checked": "2026-10-19",
+      "note": "Initially drafted using the publisher’s topic outline and primary technical references; the 60-question baseline was subsequently reviewed against the user-supplied full book on 2026-10-22. Course units select introductory material from Chapters 1–3 and measurement/lab material. They do not cover the entire book or its Chapter 4. No book prose or figures are reproduced."
+    },
+    {
+      "id": "hardware-security-original",
+      "kind": "original",
+      "title": "Almath hardware security exercises",
+      "note": "89 original Almath questions: 20 in Unit 1, 27 in Unit 2, 24 in Unit 3, and 18 in Unit 4. Each question has its own theory, worked example, optional hint, answer feedback, and solution."
+    },
+    {
+      "id": "hardware-security-technical-references",
+      "kind": "concept-reference",
+      "title": "Hardware interfaces and firmware analysis — primary technical references",
+      "urls": [
+        "https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/peripherals/communication-connectivity/uart",
+        "https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/peripherals/communication-connectivity/spi",
+        "https://developerhelp.microchip.com/xwiki/bin/view/products/mcu-mpu/32bit-mcu/sam/l10-l11/peripherals/sercom/spi/",
+        "https://www.nxp.jp/docs/en/user-guide/UM10204.pdf",
+        "https://www.ti.com/document-viewer/lit/html/SSZTCN3",
+        "https://developerhelp.microchip.com/xwiki/bin/view/applications/usb/how-it-works/descriptors/",
+        "https://www.sdcard.org/developers/sd-standard-overview/sdio-isdio/",
+        "https://www.micron.com/products/storage/managed-nand",
+        "https://onlinedocs.microchip.com/oxy/GUID-5474CCCD-F385-4AD7-9759-539BB1019357-en-US-10/GUID-15FED31B-B7B1-4FE1-8242-05E241BD99C6.html",
+        "https://www.ti.com/design-development/packaging/packaging-terminology.html",
+        "https://github.com/refirmlabs/binwalk"
+      ],
+      "checked": "2026-10-19",
+      "note": "Primary references consulted for the Unit 3 and Unit 4 drafts. Explanations, examples, scenarios, options and feedback are original Almath content. See the separate book review entry for the subsequent scope check."
+    },
+    {
+      "id": "hardware-security-book-reviewed",
+      "kind": "concept-reference",
+      "title": "The Hardware Hacking Handbook — selected introductory sections",
+      "authors": ["Jasper van Woudenberg", "Colin O’Flynn"],
+      "urls": ["https://nostarch.com/hardwarehacking"],
+      "checked": "2026-10-22",
+      "note": "User-supplied full book reviewed for introductory scope. Relevant printed pages include 5–8, 26–33, 37–49, 51–59, 64–69, 72–78, 88–105, and 109–115. Exercises and explanations are original; elementary diode/transistor explanations extend the book’s brief component discussion."
+    }
+  ],
+  "locale": {
+    "ui": {
+      "otherCourses": "Other courses",
+      "hardwareSourcesText": "Hardware Security Foundations contains original explanations and exercises informed by selected sections of The Hardware Hacking Handbook, by Jasper van Woudenberg and Colin O’Flynn, with additional introductory electronics background. The book’s text, figures, and exercises are not reproduced here.",
+      "sourceHardwareBook": "The Hardware Hacking Handbook"
+    },
+    "courses": {
+      "hardware-security": {
+        "title": "Hardware Security Foundations",
+        "category": "Hardware security",
+        "description": "Understand embedded devices, security threats, electronics, hardware interfaces, and device investigation through short lessons and practical reasoning."
+      }
+    },
+    "modules": {
+      "hw-u1-device": {
+        "title": "Inside an embedded device",
+        "description": "Computers, components, memory, firmware, and startup."
+      },
+      "hw-u1-assets": {
+        "title": "Assets and security goals",
+        "description": "Secrets, integrity, firmware authorization, and attacker access."
+      },
+      "hw-u1-threats": {
+        "title": "Reasoning about threats",
+        "description": "Attack surfaces, threat scenarios, attack trees, and countermeasures."
+      },
+      "hw-u2-electricity": {
+        "title": "Electrical basics",
+        "description": "Voltage, current, resistance, Ohm’s law, and power."
+      },
+      "hw-u2-signals": {
+        "title": "Reading digital signals",
+        "description": "References, compatible voltages, floating inputs, pull-ups, and shared output drivers."
+      },
+      "hw-u2-measurement": {
+        "title": "Choosing and interpreting measurements",
+        "description": "Multimeters, continuity, oscilloscopes, logic analyzers, sampling, probe bandwidth, and triggering."
+      },
+      "hw-u3-uart": {
+        "title": "Connectors and UART",
+        "description": "Identify pins, follow transmit/receive paths, and interpret UART timing."
+      },
+      "hw-u3-spi": {
+        "title": "SPI connections and timing",
+        "description": "Shared clocks, chip selection, and SPI modes."
+      },
+      "hw-u3-i2c": {
+        "title": "I²C and shared buses",
+        "description": "Pull-ups, addresses, acknowledgements, and comparison with SPI."
+      },
+      "hw-u3-interfaces": {
+        "title": "Differential links and peripheral interfaces",
+        "description": "Reason about CAN, USB, SDIO, eMMC, and parallel buses."
+      },
+      "hw-u3-evidence": {
+        "title": "Debug interfaces and capture evidence",
+        "description": "Separate JTAG capabilities from access and combine capture evidence."
+      },
+      "hw-u4-identification": {
+        "title": "Identify and document the hardware",
+        "description": "Record revisions and cable arrangements, then verify chip markings and packages."
+      },
+      "hw-u4-mapping": {
+        "title": "Map the board carefully",
+        "description": "Read pinouts, interpret continuity, and distinguish evidence from assumptions."
+      },
+      "hw-u4-firmware": {
+        "title": "Examine firmware evidence",
+        "description": "Understand update containers, preserve copies, and interpret analysis clues."
+      },
+      "hw-u1-trust": {
+        "title": "Trust during startup",
+        "description": "Trusted verification keys, the boot chain, and isolated operations."
+      },
+      "hw-u1-effort": {
+        "title": "Attack effort and clear reporting",
+        "description": "Reason about attack cost and communicate reproducible findings."
+      },
+      "hw-u2-capacitors": {
+        "title": "Capacitors and supply stability",
+        "description": "DC disturbances, stored energy, charging, decoupling, and finite support."
+      },
+      "hw-u2-components": {
+        "title": "Components working together",
+        "description": "Inductors, diodes, transistor switching, and voltage regulation."
+      }
+    },
+    "parts": {
+      "hw-foundations": {
+        "title": "Hardware security foundations"
+      }
+    },
+    "units": {
+      "hw-unit-01": {
+        "title": "Embedded security foundations",
+        "description": "From device architecture to security goals and attack trees."
+      },
+      "hw-unit-02": {
+        "title": "Electronics and lab fundamentals",
+        "description": "Understand electrical quantities, digital signals, and measurement tools."
+      },
+      "hw-unit-03": {
+        "title": "Hardware interfaces",
+        "description": "Communication protocols, peripheral connections, and pinouts."
+      },
+      "hw-unit-04": {
+        "title": "Understanding an unfamiliar device",
+        "description": "Identify components, research documentation, and examine firmware."
+      }
+    },
+    "concepts": {
+      "hw-u1-concept-01": {
+        "title": "What is an embedded system?",
+        "body": "An embedded system is a computer built into a device to perform a particular function. It receives inputs, processes information, and controls outputs.",
+        "formula": "",
+        "example": "A washing machine reads buttons and water sensors, then controls its motor and valves.",
+        "exampleSteps": [],
+        "takeaway": "An embedded system is a computer built into a device to perform a particular function."
+      },
+      "hw-u1-concept-02": {
+        "title": "Following information through a device",
+        "body": "A sensor measures something, a processor makes decisions, and an actuator performs a physical action.",
+        "formula": "",
+        "example": "In an automatic door, a motion sensor detects a person, a processor decides to open the door, and a motor moves it.",
+        "exampleSteps": [],
+        "takeaway": "A sensor measures something, a processor makes decisions, and an actuator performs a physical action.."
+      },
+      "hw-u1-concept-03": {
+        "title": "Remembering after power is removed",
+        "body": "Volatile memory, such as ordinary RAM, needs power to retain its contents. Nonvolatile memory, such as flash, retains data without power.",
+        "formula": "",
+        "example": "A sensor might keep its current calculations in RAM and its saved configuration in flash.",
+        "exampleSteps": [],
+        "takeaway": "Volatile memory, such as ordinary RAM, needs power to retain its contents."
+      },
+      "hw-u1-concept-04": {
+        "title": "Recognizing firmware",
+        "body": "Firmware is software that controls a device’s operation. It is commonly stored in nonvolatile memory. Stored measurements and settings are data, rather than necessarily being firmware.",
+        "formula": "",
+        "example": "A digital scale’s measurement program is firmware; its saved calibration value is configuration data.",
+        "exampleSteps": [],
+        "takeaway": "Firmware is software that controls a device’s operation."
+      },
+      "hw-u1-concept-05": {
+        "title": "Understanding startup",
+        "body": "Devices often start in stages. Initial boot code runs first, a bootloader prepares or loads the next software stage, and the main firmware starts afterward. Exact arrangements vary.",
+        "formula": "",
+        "example": "In one device: initial boot code → bootloader → application firmware.",
+        "exampleSteps": [],
+        "takeaway": "Devices often start in stages."
+      },
+      "hw-u1-concept-06": {
+        "title": "Identifying an asset",
+        "body": "A security asset is something valuable that needs protection. Assets can include secret keys, personal information, firmware, or the ability to operate correctly.",
+        "formula": "",
+        "example": "In a payment terminal, a secret authentication key is an asset. A connector is a possible access point to the system.",
+        "exampleSteps": [],
+        "takeaway": "A security asset is something valuable that needs protection."
+      },
+      "hw-u1-concept-07": {
+        "title": "Protecting confidentiality",
+        "body": "Confidentiality means preventing unauthorized disclosure. An attacker can violate confidentiality simply by reading information, without changing it.",
+        "formula": "",
+        "example": "Copying private location records from a tracker breaks confidentiality even if the original records remain intact.",
+        "exampleSteps": [],
+        "takeaway": "Confidentiality means preventing unauthorized disclosure."
+      },
+      "hw-u1-concept-08": {
+        "title": "Protecting integrity",
+        "body": "Integrity concerns preventing or detecting unauthorized changes. Confidentiality protects against disclosure; integrity protects against alteration.",
+        "formula": "",
+        "example": "Secretly changing a recorded temperature from 80°C to 30°C violates the integrity of the measurement.",
+        "exampleSteps": [],
+        "takeaway": "Integrity concerns preventing or detecting unauthorized changes."
+      },
+      "hw-u1-concept-09": {
+        "title": "Authenticating firmware",
+        "body": "Firmware authentication checks whether software comes from an authorized source and has not been altered. A digital signature can support this check when verified using a trusted key. Encryption alone does not establish who authorized the firmware.",
+        "formula": "",
+        "example": "A device rejects an update whose signature cannot be verified using its trusted update key.",
+        "exampleSteps": [],
+        "takeaway": "Firmware authentication checks whether software comes from an authorized source and has not been altered."
+      },
+      "hw-u1-concept-10": {
+        "title": "Considering the attacker’s access",
+        "body": "An attacker profile describes capabilities such as access, time, equipment, and expertise. Different capabilities make different attack paths possible.",
+        "formula": "",
+        "example": "A remote attacker may send network requests. Someone holding the device may also reach internal connectors.",
+        "exampleSteps": [],
+        "takeaway": "An attacker profile describes capabilities such as access, time, equipment, and expertise."
+      },
+      "hw-u1-concept-11": {
+        "title": "Recognizing multiple access paths",
+        "body": "An attack surface includes the ways someone can interact with a system and potentially affect its security. Network services and physical interfaces can both contribute.",
+        "formula": "",
+        "example": "Turning off Bluetooth removes one communication path, but it does not automatically disable an internal maintenance connector.",
+        "exampleSteps": [],
+        "takeaway": "An attack surface includes the ways someone can interact with a system and potentially affect its security."
+      },
+      "hw-u1-concept-12": {
+        "title": "Stating a useful threat",
+        "body": "A useful threat scenario connects an attacker’s capabilities, an asset, and an unwanted outcome. This makes the problem specific enough to evaluate.",
+        "formula": "",
+        "example": "“A visitor with temporary access could alter a sensor’s calibration through its maintenance interface” identifies access, an asset, and an outcome.",
+        "exampleSteps": [],
+        "takeaway": "A useful threat scenario connects an attacker’s capabilities, an asset, and an unwanted outcome."
+      },
+      "hw-u1-concept-13": {
+        "title": "Understanding alternative attack paths",
+        "body": "An attack tree breaks a goal into smaller steps. At an OR node, any one child path is sufficient to achieve the parent goal.",
+        "formula": "",
+        "example": "If a file can be obtained from either an unprotected backup or an exposed storage device, securing only the backup leaves another path.",
+        "exampleSteps": [],
+        "takeaway": "An attack tree breaks a goal into smaller steps."
+      },
+      "hw-u1-concept-14": {
+        "title": "Understanding required combinations",
+        "body": "At an AND node, every listed condition is required for that modeled path. Blocking one necessary condition stops that path, although other paths may still exist.",
+        "formula": "",
+        "example": "A particular maintenance operation requires both physical access and a valid service credential.",
+        "exampleSteps": [],
+        "takeaway": "At an AND node, every listed condition is required for that modeled path."
+      },
+      "hw-u1-concept-15": {
+        "title": "Combining protection, detection, and response",
+        "body": "Security measures can protect against an event, detect that it occurred, or respond to it. These roles complement each other.",
+        "formula": "",
+        "example": "A locked enclosure provides protection; an opening sensor provides detection; a configured action following an alarm provides response.",
+        "exampleSteps": [],
+        "takeaway": "Security measures can protect against an event, detect that it occurred, or respond to it."
+      },
+      "hw-u2-concept-01": {
+        "title": "Understanding voltage",
+        "body": "Voltage is an electrical potential difference between two points. A voltage measurement therefore needs a reference point.",
+        "formula": "",
+        "example": "Saying a supply is “3.3 V” usually means its supply pin is 3.3 V above the designated ground reference.",
+        "exampleSteps": [],
+        "takeaway": "Voltage is an electrical potential difference between two points."
+      },
+      "hw-u2-concept-02": {
+        "title": "Understanding current",
+        "body": "Current is the rate of electric charge flow, measured in amperes. A power supply’s current rating usually states its capacity, rather than a fixed current it forces through every load.",
+        "formula": "",
+        "example": "A suitable 5 V supply rated for up to 2 A can power a device drawing 0.1 A.",
+        "exampleSteps": [],
+        "takeaway": "Current is the rate of electric charge flow, measured in amperes."
+      },
+      "hw-u2-concept-03": {
+        "title": "Understanding resistance",
+        "body": "Resistance opposes current flow. For an ideal resistor at a fixed voltage, increasing resistance decreases current.",
+        "formula": "",
+        "example": "At the same voltage, a 2 kΩ resistor carries less current than a 1 kΩ resistor.",
+        "exampleSteps": [],
+        "takeaway": "Resistance opposes current flow."
+      },
+      "hw-u2-concept-04": {
+        "title": "Applying Ohm’s law",
+        "body": "Ohm’s law relates voltage, current, and resistance. With volts and ohms, the current is in amperes.",
+        "formula": "\\[I = \\frac{V}{R}\\]",
+        "example": "A 3 V difference across 3,000 Ω gives 3 / 3000 = 0.001 A, or 1 mA.",
+        "exampleSteps": [],
+        "takeaway": "Ohm’s law relates voltage, current, and resistance."
+      },
+      "hw-u2-concept-05": {
+        "title": "Relating voltage and current to power",
+        "body": "Electrical power describes the rate of energy transfer. For steady DC conditions, power equals voltage multiplied by current and is measured in watts.",
+        "formula": "\\[P = VI\\]",
+        "example": "A device drawing 0.1 A at 3 V receives 3 × 0.1 = 0.3 W.",
+        "exampleSteps": [],
+        "takeaway": "Electrical power describes the rate of energy transfer."
+      },
+      "hw-u2-concept-06": {
+        "title": "Sharing a reference",
+        "body": "For a simple, non-isolated connection using single-ended signals, devices need a compatible reference. Otherwise, the receiver may interpret a signal’s voltage incorrectly.",
+        "formula": "",
+        "example": "A transmitter describes a signal relative to its ground; the receiver evaluates that signal relative to its own ground.",
+        "exampleSteps": [],
+        "takeaway": "For a simple, non-isolated connection using single-ended signals, devices need a compatible reference."
+      },
+      "hw-u2-concept-07": {
+        "title": "Interpreting logic levels",
+        "body": "Digital inputs recognize voltage ranges as LOW or HIGH. Voltages between the guaranteed ranges may have an undefined interpretation.",
+        "formula": "",
+        "example": "If LOW is guaranteed at or below 0.8 V and HIGH at or above 2.0 V, then 0.4 V is LOW and 2.5 V is HIGH.",
+        "exampleSteps": [],
+        "takeaway": "Digital inputs recognize voltage ranges as LOW or HIGH."
+      },
+      "hw-u2-concept-08": {
+        "title": "Checking electrical compatibility",
+        "body": "Recognizing a voltage as HIGH and tolerating that voltage are different requirements. An input’s absolute maximum rating is a limit, not a recommended operating voltage.",
+        "formula": "",
+        "example": "A signal may be high enough to represent HIGH while still exceeding what the receiving pin can tolerate.",
+        "exampleSteps": [],
+        "takeaway": "Recognizing a voltage as HIGH and tolerating that voltage are different requirements."
+      },
+      "hw-u2-concept-09": {
+        "title": "Recognizing a floating input",
+        "body": "A high-impedance input draws little current and does not establish its own voltage. If nothing drives or biases it, it can float and respond unpredictably to noise.",
+        "formula": "",
+        "example": "An unconnected input might alternate between HIGH and LOW even though no deliberate signal is being sent.",
+        "exampleSteps": [],
+        "takeaway": "A high-impedance input draws little current and does not establish its own voltage."
+      },
+      "hw-u2-concept-10": {
+        "title": "Giving a released line a defined state",
+        "body": "A pull-up resistor biases a line HIGH when no device pulls it LOW. An open-drain output can pull LOW or release the line; it does not actively drive HIGH.",
+        "formula": "",
+        "example": "With a suitable pull-up, a released open-drain line rises HIGH. When its output pulls LOW, the line becomes LOW.",
+        "exampleSteps": [],
+        "takeaway": "A pull-up resistor biases a line HIGH when no device pulls it LOW."
+      },
+      "hw-u2-concept-11": {
+        "title": "Measuring a supply voltage",
+        "body": "A multimeter in voltage mode measures the potential difference between its probes. To measure a supply rail relative to ground, the probes go across those two points.",
+        "formula": "",
+        "example": "On a suitable low-voltage circuit, a 3.3 V rail is checked with the voltage probe on the rail and the reference probe on ground.",
+        "exampleSteps": [],
+        "takeaway": "A multimeter in voltage mode measures the potential difference between its probes."
+      },
+      "hw-u2-concept-12": {
+        "title": "Interpreting continuity",
+        "body": "Continuity mode checks for a low-resistance path. Use it on a de-energized circuit with stored energy safely discharged. A beep does not by itself reveal the exact path through the circuit.",
+        "formula": "",
+        "example": "Two points may show continuity through a wire, a PCB trace, or another low-resistance route.",
+        "exampleSteps": [],
+        "takeaway": "Continuity mode checks for a low-resistance path."
+      },
+      "hw-u2-concept-13": {
+        "title": "Finding a brief voltage disturbance",
+        "body": "An oscilloscope displays voltage over time. A multimeter’s normal display may miss short events that occur between updates or are averaged into its reading.",
+        "formula": "",
+        "example": "A supply can usually read 3.3 V while briefly dipping during startup. An appropriately configured oscilloscope can reveal that dip.",
+        "exampleSteps": [],
+        "takeaway": "An oscilloscope displays voltage over time."
+      },
+      "hw-u2-concept-14": {
+        "title": "Choosing a logic analyzer",
+        "body": "A logic analyzer records digital states across time, often on several channels. An oscilloscope shows the analog waveform, including its voltage shape.",
+        "formula": "",
+        "example": "Use an oscilloscope to inspect overshoot on one signal. Use a logic analyzer to compare the HIGH/LOW sequence of several compatible signals.",
+        "exampleSteps": [],
+        "takeaway": "A logic analyzer records digital states across time, often on several channels."
+      },
+      "hw-u2-concept-15": {
+        "title": "Recognizing a missed event",
+        "body": "A sampled instrument observes a signal at discrete times. A pulse shorter than the interval between samples can occur entirely between them and be missed.",
+        "formula": "",
+        "example": "If samples occur every 10 microseconds, a 2-microsecond pulse could start and finish between consecutive samples.",
+        "exampleSteps": [],
+        "takeaway": "A sampled instrument observes a signal at discrete times."
+      },
+      "hw-u3-concept-01": {
+        "title": "A connector is not a protocol",
+        "body": "A connector provides physical contact points. A protocol defines how devices communicate. Two connectors with the same shape can use different signals and pin assignments.",
+        "formula": "",
+        "example": "Two boards each have four pins. One uses a serial interface; the other exposes power and programming signals. Their matching shape does not establish compatibility.",
+        "exampleSteps": [],
+        "takeaway": "A connector provides physical contact points."
+      },
+      "hw-u3-concept-02": {
+        "title": "UART transmit and receive",
+        "body": "A basic UART connection has a transmit signal, TX, and a receive signal, RX. One device’s transmitter connects to the other’s receiver. Compatible signal voltages and a common reference are also needed. UART does not require a separate shared clock wire.",
+        "formula": "",
+        "example": "To send information from device A to device B, connect A’s TX to B’s RX.",
+        "exampleSteps": [],
+        "takeaway": "A basic UART connection has a transmit signal, TX, and a receive signal, RX."
+      },
+      "hw-u3-concept-03": {
+        "title": "Matching UART timing",
+        "body": "UART devices must agree on communication settings, including the baud rate, which describes the signalling rate. For ordinary binary UART, it corresponds to the number of transmitted bits per second.",
+        "formula": "",
+        "example": "A board transmits at 9,600 baud. An adapter configured for 115,200 baud samples using the wrong timing and may display unreadable characters.",
+        "exampleSteps": [],
+        "takeaway": "UART devices must agree on communication settings, including the baud rate, which describes the signalling rate."
+      },
+      "hw-u3-concept-04": {
+        "title": "Unreadable output is not a diagnosis",
+        "body": "Unreadable UART output can result from incorrect timing or framing settings. It can also be binary data rather than text. Unreadable characters alone do not prove that information is encrypted.",
+        "formula": "",
+        "example": "A sensor sends binary measurements. A terminal displays symbols because it tries to interpret those bytes as text.",
+        "exampleSteps": [],
+        "takeaway": "Unreadable UART output can result from incorrect timing or framing settings."
+      },
+      "hw-u3-concept-05": {
+        "title": "SPI uses a shared clock",
+        "body": "SPI is a synchronous interface: a controller supplies a clock that coordinates data transfer. A typical four-wire SPI connection also has separate data paths in each direction and a target-selection signal.",
+        "formula": "",
+        "example": "A processor supplies clock pulses while exchanging data with a sensor. Both use those pulses to coordinate when bits are transferred.",
+        "exampleSteps": [],
+        "takeaway": "SPI is a synchronous interface: a controller supplies a clock that coordinates data transfer."
+      },
+      "hw-u3-concept-06": {
+        "title": "Selecting an SPI target",
+        "body": "In a common SPI arrangement, several targets share clock and data wires but have separate chip-select signals. The controller selects the intended target. Chip select is often active-low, meaning LOW selects the device.",
+        "formula": "",
+        "example": "Two sensors share a bus. Pulling sensor A’s active-low select LOW while keeping sensor B’s HIGH selects A.",
+        "exampleSteps": [],
+        "takeaway": "In a common SPI arrangement, several targets share clock and data wires but have separate chip-select signals."
+      },
+      "hw-u3-concept-07": {
+        "title": "Selecting the correct SPI mode",
+        "body": "SPI settings specify the clock’s idle level and which clock edge is used to sample data. Together, these define the SPI mode. A decoder configured incorrectly can misread a valid transfer.",
+        "formula": "",
+        "example": "A device expects data to be sampled on falling edges. A decoder sampling on rising edges may interpret changing data incorrectly.",
+        "exampleSteps": [],
+        "takeaway": "SPI settings specify the clock’s idle level and which clock edge is used to sample data."
+      },
+      "hw-u3-concept-08": {
+        "title": "I²C’s two shared signals",
+        "body": "I²C uses SDA for data and SCL for the clock. In ordinary Standard/Fast-mode I²C, devices pull these lines LOW or release them; pull-up resistors provide the HIGH level.",
+        "formula": "",
+        "example": "When every device releases SDA, its pull-up brings the line HIGH. A device sends a LOW by pulling it down.",
+        "exampleSteps": [],
+        "takeaway": "I²C uses SDA for data and SCL for the clock."
+      },
+      "hw-u3-concept-09": {
+        "title": "I²C addresses",
+        "body": "An I²C controller normally selects a target by transmitting its address. If two targets on the same bus have the same active address, ordinary addressed transfers cannot select them individually.",
+        "formula": "",
+        "example": "Two identical sensors both use address 0x40. Changing one to a supported alternative address lets the controller address them separately.",
+        "exampleSteps": [],
+        "takeaway": "An I²C controller normally selects a target by transmitting its address."
+      },
+      "hw-u3-concept-10": {
+        "title": "What an acknowledgement tells you",
+        "body": "An I²C acknowledgement, or ACK, is a response within a transfer. An address ACK indicates that something acknowledged that address. It does not authenticate the device or prove that a later application-level operation succeeded.",
+        "formula": "",
+        "example": "A target acknowledges its address, but a later command is unsupported. The first acknowledgement does not establish that the command worked.",
+        "exampleSteps": [],
+        "takeaway": "An I²C acknowledgement, or ACK, is a response within a transfer."
+      },
+      "hw-u3-concept-11": {
+        "title": "Distinguishing bus arrangements",
+        "body": "Interface identification should combine observations. Shared data and clock wires with separate target-select wires suggest a typical SPI arrangement. Shared SDA/SCL wires with address-based selection suggest I²C.",
+        "formula": "",
+        "example": "Three sensors share two communication lines, and the controller sends different addresses. That supports an I²C interpretation.",
+        "exampleSteps": [],
+        "takeaway": "Interface identification should combine observations."
+      },
+      "hw-u3-concept-12": {
+        "title": "CAN uses a differential pair",
+        "body": "High-speed CAN uses a differential pair, CANH and CANL. A receiver interprets the voltage difference between them. A CAN transceiver converts between this bus signalling and a controller’s logic-level transmit/receive signals.",
+        "formula": "",
+        "example": "A CAN interface uses a transceiver to connect to CANH/CANL; those bus wires are not simply UART TX and RX.",
+        "exampleSteps": [],
+        "takeaway": "High-speed CAN uses a differential pair, CANH and CANL."
+      },
+      "hw-u3-concept-13": {
+        "title": "USB identification is a reported description",
+        "body": "In a USB connection, the host discovers and configures a device through enumeration. The device supplies descriptors containing information such as identifiers and supported functions. This information describes what the device reports; it is not, by itself, proof of authenticity.",
+        "formula": "",
+        "example": "A USB device reports that it provides a serial-port function. The host uses that information to select suitable software.",
+        "exampleSteps": [],
+        "takeaway": "In a USB connection, the host discovers and configures a device through enumeration."
+      },
+      "hw-u3-concept-14": {
+        "title": "An SD-related interface is not always storage",
+        "body": "eMMC is managed flash storage with an integrated controller. SDIO allows an SD-style interface to communicate with input/output devices, including some wireless modules. An SD-related interface therefore does not automatically identify a storage chip.",
+        "formula": "",
+        "example": "A processor communicates with a Wi-Fi module over SDIO. The interface carries communication with the radio rather than serving as a general storage device.",
+        "exampleSteps": [],
+        "takeaway": "eMMC is managed flash storage with an integrated controller."
+      },
+      "hw-u3-concept-15": {
+        "title": "Capturing a parallel bus",
+        "body": "A parallel bus carries multiple bits on separate data lines during the same transfer. To reconstruct a complete value, a capture needs the relevant data lines and the timing/control signals that establish when the value is valid.",
+        "formula": "",
+        "example": "An eight-bit bus transfers a byte across eight data lines. Observing only one line reveals only that line’s contribution.",
+        "exampleSteps": [],
+        "takeaway": "A parallel bus carries multiple bits on separate data lines during the same transfer."
+      },
+      "hw-u3-concept-16": {
+        "title": "JTAG testing and debugging",
+        "body": "JTAG can provide boundary scan, which helps test chip connections through special internal test circuitry. Some processors also expose debugging through JTAG. Available functions depend on the chip and its configuration.",
+        "formula": "",
+        "example": "A board permits a boundary-scan test but restricts processor debugging. Connection testing does not establish unrestricted access to memory.",
+        "exampleSteps": [],
+        "takeaway": "JTAG can provide boundary scan, which helps test chip connections through special internal test circuitry."
+      },
+      "hw-u3-concept-17": {
+        "title": "Choosing capture equipment",
+        "body": "Capture equipment must support both the electrical signals and the timing of an interface. A suitable channel count alone is insufficient. Fast signals may require greater bandwidth, appropriate probes and a protocol-specific analyser.",
+        "formula": "",
+        "example": "An analyser has enough channels for a bus, but its sampling rate misses short transitions. The resulting capture cannot reliably describe all bus activity.",
+        "exampleSteps": [],
+        "takeaway": "Capture equipment must support both the electrical signals and the timing of an interface."
+      },
+      "hw-u3-concept-18": {
+        "title": "Combining interface evidence",
+        "body": "A reliable interface identification combines electrical measurements, wiring observations and protocol behaviour. A label or pin count is a useful clue, but several consistent observations support a stronger conclusion.",
+        "formula": "",
+        "example": "A connector labelled “SERIAL” becomes a stronger UART candidate when measurements show compatible logic levels, separate transmit/receive paths and no shared clock.",
+        "exampleSteps": [],
+        "takeaway": "A reliable interface identification combines electrical measurements, wiring observations and protocol behaviour."
+      },
+      "hw-u4-concept-01": {
+        "title": "Identify the exact device",
+        "body": "Devices sold under the same product name can have different hardware revisions. Record the model, board revision and visible identifiers before choosing documentation.",
+        "formula": "",
+        "example": "Two routers share a product name, but revision A and revision B use different processors. A revision-A diagram may not describe revision B.",
+        "exampleSteps": [],
+        "takeaway": "Devices sold under the same product name can have different hardware revisions."
+      },
+      "hw-u4-concept-02": {
+        "title": "Record the original arrangement",
+        "body": "Clear photographs and notes preserve information about connector positions, cable orientation and component locations. Record the original arrangement before making changes.",
+        "formula": "",
+        "example": "Before disconnecting two similar cables, you photograph their positions and label their destinations.",
+        "exampleSteps": [],
+        "takeaway": "Clear photographs and notes preserve information about connector positions, cable orientation and component locations."
+      },
+      "hw-u4-concept-03": {
+        "title": "Use component markings as evidence",
+        "body": "Printed chip markings can help identify a component. Markings may be abbreviated, so check the manufacturer’s documentation and compare the package and pin count before accepting a match.",
+        "formula": "",
+        "example": "A marking search returns two candidates. Only one has a package and pin count matching the board.",
+        "exampleSteps": [],
+        "takeaway": "Printed chip markings can help identify a component."
+      },
+      "hw-u4-concept-04": {
+        "title": "Package shape does not establish function",
+        "body": "A chip’s package describes its physical form and connections. For example, a BGA package has a grid of connection balls underneath. Package type alone does not tell you whether a chip is a processor, memory or another component.",
+        "formula": "",
+        "example": "Two BGA chips on a board may perform different functions even though both connect through balls beneath their bodies.",
+        "exampleSteps": [],
+        "takeaway": "A chip’s package describes its physical form and connections."
+      },
+      "hw-u4-concept-05": {
+        "title": "Read pinouts in the correct orientation",
+        "body": "A pinout drawing has a defined viewing direction, such as top view or bottom view. Locate the package’s orientation marker and use the drawing’s stated view before assigning pin numbers.",
+        "formula": "",
+        "example": "Looking through the board from underneath reverses the apparent arrangement compared with a top-view drawing.",
+        "exampleSteps": [],
+        "takeaway": "A pinout drawing has a defined viewing direction, such as top view or bottom view."
+      },
+      "hw-u4-concept-06": {
+        "title": "Interpret continuity cautiously",
+        "body": "With a circuit de-energised, a continuity test can help find low-resistance connections. A beep does not necessarily prove a direct copper trace: an in-circuit path can pass through components.",
+        "formula": "",
+        "example": "Two pads produce a continuity indication because a low-value resistor connects them. They are not joined by an uninterrupted trace.",
+        "exampleSteps": [],
+        "takeaway": "With a circuit de-energised, a continuity test can help find low-resistance connections."
+      },
+      "hw-u4-concept-07": {
+        "title": "Build a map with confidence levels",
+        "body": "A useful board map records both connections and the evidence supporting them. Distinguish confirmed observations from hypotheses so uncertain information does not become an assumed fact.",
+        "formula": "",
+        "example": "A trace visibly connects a processor pin to a resistor. Its continuation disappears inside the board, so you mark the destination as unconfirmed.",
+        "exampleSteps": [],
+        "takeaway": "A useful board map records both connections and the evidence supporting them."
+      },
+      "hw-u4-concept-08": {
+        "title": "Compare documents with the actual board",
+        "body": "Schematics, regulatory photographs and other documents can provide useful leads. They may describe another revision, so compare them with the physical board before transferring conclusions.",
+        "formula": "",
+        "example": "A regulatory photograph shows a debug connector that is absent from your revision. The photograph remains useful, but it does not establish that your board has the same connector.",
+        "exampleSteps": [],
+        "takeaway": "Schematics, regulatory photographs and other documents can provide useful leads."
+      },
+      "hw-u4-concept-09": {
+        "title": "An update file may be a container",
+        "body": "A firmware update download may contain headers, signatures, compressed sections or several images. It is not necessarily a raw copy of the bytes stored on one flash chip.",
+        "formula": "",
+        "example": "An update package contains a bootloader image, an application image and installation metadata. Its total contents differ from a simple application-memory dump.",
+        "exampleSteps": [],
+        "takeaway": "A firmware update download may contain headers, signatures, compressed sections or several images."
+      },
+      "hw-u4-concept-10": {
+        "title": "Preserve the original and check copies",
+        "body": "Keep an unchanged original and analyse a working copy. A cryptographic hash acts as a fingerprint of file contents. Matching SHA-256 hashes provide strong evidence that two files contain the same bytes; they do not prove who created those bytes.",
+        "formula": "",
+        "example": "You hash a downloaded file and its working copy. Matching results support that the copy preserved the original contents.",
+        "exampleSteps": [],
+        "takeaway": "Keep an unchanged original and analyse a working copy."
+      },
+      "hw-u4-concept-11": {
+        "title": "Interpret strings and entropy as clues",
+        "body": "Readable strings can suggest features but may come from unused code. Entropy describes how varied or unpredictable byte values appear; high entropy can occur in compressed or encrypted data. Neither clue proves a feature is active or identifies a format by itself.",
+        "formula": "",
+        "example": "An image contains “debug console” and a high-entropy section. Those observations suggest investigation, but do not establish an accessible console or encrypted storage.",
+        "exampleSteps": [],
+        "takeaway": "Readable strings can suggest features but may come from unused code."
+      },
+      "hw-u4-concept-12": {
+        "title": "Combine evidence without overstating access",
+        "body": "Distinguish a chip’s possible capabilities, the board’s observed behaviour and the access actually demonstrated. Datasheets describe supported functions; labels and firmware strings provide clues; direct observations establish narrower facts about the tested configuration.",
+        "formula": "",
+        "example": "A processor supports debugging, but the product disables it. The processor’s capability does not establish that debugging is available on that product.",
+        "exampleSteps": [],
+        "takeaway": "Distinguish a chip’s possible capabilities, the board’s observed behaviour and the access actually demonstrated."
+      },
+      "hw-u1-concept-16": {
+        "title": "Understanding attack effort",
+        "body": "An attacker needs time, equipment and knowledge. Increasing the effort required can make an attack less attractive, even when it remains possible.",
+        "formula": "",
+        "example": "Recovering a secret originally took ten minutes. A defence makes it take several days. The defence increases the attacker’s effort without proving that recovery is impossible.",
+        "exampleSteps": [],
+        "takeaway": "An attacker needs time, equipment and knowledge."
+      },
+      "hw-u1-concept-17": {
+        "title": "Knowing which verification key to trust",
+        "body": "A digital signature is useful only when the device trusts the verification key. A root of trust provides the trusted starting point for deciding which keys or software to accept.",
+        "formula": "",
+        "example": "An attacker supplies modified software and their own verification key. The signature matches that key, but the device rejects it because the key is not authorised.",
+        "exampleSteps": [],
+        "takeaway": "A digital signature is useful only when the device trusts the verification key."
+      },
+      "hw-u1-concept-18": {
+        "title": "Continuing the checks during startup",
+        "body": "A chain of trust connects startup stages through verification. Trusted initial code checks the next stage, which checks the following stage before running it.",
+        "formula": "",
+        "example": "Boot ROM verifies a bootloader. The bootloader then verifies the application. Both transitions include a check.",
+        "exampleSteps": [],
+        "takeaway": "A chain of trust connects startup stages through verification."
+      },
+      "hw-u1-concept-19": {
+        "title": "Using a secret without revealing it",
+        "body": "A trusted execution environment, or TEE, can isolate sensitive operations and secrets from normal applications. An application can request an allowed operation without receiving the secret itself.",
+        "formula": "",
+        "example": "An application sends a message to an isolated signing service. The service returns a signature while keeping the signing key inside its protected environment.",
+        "exampleSteps": [],
+        "takeaway": "A trusted execution environment, or TEE, can isolate sensitive operations and secrets from normal applications."
+      },
+      "hw-u1-concept-20": {
+        "title": "Reporting a weakness clearly",
+        "body": "Coordinated vulnerability disclosure starts by giving the responsible organisation enough information to investigate a weakness. A useful report identifies the affected product, the observed behaviour and how to reproduce it.",
+        "formula": "",
+        "example": "A researcher reports the device model, firmware version and steps that demonstrate an unintended information leak.",
+        "exampleSteps": [],
+        "takeaway": "Coordinated vulnerability disclosure starts by giving the responsible organisation enough information to investigate a weakness."
+      },
+      "hw-u2-concept-16": {
+        "title": "What a capacitor does",
+        "body": "A capacitor stores electrical energy associated with separated charge. It can receive charge from a supply and later release energy into a connected circuit.",
+        "formula": "",
+        "example": "A capacitor charges while connected to a supply. After the supply is removed, it briefly powers an indicator before the indicator fades.",
+        "exampleSteps": [],
+        "takeaway": "A capacitor stores electrical energy associated with separated charge."
+      },
+      "hw-u2-concept-17": {
+        "title": "Charging through a resistor",
+        "body": "Changing a capacitor’s voltage requires charge to move. When it charges through a resistor, the resistor limits current and the capacitor’s voltage rises gradually.",
+        "formula": "",
+        "example": "An uncharged capacitor connects to a 3 V supply through a resistor. Its voltage starts near zero and rises towards 3 V.",
+        "exampleSteps": [],
+        "takeaway": "Changing a capacitor’s voltage requires charge to move."
+      },
+      "hw-u2-concept-18": {
+        "title": "Helping a chip through a brief current demand",
+        "body": "A chip’s current demand can rise quickly. A nearby decoupling capacitor, connected between supply and ground, helps provide brief current demands and reduces local supply disturbances.",
+        "formula": "",
+        "example": "A processor suddenly becomes active. Its nearby capacitor supplies some current while the rest of the supply network responds.",
+        "exampleSteps": [],
+        "takeaway": "A chip’s current demand can rise quickly."
+      },
+      "hw-u2-concept-19": {
+        "title": "Understanding the limit of that support",
+        "body": "A capacitor stores a finite amount of energy. If it supplies a running circuit without being recharged, its stored energy decreases and its voltage falls.",
+        "formula": "",
+        "example": "A capacitor helps a sensor through a short interruption. A longer interruption exhausts that support and the sensor stops working.",
+        "exampleSteps": [],
+        "takeaway": "A capacitor stores a finite amount of energy."
+      },
+      "hw-u2-concept-20": {
+        "title": "What an inductor does",
+        "body": "An inductor stores energy in a magnetic field associated with current. It opposes rapid changes in the current flowing through it.",
+        "formula": "",
+        "example": "When a circuit tries to interrupt current through a coil suddenly, the coil can produce a voltage spike as its stored energy is released.",
+        "exampleSteps": [],
+        "takeaway": "An inductor stores energy in a magnetic field associated with current."
+      },
+      "hw-u2-concept-21": {
+        "title": "A diode’s direction matters",
+        "body": "A diode conducts much more readily in one direction than the other. Its orientation therefore affects current flow.",
+        "formula": "",
+        "example": "In a simple battery–resistor–LED circuit, the LED normally lights in its forward direction. Reversing it prevents normal illumination.",
+        "exampleSteps": [],
+        "takeaway": "A diode conducts much more readily in one direction than the other."
+      },
+      "hw-u2-concept-22": {
+        "title": "Controlling a separate current path",
+        "body": "A transistor can work as an electrically controlled switch. In a suitable circuit, a small control signal switches a separate path supplying current to a load.",
+        "formula": "",
+        "example": "A processor pin controls a transistor. The transistor switches an indicator’s supply current, so that current does not have to pass through the processor’s control pin.",
+        "exampleSteps": [],
+        "takeaway": "A transistor can work as an electrically controlled switch."
+      },
+      "hw-u2-concept-23": {
+        "title": "Producing the required supply voltage",
+        "body": "A voltage regulator maintains a specified output voltage within its operating limits. A regulator and decoupling capacitors have complementary jobs: regulation establishes the supply level, while decoupling helps with rapid local disturbances.",
+        "formula": "",
+        "example": "A board accepts 9 V. A suitable regulator provides a 3.3 V rail, and nearby capacitors support the processor connected to that rail.",
+        "exampleSteps": [],
+        "takeaway": "A voltage regulator maintains a specified output voltage within its operating limits."
+      },
+      "hw-u2-concept-24": {
+        "title": "Recognising variation on a DC supply",
+        "body": "A DC supply maintains one polarity, but its voltage can still vary. Noise, ripple and temporary dips can occur on top of the normal DC level.",
+        "formula": "",
+        "example": "A nominal 5 V rail briefly falls to 4.8 V and recovers. Its polarity stays the same, so it remains a DC supply with a disturbance.",
+        "exampleSteps": [],
+        "takeaway": "A DC supply maintains one polarity, but its voltage can still vary."
+      },
+      "hw-u2-concept-25": {
+        "title": "Letting devices take turns",
+        "body": "A push-pull output actively drives HIGH or LOW. A tristate output can also enter a high-impedance state, allowing another device to drive a shared wire.",
+        "formula": "",
+        "example": "Device A sends data while device B disables its output. They reverse these roles when B needs to reply.",
+        "exampleSteps": [],
+        "takeaway": "A push-pull output actively drives HIGH or LOW."
+      },
+      "hw-u2-concept-26": {
+        "title": "Preserving fast signal details",
+        "body": "The oscilloscope and probe must both have enough bandwidth for the features being measured. A low-bandwidth probe can smooth fast transitions before the oscilloscope samples them.",
+        "formula": "",
+        "example": "A fast oscilloscope receives a rounded waveform through an unsuitable probe. Increasing the sampling rate does not recover the detail lost through that probe.",
+        "exampleSteps": [],
+        "takeaway": "The oscilloscope and probe must both have enough bandwidth for the features being measured."
+      },
+      "hw-u2-concept-27": {
+        "title": "Capturing a supply disturbance",
+        "body": "An oscilloscope trigger selects an event around which to capture a waveform. A falling-edge trigger can target a supply dropping below a chosen voltage.",
+        "formula": "",
+        "example": "A board normally runs at 3.3 V. Triggering on a downward crossing of 3.0 V helps capture occasional larger supply dips.",
+        "exampleSteps": [],
+        "takeaway": "An oscilloscope trigger selects an event around which to capture a waveform."
+      },
+      "hw-u3-concept-19": {
+        "title": "Matching the complete UART format",
+        "body": "UART settings specify speed and frame format. 8N1 means eight data bits, no parity bit and one stop bit.",
+        "formula": "",
+        "example": "A device specified as 9600 8N1 needs 9,600 baud, eight data bits, no parity and one stop bit.",
+        "exampleSteps": [],
+        "takeaway": "UART settings specify speed and frame format."
+      },
+      "hw-u3-concept-20": {
+        "title": "Checking electrical compatibility separately",
+        "body": "Similar serial framing can use different electrical signals. RS-232 and low-voltage logic-level UART are not directly interchangeable merely because their communication settings match.",
+        "formula": "",
+        "example": "Two interfaces both use 9600 8N1, but an RS-232 adapter’s signal voltages are unsuitable for a processor’s 3.3 V input.",
+        "exampleSteps": [],
+        "takeaway": "Similar serial framing can use different electrical signals."
+      },
+      "hw-u3-concept-21": {
+        "title": "Following SPI responses",
+        "body": "COPI carries data from the controller to the peripheral. CIPO carries data from the peripheral to the controller.",
+        "formula": "",
+        "example": "A controller sends a sensor command on COPI. The sensor returns its measurement on CIPO.",
+        "exampleSteps": [],
+        "takeaway": "COPI carries data from the controller to the peripheral."
+      },
+      "hw-u3-concept-22": {
+        "title": "Selecting an I²C register before reading",
+        "body": "A register is a small numbered storage location inside a device. In a common I²C register-read sequence, the controller first writes the register number, then begins a read transfer to receive its contents.",
+        "formula": "",
+        "example": "To read register 0x05, a controller selects the device, sends 0x05 as the register selection, then requests the data.",
+        "exampleSteps": [],
+        "takeaway": "A register is a small numbered storage location inside a device."
+      },
+      "hw-u3-concept-23": {
+        "title": "Observing pins without taking control",
+        "body": "JTAG boundary scan provides different operations. SAMPLE observes pin states during normal operation. EXTEST can take control of external connections and may interrupt normal operation.",
+        "formula": "",
+        "example": "An engineer selects SAMPLE to inspect a running board’s signals without intentionally taking over its output pins.",
+        "exampleSteps": [],
+        "takeaway": "JTAG boundary scan provides different operations."
+      },
+      "hw-u3-concept-24": {
+        "title": "Recovering timing from the signal",
+        "body": "Some protocols encode timing information within their communication signals. Their receivers recover timing without a separate clock wire.",
+        "formula": "",
+        "example": "A USB receiver uses information in the encoded signal to recover the timing needed to interpret its data.",
+        "exampleSteps": [],
+        "takeaway": "Some protocols encode timing information within their communication signals."
+      },
+      "hw-u4-concept-13": {
+        "title": "Choosing a useful documentation source",
+        "body": "Regulatory filings for some products contain internal photographs and technical documents. An FCC identifier can help locate the corresponding filing.",
+        "formula": "",
+        "example": "A researcher searches a product’s FCC identifier and finds internal photographs that reveal its board layout.",
+        "exampleSteps": [],
+        "takeaway": "Regulatory filings for some products contain internal photographs and technical documents."
+      },
+      "hw-u4-concept-14": {
+        "title": "Understanding physical access to chip connections",
+        "body": "Chip packages expose connections differently. Some have projecting metal leads; others place pads or solder balls underneath the body. This affects how easily a probe or clip can reach them.",
+        "formula": "",
+        "example": "An SOIC’s visible side leads may accept a suitable clip. A BGA’s hidden solder balls cannot be reached in the same way.",
+        "exampleSteps": [],
+        "takeaway": "Chip packages expose connections differently."
+      },
+      "hw-u4-concept-15": {
+        "title": "Recognising a configurable connection",
+        "body": "A zero-ohm resistor acts approximately as an electrical link. Manufacturers can fit or omit it to select different configurations on the same board design.",
+        "formula": "",
+        "example": "One product variant includes a zero-ohm link connecting a configuration pin to ground. Another variant omits that connection.",
+        "exampleSteps": [],
+        "takeaway": "A zero-ohm resistor acts approximately as an electrical link."
+      },
+      "hw-u4-concept-16": {
+        "title": "Following a trace between layers",
+        "body": "A trace carries a connection along a PCB layer. A via connects conductive features between layers, so a visible trace can continue through a route hidden inside the board.",
+        "formula": "",
+        "example": "A trace leaves a processor, reaches a via and continues on an internal layer towards another component.",
+        "exampleSteps": [],
+        "takeaway": "A trace carries a connection along a PCB layer."
+      },
+      "hw-u4-concept-17": {
+        "title": "Checking for available firmware first",
+        "body": "A vendor’s update download may provide firmware suitable for initial analysis. Checking available software sources can avoid unnecessary physical extraction.",
+        "formula": "",
+        "example": "A researcher finds an update for the correct model and hardware revision, then examines its contents before considering removal of the flash chip.",
+        "exampleSteps": [],
+        "takeaway": "A vendor’s update download may provide firmware suitable for initial analysis."
+      },
+      "hw-u4-concept-18": {
+        "title": "Interpreting a detected file format",
+        "body": "Firmware-analysis tools can recognise candidate formats from characteristic byte patterns, often called magic bytes. A detection suggests where to investigate; it does not prove that the entire file has that format.",
+        "formula": "",
+        "example": "A tool detects a possible filesystem halfway through an update. The researcher examines that region and checks its boundaries and contents.",
+        "exampleSteps": [],
+        "takeaway": "Firmware-analysis tools can recognise candidate formats from characteristic byte patterns, often called magic bytes."
+      }
+    },
+    "exercises": {
+      "hw-u1-q01": {
+        "title": "What is an embedded system?",
+        "statement": "Which component is an embedded system?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The plastic casing of a thermostat",
+          "b": "The controller that reads temperature and switches the heating",
+          "c": "The printed installation instructions"
+        },
+        "hint": "Look for the component that processes information and controls something.",
+        "explanation": "The controller performs computing tasks within the thermostat.",
+        "solutionSteps": [
+          "The controller performs computing tasks within the thermostat.",
+          "Choose B: The controller that reads temperature and switches the heating."
+        ]
+      },
+      "hw-u1-q02": {
+        "title": "Following information through a device",
+        "statement": "In a thermostat, which component decides whether the measured temperature requires heating?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The temperature sensor",
+          "b": "The heating relay",
+          "c": "The processor"
+        },
+        "hint": "Measuring, deciding, and acting are different jobs.",
+        "explanation": "The processor uses the sensor’s measurement to decide what the output should do.",
+        "solutionSteps": [
+          "The processor uses the sensor’s measurement to decide what the output should do.",
+          "Choose C: The processor."
+        ]
+      },
+      "hw-u1-q03": {
+        "title": "Remembering after power is removed",
+        "statement": "A device must remember its calibration after its battery is removed. Which memory is suitable?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Flash memory",
+          "b": "Ordinary RAM",
+          "c": "Either type retains data equally well without power"
+        },
+        "hint": "Consider whether the stored information must survive a complete power loss.",
+        "explanation": "Flash is nonvolatile. Ordinary RAM loses its contents when power is removed.",
+        "solutionSteps": [
+          "Flash is nonvolatile. Ordinary RAM loses its contents when power is removed.",
+          "Choose A: Flash memory."
+        ]
+      },
+      "hw-u1-q04": {
+        "title": "Recognizing firmware",
+        "statement": "Which item is firmware in a smart lock?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "A record of yesterday’s door openings",
+          "b": "The instructions that check a credential and operate the lock",
+          "c": "The serial number printed on its case"
+        },
+        "hint": "Look for executable instructions that determine the device’s behavior.",
+        "explanation": "Firmware contains the instructions that run the device.",
+        "solutionSteps": [
+          "Firmware contains the instructions that run the device.",
+          "Choose B: The instructions that check a credential and operate the lock."
+        ]
+      },
+      "hw-u1-q05": {
+        "title": "Understanding startup",
+        "statement": "In this startup arrangement, which component prepares and loads the application firmware?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The application’s settings file",
+          "b": "The temperature sensor",
+          "c": "The bootloader"
+        },
+        "hint": "Identify the stage between the earliest boot code and the application.",
+        "explanation": "The bootloader prepares the transition to the main firmware.",
+        "solutionSteps": [
+          "The bootloader prepares the transition to the main firmware.",
+          "Choose C: The bootloader."
+        ]
+      },
+      "hw-u1-q06": {
+        "title": "Identifying an asset",
+        "statement": "An attacker wants to obtain a smart lock’s secret access credential. What is the asset in this scenario?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The secret credential",
+          "b": "The tool used to open the case",
+          "c": "The attacker’s workbench"
+        },
+        "hint": "Ask what valuable thing the attacker is trying to obtain.",
+        "explanation": "The credential is the information that needs protection.",
+        "solutionSteps": [
+          "The credential is the information that needs protection.",
+          "Choose A: The secret credential."
+        ]
+      },
+      "hw-u1-q07": {
+        "title": "Protecting confidentiality",
+        "statement": "Someone copies a device’s secret key but leaves the device working normally. Which property has clearly been violated?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Availability",
+          "b": "Confidentiality",
+          "c": "Physical durability"
+        },
+        "hint": "Focus on who can now see the secret.",
+        "explanation": "The key has been disclosed to an unauthorized person. Normal operation does not undo that disclosure.",
+        "solutionSteps": [
+          "The key has been disclosed to an unauthorized person. Normal operation does not undo that disclosure.",
+          "Choose B: Confidentiality."
+        ]
+      },
+      "hw-u1-q08": {
+        "title": "Protecting integrity",
+        "statement": "An attacker changes a sensor’s alarm threshold without permission. Which property is directly affected?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Confidentiality",
+          "b": "Availability",
+          "c": "Integrity"
+        },
+        "hint": "Was information exposed, changed, or made unavailable?",
+        "explanation": "The attacker modified a setting that influences the device’s behavior.",
+        "solutionSteps": [
+          "The attacker modified a setting that influences the device’s behavior.",
+          "Choose C: Integrity."
+        ]
+      },
+      "hw-u1-q09": {
+        "title": "Authenticating firmware",
+        "statement": "Which check directly supports accepting only firmware authorized by the vendor?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Verify its digital signature using a trusted vendor key",
+          "b": "Check that the filename contains the vendor’s name",
+          "c": "Check that its file size matches the previous version"
+        },
+        "hint": "Names and sizes can be copied without the vendor’s authorization.",
+        "explanation": "A valid signature under the trusted key provides evidence of authorization and protects against undetected modification.",
+        "solutionSteps": [
+          "A valid signature under the trusted key provides evidence of authorization and protects against undetected modification.",
+          "Choose A: Verify its digital signature using a trusted vendor key."
+        ]
+      },
+      "hw-u1-q10": {
+        "title": "Considering the attacker’s access",
+        "statement": "A device moves from a locked cabinet to an unattended public area. Which assumption most needs reviewing?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Whether its firmware uses variables",
+          "b": "Whether an attacker can physically access the hardware",
+          "c": "Whether its processor executes instructions"
+        },
+        "hint": "Consider what the new location allows someone to do.",
+        "explanation": "Physical access becomes more plausible and may expose additional attack paths.",
+        "solutionSteps": [
+          "Physical access becomes more plausible and may expose additional attack paths.",
+          "Choose B: Whether an attacker can physically access the hardware."
+        ]
+      },
+      "hw-u1-q11": {
+        "title": "Recognizing multiple access paths",
+        "statement": "A device’s network connection is disabled, but its internal debug interface remains accessible. What can we conclude?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Every attack path has been removed",
+          "b": "The debug interface becomes encrypted automatically",
+          "c": "A physical interaction path still remains"
+        },
+        "hint": "Removing one entrance does not establish what happened to the others.",
+        "explanation": "The network path is removed, but the debug interface must be assessed separately.",
+        "solutionSteps": [
+          "The network path is removed, but the debug interface must be assessed separately.",
+          "Choose C: A physical interaction path still remains."
+        ]
+      },
+      "hw-u1-q12": {
+        "title": "Stating a useful threat",
+        "statement": "Which description gives the clearest threat scenario?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "A person with the device could use an exposed interface to copy private records",
+          "b": "The device might be insecure",
+          "c": "The device contains several chips"
+        },
+        "hint": "Look for who can act, what they can reach, and what could go wrong.",
+        "explanation": "It identifies physical access, private records, and unauthorized copying.",
+        "solutionSteps": [
+          "It identifies physical access, private records, and unauthorized copying.",
+          "Choose A: A person with the device could use an exposed interface to copy private records."
+        ]
+      },
+      "hw-u1-q13": {
+        "title": "Understanding alternative attack paths",
+        "statement": "A secret can be obtained through interface A or interface B. Interface A is blocked. What follows?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Both paths are now blocked",
+          "b": "Interface B must still be assessed",
+          "c": "The secret is automatically replaced"
+        },
+        "hint": "“OR” means the attacker needs only one successful route.",
+        "explanation": "Blocking one alternative does not remove the other.",
+        "solutionSteps": [
+          "Blocking one alternative does not remove the other.",
+          "Choose B: Interface B must still be assessed."
+        ]
+      },
+      "hw-u1-q14": {
+        "title": "Understanding required combinations",
+        "statement": "A modeled attack requires opening the enclosure and authenticating to the service interface. The attacker opens the enclosure but cannot authenticate. What can we conclude?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Opening the enclosure completes the attack",
+          "b": "The entire device is secure against every attack",
+          "c": "This modeled path is incomplete"
+        },
+        "hint": "Distinguish stopping one path from proving that no other path exists.",
+        "explanation": "One required condition is missing. That blocks this path, without proving overall security.",
+        "solutionSteps": [
+          "One required condition is missing. That blocks this path, without proving overall security.",
+          "Choose C: This modeled path is incomplete."
+        ]
+      },
+      "hw-u1-q15": {
+        "title": "Combining protection, detection, and response",
+        "statement": "A device already has a locked enclosure and an opening sensor, but nothing happens when the sensor triggers. Which addition supplies a response?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Suspend sensitive operations and notify the operator when the alarm triggers",
+          "b": "Add another sensor that is also ignored",
+          "c": "Make the enclosure label larger"
+        },
+        "hint": "A response changes what the system does after detection.",
+        "explanation": "It connects detection to a defined action, adding the missing response.",
+        "solutionSteps": [
+          "It connects detection to a defined action, adding the missing response.",
+          "Choose A: Suspend sensitive operations and notify the operator when the alarm triggers."
+        ]
+      },
+      "hw-u2-q01": {
+        "title": "Understanding voltage",
+        "statement": "A meter reads 5 V between a supply pin and ground. What does this describe?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The amount of data stored in the device",
+          "b": "The electrical potential difference between those points",
+          "c": "The current through every component"
+        },
+        "hint": "Voltage compares two electrical points.",
+        "explanation": "The reading describes a potential difference, not current or stored information.",
+        "solutionSteps": [
+          "The reading describes a potential difference, not current or stored information.",
+          "Choose B: The electrical potential difference between those points."
+        ]
+      },
+      "hw-u2-q02": {
+        "title": "Understanding current",
+        "statement": "A device draws 0.2 A from a suitable supply rated for up to 1 A. How much current is it drawing?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "0.2 A",
+          "b": "1 A",
+          "c": "1.2 A"
+        },
+        "hint": "Separate the supply’s capacity from the device’s actual demand.",
+        "explanation": "The rating gives the supply’s capacity; the stated load draws 0.2 A.",
+        "solutionSteps": [
+          "The rating gives the supply’s capacity; the stated load draws 0.2 A.",
+          "Choose A: 0.2 A."
+        ]
+      },
+      "hw-u2-q03": {
+        "title": "Understanding resistance",
+        "statement": "A resistor is changed from 1 kΩ to 4 kΩ while the voltage across it stays constant. What happens to its current?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "It increases",
+          "b": "It stays the same",
+          "c": "It decreases"
+        },
+        "hint": "More resistance means less current when voltage is unchanged.",
+        "explanation": "Increasing resistance reduces current at a fixed voltage.",
+        "solutionSteps": [
+          "Increasing resistance reduces current at a fixed voltage.",
+          "Choose C: It decreases."
+        ]
+      },
+      "hw-u2-q04": {
+        "title": "Applying Ohm’s law",
+        "statement": "What current flows through an ideal 2,000 Ω resistor with 4 V across it?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "0.5 mA",
+          "b": "2 mA",
+          "c": "8 mA"
+        },
+        "hint": "Divide the voltage by the resistance, then convert amperes to milliamperes.",
+        "explanation": "4 / 2000 = 0.002 A, which is 2 mA.",
+        "solutionSteps": [
+          "4 / 2000 = 0.002 A, which is 2 mA.",
+          "Choose B: 2 mA."
+        ]
+      },
+      "hw-u2-q05": {
+        "title": "Relating voltage and current to power",
+        "statement": "A device draws 0.2 A at 5 V. What electrical power does it receive?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "1 W",
+          "b": "0.04 W",
+          "c": "25 W"
+        },
+        "hint": "Multiply voltage by current.",
+        "explanation": "5 × 0.2 = 1 W.",
+        "solutionSteps": ["5 × 0.2 = 1 W.", "Choose A: 1 W."]
+      },
+      "hw-u2-q06": {
+        "title": "Sharing a reference",
+        "statement": "Two devices exchange a single-ended signal without an established common reference. What problem can occur?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Their firmware becomes identical",
+          "b": "Their supply ratings automatically match",
+          "c": "The receiver misinterprets the signal voltage"
+        },
+        "hint": "A voltage reading depends on the reference used.",
+        "explanation": "Different reference potentials can change the voltage seen by the receiver.",
+        "solutionSteps": [
+          "Different reference potentials can change the voltage seen by the receiver.",
+          "Choose C: The receiver misinterprets the signal voltage."
+        ]
+      },
+      "hw-u2-q07": {
+        "title": "Interpreting logic levels",
+        "statement": "LOW is guaranteed at or below 0.8 V and HIGH at or above 2.0 V. How should a 1.4 V input be classified?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Guaranteed HIGH",
+          "b": "Neither guaranteed LOW nor guaranteed HIGH",
+          "c": "Guaranteed LOW"
+        },
+        "hint": "Compare the voltage with both guaranteed ranges.",
+        "explanation": "It lies between the specified LOW and HIGH ranges.",
+        "solutionSteps": [
+          "It lies between the specified LOW and HIGH ranges.",
+          "Choose B: Neither guaranteed LOW nor guaranteed HIGH."
+        ]
+      },
+      "hw-u2-q08": {
+        "title": "Checking electrical compatibility",
+        "statement": "A transmitter produces 5 V signals. The receiver’s input has an absolute maximum of 3.6 V and is not 5 V tolerant. Which approach is appropriate?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Use suitable level translation within the receiver’s specifications",
+          "b": "Connect directly because both devices use digital signals",
+          "c": "Connect directly because 5 V clearly represents HIGH"
+        },
+        "hint": "Check electrical limits before interpreting the logical value.",
+        "explanation": "Level translation can provide compatible signal voltages. A direct 5 V connection exceeds the stated limit.",
+        "solutionSteps": [
+          "Level translation can provide compatible signal voltages. A direct 5 V connection exceeds the stated limit.",
+          "Choose A: Use suitable level translation within the receiver’s specifications."
+        ]
+      },
+      "hw-u2-q09": {
+        "title": "Recognizing a floating input",
+        "statement": "A disconnected input changes state unpredictably. Which explanation best fits?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "It must be receiving valid messages",
+          "b": "High impedance guarantees a LOW reading",
+          "c": "The input is floating"
+        },
+        "hint": "Ask what is establishing the pin’s voltage.",
+        "explanation": "Without a driver or bias, the input may have no defined logic level.",
+        "solutionSteps": [
+          "Without a driver or bias, the input may have no defined logic level.",
+          "Choose C: The input is floating."
+        ]
+      },
+      "hw-u2-q10": {
+        "title": "Giving a released line a defined state",
+        "statement": "Two open-drain devices share a pulled-up line. One releases it and the other pulls LOW. What is the line’s expected state?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "HIGH",
+          "b": "LOW",
+          "c": "Halfway between HIGH and LOW"
+        },
+        "hint": "Releasing the line is different from actively driving it HIGH.",
+        "explanation": "The active pull-down holds the line LOW despite the pull-up.",
+        "solutionSteps": [
+          "The active pull-down holds the line LOW despite the pull-up.",
+          "Choose B: LOW."
+        ]
+      },
+      "hw-u2-q11": {
+        "title": "Measuring a supply voltage",
+        "statement": "Which setup measures a board’s supply voltage?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Voltage mode, with probes between the supply rail and ground",
+          "b": "Continuity mode, with probes across the powered supply",
+          "c": "Current mode, with probes directly across the supply and ground"
+        },
+        "hint": "Match the meter mode to the quantity being measured.",
+        "explanation": "Voltage mode measures the difference between the rail and ground. Current mode across a supply can create a short circuit.",
+        "solutionSteps": [
+          "Voltage mode measures the difference between the rail and ground. Current mode across a supply can create a short circuit.",
+          "Choose A: Voltage mode, with probes between the supply rail and ground."
+        ]
+      },
+      "hw-u2-q12": {
+        "title": "Interpreting continuity",
+        "statement": "Two test points on an unpowered board produce a continuity beep. What is the strongest supported conclusion?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "They must be joined by one uninterrupted copper trace",
+          "b": "They must carry the same digital protocol",
+          "c": "A sufficiently low-resistance path exists between them"
+        },
+        "hint": "Separate what the instrument measured from how the board might be constructed.",
+        "explanation": "The beep indicates low resistance according to the meter’s threshold, without identifying the route.",
+        "solutionSteps": [
+          "The beep indicates low resistance according to the meter’s threshold, without identifying the route.",
+          "Choose C: A sufficiently low-resistance path exists between them."
+        ]
+      },
+      "hw-u2-q13": {
+        "title": "Finding a brief voltage disturbance",
+        "statement": "A board resets unexpectedly, but its supply looks steady on a multimeter. Which measurement is most useful next?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Measure only the enclosure’s resistance",
+          "b": "Observe the supply waveform with an oscilloscope around the reset",
+          "c": "Repeat the same steady reading and assume the supply cannot be involved"
+        },
+        "hint": "The suspected problem may exist only briefly.",
+        "explanation": "A time-resolved measurement can reveal short disturbances hidden by the multimeter’s display.",
+        "solutionSteps": [
+          "A time-resolved measurement can reveal short disturbances hidden by the multimeter’s display.",
+          "Choose B: Observe the supply waveform with an oscilloscope around the reset."
+        ]
+      },
+      "hw-u2-q14": {
+        "title": "Choosing a logic analyzer",
+        "statement": "You want to compare the order of transitions on eight digital lines. Which tool is most directly suited?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "A suitably configured logic analyzer",
+          "b": "A multimeter in continuity mode",
+          "c": "A power supply’s current-limit control"
+        },
+        "hint": "The task concerns several digital sequences rather than detailed voltage shape.",
+        "explanation": "A logic analyzer can capture and compare multiple digital channels.",
+        "solutionSteps": [
+          "A logic analyzer can capture and compare multiple digital channels.",
+          "Choose A: A suitably configured logic analyzer."
+        ]
+      },
+      "hw-u2-q15": {
+        "title": "Recognizing a missed event",
+        "statement": "A logic analyzer samples every 1 microsecond. A pulse may last only 0.1 microseconds. Its capture shows no pulse. What can you conclude?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The pulse definitely never happened",
+          "b": "Every pulse must last at least 1 microsecond",
+          "c": "The capture may have missed the pulse"
+        },
+        "hint": "Compare the event’s duration with the gaps between observations.",
+        "explanation": "The pulse could fit between samples. A suitable faster capture and appropriate instrument specifications are needed to investigate it reliably.",
+        "solutionSteps": [
+          "The pulse could fit between samples. A suitable faster capture and appropriate instrument specifications are needed to investigate it reliably.",
+          "Choose C: The capture may have missed the pulse."
+        ]
+      },
+      "hw-u3-q01": {
+        "title": "A connector is not a protocol",
+        "statement": "You find an unfamiliar four-pin connector. What should you establish before connecting an adapter?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Whether the adapter physically fits",
+          "b": "The pin assignments and electrical requirements",
+          "c": "Whether both boards have the same colour"
+        },
+        "hint": "Physical compatibility does not establish electrical compatibility.",
+        "explanation": "Identify what each pin does and its voltage requirements before connecting anything.",
+        "solutionSteps": [
+          "Identify what each pin does and its voltage requirements before connecting anything.",
+          "Choose B: The pin assignments and electrical requirements."
+        ]
+      },
+      "hw-u3-q02": {
+        "title": "UART transmit and receive",
+        "statement": "Which connection lets an adapter receive messages transmitted by a board?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Board TX → adapter RX",
+          "b": "Board TX → adapter TX",
+          "c": "Board RX → adapter RX"
+        },
+        "hint": "Follow the message from the transmitter to the receiver.",
+        "explanation": "The board transmits through TX, and the adapter receives through RX.",
+        "solutionSteps": [
+          "The board transmits through TX, and the adapter receives through RX.",
+          "Choose A: Board TX → adapter RX."
+        ]
+      },
+      "hw-u3-q03": {
+        "title": "Matching UART timing",
+        "statement": "Documentation specifies 38,400 baud, but your adapter uses 9,600. What is the first setting to correct?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The connector’s pin count",
+          "b": "The board’s supply-current limit",
+          "c": "The adapter’s baud rate"
+        },
+        "hint": "The documented mismatch concerns timing.",
+        "explanation": "Set the adapter to the documented baud rate, then check the remaining UART settings if necessary.",
+        "solutionSteps": [
+          "Set the adapter to the documented baud rate, then check the remaining UART settings if necessary.",
+          "Choose C: The adapter’s baud rate."
+        ]
+      },
+      "hw-u3-q04": {
+        "title": "Unreadable output is not a diagnosis",
+        "statement": "A terminal shows unreadable characters. Which conclusion is justified?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The device definitely encrypts its output",
+          "b": "The settings and data format need checking",
+          "c": "The device has no functioning processor"
+        },
+        "hint": "Several different causes can produce the same observation.",
+        "explanation": "Check the communication settings and expected format before deciding what the output means.",
+        "solutionSteps": [
+          "Check the communication settings and expected format before deciding what the output means.",
+          "Choose B: The settings and data format need checking."
+        ]
+      },
+      "hw-u3-q05": {
+        "title": "SPI uses a shared clock",
+        "statement": "Why must a decoder observe the SPI clock as well as the data?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The clock provides timing for interpreting the bits",
+          "b": "The clock identifies the manufacturer",
+          "c": "The clock stores the transferred information"
+        },
+        "hint": "“Synchronous” means communication follows shared timing.",
+        "explanation": "Data values must be interpreted at the appropriate moments relative to the clock.",
+        "solutionSteps": [
+          "Data values must be interpreted at the appropriate moments relative to the clock.",
+          "Choose A: The clock provides timing for interpreting the bits."
+        ]
+      },
+      "hw-u3-q06": {
+        "title": "Selecting an SPI target",
+        "statement": "A flash chip and a display have separate active-low selects. The flash select is LOW and the display select is HIGH. Which is selected?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Both devices",
+          "b": "The display",
+          "c": "The flash chip"
+        },
+        "hint": "For an active-low signal, LOW means active.",
+        "explanation": "The flash is selected. This assumes the documented active-low behaviour.",
+        "solutionSteps": [
+          "The flash is selected. This assumes the documented active-low behaviour.",
+          "Choose C: The flash chip."
+        ]
+      },
+      "hw-u3-q07": {
+        "title": "Selecting the correct SPI mode",
+        "statement": "You have identified the SPI wires, but decoded values disagree with known transfers. What should you check next?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Whether the connector has enough unused pins",
+          "b": "Whether the decoder’s clock settings match the device",
+          "c": "Whether the chip-select wire can replace the clock"
+        },
+        "hint": "Correct wires do not guarantee correct sampling.",
+        "explanation": "Check the clock mode, along with other documented settings such as bit order.",
+        "solutionSteps": [
+          "Check the clock mode, along with other documented settings such as bit order.",
+          "Choose B: Whether the decoder’s clock settings match the device."
+        ]
+      },
+      "hw-u3-q08": {
+        "title": "I²C’s two shared signals",
+        "statement": "Every device releases SDA, but the required pull-up is missing. What can happen?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "SDA may lack a reliable HIGH level",
+          "b": "SDA automatically becomes a UART transmitter",
+          "c": "Every device receives a new address"
+        },
+        "hint": "Releasing a line does not itself drive it HIGH.",
+        "explanation": "Without the required pull-up, the released line may float rather than reach a dependable HIGH level.",
+        "solutionSteps": [
+          "Without the required pull-up, the released line may float rather than reach a dependable HIGH level.",
+          "Choose A: SDA may lack a reliable HIGH level."
+        ]
+      },
+      "hw-u3-q09": {
+        "title": "I²C addresses",
+        "statement": "Two sensors share an address and must be controlled independently. Which solution can resolve the conflict?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Increase the supply voltage",
+          "b": "Rename the sensors in your notes",
+          "c": "Configure one sensor to use a different supported address"
+        },
+        "hint": "The bus uses the transmitted address, not your label.",
+        "explanation": "A supported address change gives each target a distinct address.",
+        "solutionSteps": [
+          "A supported address change gives each target a distinct address.",
+          "Choose C: Configure one sensor to use a different supported address."
+        ]
+      },
+      "hw-u3-q10": {
+        "title": "What an acknowledgement tells you",
+        "statement": "An address receives an ACK. What can you conclude from that observation alone?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The target completed every requested operation",
+          "b": "Something on the bus acknowledged that address",
+          "c": "The target’s firmware is authentic"
+        },
+        "hint": "Keep the conclusion limited to the event you observed.",
+        "explanation": "The ACK establishes an acknowledgement at that point in the transfer, not broader correctness or authenticity.",
+        "solutionSteps": [
+          "The ACK establishes an acknowledgement at that point in the transfer, not broader correctness or authenticity.",
+          "Choose B: Something on the bus acknowledged that address."
+        ]
+      },
+      "hw-u3-q11": {
+        "title": "Distinguishing bus arrangements",
+        "statement": "Two chips share a clock and separate outgoing/incoming data lines. Each has its own select wire. Which interpretation best fits?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Typical four-wire SPI",
+          "b": "Basic UART",
+          "c": "Typical two-wire I²C"
+        },
+        "hint": "Look at how the controller selects a target.",
+        "explanation": "Shared clock/data signals with separate chip selects fit the common SPI arrangement. Confirm against documentation or captured traffic.",
+        "solutionSteps": [
+          "Shared clock/data signals with separate chip selects fit the common SPI arrangement. Confirm against documentation or captured traffic.",
+          "Choose A: Typical four-wire SPI."
+        ]
+      },
+      "hw-u3-q12": {
+        "title": "CAN uses a differential pair",
+        "statement": "You identify CANH and CANL on a device. Which connection approach matches those signals?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Treat CANH as UART TX and CANL as UART RX",
+          "b": "Connect either line directly to an arbitrary logic input",
+          "c": "Use a compatible CAN interface with a suitable transceiver"
+        },
+        "hint": "Both wires form one differential signalling pair.",
+        "explanation": "A suitable CAN interface handles the bus’s electrical signalling and protocol.",
+        "solutionSteps": [
+          "A suitable CAN interface handles the bus’s electrical signalling and protocol.",
+          "Choose C: Use a compatible CAN interface with a suitable transceiver."
+        ]
+      },
+      "hw-u3-q13": {
+        "title": "USB identification is a reported description",
+        "statement": "A device reports a familiar product identifier. What does that establish by itself?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The hardware is certainly genuine",
+          "b": "The device reported that identifier",
+          "c": "Its firmware cannot have changed"
+        },
+        "hint": "A description supplied by a device is a claim from that device.",
+        "explanation": "Enumeration reveals reported identity and capabilities; stronger authenticity claims require additional evidence.",
+        "solutionSteps": [
+          "Enumeration reveals reported identity and capabilities; stronger authenticity claims require additional evidence.",
+          "Choose B: The device reported that identifier."
+        ]
+      },
+      "hw-u3-q14": {
+        "title": "An SD-related interface is not always storage",
+        "statement": "A datasheet describes a component as an “SDIO wireless module.” What is the best interpretation?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "It uses SDIO to communicate with a wireless component",
+          "b": "It must contain the device’s main firmware storage",
+          "c": "It must be a removable memory card"
+        },
+        "hint": "Use the component’s documented function as well as its interface.",
+        "explanation": "SDIO supports input/output functions; the interface name alone does not establish storage.",
+        "solutionSteps": [
+          "SDIO supports input/output functions; the interface name alone does not establish storage.",
+          "Choose A: It uses SDIO to communicate with a wireless component."
+        ]
+      },
+      "hw-u3-q15": {
+        "title": "Capturing a parallel bus",
+        "statement": "You capture the clock and one data line of an eight-bit parallel bus. Can you reconstruct arbitrary complete bytes from that capture alone?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Yes, because the clock contains the missing bits",
+          "b": "Yes, because every data line carries the same value",
+          "c": "No, because seven data bits were not observed"
+        },
+        "hint": "Parallel transfer distributes information across several wires.",
+        "explanation": "The capture lacks the other data lines needed to reconstruct each complete byte.",
+        "solutionSteps": [
+          "The capture lacks the other data lines needed to reconstruct each complete byte.",
+          "Choose C: No, because seven data bits were not observed."
+        ]
+      },
+      "hw-u3-q16": {
+        "title": "JTAG testing and debugging",
+        "statement": "A JTAG boundary-scan operation succeeds. Which conclusion is justified?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "All firmware can definitely be read",
+          "b": "That boundary-scan operation is available",
+          "c": "Every security restriction is disabled"
+        },
+        "hint": "One working function does not prove that all functions are available.",
+        "explanation": "Boundary-scan access and processor-debug access are distinct capabilities.",
+        "solutionSteps": [
+          "Boundary-scan access and processor-debug access are distinct capabilities.",
+          "Choose B: That boundary-scan operation is available."
+        ]
+      },
+      "hw-u3-q17": {
+        "title": "Choosing capture equipment",
+        "statement": "Your analyser shows no useful traffic on a fast interface. What should you check before concluding that the interface is inactive?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Whether the equipment and configuration can capture that interface",
+          "b": "Whether the board has a printed product name",
+          "c": "Whether another connector has fewer pins"
+        },
+        "hint": "Missing evidence can result from an unsuitable measurement.",
+        "explanation": "Check signal compatibility, probing, sampling capability and configuration before interpreting an empty capture.",
+        "solutionSteps": [
+          "Check signal compatibility, probing, sampling capability and configuration before interpreting an empty capture.",
+          "Choose A: Whether the equipment and configuration can capture that interface."
+        ]
+      },
+      "hw-u3-q18": {
+        "title": "Combining interface evidence",
+        "statement": "You observe two pulled-up lines. One carries clock pulses; the other carries addresses and acknowledgements. What is the strongest next step?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Treat the lines as CANH/CANL because there are two",
+          "b": "Connect an adapter without checking voltage compatibility",
+          "c": "Test an I²C interpretation against documentation and captured transfers"
+        },
+        "hint": "Combine the electrical behaviour with the structure of the messages.",
+        "explanation": "The combined evidence supports I²C. Documentation and consistent decoding can strengthen that identification.",
+        "solutionSteps": [
+          "The combined evidence supports I²C. Documentation and consistent decoding can strengthen that identification.",
+          "Choose C: Test an I²C interpretation against documentation and captured transfers."
+        ]
+      },
+      "hw-u4-q01": {
+        "title": "Identify the exact device",
+        "statement": "Which record best helps you find documentation for your particular board?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Product name alone",
+          "b": "Product name, model identifier and board revision",
+          "c": "Case colour alone"
+        },
+        "hint": "Record information that distinguishes one hardware version from another.",
+        "explanation": "Model and revision details reduce the risk of applying documentation to the wrong hardware.",
+        "solutionSteps": [
+          "Model and revision details reduce the risk of applying documentation to the wrong hardware.",
+          "Choose B: Product name, model identifier and board revision."
+        ]
+      },
+      "hw-u4-q02": {
+        "title": "Record the original arrangement",
+        "statement": "You need to remove several similar internal cables. What should you do first?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Record where each cable connects and its orientation",
+          "b": "Disconnect them and rely on memory",
+          "c": "Assume interchangeable plugs mean interchangeable functions"
+        },
+        "hint": "Preserve information that may disappear when you disassemble the device.",
+        "explanation": "A record makes later reconstruction and comparison more reliable.",
+        "solutionSteps": [
+          "A record makes later reconstruction and comparison more reliable.",
+          "Choose A: Record where each cable connects and its orientation."
+        ]
+      },
+      "hw-u4-q03": {
+        "title": "Use component markings as evidence",
+        "statement": "A search result matches part of a chip’s marking but shows a different package. What should you do?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Accept it because some letters match",
+          "b": "Assume the package has no relevance",
+          "c": "Treat it as uncertain and check other identifying details"
+        },
+        "hint": "A good identification should explain more than one observation.",
+        "explanation": "A partial marking match is a lead; inconsistent physical details need investigation.",
+        "solutionSteps": [
+          "A partial marking match is a lead; inconsistent physical details need investigation.",
+          "Choose C: Treat it as uncertain and check other identifying details."
+        ]
+      },
+      "hw-u4-q04": {
+        "title": "Package shape does not establish function",
+        "statement": "You identify a large BGA package. What additional evidence best establishes its function?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Its size alone",
+          "b": "A verified part identification and datasheet",
+          "c": "Its distance from the board’s edge alone"
+        },
+        "hint": "Physical construction and electronic function are different properties.",
+        "explanation": "The package narrows physical possibilities; the identified part and documentation explain its function.",
+        "solutionSteps": [
+          "The package narrows physical possibilities; the identified part and documentation explain its function.",
+          "Choose B: A verified part identification and datasheet."
+        ]
+      },
+      "hw-u4-q05": {
+        "title": "Read pinouts in the correct orientation",
+        "statement": "A datasheet provides a bottom-view pinout, but you are looking at the chip from above. What should you do before identifying a pin?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Account for the viewing direction and orientation marker",
+          "b": "Copy the drawing directly without changing perspective",
+          "c": "Ignore orientation because pin numbers are interchangeable"
+        },
+        "hint": "The same physical connection appears in a different position when viewed from the opposite side.",
+        "explanation": "Match the documented perspective to the physical component before assigning signals.",
+        "solutionSteps": [
+          "Match the documented perspective to the physical component before assigning signals.",
+          "Choose A: Account for the viewing direction and orientation marker."
+        ]
+      },
+      "hw-u4-q06": {
+        "title": "Interpret continuity cautiously",
+        "statement": "Two points produce a continuity beep. What is the most careful conclusion?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "They must be the same signal with no component between them",
+          "b": "They must both be ground",
+          "c": "A sufficiently low-resistance path exists under the test conditions"
+        },
+        "hint": "The instrument detects an electrical condition, not the complete route.",
+        "explanation": "Inspect the circuit and consult documentation before describing the exact connection.",
+        "solutionSteps": [
+          "Inspect the circuit and consult documentation before describing the exact connection.",
+          "Choose C: A sufficiently low-resistance path exists under the test conditions."
+        ]
+      },
+      "hw-u4-q07": {
+        "title": "Build a map with confidence levels",
+        "statement": "You suspect a test pad connects to UART TX, but have not verified the route or signal. How should you record it?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "“Confirmed UART TX”",
+          "b": "“Possible UART TX; verification needed”",
+          "c": "“Unused pad”"
+        },
+        "hint": "Your label should reflect what the evidence actually establishes.",
+        "explanation": "Recording uncertainty preserves the hypothesis without presenting it as a confirmed connection.",
+        "solutionSteps": [
+          "Recording uncertainty preserves the hypothesis without presenting it as a confirmed connection.",
+          "Choose B: “Possible UART TX; verification needed”."
+        ]
+      },
+      "hw-u4-q08": {
+        "title": "Compare documents with the actual board",
+        "statement": "An online schematic places flash memory beside the processor, but your board has a different component there. What is the best response?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Check whether the schematic matches your model and revision",
+          "b": "Assume the visible component must be flash",
+          "c": "Replace your observation with the schematic’s description"
+        },
+        "hint": "A document’s relevance depends on which hardware it describes.",
+        "explanation": "Resolve the mismatch before using that document as evidence for your board.",
+        "solutionSteps": [
+          "Resolve the mismatch before using that document as evidence for your board.",
+          "Choose A: Check whether the schematic matches your model and revision."
+        ]
+      },
+      "hw-u4-q09": {
+        "title": "An update file may be a container",
+        "statement": "You obtain an official update file for the correct device. Can you assume it is a byte-for-byte image of the entire flash chip?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Yes, because all official updates use that format",
+          "b": "Yes, if the filename contains “firmware”",
+          "c": "No; first establish the package’s format and contents"
+        },
+        "hint": "A file used to perform an update can contain more than the installed program.",
+        "explanation": "Correct model compatibility does not establish the file’s internal layout or its relationship to physical storage.",
+        "solutionSteps": [
+          "Correct model compatibility does not establish the file’s internal layout or its relationship to physical storage.",
+          "Choose C: No; first establish the package’s format and contents."
+        ]
+      },
+      "hw-u4-q10": {
+        "title": "Preserve the original and check copies",
+        "statement": "Your original and working copy have matching SHA-256 hashes. What does this support?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The firmware has no vulnerabilities",
+          "b": "The files have the same contents",
+          "c": "The manufacturer has authenticated the download"
+        },
+        "hint": "Comparing hashes checks content equality, not trustworthiness.",
+        "explanation": "The comparison supports an unchanged copy. Authenticity requires a trusted verification method or reference.",
+        "solutionSteps": [
+          "The comparison supports an unchanged copy. Authenticity requires a trusted verification method or reference.",
+          "Choose B: The files have the same contents."
+        ]
+      },
+      "hw-u4-q11": {
+        "title": "Interpret strings and entropy as clues",
+        "statement": "A firmware section has high entropy. Which next step is best supported?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Check headers and format evidence to distinguish possible explanations",
+          "b": "Declare the section encrypted",
+          "c": "Declare the section empty"
+        },
+        "hint": "More than one process can produce highly varied bytes.",
+        "explanation": "Examine additional evidence before choosing between compression, encryption or another explanation.",
+        "solutionSteps": [
+          "Examine additional evidence before choosing between compression, encryption or another explanation.",
+          "Choose A: Check headers and format evidence to distinguish possible explanations."
+        ]
+      },
+      "hw-u4-q12": {
+        "title": "Combine evidence without overstating access",
+        "statement": "A processor supports UART, nearby pads are labelled TX/RX, and a firmware file contains “console.” No signal has been captured. Which conclusion is strongest?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "An unrestricted command console is confirmed",
+          "b": "The pads are confirmed to be inactive",
+          "c": "The pads are plausible UART candidates, but their activity and access remain unverified"
+        },
+        "hint": "Separate a promising hypothesis from a demonstrated capability.",
+        "explanation": "The clues justify further identification and measurement. They do not yet establish an active interface, a console or unrestricted access.",
+        "solutionSteps": [
+          "The clues justify further identification and measurement. They do not yet establish an active interface, a console or unrestricted access.",
+          "Choose C: The pads are plausible UART candidates, but their activity and access remain unverified."
+        ]
+      },
+      "hw-u1-q16": {
+        "title": "Understanding attack effort",
+        "statement": "A defence makes an attack much more expensive but does not prevent it completely. What has it achieved?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "It has made every attack impossible.",
+          "b": "It has increased the effort required for that attack.",
+          "c": "It has reduced the value of the protected information."
+        },
+        "hint": "Separate the cost of obtaining an asset from the asset’s value.",
+        "explanation": "The defence raises the attack’s cost. That can discourage an attacker, but the path may still be possible.",
+        "solutionSteps": [
+          "The defence raises the attack’s cost. That can discourage an attacker, but the path may still be possible.",
+          "Choose B: It has increased the effort required for that attack."
+        ]
+      },
+      "hw-u1-q17": {
+        "title": "Knowing which verification key to trust",
+        "statement": "An update includes a verification key. Before trusting signatures checked with it, what must the device establish?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "That the key is authorised by an existing trusted reference.",
+          "b": "That the key is stored in the same file as the update.",
+          "c": "That the signature and key have matching filenames."
+        },
+        "hint": "Consider whether an attacker could supply both the software and a new key.",
+        "explanation": "A matching signature alone does not establish authorisation if the verification key is untrusted.",
+        "solutionSteps": [
+          "A matching signature alone does not establish authorisation if the verification key is untrusted.",
+          "Choose A: That the key is authorised by an existing trusted reference."
+        ]
+      },
+      "hw-u1-q18": {
+        "title": "Continuing the checks during startup",
+        "statement": "Boot ROM verifies a bootloader, but that bootloader runs an unchecked application. Where is the missing verification?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Between power-on and the boot ROM.",
+          "b": "In the already completed bootloader check.",
+          "c": "Between the bootloader and the application."
+        },
+        "hint": "Follow the stages in execution order.",
+        "explanation": "Verifying the bootloader does not automatically verify everything it loads.",
+        "solutionSteps": [
+          "Verifying the bootloader does not automatically verify everything it loads.",
+          "Choose C: Between the bootloader and the application."
+        ]
+      },
+      "hw-u1-q19": {
+        "title": "Using a secret without revealing it",
+        "statement": "Which information should the normal application receive in this arrangement?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The secret signing key.",
+          "b": "The resulting signature.",
+          "c": "A copy of the protected environment’s memory."
+        },
+        "hint": "Distinguish the result of an operation from the secret used to perform it.",
+        "explanation": "The application needs the signature. Keeping the key isolated reduces its exposure, provided the isolation works correctly.",
+        "solutionSteps": [
+          "The application needs the signature. Keeping the key isolated reduces its exposure, provided the isolation works correctly.",
+          "Choose B: The resulting signature."
+        ]
+      },
+      "hw-u1-q20": {
+        "title": "Reporting a weakness clearly",
+        "statement": "Which report gives the vendor the clearest starting point?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "“Your products probably have security problems.”",
+          "b": "“This device looks similar to another vulnerable product.”",
+          "c": "“Model X, firmware Y exposes private records when these steps are followed.”"
+        },
+        "hint": "Look for information that lets someone repeat the observation.",
+        "explanation": "It identifies the affected configuration and provides a reproducible finding.",
+        "solutionSteps": [
+          "It identifies the affected configuration and provides a reproducible finding.",
+          "Choose C: “Model X, firmware Y exposes private records when these steps are followed.”"
+        ]
+      },
+      "hw-u2-q16": {
+        "title": "What a capacitor does",
+        "statement": "Where does the energy powering the indicator after disconnection come from?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Energy previously stored in the capacitor.",
+          "b": "Energy continuously created by the capacitor.",
+          "c": "Energy produced by the disconnected supply cable."
+        },
+        "hint": "Consider what happened while the supply was still connected.",
+        "explanation": "The capacitor releases previously stored energy; it does not generate a continuing supply.",
+        "solutionSteps": [
+          "The capacitor releases previously stored energy; it does not generate a continuing supply.",
+          "Choose A: Energy previously stored in the capacitor."
+        ]
+      },
+      "hw-u2-q17": {
+        "title": "Charging through a resistor",
+        "statement": "An uncharged capacitor connects to a 5 V supply through a resistor. What should happen to its voltage?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "It stays at zero while connected.",
+          "b": "It immediately becomes 5 V, regardless of the resistor.",
+          "c": "It rises towards 5 V over time."
+        },
+        "hint": "Apply what you know about a resistor limiting current.",
+        "explanation": "Limited charging current means the capacitor’s voltage takes time to rise.",
+        "solutionSteps": [
+          "Limited charging current means the capacitor’s voltage takes time to rise.",
+          "Choose C: It rises towards 5 V over time."
+        ]
+      },
+      "hw-u2-q18": {
+        "title": "Helping a chip through a brief current demand",
+        "statement": "Why place a decoupling capacitor near a processor’s supply connection?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "To store the processor’s instructions.",
+          "b": "To help stabilise its local supply during rapid current changes.",
+          "c": "To select the processor’s communication address."
+        },
+        "hint": "Focus on what changes when the processor suddenly needs more current.",
+        "explanation": "The capacitor provides local support for short changes in demand.",
+        "solutionSteps": [
+          "The capacitor provides local support for short changes in demand.",
+          "Choose B: To help stabilise its local supply during rapid current changes."
+        ]
+      },
+      "hw-u2-q19": {
+        "title": "Understanding the limit of that support",
+        "statement": "Why can the same capacitor handle a short interruption but fail during a much longer one?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The circuit eventually uses too much of its stored energy.",
+          "b": "The capacitor becomes a resistor after a fixed time.",
+          "c": "The capacitor stores energy only while the circuit is off."
+        },
+        "hint": "Compare the energy available with the energy consumed over time.",
+        "explanation": "A longer interruption requires more energy than the capacitor may be able to provide.",
+        "solutionSteps": [
+          "A longer interruption requires more energy than the capacitor may be able to provide.",
+          "Choose A: The circuit eventually uses too much of its stored energy."
+        ]
+      },
+      "hw-u2-q20": {
+        "title": "What an inductor does",
+        "statement": "Which statement correctly compares capacitors and inductors?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Both primarily oppose changes in voltage.",
+          "b": "Capacitors oppose changes in current; inductors oppose changes in voltage.",
+          "c": "Capacitors oppose rapid voltage changes; inductors oppose rapid current changes."
+        },
+        "hint": "Recall which electrical quantity changed as the capacitor charged.",
+        "explanation": "Capacitor behaviour relates to changing voltage; inductor behaviour relates to changing current.",
+        "solutionSteps": [
+          "Capacitor behaviour relates to changing voltage; inductor behaviour relates to changing current.",
+          "Choose C: Capacitors oppose rapid voltage changes; inductors oppose rapid current changes."
+        ]
+      },
+      "hw-u2-q21": {
+        "title": "A diode’s direction matters",
+        "statement": "Why can reversing a diode change whether current flows through a circuit?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Reversing it changes the resistor’s resistance.",
+          "b": "The diode’s conduction depends on its orientation relative to the applied voltage.",
+          "c": "Reversing it increases the battery’s stored energy."
+        },
+        "hint": "Consider which component’s direction-dependent behaviour has changed.",
+        "explanation": "A diode behaves differently under forward and reverse voltage, within its operating limits.",
+        "solutionSteps": [
+          "A diode behaves differently under forward and reverse voltage, within its operating limits.",
+          "Choose B: The diode’s conduction depends on its orientation relative to the applied voltage."
+        ]
+      },
+      "hw-u2-q22": {
+        "title": "Controlling a separate current path",
+        "statement": "In this arrangement, which component switches the indicator’s supply-current path?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The transistor.",
+          "b": "The processor’s program memory.",
+          "c": "The decoupling capacitor."
+        },
+        "hint": "Separate the component issuing the command from the component switching the load.",
+        "explanation": "The processor provides control; the transistor switches the load’s current path.",
+        "solutionSteps": [
+          "The processor provides control; the transistor switches the load’s current path.",
+          "Choose A: The transistor."
+        ]
+      },
+      "hw-u2-q23": {
+        "title": "Producing the required supply voltage",
+        "statement": "Which component is responsible for converting the board’s 9 V input into its regulated 3.3 V supply?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The processor’s switching transistor.",
+          "b": "The decoupling capacitor alone.",
+          "c": "The voltage regulator."
+        },
+        "hint": "Identify the component designed to maintain the output supply level.",
+        "explanation": "The regulator produces the required rail; capacitors help manage changes around it.",
+        "solutionSteps": [
+          "The regulator produces the required rail; capacitors help manage changes around it.",
+          "Choose C: The voltage regulator."
+        ]
+      },
+      "hw-u2-q24": {
+        "title": "Recognising variation on a DC supply",
+        "statement": "A processor’s 3.3 V rail briefly falls to 3.0 V without reversing polarity. How should you describe it?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "A perfectly constant DC voltage.",
+          "b": "A DC supply containing a voltage disturbance.",
+          "c": "A voltage that necessarily alternates between positive and negative."
+        },
+        "hint": "Separate changing magnitude from changing polarity.",
+        "explanation": "The voltage varies, but it retains its polarity.",
+        "solutionSteps": [
+          "The voltage varies, but it retains its polarity.",
+          "Choose B: A DC supply containing a voltage disturbance."
+        ]
+      },
+      "hw-u2-q25": {
+        "title": "Letting devices take turns",
+        "statement": "A stops transmitting and B begins. What should A’s output do while B drives the shared wire?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Drive the opposite voltage to B.",
+          "b": "Continue driving its last value.",
+          "c": "Enter high impedance."
+        },
+        "hint": "Consider how A can avoid competing with B’s output.",
+        "explanation": "High impedance lets B control the wire without A actively driving against it.",
+        "solutionSteps": [
+          "High impedance lets B control the wire without A actively driving against it.",
+          "Choose C: Enter high impedance."
+        ]
+      },
+      "hw-u2-q26": {
+        "title": "Preserving fast signal details",
+        "statement": "The probe is smoothing a signal’s fast edges. Which change addresses that limitation most directly?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Use a suitable probe with adequate bandwidth.",
+          "b": "Record more samples through the same unsuitable probe.",
+          "c": "Display the same capture over a longer time window."
+        },
+        "hint": "Identify where the waveform loses detail.",
+        "explanation": "The measurement path must preserve the fast features before sampling can represent them.",
+        "solutionSteps": [
+          "The measurement path must preserve the fast features before sampling can represent them.",
+          "Choose A: Use a suitable probe with adequate bandwidth."
+        ]
+      },
+      "hw-u2-q27": {
+        "title": "Capturing a supply disturbance",
+        "statement": "A board resets when its supply briefly falls below 2.9 V. Which trigger best targets the falling supply event?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "A rising crossing of 2.9 V on the supply.",
+          "b": "A falling crossing of 2.9 V on the supply.",
+          "c": "A rising transition on an unrelated communication line."
+        },
+        "hint": "Match both the signal being investigated and its direction of change.",
+        "explanation": "This setting targets the supply as it falls through the relevant threshold.",
+        "solutionSteps": [
+          "This setting targets the supply as it falls through the relevant threshold.",
+          "Choose B: A falling crossing of 2.9 V on the supply."
+        ]
+      },
+      "hw-u3-q19": {
+        "title": "Matching the complete UART format",
+        "statement": "Your adapter already uses the correct baud rate, but it uses even parity. The device requires 8N1. What should you change?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Disable parity.",
+          "b": "Reduce the number of data bits to seven.",
+          "c": "Increase the number of stop bits to two."
+        },
+        "hint": "Check which part of “8N1” describes parity.",
+        "explanation": "The “N” specifies no parity; the other stated settings need not change.",
+        "solutionSteps": [
+          "The “N” specifies no parity; the other stated settings need not change.",
+          "Choose A: Disable parity."
+        ]
+      },
+      "hw-u3-q20": {
+        "title": "Checking electrical compatibility separately",
+        "statement": "The baud rate and frame format match, but the electrical levels do not. What is needed?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "A different number of stop bits.",
+          "b": "A different terminal character encoding.",
+          "c": "A suitable electrical interface or converter."
+        },
+        "hint": "Identify whether the mismatch concerns the message format or the voltages carrying it.",
+        "explanation": "Matching software settings cannot correct incompatible electrical signalling.",
+        "solutionSteps": [
+          "Matching software settings cannot correct incompatible electrical signalling.",
+          "Choose C: A suitable electrical interface or converter."
+        ]
+      },
+      "hw-u3-q21": {
+        "title": "Following SPI responses",
+        "statement": "You captured the controller’s command but now want the sensor’s returned measurement. Which data signal should you inspect?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "COPI.",
+          "b": "CIPO.",
+          "c": "Chip select."
+        },
+        "hint": "Follow the direction from the sensor back to the controller.",
+        "explanation": "CIPO carries the peripheral’s outgoing data towards the controller.",
+        "solutionSteps": [
+          "CIPO carries the peripheral’s outgoing data towards the controller.",
+          "Choose B: CIPO."
+        ]
+      },
+      "hw-u3-q22": {
+        "title": "Selecting an I²C register before reading",
+        "statement": "A controller writes 0x10 before reading a sensor’s temperature register. In this arrangement, why does it send 0x10?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "To select the register whose contents it wants.",
+          "b": "To replace the temperature measurement with 0x10.",
+          "c": "To change the sensor’s I²C device address to 0x10."
+        },
+        "hint": "Distinguish selecting a location from changing the value stored there.",
+        "explanation": "The initial write selects the register; the subsequent read receives its contents.",
+        "solutionSteps": [
+          "The initial write selects the register; the subsequent read receives its contents.",
+          "Choose A: To select the register whose contents it wants."
+        ]
+      },
+      "hw-u3-q23": {
+        "title": "Observing pins without taking control",
+        "statement": "You want to control selected output pins for a connection test rather than just observe them. Which operation matches that purpose?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "SAMPLE only.",
+          "b": "Either operation, because both provide identical control.",
+          "c": "EXTEST, with attention to its effect on normal operation."
+        },
+        "hint": "Decide whether the task requires observing or driving the connections.",
+        "explanation": "EXTEST can control external connections; SAMPLE serves the different purpose of observation.",
+        "solutionSteps": [
+          "EXTEST can control external connections; SAMPLE serves the different purpose of observation.",
+          "Choose C: EXTEST, with attention to its effect on normal operation."
+        ]
+      },
+      "hw-u3-q24": {
+        "title": "Recovering timing from the signal",
+        "statement": "An unfamiliar connection has no separate clock wire. Which conclusion is justified?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "It must be UART.",
+          "b": "Its protocol still needs identifying because several interfaces work without a separate clock wire.",
+          "c": "It cannot communicate using synchronised timing."
+        },
+        "hint": "An absent clock wire does not mean that the signal contains no timing information.",
+        "explanation": "The observation narrows some possibilities but does not identify the protocol by itself.",
+        "solutionSteps": [
+          "The observation narrows some possibilities but does not identify the protocol by itself.",
+          "Choose B: Its protocol still needs identifying because several interfaces work without a separate clock wire."
+        ]
+      },
+      "hw-u4-q13": {
+        "title": "Choosing a useful documentation source",
+        "statement": "You have an FCC identifier and want publicly available photographs of the product’s internal board. Which source should you check first?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The corresponding FCC filing.",
+          "b": "A generic processor programming manual.",
+          "c": "A resistor manufacturer’s package catalogue."
+        },
+        "hint": "Match the identifier to the organisation and record it identifies.",
+        "explanation": "The filing may contain product-specific internal photographs, although availability varies.",
+        "solutionSteps": [
+          "The filing may contain product-specific internal photographs, although availability varies.",
+          "Choose A: The corresponding FCC filing."
+        ]
+      },
+      "hw-u4-q14": {
+        "title": "Understanding physical access to chip connections",
+        "statement": "Two chips have the same function, but one has exposed leads and the other has hidden underside connections. Which is generally easier to contact with a suitable lead clip?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The chip with hidden underside connections.",
+          "b": "Both are equally accessible because their function matches.",
+          "c": "The chip with exposed leads."
+        },
+        "hint": "Consider what the clip must physically touch.",
+        "explanation": "Accessible leads provide contact points; matching function does not make the packages equally accessible.",
+        "solutionSteps": [
+          "Accessible leads provide contact points; matching function does not make the packages equally accessible.",
+          "Choose C: The chip with exposed leads."
+        ]
+      },
+      "hw-u4-q15": {
+        "title": "Recognising a configurable connection",
+        "statement": "Why might a manufacturer use a zero-ohm component in this position?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "To provide a precise current-limiting resistance.",
+          "b": "To make the connection optional during assembly.",
+          "c": "To store charge beside the configuration pin."
+        },
+        "hint": "Think about what changes when the component is fitted or omitted.",
+        "explanation": "The part provides an assembly-time connection option.",
+        "solutionSteps": [
+          "The part provides an assembly-time connection option.",
+          "Choose B: To make the connection optional during assembly."
+        ]
+      },
+      "hw-u4-q16": {
+        "title": "Following a trace between layers",
+        "statement": "You follow a surface trace until it reaches a via. What should you record?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "The connection may continue on another layer.",
+          "b": "The electrical connection necessarily ends there.",
+          "c": "The via connects the trace to every other signal on the board."
+        },
+        "hint": "Consider the purpose of having multiple conductive layers.",
+        "explanation": "A via can transfer the connection between layers; its destination still needs investigation.",
+        "solutionSteps": [
+          "A via can transfer the connection between layers; its destination still needs investigation.",
+          "Choose A: The connection may continue on another layer."
+        ]
+      },
+      "hw-u4-q17": {
+        "title": "Checking for available firmware first",
+        "statement": "You need firmware for initial analysis and have not checked whether a matching update exists. What is the most sensible first step?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Remove the flash chip immediately.",
+          "b": "Begin capturing every communication interface.",
+          "c": "Check the vendor’s update downloads for the correct device."
+        },
+        "hint": "Which option could provide the information with the least physical work?",
+        "explanation": "A matching download may satisfy the task without modifying the hardware.",
+        "solutionSteps": [
+          "A matching download may satisfy the task without modifying the hardware.",
+          "Choose C: Check the vendor’s update downloads for the correct device."
+        ]
+      },
+      "hw-u4-q18": {
+        "title": "Interpreting a detected file format",
+        "statement": "A tool reports a possible compressed section at a particular offset. What is the best next step?",
+        "prompt": "Choose the best answer.",
+        "options": {
+          "a": "Assume the entire firmware file is compressed in that format.",
+          "b": "Examine the reported region to check the format and its boundaries.",
+          "c": "Treat the detection as proof that the firmware is encrypted."
+        },
+        "hint": "Keep the conclusion limited to the region and evidence reported.",
+        "explanation": "The detection provides a starting point that should be checked before drawing broader conclusions.",
+        "solutionSteps": [
+          "The detection provides a starting point that should be checked before drawing broader conclusions.",
+          "Choose B: Examine the reported region to check the format and its boundaries."
+        ]
+      }
+    }
+  }
+}

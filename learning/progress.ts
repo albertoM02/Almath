@@ -114,9 +114,19 @@ export function refreshSession(
       next.drafts[id]?.feedback !== "correct" &&
       !next.drafts[id]?.solutionRevealed,
   );
+  // Teach newly inserted prerequisites before resuming a later saved question.
+  // Compatible drafts remain available when the learner returns to that question.
+  const firstInserted =
+    previous.mode === "learn"
+      ? next.baseExerciseIds.findIndex(
+          (id) => !previous.baseExerciseIds.includes(id),
+        )
+      : -1;
   next.index =
     !previous.finished && currentIndex >= 0
-      ? currentIndex
+      ? firstInserted >= 0 && firstInserted < currentIndex
+        ? firstInserted
+        : currentIndex
       : Math.max(0, firstUnfinished);
   const previousConcept = exercises.find(
     (exercise) => exercise.id === currentId,

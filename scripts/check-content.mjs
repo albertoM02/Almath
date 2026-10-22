@@ -6,13 +6,20 @@ import { renderToString } from "katex";
 export function checkContent(root = new URL("../", import.meta.url)) {
   const read = (name) =>
     JSON.parse(readFileSync(new URL(`content/${name}.json`, root), "utf8"));
-  const courses = read("courses"),
-    modules = read("modules"),
-    concepts = read("concepts"),
-    exercises = read("exercises"),
-    outlines = read("outlines"),
-    sources = read("sources"),
-    locale = read("locales/en");
+  const hardware = read("hardware-security/course");
+  const courses = [...read("courses"), ...hardware.courses],
+    modules = [...read("modules"), ...hardware.modules],
+    concepts = [...read("concepts"), ...hardware.concepts],
+    exercises = [...read("exercises"), ...hardware.exercises],
+    outlines = [...read("outlines"), ...hardware.outlines],
+    sources = [...read("sources"), ...hardware.sources];
+  const english = read("locales/en");
+  const locale = Object.fromEntries(
+    Object.entries(english).map(([key, value]) => [
+      key,
+      { ...value, ...hardware.locale[key] },
+    ]),
+  );
   const index = (items, kind) => {
     assert.ok(
       Array.isArray(items) && items.length,

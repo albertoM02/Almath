@@ -4,6 +4,7 @@ import conceptData from "@/content/concepts.json";
 import exerciseData from "@/content/exercises.json";
 import outlineData from "@/content/outlines.json";
 import english from "@/content/locales/en.json";
+import hardwareSecurity from "@/content/hardware-security/course.json";
 import type {
   Course,
   CourseOutline,
@@ -14,12 +15,29 @@ import type {
   ExerciseText,
 } from "./types";
 
-export const courses = courseData as Course[];
-export const outlines = outlineData as CourseOutline[];
-export const modules = moduleData as Module[];
-export const concepts = conceptData as Concept[];
-export const exercises = exerciseData as Exercise[];
-export const locale = english as {
+export const courses = [...courseData, ...hardwareSecurity.courses] as Course[];
+export const outlines = [
+  ...outlineData,
+  ...hardwareSecurity.outlines,
+] as CourseOutline[];
+export const modules = [...moduleData, ...hardwareSecurity.modules] as Module[];
+export const concepts = [
+  ...conceptData,
+  ...hardwareSecurity.concepts,
+] as Concept[];
+export const exercises = [
+  ...exerciseData,
+  ...hardwareSecurity.exercises,
+] as Exercise[];
+export const locale = {
+  ui: { ...english.ui, ...hardwareSecurity.locale.ui },
+  courses: { ...english.courses, ...hardwareSecurity.locale.courses },
+  modules: { ...english.modules, ...hardwareSecurity.locale.modules },
+  parts: { ...english.parts, ...hardwareSecurity.locale.parts },
+  units: { ...english.units, ...hardwareSecurity.locale.units },
+  concepts: { ...english.concepts, ...hardwareSecurity.locale.concepts },
+  exercises: { ...english.exercises, ...hardwareSecurity.locale.exercises },
+} as {
   ui: Record<string, string>;
   courses: Record<
     string,

@@ -2,7 +2,7 @@
 
 Almath includes open-source software and fonts, each under its own license. This file preserves their copyright notices and full license texts. Identical texts are included once and linked from the component list below.
 
-Prepared for Almath 0.5.1-beta. Some listed dependencies are used only during builds or by the web server and are not bundled in the Android APK. KaTeX code uses MIT; its fonts use SIL OFL 1.1.
+Prepared for Almath 0.6.0. Some listed dependencies are used only during builds or by the web server and are not bundled in the Android APK. KaTeX code uses MIT; its fonts use SIL OFL 1.1.
 
 ## JavaScript and Capacitor packages
 

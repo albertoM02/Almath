@@ -16,7 +16,17 @@ export function AboutScreen({ backup }: { backup: BackupActions }) {
       <h3>{t("contentSources")}</h3>
       <p>{t("sourcesText")}</p>
       <p>{t("mlSourcesText")}</p>
+      <p>{t("hardwareSourcesText")}</p>
       <ul className="source-links">
+        <li>
+          <a
+            href="https://nostarch.com/hardwarehacking"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t("sourceHardwareBook")}
+          </a>
+        </li>
         <li>
           <a
             href="https://courses.csail.mit.edu/6.042/spring18/mcs.pdf"
