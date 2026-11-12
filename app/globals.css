@@ -665,6 +665,9 @@ a {
 .course-icon.hardware-security {
   background: #e2eae9;
 }
+.course-icon.ml-security {
+  background: #e6e8d8;
+}
 .eyebrow {
   font-size: 0.75rem;
   font-weight: 650;

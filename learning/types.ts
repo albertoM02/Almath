@@ -11,7 +11,7 @@ export type Exercise = {
 };
 export type Course = {
   id: string;
-  icon: "logic" | "vectors" | "chip";
+  icon: "logic" | "vectors" | "chip" | "shield";
   section?: "other";
   moduleIds: string[];
 };

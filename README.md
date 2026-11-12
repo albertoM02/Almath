@@ -32,6 +32,8 @@ The app is designed for short learning sessions: understand a concept, try it yo
 
 **Mathematics for Machine Learning:** 12 modules and 74 original exercises covering vectors, regression, optimization, classification, probability, regularization, evaluation, neural networks, attention and ML systems.
 
+**Machine Learning Security:** 7 units, 24 modules and 95 original exercises covering threat modelling, adversarial examples, poisoning and backdoors, privacy and model extraction, prompt injection, AI agents and the ML supply chain.
+
 The interface and learning content are in English. An account is not required: progress is saved locally using IndexedDB, with no automatic cross-device synchronization. An encrypted backup can be imported on another device. Clearing browser/app data or uninstalling the app can remove your progress, so export a backup first. Android bundles the lessons and mathematical fonts for offline use; external reference links require an internet connection.
 
 **Try the Android beta:**

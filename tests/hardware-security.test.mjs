@@ -58,7 +58,7 @@ test("Hardware stays below the original courses under Other courses after recent
   );
   assert.equal(
     document.querySelectorAll(".other-courses .course-card").length,
-    1,
+    2,
   );
   assert.match(
     document.querySelector(".other-courses").textContent,

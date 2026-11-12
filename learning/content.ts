@@ -5,6 +5,7 @@ import exerciseData from "@/content/exercises.json";
 import outlineData from "@/content/outlines.json";
 import english from "@/content/locales/en.json";
 import hardwareSecurity from "@/content/hardware-security/course.json";
+import mlSecurity from "@/content/ml-security/course.json";
 import type {
   Course,
   CourseOutline,
@@ -15,28 +16,67 @@ import type {
   ExerciseText,
 } from "./types";
 
-export const courses = [...courseData, ...hardwareSecurity.courses] as Course[];
+export const courses = [
+  ...courseData,
+  ...hardwareSecurity.courses,
+  ...mlSecurity.courses,
+] as Course[];
 export const outlines = [
   ...outlineData,
   ...hardwareSecurity.outlines,
+  ...mlSecurity.outlines,
 ] as CourseOutline[];
-export const modules = [...moduleData, ...hardwareSecurity.modules] as Module[];
+export const modules = [
+  ...moduleData,
+  ...hardwareSecurity.modules,
+  ...mlSecurity.modules,
+] as Module[];
 export const concepts = [
   ...conceptData,
   ...hardwareSecurity.concepts,
+  ...mlSecurity.concepts,
 ] as Concept[];
 export const exercises = [
   ...exerciseData,
   ...hardwareSecurity.exercises,
+  ...mlSecurity.exercises,
 ] as Exercise[];
 export const locale = {
-  ui: { ...english.ui, ...hardwareSecurity.locale.ui },
-  courses: { ...english.courses, ...hardwareSecurity.locale.courses },
-  modules: { ...english.modules, ...hardwareSecurity.locale.modules },
-  parts: { ...english.parts, ...hardwareSecurity.locale.parts },
-  units: { ...english.units, ...hardwareSecurity.locale.units },
-  concepts: { ...english.concepts, ...hardwareSecurity.locale.concepts },
-  exercises: { ...english.exercises, ...hardwareSecurity.locale.exercises },
+  ui: {
+    ...english.ui,
+    ...hardwareSecurity.locale.ui,
+    ...mlSecurity.locale.ui,
+  },
+  courses: {
+    ...english.courses,
+    ...hardwareSecurity.locale.courses,
+    ...mlSecurity.locale.courses,
+  },
+  modules: {
+    ...english.modules,
+    ...hardwareSecurity.locale.modules,
+    ...mlSecurity.locale.modules,
+  },
+  parts: {
+    ...english.parts,
+    ...hardwareSecurity.locale.parts,
+    ...mlSecurity.locale.parts,
+  },
+  units: {
+    ...english.units,
+    ...hardwareSecurity.locale.units,
+    ...mlSecurity.locale.units,
+  },
+  concepts: {
+    ...english.concepts,
+    ...hardwareSecurity.locale.concepts,
+    ...mlSecurity.locale.concepts,
+  },
+  exercises: {
+    ...english.exercises,
+    ...hardwareSecurity.locale.exercises,
+    ...mlSecurity.locale.exercises,
+  },
 } as {
   ui: Record<string, string>;
   courses: Record<
