@@ -1,4 +1,5 @@
 import { t } from "@/learning/content";
+import { withBasePath } from "@/platform/base-path";
 import {
   ProgressBackupSection,
   type BackupActions,
@@ -93,7 +94,7 @@ export function AboutScreen({ backup }: { backup: BackupActions }) {
         <summary>Open-source licenses</summary>
         <iframe
           className="license-frame"
-          src="/legal/index.html"
+          src={withBasePath("/legal/index.html")}
           title="Almath licenses and third-party notices"
           sandbox=""
         />

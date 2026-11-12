@@ -3,6 +3,8 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, resolve, sep } from "node:path";
 
 const output = resolve("out");
+// A GitHub Pages build serves out/ under this prefix, e.g. /Almath.
+const basePath = process.env.ALMATH_BASE_PATH ?? "";
 assert(
   existsSync(resolve(output, "index.html")),
   "Build the static app first.",
@@ -47,7 +49,15 @@ for (const path of files(output)) {
       !/^(?:[a-z]+:)?\/\//i.test(resource),
       `Remote runtime asset: ${resource}`,
     );
-    const local = decodeURIComponent(resource.split(/[?#]/)[0]);
+    let local = decodeURIComponent(resource.split(/[?#]/)[0]);
+    // "/" alone is Next's same-origin preconnect hint, not a bundled file.
+    if (basePath && local.startsWith("/") && local !== "/") {
+      assert(
+        local === basePath || local.startsWith(`${basePath}/`),
+        `Asset ignores the base path ${basePath}: ${resource}`,
+      );
+      local = local.slice(basePath.length) || "/";
+    }
     const target = local.startsWith("/")
       ? resolve(output, `.${local}`)
       : resolve(dirname(path), local);

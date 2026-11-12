@@ -36,6 +36,10 @@ The app is designed for short learning sessions: understand a concept, try it yo
 
 The interface and learning content are in English. An account is not required: progress is saved locally using IndexedDB, with no automatic cross-device synchronization. An encrypted backup can be imported on another device. Clearing browser/app data or uninstalling the app can remove your progress, so export a backup first. Android bundles the lessons and mathematical fonts for offline use; external reference links require an internet connection.
 
+**Use it on the web:**
+
+[Open Almath in your browser](https://albertom02.github.io/Almath/). It runs in any modern browser with the same lessons as the Android app. Progress stays in that browser's IndexedDB, and the encrypted backup in About moves it between the browser and Android. Daily reminders are only available on Android.
+
 **Try the Android beta:**
 
 Download the APK attached to an [Android release](https://github.com/albertoM02/Almath/releases) and install it on Android 7.0 or later. Android may ask you to allow installation from the app used to download it. Updates with the same application ID and signing certificate preserve app data.
@@ -53,7 +57,11 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Use `pnpm check` for lint, TypeScript, content validation and tests, or `pnpm build` for a production web build.
+Open [http://localhost:3000](http://localhost:3000). Use `pnpm check` for lint, TypeScript, content validation and tests, or `pnpm build` followed by `pnpm start` to serve the production web build locally.
+
+**Deploy the web app:**
+
+Every push to `main` in `albertoM02/Almath` runs `.github/workflows/web-deploy.yml`, which checks the app, builds the static export with `ALMATH_BASE_PATH=/Almath` and publishes `out/` to GitHub Pages. Enable it once under Settings → Pages → Source: GitHub Actions.
 
 **Build Android:**
 
