@@ -14,6 +14,7 @@ import {
   t,
 } from "@/learning/content";
 import { checkAnswer } from "@/learning/grading";
+import { isLabState, matchesQuestion } from "@/learning/circuit-lab";
 import {
   createSession,
   emptyDraft,
@@ -73,6 +74,8 @@ import {
   type ReminderStatus,
 } from "@/platform/reminders";
 import { DailyGoalCard, DailyGoalSettings } from "./daily-goal";
+import { widgetConceptTarget, widgetSnapshot } from "@/learning/widget";
+import { registerWidgetOpen, syncHomeWidgets } from "@/platform/widgets";
 
 export function AlmathApp() {
   const [progress, setProgress] = useState<ProgressState>(emptyProgress);
@@ -108,6 +111,30 @@ export function AlmathApp() {
     [progress.attempts, day],
   );
   const streak = useMemo(() => streakSummary(progress, day), [progress, day]);
+  const widgetData = useMemo(
+    () => widgetSnapshot(progress, day),
+    [progress, day],
+  );
+  const widgetSignature = JSON.stringify(widgetData);
+  const syncedWidget = useRef("");
+
+  useEffect(() => {
+    if (
+      !ready ||
+      saveStatus !== "saved" ||
+      syncedWidget.current === widgetSignature
+    )
+      return;
+    let disposed = false;
+    void syncHomeWidgets(widgetData)
+      .then(() => {
+        if (!disposed) syncedWidget.current = widgetSignature;
+      })
+      .catch((error) => console.error("Could not update home widgets", error));
+    return () => {
+      disposed = true;
+    };
+  }, [ready, saveStatus, widgetData, widgetSignature, reminderRefresh]);
 
   useEffect(() => {
     goalOverlay.current = goalSettingsOpen;
@@ -279,32 +306,6 @@ export function AlmathApp() {
     }
   }
 
-  function continueDailyLearning() {
-    const current = state.current;
-    const lastExercise = current.attempts.at(-1)?.exerciseId;
-    const lastModule = modules.find((item) =>
-      item.exerciseIds.includes(lastExercise ?? ""),
-    );
-    const unfinished = Object.values(current.sessions).filter(
-      (session) => !session.finished,
-    );
-    const resume =
-      unfinished.find((session) => session.moduleId === lastModule?.id) ??
-      unfinished.at(-1);
-    if (resume) {
-      start(resume.moduleId, resume.mode);
-      return;
-    }
-    const available = courses.flatMap((course) =>
-      course.moduleIds.map(getModule),
-    );
-    const next = available.find(
-      (item) =>
-        !item.archived && item.exerciseIds.some((id) => !current.completed[id]),
-    );
-    start((next ?? available[0]).id, next ? "learn" : "review");
-  }
-
   useEffect(() => {
     if (!ready) return;
     return registerAndroidBackHandler({
@@ -405,6 +406,45 @@ export function AlmathApp() {
     [persist],
   );
 
+  const continueDailyLearning = useCallback(() => {
+    const current = state.current;
+    const lastExercise = current.attempts.at(-1)?.exerciseId;
+    const lastModule = modules.find((item) =>
+      item.exerciseIds.includes(lastExercise ?? ""),
+    );
+    const unfinished = Object.values(current.sessions).filter(
+      (session) => !session.finished,
+    );
+    const resume =
+      unfinished.find((session) => session.moduleId === lastModule?.id) ??
+      unfinished.at(-1);
+    if (resume) {
+      start(resume.moduleId, resume.mode);
+      return;
+    }
+    const available = courses.flatMap((course) =>
+      course.moduleIds.map(getModule),
+    );
+    const next = available.find(
+      (item) =>
+        !item.archived && item.exerciseIds.some((id) => !current.completed[id]),
+    );
+    start((next ?? available[0]).id, next ? "learn" : "review");
+  }, [start]);
+
+  useEffect(() => {
+    if (!ready) return;
+    return registerWidgetOpen((request) => {
+      setGoalSettingsOpen(false);
+      const target =
+        request.action === "concept" && request.conceptId
+          ? widgetConceptTarget(request.conceptId, state.current)
+          : undefined;
+      if (target) start(target.moduleId, "learn", target.index);
+      else continueDailyLearning();
+    });
+  }, [ready, start, continueDailyLearning]);
+
   function changeSession(changes: Partial<Session>) {
     const current = state.current;
     const key = current.view.sessionKey!;
@@ -436,6 +476,22 @@ export function AlmathApp() {
     const exercise = getExercise(session.exerciseIds[session.index]);
     const draft = session.drafts[exercise.id] ?? emptyDraft();
     if (draft.feedback === "correct" || draft.solutionRevealed) return;
+    if (exercise.interaction) {
+      // One graded prediction per test; free experimentation never earns credit.
+      if (draft.feedback !== null) return;
+      if (
+        !isLabState(draft.lab) ||
+        draft.lab.kind !== exercise.interaction ||
+        draft.lab.phase !== "explain" ||
+        !draft.lab.hasTested ||
+        !matchesQuestion(exercise.interaction, draft.lab.controls)
+      ) {
+        setValidationError(
+          "Make a prediction and run the question setup first.",
+        );
+        return;
+      }
+    }
     const correct = checkAnswer(exercise, draft.answer);
     if (correct === null) {
       setValidationError(
@@ -639,6 +695,7 @@ export function AlmathApp() {
             setValidationError("");
           }}
           onAnswer={(answer) => changeDraft({ answer, feedback: null })}
+          onLabChange={(lab) => changeDraft({ lab })}
           onHint={() => changeDraft({ hintUsed: true })}
           onCheck={submitAnswer}
           onSolution={revealSolution}

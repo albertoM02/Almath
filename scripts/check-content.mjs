@@ -148,6 +148,17 @@ export function checkContent(root = new URL("../", import.meta.url)) {
       exercise.id,
     );
     strings(translated.solutionSteps, `${exercise.id}: solution steps`);
+    if (exercise.interaction !== undefined) {
+      assert.equal(
+        exercise.type,
+        "choice",
+        `${exercise.id}: labs need a prediction`,
+      );
+      assert.ok(
+        ["ohms-law", "open-drain"].includes(exercise.interaction),
+        `${exercise.id}: unknown interaction`,
+      );
+    }
     if (exercise.type === "choice") {
       strings(exercise.optionIds, exercise.id);
       assert.ok(

@@ -181,3 +181,36 @@ test("ML security units run in order and teach prerequisites first", () => {
     learned.add(concept.id);
   }
 });
+
+test("Adversarial example B agrees with its explanation and worked solution", () => {
+  const item = exercise("mls-u2-q01");
+  const text = locale.exercises[item.id];
+  assert.equal(item.answer, "b");
+  assert.match(text.options.b, /deliberately/);
+  assert.match(text.explanation, /case B/);
+  assert.match(text.solutionSteps[0], /case B/);
+  assert.doesNotMatch(
+    [text.explanation, ...text.solutionSteps].join(" "),
+    /first case/i,
+  );
+});
+
+test("Smoothing certificate states its distribution, statistical and threat-model conditions", () => {
+  const item = exercise("mls-u2-q16");
+  const theory = locale.concepts[item.conceptId];
+  const text = locale.exercises[item.id];
+  assert.match(theory.body, /isotropic noise/);
+  assert.match(
+    theory.body,
+    /lower confidence bound, not the observed vote fraction/,
+  );
+  assert.match(theory.body, /abstains/);
+  assert.match(
+    theory.body,
+    /does not certify the base classifier, correctness/,
+  );
+  assert.match(theory.body, /1-\\alpha/);
+  assert.match(theory.formula, /underline p_A/);
+  assert.match(text.statement, /statistically valid lower bound/);
+  assert.equal(item.answer, 0.5);
+});

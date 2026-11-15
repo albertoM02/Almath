@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 // GitHub Pages serves the project under /<repository>; local, hosted and
 // Android builds stay at the root.
 const basePath = process.env.ALMATH_BASE_PATH ?? "";
-if (basePath && !/^\/[A-Za-z0-9._-]+$/.test(basePath)) {
+if (
+  basePath &&
+  (!/^\/[A-Za-z0-9._-]+$/.test(basePath) || ["/.", "/.."].includes(basePath))
+) {
   throw new Error(`ALMATH_BASE_PATH must look like /Almath, got ${basePath}`);
 }
 

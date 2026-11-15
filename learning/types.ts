@@ -1,8 +1,11 @@
+import type { LabKind, LabState } from "./circuit-lab";
+
 export type Exercise = {
   id: string;
   conceptId: string;
   version: number;
   type: "choice" | "number";
+  interaction?: LabKind;
   optionIds?: string[];
   answer: string | number;
   tolerance?: number;
@@ -65,6 +68,8 @@ export type Draft = {
   hintUsed: boolean;
   solutionRevealed: boolean;
   attempts: number;
+  // Optional: old saves and their answers need no storage migration.
+  lab?: LabState;
 };
 export type Session = {
   moduleId: string;

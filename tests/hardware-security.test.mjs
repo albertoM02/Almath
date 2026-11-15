@@ -67,20 +67,20 @@ test("Hardware stays below the original courses under Other courses after recent
   dom.window.close();
 });
 
-test("Each of the 89 hardware questions opens with its own theory and worked example", () => {
+test("Each of the 91 hardware questions opens with its own theory and worked example", () => {
   const course = courses.find((item) => item.id === "hardware-security");
   const ids = course.moduleIds.flatMap(
     (id) => modules.find((item) => item.id === id).exerciseIds,
   );
-  assert.equal(ids.length, 89);
+  assert.equal(ids.length, 91);
   assert.equal(ids.filter((id) => id.startsWith("hw-u1-")).length, 20);
-  assert.equal(ids.filter((id) => id.startsWith("hw-u2-")).length, 27);
+  assert.equal(ids.filter((id) => id.startsWith("hw-u2-")).length, 29);
   assert.equal(ids.filter((id) => id.startsWith("hw-u3-")).length, 24);
   assert.equal(ids.filter((id) => id.startsWith("hw-u4-")).length, 18);
   assert.equal(
     new Set(ids.map((id) => exercises.find((item) => item.id === id).conceptId))
       .size,
-    89,
+    91,
   );
   for (const id of ids) {
     const module = modules.find((item) => item.exerciseIds.includes(id));
@@ -166,7 +166,7 @@ test("The four hardware units are reachable in order without changing existing q
     assert.deepEqual(
       [...ids].sort(),
       Array.from(
-        { length: [20, 27, 24, 18][index] },
+        { length: [20, 29, 24, 18][index] },
         (_, i) => `hw-u${index + 1}-q${String(i + 1).padStart(2, "0")}`,
       ),
     );

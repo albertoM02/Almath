@@ -4,7 +4,7 @@ import { JSDOM } from "jsdom";
 import { IDBFactory } from "fake-indexeddb";
 import React, { act } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { bundle } from "./helpers.mjs";
+import { bundle, bundleAsync } from "./helpers.mjs";
 
 const wait = (ms = 30) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -218,7 +218,7 @@ async function read(factory) {
   db.close();
   return value;
 }
-async function withApp(factory, run) {
+async function withApp(factory, run, widgetHarness) {
   const dom = new JSDOM('<!doctype html><div id="root"></div>', {
     url: "https://localhost",
     pretendToBeVisual: true,
@@ -263,9 +263,30 @@ async function withApp(factory, run) {
   };
   const { createRoot } = await import("react-dom/client");
   const root = createRoot(dom.window.document.getElementById("root"));
-  const { AlmathApp } = bundle(
+  const { AlmathApp } = await bundleAsync(
     'export { AlmathApp } from "./components/almath/app";',
+    widgetHarness
+      ? [
+          {
+            name: "native-widget-harness",
+            setup(build) {
+              build.onResolve({ filter: /^@\/platform\/widgets$/ }, () => ({
+                path: "widgets",
+                namespace: "widget-test",
+              }));
+              build.onLoad({ filter: /.*/, namespace: "widget-test" }, () => ({
+                contents: `
+          export function syncHomeWidgets(snapshot) { globalThis.__almathWidgetHarness.snapshots.push(snapshot); return Promise.resolve(); }
+          export function registerWidgetOpen(callback) { globalThis.__almathWidgetHarness.open = callback; return () => { globalThis.__almathWidgetHarness.open = undefined; }; }
+        `,
+                loader: "js",
+              }));
+            },
+          },
+        ]
+      : [],
   );
+  if (widgetHarness) globalThis.__almathWidgetHarness = widgetHarness;
   try {
     await act(async () => {
       root.render(React.createElement(AlmathApp));
@@ -273,6 +294,7 @@ async function withApp(factory, run) {
     await run({ dom, registered });
   } finally {
     await act(async () => root.unmount());
+    if (widgetHarness) delete globalThis.__almathWidgetHarness;
     dom.window.close();
     for (const [key, descriptor] of saved) {
       if (descriptor) Object.defineProperty(globalThis, key, descriptor);
@@ -660,24 +682,31 @@ test("Backup imports require a valid password and explicit merge confirmation", 
         await wait();
       });
     };
-    const submit = async () =>
-      act(async () => {
+    const submit = async (ready) => {
+      await act(async () => {
         document
           .querySelector(".backup-form")
           .dispatchEvent(
             new dom.window.Event("submit", { bubbles: true, cancelable: true }),
           );
-        await wait(450);
+        await wait(20);
       });
+      // Cryptographic work can take longer on slower devices and busy CI hosts.
+      for (let i = 0; i < 100; i++) {
+        if (ready()) return;
+        await act(async () => wait(50));
+      }
+      assert.fail("Backup action did not reach its expected state");
+    };
     await setPassword("a wrong long password");
-    await submit();
+    await submit(() => document.querySelector('[role="alert"]'));
     assert.match(
       document.querySelector('[role="alert"]').textContent,
       /password is incorrect/,
     );
     assert.deepEqual((await read(factory)).completed, original.completed);
     await setPassword(password);
-    await submit();
+    await submit(() => document.querySelector(".backup-preview"));
     assert.ok(document.querySelector(".backup-preview"));
     assert.deepEqual(
       (await read(factory)).completed,
@@ -689,7 +718,7 @@ test("Backup imports require a valid password and explicit merge confirmation", 
       null,
       "The password is cleared before confirmation",
     );
-    await submit();
+    await submit(() => document.querySelector("dialog") === null);
     const restored = await read(factory);
     assert.deepEqual(Object.keys(restored.completed).sort(), [
       "backup",
@@ -700,5 +729,224 @@ test("Backup imports require a valid password and explicit merge confirmation", 
       /existing progress has been kept/,
     );
     assert.equal(document.querySelector("dialog"), null);
+  });
+});
+
+test("Widget taps open existing theory, preserve drafts and synchronize committed progress", async () => {
+  const { emptyProgress, createSession, modules, exercises } = bundle(`
+    export { emptyProgress, createSession } from "./learning/progress";
+    export { modules, exercises } from "./learning/content";
+  `);
+  const progress = emptyProgress();
+  const module = modules.find((m) => m.courseId === "ml" && !m.archived);
+  const session = createSession(module, exercises, progress, "learn");
+  const exercise = exercises.find((e) => e.id === module.exerciseIds[0]);
+  session.index = 1;
+  session.stage = "practice";
+  session.drafts[exercise.id] = {
+    answer: "saved answer",
+    feedback: null,
+    hintUsed: true,
+    solutionRevealed: false,
+    attempts: 2,
+  };
+  progress.sessions[`${module.id}:learn`] = session;
+  const factory = new IDBFactory();
+  await put(factory, progress);
+  const harness = { snapshots: [] };
+  await withApp(
+    factory,
+    async ({ dom }) => {
+      await act(async () => wait());
+      assert.ok(harness.snapshots.length > 0);
+      assert.equal(typeof harness.open, "function");
+      await act(async () => {
+        harness.open({ action: "concept", conceptId: exercise.conceptId });
+        await wait();
+      });
+      let saved = await read(factory);
+      const current = saved.sessions[saved.view.sessionKey];
+      assert.equal(saved.view.screen, "lesson");
+      assert.equal(current.stage, "theory");
+      assert.equal(current.index, 0);
+      assert.deepEqual(
+        current.drafts[exercise.id],
+        session.drafts[exercise.id],
+      );
+      assert.ok(dom.window.document.querySelector(".lesson-layout"));
+      await act(async () => {
+        harness.open({ action: "continue" });
+        await wait();
+      });
+      saved = await read(factory);
+      assert.equal(saved.view.screen, "lesson");
+      assert.deepEqual(
+        saved.sessions[`${module.id}:learn`].drafts,
+        session.drafts,
+      );
+    },
+    harness,
+  );
+  assert.equal(harness.open, undefined);
+});
+
+test("Circuit Lab saves the prediction and experiment, grades once, and resumes free exploration", async () => {
+  const { emptyProgress, createSession, modules, exercises } = bundle(`
+    export { emptyProgress, createSession } from './learning/progress';
+    export { modules, exercises } from './learning/content';
+  `);
+  const factory = new IDBFactory();
+  const original = emptyProgress();
+  original.completed["hw-u1-q01"] = {
+    result: "solved",
+    completedAt: "2026-10-24T12:00:00Z",
+  };
+  const module = modules.find((m) => m.id === "hw-u2-electricity");
+  const session = createSession(
+    module,
+    exercises,
+    original,
+    "learn",
+    module.exerciseIds.indexOf("hw-u2-q28"),
+  );
+  session.stage = "practice";
+  original.sessions.lab = session;
+  original.view = { screen: "lesson", sessionKey: "lab" };
+  await put(factory, original);
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    const d = dom.window.document;
+    const button = (text) =>
+      [...d.querySelectorAll("button")].find(
+        (b) => b.textContent.trim() === text,
+      );
+    const click = async (element) =>
+      act(async () => {
+        assert.ok(element);
+        element.click();
+        await wait();
+      });
+    assert.ok(
+      d
+        .querySelector('.lab-steps [aria-current="step"]')
+        .textContent.includes("Predict"),
+    );
+    assert.equal(d.querySelector(".lab-observation"), null);
+    await click(d.querySelector('.lab-prediction input[value="a"]'));
+    await click(button("Test prediction"));
+    assert.equal(
+      button("Run experiment").disabled,
+      true,
+      "The first test must match the question setup",
+    );
+    const changeResistance = async (value) =>
+      act(async () => {
+        const input = d.querySelector('input[type="range"]');
+        Object.getOwnPropertyDescriptor(
+          dom.window.HTMLInputElement.prototype,
+          "value",
+        ).set.call(input, String(value));
+        input.dispatchEvent(new dom.window.Event("input", { bubbles: true }));
+        input.dispatchEvent(new dom.window.Event("change", { bubbles: true }));
+        await wait();
+      });
+    await changeResistance(3);
+    await act(async () => {
+      const run = button("Run experiment");
+      assert.equal(run.disabled, false);
+      run.click();
+      run.click();
+      await wait();
+    });
+    let saved = await read(factory);
+    assert.equal(saved.sessions.lab.drafts["hw-u2-q28"].feedback, "correct");
+    assert.equal(saved.attempts.length, 1);
+    assert.equal(saved.completed["hw-u2-q28"].result, "solved");
+    assert.deepEqual(
+      saved.completed["hw-u1-q01"],
+      original.completed["hw-u1-q01"],
+    );
+    assert.match(d.querySelector(".lab-observation").textContent, /1 mA/);
+    await changeResistance(5);
+    await click(button("Run experiment"));
+    saved = await read(factory);
+    assert.equal(saved.attempts.length, 1, "Exploration does not add attempts");
+    assert.match(d.querySelector(".lab-observation").textContent, /0.6 mA/);
+    assert.equal(
+      saved.sessions.lab.drafts["hw-u2-q28"].lab.controls.resistance,
+      5,
+    );
+  });
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    assert.match(
+      dom.window.document.querySelector(".lab-observation").textContent,
+      /0.6 mA/,
+    );
+    assert.equal((await read(factory)).attempts.length, 1);
+  });
+});
+
+test("Shared-wire controls distinguish LOW, pulled-up HIGH and an undefined floating input", async () => {
+  const { emptyProgress, createSession, modules, exercises } = bundle(`
+    export { emptyProgress, createSession } from './learning/progress';
+    export { modules, exercises } from './learning/content';
+  `);
+  const p = emptyProgress(),
+    factory = new IDBFactory();
+  const module = modules.find((m) => m.id === "hw-u2-signals");
+  const session = createSession(
+    module,
+    exercises,
+    p,
+    "learn",
+    module.exerciseIds.indexOf("hw-u2-q29"),
+  );
+  session.stage = "practice";
+  p.sessions.lab = session;
+  p.view = { screen: "lesson", sessionKey: "lab" };
+  await put(factory, p);
+  await withApp(factory, async ({ dom }) => {
+    await act(async () => wait());
+    const d = dom.window.document;
+    const button = (text) =>
+      [...d.querySelectorAll("button")].find(
+        (b) => b.textContent.trim() === text,
+      );
+    const click = async (el) =>
+      act(async () => {
+        assert.ok(el);
+        el.click();
+        await wait();
+      });
+    await click(d.querySelector('.lab-prediction input[value="b"]'));
+    await click(button("Test prediction"));
+    await click(button("Run experiment"));
+    assert.match(d.querySelector(".lab-observation h2").textContent, /LOW/);
+    const deviceA = d.querySelector(".lab-device");
+    await click(
+      [...deviceA.querySelectorAll("button")].find(
+        (b) => b.textContent === "Release",
+      ),
+    );
+    await click(button("Run experiment"));
+    assert.match(d.querySelector(".lab-observation h2").textContent, /HIGH/);
+    await click(d.querySelector(".lab-pullup input"));
+    await click(button("Run experiment"));
+    assert.match(
+      d.querySelector(".lab-observation h2").textContent,
+      /Undefined/,
+    );
+    assert.match(
+      d.querySelector(".lab-observation").textContent,
+      /floating does not mean LOW/,
+    );
+    const saved = await read(factory);
+    assert.equal(saved.attempts.length, 1);
+    assert.equal(
+      saved.sessions.lab.drafts["hw-u2-q29"].lab.controls.pullUp,
+      false,
+    );
+    assert.equal(saved.completed["hw-u2-q29"].result, "solved");
   });
 });

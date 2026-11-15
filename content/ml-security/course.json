@@ -2135,8 +2135,8 @@
       },
       "mls-u1-concept-14": {
         "title": "Clean and robust accuracy",
-        "body": "Clean accuracy is measured on unmodified data. Robust accuracy is measured after a stated attack with a stated budget. A robust accuracy figure means nothing unless the attack and its budget are named, because a weak attack produces a flattering number.",
-        "formula": "\\[\\text{robust accuracy} = \\frac{\\text{correct after attack}}{\\text{total test inputs}}\\]",
+        "body": "Clean accuracy is measured on unmodified data. Accuracy under a stated attack and budget is an empirical estimate of robust accuracy. True robust accuracy requires correctness for every allowed perturbation; a tested attack can miss failures, so its result can overestimate robustness. Always name the attack, budget and evaluation set.",
+        "formula": "\\[\\text{accuracy under attack} = \\frac{\\text{correct after attack}}{\\text{total test inputs}}\\]",
         "example": "On 500 images, 480 are correct when clean and 150 remain correct under attack.",
         "exampleSteps": [
           "Clean accuracy is \\(480/500 = 96\\%\\).",
@@ -2169,7 +2169,7 @@
       },
       "mls-u2-concept-01": {
         "title": "What an adversarial example is",
-        "body": "An adversarial example is an input changed by a small, deliberately chosen perturbation so that the model produces a wrong output, while the input still looks unchanged to a person. The perturbation is limited by a budget \\(\\epsilon\\) under a chosen norm.",
+        "body": "In the small-perturbation image setting, an adversarial example is deliberately changed to make a model give a wrong output while preserving the image’s true label. The change is limited by a budget \\(\\epsilon\\) under a chosen norm. Other threat models allow visible patches or other changes; a small norm alone does not guarantee perceptual similarity.",
         "formula": "\\[f(x+\\delta) \\ne y \\quad\\text{subject to}\\quad \\|\\delta\\| \\le \\epsilon\\]",
         "example": "An image of a panda is classified correctly.",
         "exampleSteps": [
@@ -2333,14 +2333,14 @@
       },
       "mls-u2-concept-16": {
         "title": "Certified robustness",
-        "body": "Certified defences prove that no perturbation within a radius can change the prediction, instead of relying on attacks failing. Randomised smoothing classifies many noisy copies of the input. If the top class wins with probability \\(p_A\\) under noise of scale \\(\\sigma\\), it gives an \\(L_2\\) radius, where \\(\\Phi^{-1}\\) is the inverse normal CDF. The guarantee is real, but radii are small and hold only for the stated norm.",
-        "formula": "\\[R = \\sigma\\,\\Phi^{-1}(p_A)\\]",
-        "example": "With \\(\\sigma=0.5\\), suppose \\(\\Phi^{-1}(p_A)=1\\).",
+        "body": "Gaussian randomised smoothing defines a smoothed classifier as the most probable class of a base classifier under isotropic noise \\(\\mathcal{N}(0,\\sigma^2 I)\\), with \\(\\sigma>0\\). Let \\(\\underline p_A>1/2\\) be a valid lower bound on that class probability. Using \\(1-\\underline p_A\\) as a conservative bound for every rival gives the radius below; \\(\\Phi\\) is the standard normal CDF. A Monte Carlo certificate needs a statistically valid lower confidence bound, not the observed vote fraction: its confidence is \\(1-\\alpha\\). If the bound is at most \\(1/2\\), this procedure abstains. The guarantee fixes the smoothed prediction for all \\(\\|\\delta\\|_2<R\\); it does not certify the base classifier, correctness of the label, or safety outside this threat model.",
+        "formula": "\\[R = \\sigma\\,\\Phi^{-1}(\\underline p_A), \\qquad \\underline p_A>\\tfrac12\\]",
+        "example": "Using isotropic Gaussian noise with \\(\\sigma=0.5\\), suppose a valid lower confidence bound satisfies \\(\\Phi^{-1}(\\underline p_A)=1\\).",
         "exampleSteps": [
-          "\\(R = 0.5 \\times 1 = 0.5\\).",
-          "No \\(L_2\\) perturbation smaller than \\(0.5\\) can change the smoothed prediction, with high statistical confidence."
+          "\\(R=0.5\\times1=0.5\\).",
+          "At the confidence level of the bound, every perturbation with \\(L_2\\) norm strictly below \\(0.5\\) leaves the smoothed classifier’s prediction unchanged. This does not prove that prediction is correct."
         ],
-        "takeaway": "A certificate is a proof about one norm and one radius, and nothing beyond those."
+        "takeaway": "A certificate needs a stated classifier, noise distribution, probability bound and perturbation set."
       },
       "mls-u3-concept-01": {
         "title": "Kinds of poisoning",
@@ -2555,7 +2555,7 @@
       },
       "mls-u4-concept-08": {
         "title": "Leakage from shared gradients",
-        "body": "Federated learning shares gradients instead of raw data, but gradients depend on that data. For one example passing through a linear layer with a bias, the input can be recovered exactly: dividing the weight gradient by the bias gradient gives the input.",
+        "body": "Federated learning shares gradients instead of raw data, but gradients depend on that data. For one example in a scalar-output linear model with a bias and a nonzero bias gradient, the input can be recovered exactly: dividing the weight gradient by the bias gradient gives the input.",
         "formula": "\\[\\nabla_w \\ell = \\frac{d\\ell}{d\\hat y}\\,x, \\quad \\frac{\\partial \\ell}{\\partial b} = \\frac{d\\ell}{d\\hat y} \\;\\Rightarrow\\; x = \\frac{\\nabla_w \\ell}{\\partial\\ell/\\partial b}\\]",
         "example": "The weight gradient is \\((4, 2)\\) and \\(\\partial\\ell/\\partial b = 2\\).",
         "exampleSteps": [
@@ -2565,7 +2565,7 @@
       },
       "mls-u4-concept-09": {
         "title": "Definition of differential privacy",
-        "body": "A randomised algorithm is differentially private if adding or removing one person’s record barely changes the distribution of its output. The parameter \\(\\epsilon\\) limits that change, and \\(\\delta\\) is a small allowance for failure. Smaller \\(\\epsilon\\) means stronger privacy.",
+        "body": "A randomised algorithm is differentially private if adding or removing one person’s record barely changes the distribution of its output. The parameter \\(\\epsilon\\) limits that change, and \\(\\delta\\) is a small additive slack in the probability inequality, not a per-record probability of a privacy breach. The inequality must hold for every pair of neighbouring datasets and every output event. Smaller \\(\\epsilon\\) means stronger privacy.",
         "formula": "\\[\\Pr[M(D)\\in S] \\le e^{\\epsilon}\\,\\Pr[M(D')\\in S] + \\delta\\]",
         "example": "Suppose \\(\\epsilon = \\ln 2\\) and \\(\\delta = 0\\).",
         "exampleSteps": [
@@ -2630,7 +2630,7 @@
       },
       "mls-u4-concept-15": {
         "title": "Limiting extraction",
-        "body": "API design affects extraction cost. Rounding or removing confidence values, restricting optional outputs such as logit controls and log probabilities, and watching for systematic query patterns all raise the bar. In 2024, researchers recovered the final embedding layer of production language models through such API features.",
+        "body": "API design affects extraction cost. Rounding or removing confidence values, restricting optional outputs such as logit controls and log probabilities, and watching for systematic query patterns all raise the bar. In 2024, researchers recovered the output embedding projection layer, up to symmetries, of some production language models through such API features.",
         "formula": "",
         "example": "An API offers detailed log probabilities and a per-token logit bias parameter.",
         "exampleSteps": [
@@ -3246,9 +3246,9 @@
       "mls-u1-q14": {
         "title": "Clean and robust accuracy",
         "statement": "Of 1,000 test images, 940 are classified correctly when clean and 310 remain correct under a stated attack.",
-        "prompt": "What is the robust accuracy, in percent?",
+        "prompt": "What is the accuracy under this attack, in percent?",
         "hint": "Use all 1,000 inputs as the denominator.",
-        "explanation": "Robust accuracy is \\(310/1000 = 31\\%\\). The clean figure of 940 is not part of this calculation.",
+        "explanation": "Accuracy under this attack is \\(310/1000 = 31\\%\\). The clean figure of 940 is not part of this calculation.",
         "solutionSteps": ["\\(310/1000 = 0.31\\), which is \\(31\\%\\)."]
       },
       "mls-u1-q15": {
@@ -3273,18 +3273,18 @@
       },
       "mls-u2-q01": {
         "title": "What an adversarial example is",
-        "statement": "Which of these is an adversarial example in the standard sense?",
+        "statement": "Which of these is a deliberately crafted adversarial example in the small-perturbation image setting?",
         "prompt": "Choose the best answer.",
         "options": {
           "a": "A blurry photo that the classifier happens to get wrong by chance",
-          "b": "A photo changed imperceptibly so that the classifier’s label flips",
+          "b": "A photo deliberately changed imperceptibly so that the classifier’s label flips",
           "c": "A photo of a new object that was missing from the training classes"
         },
         "hint": "Look for both a deliberate change and a preserved meaning.",
-        "explanation": "Only the first case combines a crafted, small change with an input whose true meaning has not changed.",
+        "explanation": "Only case B combines a deliberately crafted, small change with an input whose true meaning has not changed.",
         "solutionSteps": [
-          "Only the first case combines a crafted, small change with an input whose true meaning has not changed.",
-          "Choose B: A photo changed imperceptibly so that the classifier’s label flips"
+          "Only case B combines a deliberately crafted, small change with an input whose true meaning has not changed.",
+          "Choose B: A photo deliberately changed imperceptibly so that the classifier’s label flips"
         ]
       },
       "mls-u2-q02": {
@@ -3483,12 +3483,14 @@
       },
       "mls-u2-q16": {
         "title": "Certified robustness",
-        "statement": "A smoothed classifier uses \\(\\sigma=0.25\\), and on a given input \\(\\Phi^{-1}(p_A)=2\\).",
+        "statement": "A Gaussian-smoothed classifier uses \\(\\sigma=0.25\\). A statistically valid lower bound \\(\\underline p_A>1/2\\) satisfies \\(\\Phi^{-1}(\\underline p_A)=2\\).",
         "prompt": "What is the certified \\(L_2\\) radius?",
         "hint": "Multiply the noise level by the given inverse-CDF value.",
-        "explanation": "\\(R = 0.25 \\times 2 = 0.5\\).",
+        "explanation": "The conservative certified radius is \\(R=0.25\\times2=0.5\\). At the bound’s confidence level, the smoothed prediction is unchanged for \\(\\|\\delta\\|_2<0.5\\).",
         "solutionSteps": [
-          "\\(R = \\sigma\\,\\Phi^{-1}(p_A) = 0.25 \\times 2 = 0.5\\)."
+          "Use the lower probability bound, not an empirical vote fraction.",
+          "\\(R=\\sigma\\Phi^{-1}(\\underline p_A)=0.25\\times2=0.5\\).",
+          "The guarantee concerns the smoothed classifier within this open L2 ball, not correctness or the base classifier."
         ]
       },
       "mls-u3-q01": {
@@ -3736,9 +3738,9 @@
           "c": "Removing those secrets from the data before training begins"
         },
         "hint": "Which option removes the information instead of asking the model not to use it?",
-        "explanation": "If the secret is not in the data, it cannot be memorised. Instructions and sampling settings still leave it inside the weights.",
+        "explanation": "Removing secrets before training reduces direct memorisation of those records. It does not guarantee that sensitive information cannot be inferred or obtained from other data. Prompt instructions and sampling settings do not remove memorised data from the weights.",
         "solutionSteps": [
-          "If the secret is not in the data, it cannot be memorised. Instructions and sampling settings still leave it inside the weights.",
+          "Removing secrets before training reduces direct memorisation of those records. It does not guarantee that sensitive information cannot be inferred or obtained from other data. Prompt instructions and sampling settings do not remove memorised data from the weights.",
           "Choose C: Removing those secrets from the data before training begins"
         ]
       },

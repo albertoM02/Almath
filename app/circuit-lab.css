@@ -1,0 +1,295 @@
+.interactive-lab {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.lab-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-self: start;
+  color: #064e36;
+  background: #e9efe2;
+  border-radius: 2rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+.lab-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5.2rem), 1fr));
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lab-steps li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 0.7rem 0.25rem;
+  border: 1px solid #dcded0;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  color: #61695f;
+}
+.lab-steps li > span {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #eeebdf;
+  flex-shrink: 0;
+}
+.lab-steps li[aria-current="step"] {
+  background: #0f6b46;
+  border-color: #0f6b46;
+  color: #fffbef;
+  font-weight: 650;
+}
+.lab-steps li[aria-current="step"] > span {
+  background: #fffbef;
+  color: #0f6b46;
+}
+.lab-steps li.done {
+  background: #e9efe2;
+  color: #064e36;
+}
+.lab-canvas,
+.lab-controls,
+.lab-prediction {
+  padding: 1rem;
+  background: #fffbef;
+  border: 1px solid #dcded0;
+  border-radius: 0.9rem;
+  min-width: 0;
+  margin: 0;
+}
+.lab-canvas {
+  padding: 0.75rem;
+}
+.lab-diagram {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: auto;
+  color: #1f2937;
+  overflow: visible;
+}
+.lab-diagram text {
+  stroke: none;
+  fill: currentColor;
+  text-anchor: middle;
+  font-family: inherit;
+}
+.lab-svg-meter {
+  font-size: 22px;
+  font-weight: 650;
+}
+.lab-svg-label {
+  font-size: 17px;
+  font-weight: 650;
+}
+.lab-svg-text {
+  font-size: 16px;
+}
+.lab-svg-caption {
+  font-size: 12px;
+}
+.lab-active-wire {
+  color: #0f6b46;
+  stroke-width: 3;
+}
+.lab-disconnected {
+  opacity: 0.45;
+}
+.lab-controls {
+  display: grid;
+  gap: 0.75rem;
+}
+.lab-control-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 650;
+}
+.lab-control-label output {
+  background: #e9efe2;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  color: #064e36;
+}
+.lab-controls input[type="range"] {
+  width: 100%;
+  height: 44px;
+  accent-color: #0f6b46;
+  cursor: pointer;
+  margin: 0;
+}
+.lab-range-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #61695f;
+  margin-top: -0.75rem;
+}
+.lab-devices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.lab-device {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+  margin: 0;
+}
+.lab-device legend,
+.lab-prediction legend {
+  font-weight: 650;
+  color: #064e36;
+  padding: 0 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.lab-toggle-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+.lab-toggle-group button {
+  border: 1px solid #bdc9ba;
+  background: #fffbef;
+  border-radius: 0.6rem;
+  min-height: 48px;
+  padding: 0.5rem 0.3rem;
+  font-size: 0.9rem;
+  color: #1f2937;
+  overflow-wrap: anywhere;
+}
+.lab-toggle-group button[aria-pressed="true"] {
+  background: #e9efe2;
+  border-color: #0f6b46;
+  color: #064e36;
+  font-weight: 650;
+}
+.lab-device:disabled,
+.lab-controls:disabled {
+  opacity: 0.65;
+}
+.lab-pullup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding-top: 0.65rem;
+  border-top: 1px solid #dcded0;
+  cursor: pointer;
+}
+.lab-pullup input {
+  width: 24px;
+  height: 24px;
+  accent-color: #0f6b46;
+  flex-shrink: 0;
+}
+.lab-prediction .answer-options {
+  margin: 0.25rem 0 1rem;
+}
+.lab-prediction .answer-option input {
+  width: 20px;
+  height: 20px;
+  accent-color: #0f6b46;
+  flex-shrink: 0;
+}
+.lab-instruction {
+  padding: 1rem;
+  border-left: 3px solid #7fb28f;
+  background: #e9efe2;
+  border-radius: 0.5rem;
+}
+.lab-observation {
+  display: grid;
+  gap: 0.7rem;
+  border: 1px solid #bdc9ba;
+  background: #e9efe2;
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+.lab-observation h2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+}
+.lab-observation h2 strong {
+  font-size: 1.4rem;
+  color: #064e36;
+}
+.lab-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+.lab-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+}
+.lab-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media (max-width: 520px) {
+  .lab-devices {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .lab-steps li {
+    font-size: 0.8rem;
+    gap: 0.25rem;
+  }
+  .lab-steps li > span {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .lab-canvas {
+    padding: 0.45rem;
+  }
+  .lab-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lab-actions button {
+    width: 100%;
+  }
+}
+
+.lab-prediction legend {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.has-lab .lesson-actions {
+  position: static;
+  background: transparent;
+  z-index: auto;
+}
+.has-lab .lesson-actions:empty {
+  display: none;
+}
+
+/* Let support buttons stack when Android's large text no longer fits a row. */
+.has-lab .support-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+}
