@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "sessions": {
+    "hw-u2-electricity:learn": {
+      "moduleId": "hw-u2-electricity",
+      "contentVersion": 2,
+      "mode": "learn",
+      "exerciseIds": [
+        "hw-u2-q01",
+        "hw-u2-q02",
+        "hw-u2-q03",
+        "hw-u2-q04",
+        "hw-u2-q28",
+        "hw-u2-q05"
+      ],
+      "baseExerciseIds": [
+        "hw-u2-q01",
+        "hw-u2-q02",
+        "hw-u2-q03",
+        "hw-u2-q04",
+        "hw-u2-q28",
+        "hw-u2-q05"
+      ],
+      "exerciseVersions": {
+        "hw-u2-q01": 1,
+        "hw-u2-q02": 1,
+        "hw-u2-q03": 1,
+        "hw-u2-q04": 1,
+        "hw-u2-q28": 1,
+        "hw-u2-q05": 1
+      },
+      "index": 4,
+      "stage": "practice",
+      "drafts": {
+        "hw-u2-q28": {
+          "answer": "a",
+          "feedback": null,
+          "hintUsed": true,
+          "solutionRevealed": false,
+          "attempts": 1,
+          "lab": {
+            "version": 1,
+            "kind": "ohms-law",
+            "phase": "explain",
+            "controls": {
+              "resistance": 3,
+              "aLow": true,
+              "bLow": false,
+              "pullUp": true
+            },
+            "hasTested": true
+          }
+        }
+      },
+      "finished": false
+    }
+  },
+  "completed": {
+    "hw-u2-q04": {
+      "result": "solved",
+      "completedAt": "2026-11-14T12:00:00Z"
+    }
+  },
+  "attempts": [],
+  "reviewCounts": {},
+  "view": {
+    "screen": "lesson",
+    "sessionKey": "hw-u2-electricity:learn"
+  },
+  "recentCourse": {
+    "id": "hardware-security",
+    "at": "2026-11-14T12:00:00Z"
+  }
+}

@@ -1,4 +1,5 @@
 import { t } from "@/learning/content";
+import { withBasePath } from "@/platform/base-path";
 import {
   ProgressBackupSection,
   type BackupActions,
@@ -17,6 +18,7 @@ export function AboutScreen({ backup }: { backup: BackupActions }) {
       <p>{t("sourcesText")}</p>
       <p>{t("mlSourcesText")}</p>
       <p>{t("hardwareSourcesText")}</p>
+      <p>{t("mlSecuritySourcesText")}</p>
       <ul className="source-links">
         <li>
           <a
@@ -54,6 +56,29 @@ export function AboutScreen({ backup }: { backup: BackupActions }) {
             {t("sourceGoogle")}
           </a>
         </li>
+        <li>
+          <a
+            href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t("sourceNistAml")}
+          </a>
+        </li>
+        <li>
+          <a href="https://atlas.mitre.org/" target="_blank" rel="noreferrer">
+            {t("sourceMitreAtlas")}
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://genai.owasp.org/llm-top-10/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t("sourceOwaspLlm")}
+          </a>
+        </li>
       </ul>
       <h3>License</h3>
       <p>
@@ -69,7 +94,7 @@ export function AboutScreen({ backup }: { backup: BackupActions }) {
         <summary>Open-source licenses</summary>
         <iframe
           className="license-frame"
-          src="/legal/index.html"
+          src={withBasePath("/legal/index.html")}
           title="Almath licenses and third-party notices"
           sandbox=""
         />

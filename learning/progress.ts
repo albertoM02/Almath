@@ -7,6 +7,7 @@ import type {
   View,
 } from "./types";
 import { isStreak } from "./streak";
+import { isLabState } from "./circuit-lab";
 import { MIXED_REVIEW_MODULE_ID } from "./review";
 
 export function emptyProgress(): ProgressState {
@@ -210,7 +211,8 @@ function isDraft(value: unknown): value is Draft {
     [null, "correct", "incorrect"].includes(value.feedback as null | string) &&
     typeof value.hintUsed === "boolean" &&
     typeof value.solutionRevealed === "boolean" &&
-    isCount(value.attempts)
+    isCount(value.attempts) &&
+    (value.lab === undefined || isLabState(value.lab))
   );
 }
 

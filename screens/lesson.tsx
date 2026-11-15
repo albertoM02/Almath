@@ -10,6 +10,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Progress } from "@/components/ui/progress";
 import { SaveIndicator, type SaveStatus } from "@/components/almath/shell";
 import { MathText } from "@/components/almath/math-text";
+import { CircuitLab } from "@/components/almath/circuit-lab";
+import type { LabState } from "@/learning/circuit-lab";
 import { getExercise, concepts, modules, locale, t } from "@/learning/content";
 import { emptyDraft, getConceptPosition } from "@/learning/progress";
 import { isMixedReview } from "@/learning/review";
@@ -22,6 +24,7 @@ export function LessonScreen({
   onExit,
   onStage,
   onAnswer,
+  onLabChange,
   onHint,
   onCheck,
   onSolution,
@@ -35,6 +38,7 @@ export function LessonScreen({
   onExit: () => void;
   onStage: (stage: "theory" | "practice") => void;
   onAnswer: (answer: string) => void;
+  onLabChange?: (lab: LabState) => void;
   onHint: () => void;
   onCheck: () => void;
   onSolution: () => void;
@@ -169,7 +173,7 @@ export function LessonScreen({
               </button>
             </div>
           </TabsContent>
-          <TabsContent value="practice" className="practice-content">
+          <TabsContent value="practice" className={`practice-content${exercise.interaction ? " has-lab" : ""}`}>
             <span className="eyebrow">
               {t("questionPosition", {
                 current: mixed ? session.index + 1 : position.question,
@@ -190,10 +194,19 @@ export function LessonScreen({
             <form
               onSubmit={(event) => {
                 event.preventDefault();
-                if (!finished) onCheck();
+                if (!finished && !exercise.interaction) onCheck();
               }}
             >
-              {exercise.type === "choice" ? (
+              {exercise.interaction ? (
+                <CircuitLab
+                  exercise={exercise}
+                  text={text}
+                  draft={draft}
+                  onAnswer={onAnswer}
+                  onChange={onLabChange ?? (() => {})}
+                  onCheck={onCheck}
+                />
+              ) : exercise.type === "choice" ? (
                 <RadioGroup
                   aria-labelledby="question-prompt"
                   value={draft.answer}
@@ -343,7 +356,7 @@ export function LessonScreen({
                         : "nextExercise",
                     )}
                   </button>
-                ) : (
+                ) : !exercise.interaction ? (
                   <button
                     className="primary-button"
                     type="submit"
@@ -351,7 +364,7 @@ export function LessonScreen({
                   >
                     {t("checkAnswer")}
                   </button>
-                )}
+                ) : null}
               </div>
             </form>
           </TabsContent>
