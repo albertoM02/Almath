@@ -32,15 +32,36 @@ The app is designed for short learning sessions: understand a concept, try it yo
 
 **Mathematics for Machine Learning:** 12 modules and 74 original exercises covering vectors, regression, optimization, classification, probability, regularization, evaluation, neural networks, attention and ML systems.
 
+**Machine Learning Security:** 7 units, 24 modules and 95 original exercises covering threat modelling, adversarial examples, poisoning and backdoors, privacy and model extraction, prompt injection, AI agents and the ML supply chain.
+
 The interface and learning content are in English. An account is not required: progress is saved locally using IndexedDB, with no automatic cross-device synchronization. An encrypted backup can be imported on another device. Clearing browser/app data or uninstalling the app can remove your progress, so export a backup first. Android bundles the lessons and mathematical fonts for offline use; external reference links require an internet connection.
+
+**Use it on the web:**
+
+[Open Almath in your browser](https://albertom02.github.io/Almath/). It runs in any modern browser with the same lessons as the Android app. Progress stays in that browser's IndexedDB, and the encrypted backup in About moves it between the browser and Android. Daily reminders are only available on Android.
 
 **Try the Android beta:**
 
 Download the APK attached to an [Android release](https://github.com/albertoM02/Almath/releases) and install it on Android 7.0 or later. Android may ask you to allow installation from the app used to download it. Updates with the same application ID and signing certificate preserve app data.
 
+**Android home-screen widgets:** Open Almath once after updating, then
+long-press your home screen, choose Widgets and select Almath. The small widget
+shows your streak and daily goal; the large widget also shows a daily concept.
+Tap the concept to open its full existing lesson, or Continue learning to resume
+practice. Concepts come from completed lessons, with one introductory concept
+for new learners. A bounded local cache of up to 30 existing excerpts supports
+offline daily rotation while the app is closed. Almath selects short, complete
+existing explanations and checks their rendered size before showing them. Optional
+formulas appear only when they also fit; tap the concept for its full theory.
+Native widget updates follow
+Android battery scheduling, so a day change can appear after midnight. Widget
+dimensions and resizing depend on your launcher.
+
+**Circuit Lab activities:** Hardware Security Foundations includes 91 questions. Two offline activities use a shared Predict → Test → Explain flow for Ohm’s law and open-drain signals. Experiments and compatible answers are saved; exploring after grading does not earn extra attempts or goal credit.
+
 **Run locally:**
 
-Developed using TypeScript, React 19, Next.js 16 and Tailwind CSS 4, with KaTeX for mathematical notation. Android uses Capacitor 8 and Java for the native reminder scheduler.
+Developed using TypeScript, React 19, Next.js 16 and Tailwind CSS 4, with KaTeX for mathematical notation. Android uses Capacitor 8 and Java for reminders and home-screen widgets.
 
 Requires Node.js 22.13.0 or later and pnpm 11.25.0.
 
@@ -51,7 +72,11 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Use `pnpm check` for lint, TypeScript, content validation and tests, or `pnpm build` for a production web build.
+Open [http://localhost:3000](http://localhost:3000). Use `pnpm check` for lint, TypeScript, content validation and tests, or `pnpm build` followed by `pnpm start` to serve the production web build locally.
+
+**Deploy the web app:**
+
+Pull requests run `pnpm check`, the `/Almath/` static export and development Android validation, without release secrets. Every push to `main` in `albertoM02/Almath` runs `.github/workflows/web-deploy.yml`, which checks the app, builds the static export with `ALMATH_BASE_PATH=/Almath` and publishes `out/` to GitHub Pages. Enable it once under Settings → Pages → Source: GitHub Actions.
 
 **Build Android:**
 

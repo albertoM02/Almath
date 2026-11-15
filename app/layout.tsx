@@ -1,14 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import "katex/dist/katex.min.css";
 import "./globals.css";
+import { withBasePath } from "@/platform/base-path";
 
 export const metadata: Metadata = {
   title: "Almath",
   description:
-    "Interactive mathematics for computer science and machine learning.",
+    "Interactive lessons in mathematics for computer science and machine learning, hardware security and machine learning security.",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
+    icon: withBasePath("/logo.png"),
+    shortcut: withBasePath("/logo.png"),
   },
 };
 

@@ -6,18 +6,22 @@ import { renderToString } from "katex";
 export function checkContent(root = new URL("../", import.meta.url)) {
   const read = (name) =>
     JSON.parse(readFileSync(new URL(`content/${name}.json`, root), "utf8"));
-  const hardware = read("hardware-security/course");
-  const courses = [...read("courses"), ...hardware.courses],
-    modules = [...read("modules"), ...hardware.modules],
-    concepts = [...read("concepts"), ...hardware.concepts],
-    exercises = [...read("exercises"), ...hardware.exercises],
-    outlines = [...read("outlines"), ...hardware.outlines],
-    sources = [...read("sources"), ...hardware.sources];
+  const packs = [read("hardware-security/course"), read("ml-security/course")];
+  const merged = (name) => [
+    ...read(name),
+    ...packs.flatMap((pack) => pack[name]),
+  ];
+  const courses = merged("courses"),
+    modules = merged("modules"),
+    concepts = merged("concepts"),
+    exercises = merged("exercises"),
+    outlines = merged("outlines"),
+    sources = merged("sources");
   const english = read("locales/en");
   const locale = Object.fromEntries(
     Object.entries(english).map(([key, value]) => [
       key,
-      { ...value, ...hardware.locale[key] },
+      Object.assign({}, value, ...packs.map((pack) => pack.locale[key])),
     ]),
   );
   const index = (items, kind) => {
@@ -144,6 +148,17 @@ export function checkContent(root = new URL("../", import.meta.url)) {
       exercise.id,
     );
     strings(translated.solutionSteps, `${exercise.id}: solution steps`);
+    if (exercise.interaction !== undefined) {
+      assert.equal(
+        exercise.type,
+        "choice",
+        `${exercise.id}: labs need a prediction`,
+      );
+      assert.ok(
+        ["ohms-law", "open-drain"].includes(exercise.interaction),
+        `${exercise.id}: unknown interaction`,
+      );
+    }
     if (exercise.type === "choice") {
       strings(exercise.optionIds, exercise.id);
       assert.ok(

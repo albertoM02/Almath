@@ -4,4 +4,22 @@
     <string name="title_activity_main">Almath</string>
     <string name="package_name">io.github.albertom02.almath</string>
     <string name="custom_url_scheme">io.github.albertom02.almath</string>
+    <string name="widget_streak_name">Almath · Streak</string>
+    <string name="widget_theory_name">Almath · Daily concept</string>
+    <string name="widget_streak_description">Your streak and daily learning progress.</string>
+    <string name="widget_theory_description">Your streak and a daily refresher from existing course theory.</string>
+    <string name="widget_day_streak">day streak</string>
+    <string name="widget_days_streak">day streak</string>
+    <string name="widget_practised">✓ Practised today</string>
+    <string name="widget_practise">Practise today</string>
+    <string name="widget_goal">%1$d / %2$d today</string>
+    <string name="widget_initial_goal">0 / 5 today</string>
+    <string name="widget_concept_heading">CONCEPT OF THE DAY</string>
+    <string name="widget_welcome">A little daily learning</string>
+    <string name="widget_open_once">Open Almath to load your streak and course concepts.</string>
+    <string name="widget_continue">Continue learning →</string>
+    <string name="widget_accessibility">Almath, %1$d day streak. Tap to continue learning.</string>
+    <string name="widget_compact_title">Review</string>
+    <string name="widget_compact_excerpt">Open Almath.</string>
+    <string name="widget_compact_action">Continue →</string>
 </resources>

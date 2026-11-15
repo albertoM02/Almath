@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal" android:background="@drawable/widget_background">
+    <LinearLayout android:layout_width="0dp" android:layout_weight="0.34" android:layout_height="match_parent" android:orientation="vertical" android:padding="12dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/app_name"
+            android:fontFamily="serif" android:textStyle="bold" android:textColor="#FAF7ED" android:textSize="17sp" android:maxLines="1" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+            <ImageView android:layout_width="18dp" android:layout_height="24dp" android:src="@drawable/widget_flame" android:importantForAccessibility="no" />
+            <TextView android:id="@+id/widget_streak_count" android:layout_width="0dp" android:layout_weight="1" android:layout_height="42dp"
+                android:layout_marginStart="5dp" android:text="0" android:textSize="32sp" android:textColor="#FAF7ED" android:fontFamily="sans-serif-light" android:includeFontPadding="false" android:gravity="center_vertical" android:maxLines="1" />
+        </LinearLayout>
+        <TextView android:id="@+id/widget_streak_label" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/widget_days_streak" android:textSize="12sp" android:textColor="#FAF7ED" android:maxLines="1" />
+        <TextView android:id="@+id/widget_status" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:minHeight="18dp" android:gravity="bottom"
+            android:text="@string/widget_practise" android:textSize="10sp" android:textColor="#C3D7C7" android:maxLines="1" android:ellipsize="end" />
+        <TextView android:id="@+id/widget_goal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp"
+            android:text="@string/widget_initial_goal" android:textSize="10sp" android:textColor="#C3D7C7" android:maxLines="1" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/widget_theory_panel" android:layout_width="0dp" android:layout_weight="0.66" android:layout_height="match_parent"
+        android:orientation="vertical" android:padding="12dp" android:background="@drawable/widget_theory_background">
+        <TextView android:id="@+id/widget_concept_heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/widget_concept_heading"
+            android:textSize="9sp" android:letterSpacing="0.1" android:textColor="#416951" android:maxLines="1" />
+        <TextView android:id="@+id/widget_concept_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"
+            android:text="@string/widget_welcome" android:textColor="#173F32" android:fontFamily="serif" android:textStyle="bold" android:textSize="18sp" android:maxLines="2" android:ellipsize="end" />
+        <TextView android:id="@+id/widget_excerpt" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="4dp"
+            android:text="@string/widget_open_once" android:textColor="#233C31" android:fontFamily="sans-serif" android:textSize="12sp" android:maxLines="8" android:ellipsize="end" />
+        <TextView android:id="@+id/widget_formula" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="#173F32" android:textSize="14sp" android:fontFamily="serif" android:maxLines="1" android:ellipsize="end" android:visibility="gone" />
+        <TextView android:id="@+id/widget_continue" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="28dp" android:gravity="end|center_vertical"
+            android:text="@string/widget_continue" android:textColor="#416951" android:textSize="11sp" android:textStyle="bold" android:maxLines="1" />
+    </LinearLayout>
+</LinearLayout>

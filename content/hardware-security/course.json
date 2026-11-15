@@ -78,12 +78,13 @@
     {
       "id": "hw-u2-electricity",
       "courseId": "hardware-security",
-      "version": 1,
+      "version": 2,
       "exerciseIds": [
         "hw-u2-q01",
         "hw-u2-q02",
         "hw-u2-q03",
         "hw-u2-q04",
+        "hw-u2-q28",
         "hw-u2-q05"
       ]
     },
@@ -108,13 +109,14 @@
     {
       "id": "hw-u2-signals",
       "courseId": "hardware-security",
-      "version": 2,
+      "version": 3,
       "exerciseIds": [
         "hw-u2-q06",
         "hw-u2-q07",
         "hw-u2-q08",
         "hw-u2-q09",
         "hw-u2-q10",
+        "hw-u2-q29",
         "hw-u2-q25"
       ]
     },
@@ -755,6 +757,18 @@
       "courseId": "hardware-security",
       "prerequisites": ["hw-u4-concept-10"],
       "sourceId": "hardware-security-book-reviewed"
+    },
+    {
+      "id": "hw-u2-concept-28",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-04"],
+      "sourceId": "hardware-security-outline"
+    },
+    {
+      "id": "hw-u2-concept-29",
+      "courseId": "hardware-security",
+      "prerequisites": ["hw-u2-concept-10"],
+      "sourceId": "hardware-security-outline"
     }
   ],
   "exercises": [
@@ -1558,6 +1572,26 @@
       "optionIds": ["a", "b", "c"],
       "answer": "b",
       "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q28",
+      "conceptId": "hw-u2-concept-28",
+      "version": 1,
+      "type": "choice",
+      "interaction": "ohms-law",
+      "optionIds": ["a", "b", "c"],
+      "answer": "a",
+      "sourceId": "hardware-security-original"
+    },
+    {
+      "id": "hw-u2-q29",
+      "conceptId": "hw-u2-concept-29",
+      "version": 1,
+      "type": "choice",
+      "interaction": "open-drain",
+      "optionIds": ["a", "b", "c"],
+      "answer": "b",
+      "sourceId": "hardware-security-original"
     }
   ],
   "outlines": [
@@ -1631,8 +1665,8 @@
     {
       "id": "hardware-security-original",
       "kind": "original",
-      "title": "Almath hardware security exercises",
-      "note": "89 original Almath questions: 20 in Unit 1, 27 in Unit 2, 24 in Unit 3, and 18 in Unit 4. Each question has its own theory, worked example, optional hint, answer feedback, and solution."
+      "title": "Almath private hardware security exercises",
+      "note": "91 original Almath questions: 20 in Unit 1, 29 in Unit 2, 24 in Unit 3, and 18 in Unit 4. Version 0.6.3 adds two Circuit Lab activities to the existing 89 questions. Every question includes theory, a worked example, an optional hint, feedback and a solution. Circuit models are explicitly idealised."
     },
     {
       "id": "hardware-security-technical-references",
@@ -1652,7 +1686,7 @@
         "https://github.com/refirmlabs/binwalk"
       ],
       "checked": "2026-10-19",
-      "note": "Primary references consulted for the Unit 3 and Unit 4 drafts. Explanations, examples, scenarios, options and feedback are original Almath content. See the separate book review entry for the subsequent scope check."
+      "note": "Primary references consulted for the Unit 3 and Unit 4 drafts. Explanations, examples, scenarios, options and feedback are original Almath content; the full book was not available for a page-by-page check."
     },
     {
       "id": "hardware-security-book-reviewed",
@@ -2486,6 +2520,30 @@
         "example": "A tool detects a possible filesystem halfway through an update. The researcher examines that region and checks its boundaries and contents.",
         "exampleSteps": [],
         "takeaway": "Firmware-analysis tools can recognise candidate formats from characteristic byte patterns, often called magic bytes."
+      },
+      "hw-u2-concept-28": {
+        "title": "What happens when resistance increases?",
+        "body": "For an ideal resistor, current equals voltage divided by resistance. When the voltage stays fixed, increasing resistance reduces current. A circuit model lets you test a prediction while changing one quantity at a time.",
+        "formula": "\\[I = \\frac{V}{R}\\]",
+        "example": "At 3 V, a 1 kΩ resistor carries 3 mA. Changing it to 3 kΩ gives 3 / 3000 = 0.001 A, or 1 mA.",
+        "exampleSteps": [
+          "Keep the ideal supply at 3 V.",
+          "Triple the resistance from 1 kΩ to 3 kΩ.",
+          "The current becomes one third of its original value."
+        ],
+        "takeaway": "At a fixed voltage, tripling resistance divides current by three."
+      },
+      "hw-u2-concept-29": {
+        "title": "Who controls the shared wire?",
+        "body": "An open-drain output can pull a wire LOW or release it into high impedance. Releasing the wire does not actively drive it HIGH. A pull-up establishes HIGH only when every connected output releases the wire.",
+        "formula": "",
+        "example": "A and B share a pulled-up signal. If A pulls LOW while B releases, the receiver reads LOW. If both release, the pull-up establishes HIGH. If both release without a pull-up or other bias, no logic level is guaranteed.",
+        "exampleSteps": [
+          "Check whether any output provides a path to ground.",
+          "If all outputs release, check whether a pull-up establishes the voltage.",
+          "Treat an unbiased released line as undefined, not automatically LOW."
+        ],
+        "takeaway": "A released output does not fight a pull-down; it stops driving the wire."
       }
     },
     "exercises": {
@@ -3908,6 +3966,40 @@
         "solutionSteps": [
           "The detection provides a starting point that should be checked before drawing broader conclusions.",
           "Choose B: Examine the reported region to check the format and its boundaries."
+        ]
+      },
+      "hw-u2-q28": {
+        "title": "What happens when resistance increases?",
+        "statement": "A fixed 3 V supply drives a 1 kΩ resistor. You increase the resistance to 3 kΩ. What current do you predict?",
+        "prompt": "Predict first. Then set the resistance and run the circuit to test your idea.",
+        "options": {
+          "a": "1 mA",
+          "b": "3 mA",
+          "c": "9 mA"
+        },
+        "hint": "Use I = V/R. Convert 3 kΩ to 3,000 Ω before dividing.",
+        "explanation": "For the question setting, 3 / 3000 = 0.001 A = 1 mA. The resistance triples while voltage stays fixed, so current is divided by three.",
+        "solutionSteps": [
+          "Keep the voltage at 3 V.",
+          "Convert 3 kΩ to 3,000 Ω.",
+          "Calculate I = 3 / 3000 = 0.001 A = 1 mA."
+        ]
+      },
+      "hw-u2-q29": {
+        "title": "Who controls the shared wire?",
+        "statement": "Device A pulls LOW while device B releases a shared open-drain wire. A pull-up is connected. What will the receiver read?",
+        "prompt": "Predict the receiver state, test this setup, then explore the switches and pull-up.",
+        "options": {
+          "a": "HIGH",
+          "b": "LOW",
+          "c": "Undefined"
+        },
+        "hint": "Releasing means high impedance. Ask whether A still provides a path to ground.",
+        "explanation": "For the question setup, A holds the wire LOW. B releases it and does not drive HIGH. In this ideal model the receiver sees 0 V; the pull-up resistor limits current from the supply.",
+        "solutionSteps": [
+          "A provides a path from the wire to ground.",
+          "B releases the wire, so it does not actively drive against A.",
+          "The receiver reads LOW. In the ideal model this is 0 V."
         ]
       }
     }

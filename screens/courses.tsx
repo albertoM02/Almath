@@ -1,4 +1,4 @@
-import { Network, Box, Layers, Cpu } from "lucide-react";
+import { Network, Box, Layers, Cpu, ShieldCheck } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import {
   courses,
@@ -40,7 +40,13 @@ export function CourseScreen({
       0,
     );
     const Icon =
-      course.icon === "logic" ? Network : course.icon === "chip" ? Cpu : Box;
+      course.icon === "logic"
+        ? Network
+        : course.icon === "chip"
+          ? Cpu
+          : course.icon === "shield"
+            ? ShieldCheck
+            : Box;
     return (
       <article className="course-card" key={course.id}>
         <div className="course-card-heading">
